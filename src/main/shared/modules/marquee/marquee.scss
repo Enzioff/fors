@@ -1,0 +1,75 @@
+.marquee {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  &__track {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transform: translateX(-350px);
+
+    @include r($tablet) {
+      transform: translateX(-150px);
+    }
+
+    &--revert {
+      transform: translateX(-450px);
+
+      @include r($tablet) {
+        transform: translateX(-250px);
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-color: $white;
+    overflow: hidden;
+
+    @include r($tablet) {
+      width: 100px;
+      height: 100px;
+      padding: 28px;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    width: auto;
+    height: auto;
+  }
+
+  &--small {
+    gap: 20px;
+
+    @include r($tablet) {
+      gap: 5px;
+    }
+
+    .marquee__track {
+      gap: 30px;
+
+      @include r($tablet) {
+        gap: 15px;
+      }
+    }
+
+    .marquee__item {
+      width: 130px;
+      height: 130px;
+      padding: 0;
+
+      @include r($tablet) {
+        width: 70px;
+        height: 70px;
+      }
+    }
+  }
+}

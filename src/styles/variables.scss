@@ -1,0 +1,371 @@
+@use "sass:math";
+
+// Шрифты
+$font-main: "Oswald", sans-serif;
+$font-accent: "Roboto", sans-serif;
+
+// Цвета
+$white: #FFFFFF;
+$bg: #F0F0FF;
+$gray: #6C696E;
+$dark: #26282C;
+$main3: #032183;
+$main3_40: rgba(#032183, 0.4);
+$main2: #032183;
+$main1: #134AFF;
+$main1_15: rgba(#134AFF, .15);
+
+// Размеры
+$tablet: 1439;
+$mobile: 767;
+
+// Миксины
+
+// Типография
+@mixin h1() {
+  font-family: $font-main;
+  font-size: 70px;
+  font-weight: 400;
+  line-height: 91px;
+  text-align: left;
+  color: $main3;
+
+  @include r($tablet) {
+    font-size: 35px;
+    line-height: 42px;
+  }
+
+  @include r($mobile) {
+    font-size: 29px;
+    line-height: 34.8px;
+  }
+}
+
+@mixin h2() {
+  font-family: $font-main;
+  font-size: 82px;
+  font-weight: 400;
+  line-height: 110.7px;
+  text-align: left;
+  color: $main3;
+
+  @include r($tablet) {
+    font-size: 43px;
+    line-height: 58.05px;
+  }
+
+  @include r($mobile) {
+    font-size: 38px;
+    line-height: 51.3px;
+  }
+}
+
+@mixin h3() {
+  font-family: $font-main;
+  font-size: 35px;
+  font-weight: 400;
+  line-height: 45.5px;
+  text-align: left;
+  color: $main3;
+
+  @include r($tablet) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  @include r($mobile) {
+    font-size: 18px;
+    line-height: 23.4px;
+  }
+}
+
+@mixin h4() {
+  font-family: $font-main;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 32.5px;
+  text-align: left;
+  color: $main3;
+
+  @include r($tablet) {
+    font-size: 16px;
+    line-height: 20.8px;
+  }
+
+  @include r($mobile) {
+    font-size: 15px;
+    line-height: 19.5px;
+  }
+}
+
+@mixin h5() {
+  font-family: $font-accent;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 25px;
+  text-align: left;
+  color: $main3;
+
+  @include r($tablet) {
+    font-size: 20px;
+    line-height: 20px;
+  }
+
+  @include r($mobile) {
+    font-size: 18px;
+    line-height: 18px;
+  }
+}
+
+@mixin text1($color: $main3, $font: $font-accent) {
+  @if $font {
+    font-family: $font;
+  } @else {
+    font-family: $font-accent;
+  }
+
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+
+  @if $color {
+    color: $color;
+  } @else {
+    color: $main3;
+  }
+
+  @include r($tablet) {
+    font-size: 16px;
+    line-height: 19.2px;
+  }
+
+  @include r($mobile) {
+    font-size: 14px;
+    line-height: 16.8px;
+  }
+}
+
+@mixin text2($color: $main3, $font: $font-accent) {
+  @if $font {
+    font-family: $font;
+  } @else {
+    font-family: $font-accent;
+  }
+
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+
+  @if $color {
+    color: $color;
+  } @else {
+    color: $main3;
+  }
+
+  @include r($tablet) {
+    font-size: 13px;
+    line-height: 15.6px;
+  }
+
+  @include r($mobile) {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+}
+
+@mixin text3($color: $main3, $font: $font-accent) {
+  @if $font {
+    font-family: $font;
+  } @else {
+    font-family: $font-accent;
+  }
+
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: left;
+
+  @if $color {
+    color: $color;
+  } @else {
+    color: $main3;
+  }
+
+  @include r($tablet) {
+    font-size: 12px;
+    line-height: 14.4px;
+  }
+
+  @include r($mobile) {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
+
+// Адаптивность
+@mixin r($width) {
+  @media only screen and (max-width: $width+ "px") {
+    @content
+  }
+}
+
+@mixin rmin($width) {
+  @media only screen and (min-width: $width+ "px") {
+    @content
+  }
+}
+
+// Для изображений
+@mixin cover() {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+}
+
+@mixin coverFull() {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+// Генераторы
+@mixin pt($size) {
+  padding-top: math.div($size, 16) * 1rem;
+}
+
+@for $i from 1 through 200 {
+  .pt-#{$i} {
+    @include pt($i);
+  }
+}
+
+@mixin ptt($size) {
+  @include r($tablet) {
+    padding-top: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .ptt-#{$i} {
+    @include ptt($i);
+  }
+}
+
+@mixin ptm($size) {
+  @include r($mobile) {
+    padding-top: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .ptm-#{$i} {
+    @include ptm($i);
+  }
+}
+
+@mixin pb($size) {
+  padding-bottom: math.div($size, 16) * 1rem;
+}
+
+@for $i from 1 through 200 {
+  .pb-#{$i} {
+    @include pb($i);
+  }
+}
+
+@mixin pbt($size) {
+  @include r($tablet) {
+    padding-bottom: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .pbt-#{$i} {
+    @include pbt($i);
+  }
+}
+
+@mixin pbm($size) {
+  @include r($mobile) {
+    padding-bottom: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .pbm-#{$i} {
+    @include pbm($i);
+  }
+}
+
+@mixin mt($size) {
+  margin-top: math.div($size, 16) * 1rem;
+}
+
+@for $i from 1 through 200 {
+  .mt-#{$i} {
+    @include mt($i);
+  }
+}
+
+@mixin mtt($size) {
+  @include r($tablet) {
+    margin-top: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .mtt-#{$i} {
+    @include mtt($i);
+  }
+}
+
+@mixin mtm($size) {
+  @include r($mobile) {
+    margin-top: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .mtm-#{$i} {
+    @include mtm($i);
+  }
+}
+
+@mixin mb($size) {
+  margin-bottom: math.div($size, 16) * 1rem;
+}
+
+@for $i from 1 through 200 {
+  .mb-#{$i} {
+    @include mb($i);
+  }
+}
+
+@mixin mbt($size) {
+  @include r($tablet) {
+    margin-bottom: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .mbt-#{$i} {
+    @include mbt($i);
+  }
+}
+
+@mixin mbm($size) {
+  @include r($mobile) {
+    margin-bottom: math.div($size, 16) * 1rem;
+  }
+}
+
+@for $i from 0 through 200 {
+  .mbm-#{$i} {
+    @include mbm($i);
+  }
+}

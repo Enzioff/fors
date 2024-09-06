@@ -1,0 +1,48 @@
+.action-tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max-content;
+  gap: 5px;
+  padding: 7px 10px 8px;
+  border-radius: 4px;
+  background-color: $main1;
+
+  @include r($tablet) {
+    gap: 2px;
+    padding: 3px 7px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 12px;
+    height: 14px;
+
+    @include r($tablet) {
+      width: 8px;
+      height: 9.33px;
+    }
+  }
+
+  span {
+    font-family: $font-accent;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 15px;
+    text-align: left;
+    color: $white;
+
+    @include r($tablet) {
+      font-size: 8px;
+      line-height: 8px;
+    }
+  }
+  
+  &--light {
+    background-color: $main1_15;
+
+    span {
+      color: $main3;
+    }
+  }
+}

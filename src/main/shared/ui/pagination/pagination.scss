@@ -1,0 +1,36 @@
+.pagination {
+  display: grid;
+  grid-template-columns: repeat(3, 40px);
+  flex-wrap: wrap;
+  gap: 5px;
+
+  @include r($tablet) {
+    grid-template-columns: repeat(3, 25px);
+  }
+
+  &--slim {
+    grid-template-columns: repeat(2, 40px);
+
+    @include r($tablet) {
+      grid-template-columns: repeat(2, 25px);
+    }
+  }
+
+  &__item {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba($main1, .07);
+    cursor: pointer;
+
+    @include r($tablet) {
+      width: 25px;
+      height: 25px;
+    }
+
+    &.active {
+      background-color: $main1;
+    }
+  }
+}

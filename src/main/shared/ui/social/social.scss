@@ -1,0 +1,58 @@
+.social {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  @include r($tablet) {
+    gap: 10px;
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    grid-column: span 1;
+
+    width: 95px;
+    height: 95px;
+
+    border: 1px solid $gray;
+    border-radius: 50%;
+
+    @include r($tablet) {
+      width: 50px;
+      height: 50px;
+    }
+
+    &:first-child {
+      grid-column: 2 / 3
+    }
+
+    &--brown {
+      background-color: #FFF5E1;
+      border-color: #CC8B09;
+    }
+
+    &--red {
+      background-color: #FFF7F4;
+      border-color: rgba(#FF3D00, .3);
+    }
+
+    &--turquoise {
+      background-color: #F1FBFF;
+      border-color: #009AAF;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    width: 39px;
+    height: 39px;
+
+    @include r($tablet) {
+      width: 20px;
+      height: 20px;
+    }
+  }
+}

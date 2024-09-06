@@ -1,0 +1,142 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-width: 375px;
+  min-height: 100vh;
+
+  @include text1();
+
+  background-color: $bg;
+  overflow-x: hidden;
+}
+
+.main {
+  flex-grow: 1;
+  overflow-x: hidden;
+}
+
+.centered {
+  margin: 0 auto;
+}
+
+.mb-auto {
+  margin-bottom: auto;
+}
+
+.logo {
+  display: flex;
+
+  @include r($tablet) {
+    width: 123px;
+    height: 65.6px;
+  }
+
+  @include r($mobile) {
+    width: 94px;
+    height: 50px;
+  }
+}
+
+.tab-hidden {
+  @include r($tablet) {
+    display: none;
+  }
+}
+
+.mob-hidden {
+  @include r($mobile) {
+    display: none;
+  }
+}
+
+.desktop-hidden {
+  @include rmin($tablet + 1) {
+    display: none;
+  }
+}
+
+.order {
+  &--1 {
+    order: 1;
+  }
+
+  &--2 {
+    order: 2;
+  }
+
+  &--3 {
+    order: 3;
+  }
+
+  &--4 {
+    order: 4;
+  }
+
+  &--5 {
+    order: 5;
+  }
+
+  &-tab {
+    &--1 {
+      @include r($tablet) {
+        order: 1;
+      }
+    }
+
+    &--2 {
+      @include r($tablet) {
+        order: 2;
+      }
+    }
+
+    &--3 {
+      @include r($tablet) {
+        order: 3;
+      }
+    }
+
+    &--4 {
+      @include r($tablet) {
+        order: 4;
+      }
+    }
+
+    &--5 {
+      @include r($tablet) {
+        order: 5;
+      }
+    }
+  }
+
+  &-mob {
+    &--1 {
+      @include r($mobile) {
+        order: 1;
+      }
+    }
+
+    &--2 {
+      @include r($mobile) {
+        order: 2;
+      }
+    }
+
+    &--3 {
+      @include r($mobile) {
+        order: 3;
+      }
+    }
+
+    &--4 {
+      @include r($mobile) {
+        order: 4;
+      }
+    }
+
+    &--5 {
+      @include r($mobile) {
+        order: 5;
+      }
+    }
+  }
+}

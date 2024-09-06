@@ -1,0 +1,16 @@
+.title {
+  @include h2();
+  text-transform: uppercase;
+
+  &--light {
+    color: $white;
+  }
+
+  &--main {
+    @include h1();
+  }
+
+  &--small {
+    @include h3();
+  }
+}

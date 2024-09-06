@@ -1,0 +1,18 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+
+  &__link {
+    font-family: $font-accent;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36.12px;
+    text-align: left;
+    color: $main3;
+
+    @include r($tablet) {
+      font-size: 16px;
+      line-height: 20.8px;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+import './icon-arrow-down.svg';
+import './icon-arrow-right.svg';
+import './icon-play.svg';
+import './icon-rocket.svg';
+import './icon-rocket-start.svg';

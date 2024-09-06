@@ -1,0 +1,30 @@
+.widget-stats {
+  display: flex;
+  flex-direction: column;
+  grid-column: span 2;
+  gap: 6px;
+  box-shadow: 0 0 60px 0 #213A5B2E;
+
+  @include r($tablet) {
+    grid-column: span 5;
+    gap: 5px;
+    padding: 15px;
+    max-height: 110px;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+
+  &__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__picture {
+    display: flex;
+  }
+}

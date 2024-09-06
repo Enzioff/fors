@@ -1,0 +1,27 @@
+.people {
+  display: flex;
+  flex-direction: column;
+  gap: 69px;
+  padding: 70px 30px;
+  border-radius: 25px;
+  background-color: $main1;
+  overflow: hidden;
+
+  @include r($tablet) {
+    gap: 42px;
+    margin-bottom: 10px;
+    padding: 20px 20px 22px;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+  }
+
+  &__title {
+    @include h3();
+    text-transform: uppercase;
+    color: $white;
+  }
+}

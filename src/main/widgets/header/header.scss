@@ -1,0 +1,18 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  @include r($mobile) {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}

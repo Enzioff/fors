@@ -1,0 +1,130 @@
+.button {
+  display: inline-block;
+  width: 100%;
+  height: 70px;
+  padding: 24px 12px;
+
+  font-family: $font-accent;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21.6px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $white;
+
+  background-color: $main1;
+  border: 1px solid $main1;
+  border-radius: 35px;
+
+  vertical-align: middle;
+  transition: .2s linear;
+
+  &:hover {
+    background: transparent;
+    border-color: $white;
+  }
+
+  @include r($tablet) {
+    height: auto;
+    padding: 7px 8px;
+
+    font-size: 14px;
+    line-height: 16.8px;
+
+    border-radius: 15px;
+  }
+}
+
+.button-circle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 11px;
+  width: 210px;
+  height: 210px;
+  padding: 0 36px;
+
+  border: 1px solid $main1;
+  background-color: $main1;
+  border-radius: 50%;
+
+  @include r($tablet) {
+    gap: 5px;
+    width: 135px;
+    height: 135px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 53px;
+    height: 53px;
+
+    @include r($tablet) {
+      width: 42px;
+      height: 42px;
+    }
+
+    &--long {
+      height: 72px;
+
+      @include r($tablet) {
+        width: 42px;
+        height: 42px;
+      }
+    }
+  }
+
+  span {
+    font-family: $font-accent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21.6px;
+    text-align: center;
+    color: $white;
+
+    @include r($tablet) {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+    }
+  }
+
+  &--small {
+    width: 160px;
+    height: 160px;
+    padding: 0;
+
+    @include r($tablet) {
+      width: 122px;
+      height: 122px;
+    }
+
+
+    .button-circle__icon {
+      width: 43px;
+      height: 43px;
+
+      @include r($tablet) {
+        width: 24px;
+        height: 24px;
+      }
+    }
+
+    span {
+      @include r($tablet) {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 16.8px;
+      }
+    }
+  }
+
+  &--light {
+    border-color: $white;
+  }
+
+  &--right {
+    align-self: flex-end;
+  }
+}

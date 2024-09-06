@@ -1,0 +1,176 @@
+.grid {
+  display: grid;
+  grid-auto-flow: dense;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 20px;
+
+  @include r($tablet) {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  @include r($mobile) {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  &--widgets {
+    grid-template-columns: repeat(auto-fill, 210px);
+
+    @include r($tablet) {
+      grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+      gap: 10px;
+      align-items: center;
+      justify-items: center;
+    }
+
+    @include r($mobile) {
+      grid-template-columns: repeat(auto-fill, 163px);
+      gap: 10px;
+    }
+
+    .grid__item--last {
+      grid-column: 3/4;
+    }
+  }
+
+  &--end {
+    align-items: end;
+  }
+
+  &__item {
+    &--1 {
+      grid-column: span 1;
+    }
+
+    &--2 {
+      grid-column: span 2;
+    }
+
+    &--3 {
+      grid-column: span 3;
+    }
+
+    &--4 {
+      grid-column: span 4;
+    }
+
+    &--5 {
+      grid-column: span 5;
+    }
+
+    &--6 {
+      grid-column: span 6;
+    }
+
+    &--between {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &--end {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+  }
+
+  &__item-tab {
+    &--1 {
+      @include r($tablet) {
+        grid-column: span 1;
+      }
+    }
+
+    &--2 {
+      @include r($tablet) {
+        grid-column: span 2;
+      }
+    }
+
+    &--3 {
+      @include r($tablet) {
+        grid-column: span 3;
+      }
+    }
+
+    &--4 {
+      @include r($tablet) {
+        grid-column: span 4;
+      }
+    }
+
+    &--5 {
+      @include r($tablet) {
+        grid-column: span 5;
+      }
+    }
+
+    &--6 {
+      @include r($tablet) {
+        grid-column: span 6;
+      }
+    }
+
+    &--7 {
+      @include r($tablet) {
+        grid-column: span 7;
+      }
+    }
+
+    &--8 {
+      @include r($tablet) {
+        grid-column: span 8;
+      }
+    }
+
+    &--9 {
+      @include r($tablet) {
+        grid-column: span 9;
+      }
+    }
+
+    &--10 {
+      @include r($tablet) {
+        grid-column: span 10;
+      }
+    }
+
+    &--11 {
+      @include r($tablet) {
+        grid-column: span 11;
+      }
+    }
+
+    &--12 {
+      @include r($tablet) {
+        grid-column: span 12;
+      }
+    }
+  }
+
+  &__item-mob {
+    &--1 {
+      @include r($mobile) {
+        grid-column: span 1;
+      }
+    }
+
+    &--2 {
+      @include r($mobile) {
+        grid-column: span 2;
+      }
+    }
+
+    &--3 {
+      @include r($mobile) {
+        grid-column: span 3;
+      }
+    }
+
+    &--4 {
+      @include r($mobile) {
+        grid-column: span 4;
+      }
+    }
+  }
+}

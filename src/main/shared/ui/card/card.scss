@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 25px;
+  height: 100%;
+  background-color: $white;
+  border-radius: 25px;
+
+  @include r($tablet) {
+    padding: 10px;
+    border-radius: 15px;
+  }
+}

@@ -1,0 +1,10 @@
+.users {
+  display: flex;
+  align-items: center;
+
+  @for $i from 2 through 3 {
+    .user:nth-child(#{$i}) {
+      margin-left: -9px;
+    }
+  }
+}

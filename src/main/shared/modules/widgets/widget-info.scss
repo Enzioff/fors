@@ -1,0 +1,88 @@
+.widget-info {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 65px 0 #213A5B33;
+
+  @include r($tablet) {
+    grid-column: span 1;
+    padding-bottom: 11px;
+    max-height: 110px;
+  }
+
+  @include r($mobile) {
+    width: 110px;
+    height: 110px;
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__top {
+    position: relative;
+    padding-bottom: 14px;
+    border-bottom: 1px solid $gray;
+
+    @include r($tablet) {
+      padding-bottom: 10px;
+    }
+
+    @include r($mobile) {
+      padding-bottom: 17.9px;
+    }
+
+    .widget-info__icon {
+      @include r($tablet) {
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+
+      @include r($mobile) {
+        position: static;
+        width: 26.5px;
+        height: 26.5px;
+      }
+    }
+  }
+
+  &__bottom {
+    align-items: flex-end;
+    padding-top: 14px;
+
+    @include r($tablet) {
+      padding-top: 10px;
+    }
+
+    @include r($mobile) {
+      padding-top: 15.9px;
+    }
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  &__icon {
+    display: flex;
+    flex-shrink: 0;
+    width: 25px;
+    height: 25px;
+
+    @include r($tablet) {
+      width: 17px;
+      height: 17px;
+    }
+
+    @include r($mobile) {
+      width: 26.5px;
+      height: 26.5px;
+    }
+  }
+}
