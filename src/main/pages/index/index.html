@@ -4,16 +4,16 @@
 <body>
 <%= htmlWebpackPlugin.options.widgets.header %>
 <main class="main">
-    <section class="section section--bg pt-50 ptt-30 ptm-120 pbm-50 mb-150 mbt-70 mbm-0">
+    <section class="section section--bg pt-50 ptt-30 ptm-120 pb-50 pbt-24 pbm-30 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-50 mbt-147 mbm-20">
+            <div class="grid mb-50 mbt-20 mbm-20">
                 <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
                     <a href="/" class="logo">
                         <img src="./assets/images/logo.svg" alt="">
                     </a>
                 </div>
                 <div class="grid__item grid__item--2 mob-hidden"></div>
-                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--2">
+                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--3">
                     <div class="card widget-info">
                         <div class="widget-info__top">
                             <div class="widget-info__detail">
@@ -56,8 +56,8 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--5 tab-hidden"></div>
-                <div class="grid__item grid__item--1 tab-hidden">
-                    <a href="#" class="button-circle">
+                <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--self-end">
+                    <a href="#" class="button-circle anim-in-right">
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
@@ -68,13 +68,13 @@
             <div class="grid grid--end">
                 <div class="grid__item grid__item--3 grid__item-tab--5 grid__item-mob--3">
                     <h1 class="title title--main">
-                        Инновации,
-                        вдохновленные
-                        годами опыта
+                        <span>Инновации,</span>
+                        <span>вдохновленные</span>
+                        <span>годами опыта</span>
                     </h1>
                 </div>
                 <div class="grid__item grid__item--2 grid__item-tab--4 mob-hidden">
-                    <nav class="nav">
+                    <nav class="nav anim-in-bottom">
                         <a href="#" class="nav__link">Компания</a>
                         <a href="#" class="nav__link">Проекты</a>
                         <a href="#" class="nav__link">Продукты</a>
@@ -87,17 +87,17 @@
                 <div class="grid__item grid__item--1 desktop-hidden mob-hidden"></div>
                 <div class="grid__item grid__item--1 grid__item-tab--2 mob-hidden">
                     <div class="social">
-                        <a href="#" class="social__link social__link--brown">
+                        <a href="#" class="social__link social__link--brown anim-in-right">
                             <picture class="social__picture">
                                 <img src="./assets/images/icon-github.svg" alt="">
                             </picture>
                         </a>
-                        <a href="#" class="social__link social__link--red">
+                        <a href="#" class="social__link social__link--red anim-in-bottom-stagger">
                             <picture class="social__picture">
                                 <img src="./assets/images/icon-youtube.svg" alt="">
                             </picture>
                         </a>
-                        <a href="#" class="social__link social__link--turquoise">
+                        <a href="#" class="social__link social__link--turquoise anim-in-bottom-stagger">
                             <picture class="social__picture">
                                 <img src="./assets/images/icon-telegram.svg" alt="">
                             </picture>
@@ -107,10 +107,26 @@
             </div>
         </div>
     </section>
-    <section class="section section--radial pt-50 mb-150 mbt-70">
+    <section class="section section--radial section-second pt-50 ptt-60 pb-56 pbt-60 pbm-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid">
                 <div class="grid__item grid__item--3 grid__item-tab--6">
+                    <div class="direction tab-hidden-min">
+                        <ul class="direction__list">
+                            <li class="direction__item">
+                                <span>Контроль и надзор</span>
+                            </li>
+                            <li class="direction__item">
+                                <span>Медицина</span>
+                            </li>
+                            <li class="direction__item">
+                                <span>Спорт</span>
+                            </li>
+                            <li class="direction__item">
+                                <span>ЖКХ</span>
+                            </li>
+                        </ul>
+                    </div>
                     <div class="news-block">
                         <div class="news-item">
                             <picture class="news-item__picture">
@@ -186,7 +202,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--between grid__item--3 grid__item-tab--6">
-                    <div class="direction">
+                    <div class="direction mob-hidden">
                         <ul class="direction__list">
                             <li class="direction__item active">
                                 <span>Контроль и надзор</span>
@@ -210,6 +226,7 @@
                         <a href="#" class="tag">Atlassian Jira</a>
                         <a href="#" class="tag">Chat GPT</a>
                         <a href="#" class="tag">РЭД ОС</a>
+                        <a href="#" class="tag">Ansible</a>
                         <a href="#" class="tag">Linux</a>
                         <a href="#" class="tag">Python</a>
                     </div>
@@ -217,9 +234,9 @@
             </div>
         </div>
     </section>
-    <section class="section section--blue section--radius pt-150 ptt-100 pb-179 pbt-88 mb-150 mbt-80">
+    <section class="section section--blue section--radius pt-150 ptt-100 pb-149 pbt-100 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-50">
+            <div class="grid mb-100 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title title--light">
@@ -336,8 +353,8 @@
                     </div>
                 </div>
             </div>
-            <div class="grid">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--5 order-tab--2">
+            <div class="grid anim-stay">
+                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--5 grid__item-mob--4 order-tab--2 mob-hidden">
                     <div class="article-notification mb-61">
                         <div class="article-notification__item">
                             <h3 class="article-notification__title">&gt;2000</h3>
@@ -350,7 +367,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--1 order-tab--2">
+                <div class="grid__item grid__item--1 order-tab--2 mob-hidden">
                     <div class="article-notification article-notification--small mt-82 tab-hidden">
                         <div class="article-notification__item">
                             <p class="article-notification__text">лет опыта</p>
@@ -358,9 +375,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--2 grid__item-tab--6 order-tab--2">
+                <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2">
                     <div class="layering">
-                        <div class="article-info">
+                        <div class="article-info article-info--1">
                             <div class="article-info__top">
                                 <div class="article-info__head">
                                     <picture class="article-info__logo">
@@ -398,30 +415,34 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="article-info">
+                        <div class="article-info article-info--2">
                             <div class="article-info__top">
                                 <div class="article-info__head">
                                     <picture class="article-info__logo">
-                                        <img src="./assets/images/logo-footbal.png" alt="">
+                                        <img src="./assets/images/logo-mts.png" alt="">
                                     </picture>
                                     <h3 class="article-info__title">
-                                        Российский<br>
-                                        футбольный союз
+                                        ПАО «Мобильные<br>
+                                        ТелеСистемы» (МТС)
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
                                     <div class="action-tag action-tag--light">
-                                        <span>Спорт</span>
+                                        <span>ИТ-консалтинг</span>
                                     </div>
                                     <div class="action-tag action-tag--light">
-                                        <span>Автоматизация процессов</span>
+                                        <span>Телекоммуникация</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Миграция ИС</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
-                                    футбольным союзом (РФС)
+                                    Необходимость провести миграцию ИС в условиях весьма ограниченного «окна простоя»
+                                    (требование бизнеса для критически важных систем) при больших объёмах данных,
+                                    которые необходимо было перенести на новую платформу.
                                 </div>
                             </div>
                             <div class="article-info__footer">
@@ -436,30 +457,29 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="article-info">
+                        <div class="article-info article-info--3">
                             <div class="article-info__top">
                                 <div class="article-info__head">
                                     <picture class="article-info__logo">
-                                        <img src="./assets/images/logo-footbal.png" alt="">
+                                        <img src="./assets/images/logo-rgd.png" alt="">
                                     </picture>
                                     <h3 class="article-info__title">
-                                        Российский<br>
-                                        футбольный союз
+                                        ОАО "Российские<br>
+                                        железные дороги"
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
                                     <div class="action-tag action-tag--light">
-                                        <span>Спорт</span>
+                                        <span>Медицина</span>
                                     </div>
                                     <div class="action-tag action-tag--light">
-                                        <span>Автоматизация процессов</span>
+                                        <span>Единая интеграционная система</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
-                                    футбольным союзом (РФС)
+                                    Внедрение типовой медицинской информационной системы на базе решения МИС «Вятка»
                                 </div>
                             </div>
                             <div class="article-info__footer">
@@ -474,30 +494,32 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="article-info">
+                        <div class="article-info article-info--4">
                             <div class="article-info__top">
                                 <div class="article-info__head">
                                     <picture class="article-info__logo">
-                                        <img src="./assets/images/logo-footbal.png" alt="">
+                                        <img src="./assets/images/logo-renessans.png" alt="">
                                     </picture>
                                     <h3 class="article-info__title">
-                                        Российский<br>
-                                        футбольный союз
+                                        Банк<br>
+                                        «Ренессанс Кредит»
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
                                     <div class="action-tag action-tag--light">
-                                        <span>Спорт</span>
+                                        <span>Поддержка</span>
                                     </div>
                                     <div class="action-tag action-tag--light">
-                                        <span>Автоматизация процессов</span>
+                                        <span>Финансовый сектор</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Миграция системы</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
-                                    футбольным союзом (РФС)
+                                    Миграция системы мониторинга Zabbix с проприетарной базы данных на СУБД PostgreSQL
                                 </div>
                             </div>
                             <div class="article-info__footer">
@@ -512,30 +534,30 @@
                                 </picture>
                             </div>
                         </div>
-                        <div class="article-info">
+                        <div class="article-info article-info--5">
                             <div class="article-info__top">
                                 <div class="article-info__head">
                                     <picture class="article-info__logo">
-                                        <img src="./assets/images/logo-footbal.png" alt="">
+                                        <img src="./assets/images/logo-notarius.png" alt="">
                                     </picture>
                                     <h3 class="article-info__title">
-                                        Российский<br>
-                                        футбольный союз
+                                        Федеральная<br>
+                                        нотариальная палата РФ
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
                                     <div class="action-tag action-tag--light">
-                                        <span>Спорт</span>
+                                        <span>ДИТ</span>
                                     </div>
                                     <div class="action-tag action-tag--light">
-                                        <span>Автоматизация процессов</span>
+                                        <span>Информационной системы</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
-                                    футбольным союзом (РФС)
+                                    В рамках проекта произведена поставка лицензий и оборудования, а также установка,
+                                    наладка и нагрузочное тестирование систем.
                                 </div>
                             </div>
                             <div class="article-info__footer">
@@ -552,8 +574,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item-tab--10 desktop-hidden order-tab--1"></div>
-                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 order-tab--1">
+                <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden order-tab--1"></div>
+                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--4 order-tab--1">
                     <div class="card widget-slider mb-auto">
                         <div class="widget-slider__top">
                             <div class="pagination">
@@ -569,15 +591,16 @@
                             <p class="widget-slider__caption">ВНЕДРЯЕМЫЕ РЕШЕНИЯ</p>
                         </div>
                     </div>
-                    <a href="#" class="button-circle button-circle--right button-circle--light button-circle--small tab-hidden">
+                    <a href="#"
+                       class="button-circle button-circle--right button-circle--light button-circle--small tab-hidden">
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
                         <span>все<br>проекты</span>
                     </a>
                 </div>
-                <div class="grid__item grid__item-tab--10 order-tab--2 desktop-hidden"></div>
-                <div class="grid__item grid__item-tab--2 order-tab--2 desktop-hidden">
+                <div class="grid__item grid__item-tab--10 grid__item-mob--4 order-tab--2 desktop-hidden"></div>
+                <div class="grid__item grid__item-tab--2 order-tab--2 grid__item-mob--2 desktop-hidden">
                     <a href="#" class="button-circle button-circle--right button-circle--light button-circle--small">
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
@@ -588,21 +611,21 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 ptt-0 pb-70 pbt-106 mb-150 mbt-80">
+    <section class="section pt-70 ptt-60 pb-69 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-40">
+            <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title">
                         Готовы
-                        подключиться
+                        подключиться<br>
                         на любой стадии
                         развития проекта
                     </h2>
                 </div>
             </div>
             <div class="grid">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 order-tab--2">
+                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-2.jpg" alt="">
@@ -622,7 +645,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--1 tab-hidden"></div>
-                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 order-tab--2">
+                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
                     <div class="layering layering--light mbt-62">
                         <div class="article-info article-info--text">
                             <div class="article-info__top">
@@ -630,11 +653,11 @@
                                 <h3 class="article-info__title">Консалтинг</h3>
                             </div>
                             <div class="article-info__body">
-                                <div class="article-info__text">
+                                <p class="article-info__text">
                                     ФОРС обладает широкой экспертизой в области оказания консалтинговых услуг,
                                     направленных на создание, развитие и оптимизацию используемых на предприятии систем
                                     управления.
-                                </div>
+                                </p>
                             </div>
                         </div>
                         <div class="article-info article-info--text">
@@ -697,8 +720,8 @@
                         <span>все<br>услуги</span>
                     </a>
                 </div>
-                <div class="grid__item grid__item-tab--10 desktop-hidden"></div>
-                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 order-tab--1">
+                <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden"></div>
+                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--1 order-tab--1">
                     <div class="card widget-slider mb-auto">
                         <div class="widget-slider__top">
                             <div class="pagination pagination--slim">
@@ -723,9 +746,9 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 ptt-0 pb-70 mb-150 mbt-80">
+    <section class="section pt-70 ptt-60 pb-69 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-40">
+            <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title">
@@ -783,12 +806,12 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 ptt-80 pb-70 pbt-89 mb-150 mbt-80">
+    <section class="section pt-70 ptt-60 pb-70 pbt-50 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-40">
+            <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <h2 class="title">
+                    <h2 class="title title--temp">
                         Мультивендорный
                         центр технической
                         поддержки
@@ -796,7 +819,7 @@
                 </div>
             </div>
             <div class="grid">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 order-tab--2">
+                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-3.jpg" alt="">
@@ -817,7 +840,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--1 tab-hidden"></div>
-                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 order-tab--2">
+                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
                     <div class="layering layering--light mbt-73">
                         <div class="article-info article-info--text">
                             <div class="article-info__top">
@@ -892,8 +915,8 @@
                         <span>все<br>услуги</span>
                     </a>
                 </div>
-                <div class="grid__item grid__item-tab--10 desktop-hidden order-tab--1"></div>
-                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 order-tab--1">
+                <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden order-tab--1"></div>
+                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--1 order-tab--1">
                     <div class="card widget-slider mb-auto">
                         <div class="widget-slider__top">
                             <div class="pagination pagination--slim">
@@ -917,27 +940,26 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 ptt-0 pb-70 mb-150 mbt-80">
+    <section class="section pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid">
-                <div class="grid__item grid__item--3 grid__item-tab--6">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 order-mob--2">
                     <h3 class="title title--small mb-30">&gt;30 направлений</h3>
                     <div class="tags tags--left">
                         <a href="#" class="tag">PostgreSQL</a>
                         <a href="#" class="tag">Oracle</a>
                         <a href="#" class="tag">MangoDB</a>
-                        <a href="#" class="tag">MangoDB</a>
                         <a href="#" class="tag">Astra Linux</a>
-                        <a href="#" class="tag">РЭД ОС</a>
-                        <a href="#" class="tag">Linux</a>
-                        <a href="#" class="tag">Ansible</a>
-                        <a href="#" class="tag">Python</a>
                         <a href="#" class="tag">Atlassian Jira</a>
                         <a href="#" class="tag">Chat GPT</a>
+                        <a href="#" class="tag">Ansible</a>
+                        <a href="#" class="tag">РЭД ОС</a>
+                        <a href="#" class="tag">Linux</a>
+                        <a href="#" class="tag">Python</a>
                     </div>
                 </div>
-                <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <h2 class="title mb-70">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <h2 class="title mb-70 mbt-60">
                         Развиваем<br>
                         и воспитываем
                         национальную<br>
@@ -1023,9 +1045,9 @@
                             </div>
                             <div class="people__footer">
                                 <h3 class="people__title">
-                                    преподаватели,<br>
-                                    стоявшие у истоков<br>
-                                    внедрения Oracle<br>
+                                    преподаватели,
+                                    стоявшие у истоков
+                                    внедрения Oracle
                                     в России
                                 </h3>
                                 <a href="#"
@@ -1096,26 +1118,25 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 ptt-80 pb-70 pbt-77 mb-150 mbt-0">
+    <section class="section pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-90 mbt-40">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <h2 class="title mb-40 mbt-20">
-                        Присоединяйся
+                    <h2 class="title mb-35 mbt-20">
+                        Присоединяйся<br>
                         к команде ФОРС
                     </h2>
                     <p>
-                        ФОРС — это люди, благодаря которым компания<br class="tab-hidden">
-                        приобрела свое собственное, уникальное лицо,<br class="tab-hidden">
-                        год за годом укрепляла свои позиции и сумела<br class="tab-hidden">
-                        заработать репутацию, которая и по сей день<br class="tab-hidden">
-                        остается ее ценнейшим активом.
+                        ФОРС — это люди, благодаря которым компания приобрела<br class="tab-hidden">
+                        свое собственное, уникальное лицо, год за годом<br class="tab-hidden">
+                        укрепляла свои позиции и сумела заработать репутацию,<br class="tab-hidden">
+                        которая и по сей день остается ее ценнейшим активом.
                     </p>
                 </div>
             </div>
             <div class="grid">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--5">
+                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--5 grid__item-mob--4 order-mob--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-4.jpg" alt="">
@@ -1134,8 +1155,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--1"></div>
-                <div class="grid__item grid__item--3 grid__item-tab--6">
+                <div class="grid__item grid__item--1 mob-hidden"></div>
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 mbm-60">
                     <div class="grid grid--widgets">
                         <div class="card article-vacancy">
                             <h3 class="article-vacancy__title">Главный Devops инженер</h3>

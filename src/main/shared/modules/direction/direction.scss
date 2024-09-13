@@ -8,10 +8,33 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 1px;
+
+    @include r($tablet) {
+      gap: 7px;
+    }
+
+    @include r($mobile) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 6px 5px;
+    }
   }
 
   &__item {
     cursor: pointer;
+
+    @include r($mobile) {
+      padding: 10px 20px 11px;
+      min-width: 100px;
+      border: 1px solid $main1;
+      border-radius: 37px;
+    }
+
+    &:hover {
+      span {
+        color: $main3;
+      }
+    }
 
     span {
       font-family: $font-main;
@@ -21,12 +44,19 @@
       text-align: right;
       text-transform: uppercase;
       color: rgba($main3, .3);
+      transition: .2s linear;
 
       @include r($tablet) {
         font-size: 40px;
         font-weight: 400;
         line-height: 40px;
         text-align: right;
+      }
+
+      @include r($mobile) {
+        font-size: 12px;
+        line-height: 14.4px;
+        text-transform: none;
       }
     }
 

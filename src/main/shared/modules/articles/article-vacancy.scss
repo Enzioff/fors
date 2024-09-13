@@ -1,17 +1,21 @@
 .article-vacancy {
-  gap: 16px;
-  padding: 20px 15px;
+  gap: 15px;
+  padding: 15px;
   min-height: 212px;
 
   @include r($tablet) {
     gap: 10px;
-    padding: 15px 10px;
+    padding: 10px;
     min-height: 150px;
   }
 
   &__title {
     @include h4();
     text-transform: uppercase;
+
+    @include r($tablet) {
+      min-height: 40px;
+    }
   }
 
   &__text {

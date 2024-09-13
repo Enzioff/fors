@@ -24,7 +24,7 @@
     }
 
     @include r($mobile) {
-      grid-template-columns: repeat(auto-fill, 163px);
+      grid-template-columns: repeat(2, 163px);
       gap: 10px;
     }
 
@@ -35,6 +35,10 @@
 
   &--end {
     align-items: end;
+  }
+
+  &__item--self-end {
+    justify-self: flex-end;
   }
 
   &__item {

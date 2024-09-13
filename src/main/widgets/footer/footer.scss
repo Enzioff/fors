@@ -90,6 +90,12 @@
     @include r($tablet) {
       padding: 20px 0 10px;
     }
+
+    @include r($mobile) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
 
   &__logo {
@@ -122,6 +128,10 @@
     @include r($tablet) {
       align-self: flex-start;
       padding-bottom: 0;
+    }
+
+    @include r($mobile) {
+      text-align: left;
     }
   }
 }

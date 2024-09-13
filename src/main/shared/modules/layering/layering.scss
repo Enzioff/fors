@@ -22,7 +22,7 @@
 
     @include r($tablet) {
       height: 89px;
-      background: linear-gradient(180.01deg, rgba(19, 74, 255, 0) 30.87%, #134AFF 66.69%);
+      background: linear-gradient(180.01deg, rgba(19, 74, 255, 0) 45.17%, #134AFF 76.75%);
     }
   }
 
@@ -36,11 +36,11 @@
 
     &::after {
       height: 225px;
-      background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+      background: linear-gradient(180deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
 
       @include r($tablet) {
-        height: 73px;
-        background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+        height: 50px;
+        background: linear-gradient(180deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
       }
     }
   }

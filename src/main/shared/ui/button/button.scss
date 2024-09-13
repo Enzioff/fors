@@ -40,6 +40,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  flex-shrink: 0;
   gap: 11px;
   width: 210px;
   height: 210px;
@@ -69,7 +70,7 @@
       height: 72px;
 
       @include r($tablet) {
-        width: 42px;
+        width: 45px;
         height: 42px;
       }
     }
@@ -81,6 +82,7 @@
     font-weight: 400;
     line-height: 21.6px;
     text-align: center;
+    text-transform: uppercase;
     color: $white;
 
     @include r($tablet) {
@@ -91,6 +93,7 @@
   }
 
   &--small {
+    gap: 5px;
     width: 160px;
     height: 160px;
     padding: 0;

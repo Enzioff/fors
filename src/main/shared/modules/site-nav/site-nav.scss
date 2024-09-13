@@ -1,15 +1,19 @@
 .site-nav {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 209px);
   gap: 20px;
-  padding: 60px 0 168px;
+  justify-content: space-between;
+  padding-bottom: 168px;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0) -35.8%, #FFFFFF 45.15%);
   z-index: 1;
 
   @include r($tablet) {
     grid-template-columns: repeat(4, 1fr);
-    gap: 20px 46px;
     padding: 0;
+  }
+
+  @include r($mobile) {
+    grid-template-columns: repeat(2, 1fr);
   }
 
 
@@ -33,6 +37,7 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
 
     @include r($tablet) {
       gap: 10px;

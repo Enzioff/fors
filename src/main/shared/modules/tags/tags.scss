@@ -3,14 +3,26 @@
   justify-content: flex-end;
   flex-wrap: wrap;
   gap: 5px;
+  max-width: 570px;
+  margin-left: auto;
+
+  @include r($mobile) {
+    justify-content: flex-start;
+    max-width: 100%;
+    margin-left: 0;
+  }
 
   &--left {
     justify-content: flex-start;
+    max-width: 640px;
+    margin-left: 0;
   }
 
   &--card {
     justify-content: flex-start;
     gap: 10px;
+    max-width: 100%;
+    margin-left: 0;
 
     @include r($tablet) {
       gap: 5px;

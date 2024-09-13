@@ -7,14 +7,14 @@
   &__picture {
     display: flex;
     flex-shrink: 0;
-    width: 94px;
-    height: 94px;
+    width: 95px;
+    height: 95px;
     border-radius: 10px;
     overflow: hidden;
 
     @include r($tablet) {
-      width: 40px;
-      height: 40px;
+      width: 42px;
+      height: 42px;
       border-radius: 5px;
     }
 
@@ -79,6 +79,10 @@
   }
 
   .action-tag {
-    align-self: flex-end;
+    min-width: 106px;
+
+    @include r($tablet) {
+      min-width: 62px;
+    }
   }
 }

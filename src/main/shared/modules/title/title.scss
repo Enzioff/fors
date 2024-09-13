@@ -3,14 +3,27 @@
   text-transform: uppercase;
 
   &--light {
+    position: relative;
     color: $white;
   }
 
   &--main {
+    display: flex;
+    flex-direction: column;
     @include h1();
+
+    span {
+      display: block;
+    }
   }
 
   &--small {
     @include h3();
+  }
+
+  &--temp {
+    @include r($tablet) {
+      width: 352px;
+    }
   }
 }

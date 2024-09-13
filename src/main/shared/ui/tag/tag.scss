@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px 41px 21px;
+  padding: 20px 40px 20px;
   width: max-content;
 
   font-family: $font-accent;
@@ -17,10 +17,17 @@
   border-radius: 37px;
 
   @include r($tablet) {
-    padding: 12px 21px;
+    padding: 12px 20px;
 
     font-size: 13px;
     font-weight: 400;
     line-height: 15.6px;
+  }
+
+  @include r($mobile) {
+    padding: 10px 20px;
+
+    font-size: 12px;
+    line-height: 14.4px;
   }
 }

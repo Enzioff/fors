@@ -43,6 +43,12 @@ body {
   }
 }
 
+.tab-hidden-min {
+  @include rmin($mobile + 1) {
+    display: none;
+  }
+}
+
 .mob-hidden {
   @include r($mobile) {
     display: none;

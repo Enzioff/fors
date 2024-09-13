@@ -1,4 +1,5 @@
 import Slider from "./slider";
+import Animation from "./animation/animation";
 
 class App {
     constructor() {
@@ -7,6 +8,7 @@ class App {
 
     init = () => {
         this.createSlider()
+        this.createAnimation()
     }
 
     createSlider = () => {
@@ -15,6 +17,10 @@ class App {
         sliders.forEach(slider => {
             new Slider(slider)
         })
+    }
+
+    createAnimation = () => {
+        new Animation()
     }
 }
 

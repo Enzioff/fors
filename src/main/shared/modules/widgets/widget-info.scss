@@ -24,7 +24,7 @@
 
   &__top {
     position: relative;
-    padding-bottom: 14px;
+    padding-bottom: 15px;
     border-bottom: 1px solid $gray;
 
     @include r($tablet) {
@@ -52,7 +52,7 @@
 
   &__bottom {
     align-items: flex-end;
-    padding-top: 14px;
+    padding-top: 15px;
 
     @include r($tablet) {
       padding-top: 10px;
@@ -66,7 +66,6 @@
   &__detail {
     display: flex;
     flex-direction: column;
-    gap: 2px;
   }
 
   &__icon {
