@@ -28,11 +28,12 @@
 </header>
 
 <main class="main">
-    <section class="section section--bg pt-50 ptt-30 ptm-120 pb-50 pbt-24 pbm-30 mb-150 mbt-0">
+    <canvas class="spline-canvas"></canvas>
+    <section class="section section--bg pt-50 ptt-158 ptm-120 pb-50 pbt-24 pbm-30 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-50 mbt-20 mbm-20">
+            <div class="grid mb-34 mbt-20 mbm-20">
                 <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
-                    <a href="/" class="logo">
+                    <a href="/" class="logo tab-hidden">
                         <img src="./assets/images/logo.svg" alt="">
                     </a>
                 </div>
@@ -98,7 +99,7 @@
                     </h1>
                 </div>
                 <div class="grid__item grid__item--2 grid__item-tab--4 mob-hidden">
-                    <nav class="nav anim-in-bottom">
+                    <nav class="nav anim-in-bottom tab-hidden">
                         <a href="#" class="nav__link">Компания</a>
                         <a href="#" class="nav__link">Проекты</a>
                         <a href="#" class="nav__link">Продукты</a>
@@ -131,7 +132,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--radial section-second pt-50 ptt-60 pb-56 pbt-60 pbm-60 mb-150 mbt-0">
+    <section class="section section--radial section-second ptt-60 pbt-60 pbm-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid">
                 <div class="grid__item grid__item--3 grid__item-tab--6">
@@ -166,7 +167,7 @@
                                         <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
                                         <span>Событие</span>
                                     </div>
-                                    <p class="news-item__text news-item__text--small">08/08/2024</p>
+                                    <p class="news-item__text news-item__text--small">08.08.2024</p>
                                 </div>
                             </div>
                         </div>
@@ -182,10 +183,10 @@
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Новости СМИ</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                             <div class="card info-block">
@@ -199,10 +200,10 @@
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Новости СМИ</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                             <div class="card info-block">
@@ -216,19 +217,20 @@
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Новости</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                         </div>
+                        <a href="#" class="button button--wide">все новости</a>
                     </div>
                 </div>
                 <div class="grid__item grid__item--between grid__item--3 grid__item-tab--6">
                     <div class="direction mob-hidden">
                         <ul class="direction__list">
-                            <li class="direction__item active">
+                            <li class="direction__item">
                                 <span>Контроль и надзор</span>
                             </li>
                             <li class="direction__item">
@@ -242,23 +244,26 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="tags">
-                        <a href="#" class="tag">PostgreSQL</a>
-                        <a href="#" class="tag">Oracle</a>
-                        <a href="#" class="tag">MangoDB</a>
-                        <a href="#" class="tag">Astra Linux</a>
-                        <a href="#" class="tag">Atlassian Jira</a>
-                        <a href="#" class="tag">Chat GPT</a>
-                        <a href="#" class="tag">РЭД ОС</a>
-                        <a href="#" class="tag">Ansible</a>
-                        <a href="#" class="tag">Linux</a>
-                        <a href="#" class="tag">Python</a>
+                    <div class="tools">
+                        <div class="tools__title">&gt;30 технологий</div>
+                        <div class="tags">
+                            <a href="#" class="tag">PostgreSQL</a>
+                            <a href="#" class="tag">Oracle</a>
+                            <a href="#" class="tag">MangoDB</a>
+                            <a href="#" class="tag">Astra Linux</a>
+                            <a href="#" class="tag">Atlassian Jira</a>
+                            <a href="#" class="tag">Chat GPT</a>
+                            <a href="#" class="tag">РЭД ОС</a>
+                            <a href="#" class="tag">Ansible</a>
+                            <a href="#" class="tag">Linux</a>
+                            <a href="#" class="tag">Python</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section section--blue section--radius pt-150 ptt-100 pb-149 pbt-100 mb-150 mbt-0">
+    <section class="section section--blue section--radius pt-150 ptt-100 pb-150 pbt-100 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-100 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
@@ -498,10 +503,10 @@
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Спорт</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Автоматизация процессов</span>
                                     </div>
                                 </div>
@@ -536,13 +541,13 @@
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>ИТ-консалтинг</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Телекоммуникация</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Миграция ИС</span>
                                     </div>
                                 </div>
@@ -556,13 +561,7 @@
                             </div>
                             <div class="article-info__footer">
                                 <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-1.svg" alt="">
-                                </picture>
-                                <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-2.svg" alt="">
-                                </picture>
-                                <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                    <img src="./assets/images/icon-proprietar.svg" alt="">
                                 </picture>
                             </div>
                         </div>
@@ -578,10 +577,10 @@
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Медицина</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Единая интеграционная система</span>
                                     </div>
                                 </div>
@@ -615,14 +614,11 @@
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Поддержка</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Финансовый сектор</span>
-                                    </div>
-                                    <div class="action-tag action-tag--light">
-                                        <span>Миграция системы</span>
                                     </div>
                                 </div>
                             </div>
@@ -633,13 +629,7 @@
                             </div>
                             <div class="article-info__footer">
                                 <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-1.svg" alt="">
-                                </picture>
-                                <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-2.svg" alt="">
-                                </picture>
-                                <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                    <img src="./assets/images/icon-proprietar.svg" alt="">
                                 </picture>
                             </div>
                         </div>
@@ -655,10 +645,10 @@
                                     </h3>
                                 </div>
                                 <div class="tags tags--card">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>ДИТ</span>
                                     </div>
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Информационной системы</span>
                                     </div>
                                 </div>
@@ -720,7 +710,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--anim-top pt-70 ptt-60 pb-69 pbt-60 mb-150 mbt-0">
+    <section class="section section--anim-top pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
@@ -734,7 +724,7 @@
                 </div>
             </div>
             <div class="grid grid--anim">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-2.jpg" alt="">
@@ -746,20 +736,22 @@
                         </div>
                         <div class="widget-video__detail">
                             <div class="widget-video__info">
-                                <h3 class="widget-video__title">Евгений Николаевич Ефименко</h3>
+                                <h3 class="widget-video__title">Евгений Николаевич<br>Ефименко</h3>
                                 <p class="widget-video__text">Генеральный директор</p>
                             </div>
                             <a href="#" class="widget-video__button button">Обсудить проект</a>
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--1 tab-hidden"></div>
                 <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
                     <div class="layering layering--light mbt-62">
                         <div class="article-info article-info--text article-info--01">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle">{01}</div>
-                                <h3 class="article-info__title">Консалтинг</h3>
+                                <h3 class="article-info__title">
+                                    построение<br>
+                                    инфраструктуры
+                                </h3>
                             </div>
                             <div class="article-info__body">
                                 <p class="article-info__text">
@@ -771,53 +763,43 @@
                         </div>
                         <div class="article-info article-info--text article-info--02">
                             <div class="article-info__top">
-                                <div class="article-info__pretitle">{01}</div>
-                                <h3 class="article-info__title">Консалтинг</h3>
+                                <div class="article-info__pretitle">{02}</div>
+                                <h3 class="article-info__title">
+                                    построение<br>
+                                    инфраструктуры
+                                </h3>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    ФОРС обладает широкой экспертизой в области оказания консалтинговых услуг,
-                                    направленных на создание, развитие и оптимизацию используемых на предприятии систем
-                                    управления.
+                                    Создаем и внедряем заказную ИС, дорабатываем и оптимизируем функционал с учетом
+                                    изменений бизнес-требований.
                                 </div>
                             </div>
                         </div>
                         <div class="article-info article-info--text article-info--03">
                             <div class="article-info__top">
-                                <div class="article-info__pretitle">{01}</div>
-                                <h3 class="article-info__title">Консалтинг</h3>
+                                <div class="article-info__pretitle">{03}</div>
+                                <h3 class="article-info__title">
+                                    Техническая<br>
+                                    поддержка
+                                </h3>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    ФОРС обладает широкой экспертизой в области оказания консалтинговых услуг,
-                                    направленных на создание, развитие и оптимизацию используемых на предприятии систем
-                                    управления.
+                                    Центр технической поддержки ФОРС оказывает полный комплекс услуг по сопровождению
+                                    и поддержке бесперебойной работы БД
                                 </div>
                             </div>
                         </div>
                         <div class="article-info article-info--text article-info--04">
                             <div class="article-info__top">
-                                <div class="article-info__pretitle">{01}</div>
-                                <h3 class="article-info__title">Консалтинг</h3>
+                                <div class="article-info__pretitle">{04}</div>
+                                <h3 class="article-info__title">Обучение</h3>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    ФОРС обладает широкой экспертизой в области оказания консалтинговых услуг,
-                                    направленных на создание, развитие и оптимизацию используемых на предприятии систем
-                                    управления.
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-info article-info--text article-info--05">
-                            <div class="article-info__top">
-                                <div class="article-info__pretitle">{01}</div>
-                                <h3 class="article-info__title">Консалтинг</h3>
-                            </div>
-                            <div class="article-info__body">
-                                <div class="article-info__text">
-                                    ФОРС обладает широкой экспертизой в области оказания консалтинговых услуг,
-                                    направленных на создание, развитие и оптимизацию используемых на предприятии систем
-                                    управления.
+                                    Центр технической поддержки ФОРС оказывает полный комплекс услуг по сопровождению
+                                    и поддержке бесперебойной работы БД
                                 </div>
                             </div>
                         </div>
@@ -855,13 +837,13 @@
             </div>
         </div>
     </section>
-    <section class="section section--cards pt-70 ptt-60 pb-69 pbt-60 mb-150 mbt-0">
+    <section class="section section--cards pt-70 ptt-60 pb-50 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title">
-                        информационно
+                        информационно-
                         технологические
                         решения
                     </h2>
@@ -920,7 +902,7 @@
             <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <h2 class="title title--temp">
+                    <h2 class="title">
                         Мультивендорный
                         центр технической
                         поддержки
@@ -928,7 +910,7 @@
                 </div>
             </div>
             <div class="grid grid--anim">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-3.jpg" alt="">
@@ -940,15 +922,14 @@
                         </div>
                         <div class="widget-video__detail">
                             <div class="widget-video__info">
-                                <h3 class="widget-video__title">Елена Александровна Борхарт</h3>
-                                <p class="widget-video__text">Руководитель отдела продаж и развития сервисных
+                                <h3 class="widget-video__title">Елена Александровна<br>Борхарт</h3>
+                                <p class="widget-video__text">Руководитель отдела продаж<br>и развития сервисных
                                     продуктов</p>
                             </div>
                             <a href="#" class="widget-video__button button">Обсудить проект</a>
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--1 tab-hidden"></div>
                 <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
                     <div class="layering layering--light mbt-73">
                         <div class="article-info article-info--text article-info--01">
@@ -967,52 +948,29 @@
                         <div class="article-info article-info--text article-info--02">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
-                                <h3 class="article-info__title">Восстановление<br>СУБД после аварии</h3>
+                                <h3 class="article-info__title">
+                                    Консультационная<br>
+                                    поддержка СУБД
+                                </h3>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Восстановим работоспособность СУБД
-                                    Проанализируем последствия сбоев СУБД
-                                    Разработаем план действий для устранения аварийной ситуации
+                                    Проконсультируем по любым вопросам работоспособности и функционирования СУБД
                                 </div>
                             </div>
                         </div>
                         <div class="article-info article-info--text article-info--03">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
-                                <h3 class="article-info__title">Восстановление<br>СУБД после аварии</h3>
+                                <h3 class="article-info__title">
+                                    Техническая<br>
+                                    поддержка
+                                </h3>
                             </div>
                             <div class="article-info__body">
                                 <div class="article-info__text">
-                                    Восстановим работоспособность СУБД
-                                    Проанализируем последствия сбоев СУБД
-                                    Разработаем план действий для устранения аварийной ситуации
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-info article-info--text article-info--04">
-                            <div class="article-info__top">
-                                <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
-                                <h3 class="article-info__title">Восстановление<br>СУБД после аварии</h3>
-                            </div>
-                            <div class="article-info__body">
-                                <div class="article-info__text">
-                                    Восстановим работоспособность СУБД
-                                    Проанализируем последствия сбоев СУБД
-                                    Разработаем план действий для устранения аварийной ситуации
-                                </div>
-                            </div>
-                        </div>
-                        <div class="article-info article-info--text article-info--05">
-                            <div class="article-info__top">
-                                <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
-                                <h3 class="article-info__title">Восстановление<br>СУБД после аварии</h3>
-                            </div>
-                            <div class="article-info__body">
-                                <div class="article-info__text">
-                                    Восстановим работоспособность СУБД
-                                    Проанализируем последствия сбоев СУБД
-                                    Разработаем план действий для устранения аварийной ситуации
+                                    Центр технической поддержки ФОРС оказывает полный комплекс услуг по сопровождению
+                                    и поддержке бесперебойной работы БД
                                 </div>
                             </div>
                         </div>
@@ -1154,11 +1112,11 @@
                                 в России
                             </h3>
                             <a href="#"
-                               class="button-circle button-circle--right button-circle--light button-circle--small">
+                               class="button-circle button-circle--right button-circle--light">
                                 <svg class="button-circle__icon">
                                     <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                                 </svg>
-                                <span>все<br>проекты</span>
+                                <span>Узнать больше</span>
                             </a>
                         </div>
                     </div>
@@ -1176,14 +1134,15 @@
                                 <div class="info-block__info">
                                     <h3 class="info-block__title">CCR в Postgresql</h3>
                                     <p class="info-block__text">
-                                        Тайный смысл флага CCR в Postgresql
+                                        Тайный смысл флага CCR в
+                                        Postgresql
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Технологии</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                             <div class="card info-block">
@@ -1198,10 +1157,10 @@
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Процессы</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                             <div class="card info-block">
@@ -1215,13 +1174,14 @@
                                     </p>
                                 </div>
                                 <div class="info-block__meta">
-                                    <div class="action-tag action-tag--light">
+                                    <div class="action-tag action-tag--default action-tag--light">
                                         <span>Технологии</span>
                                     </div>
-                                    <time class="info-block__date">28/05/2022</time>
+                                    <time class="info-block__date">28.05.2022</time>
                                 </div>
                             </div>
                         </div>
+                        <a href="#" class="button">все статьи</a>
                     </div>
                 </div>
             </div>
@@ -1229,7 +1189,7 @@
     </section>
     <section class="section pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-90 mbt-40">
+            <div class="grid mb-70 mbt-40">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title mb-35 mbt-20">
@@ -1245,7 +1205,7 @@
                 </div>
             </div>
             <div class="grid">
-                <div class="grid__item grid__item--end grid__item--2 grid__item-tab--5 grid__item-mob--4 order-mob--2">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--5 grid__item-mob--4 order-mob--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-4.jpg" alt="">
@@ -1258,13 +1218,12 @@
                         <div class="widget-video__detail">
                             <div class="widget-video__info">
                                 <h3 class="widget-video__title">Присоединяйся команде!</h3>
-                                <p class="widget-video__text">направьте свое резюме и мы свяжемся с Вами</p>
+                                <p class="widget-video__text">направьте свое резюме<br>и мы свяжемся с Вами</p>
                             </div>
                             <a href="#" class="widget-video__button button">Отправить резюме</a>
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--1 mob-hidden"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 mbm-60">
                     <div class="grid grid--widgets grid--widgets--anim">
                         <div class="card anim-el-in article-vacancy">
