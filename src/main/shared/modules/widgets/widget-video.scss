@@ -1,6 +1,8 @@
 .widget-video {
   display: flex;
   gap: 20px;
+  width: 100%;
+  max-width: 496px;
 
   @include r($tablet) {
     gap: 10px;
@@ -12,7 +14,6 @@
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    margin: 7px 0 6px;
     width: 210px;
     height: 210px;
     border-radius: 50%;
@@ -50,16 +51,13 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
-    @include r($tablet) {
-      gap: 10px;
-    }
+    gap: 10px;
   }
 
   &__info {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px;
 
     @include r($tablet) {
       gap: 10px;

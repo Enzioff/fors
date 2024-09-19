@@ -1,7 +1,7 @@
 .news-block {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
 
   @include r($tablet) {
     gap: 20px;

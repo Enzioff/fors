@@ -3,12 +3,14 @@
   flex-direction: row;
   justify-content: space-between;
   gap: 10px;
+  min-height: 155px;
 
   &__picture {
     display: flex;
     flex-shrink: 0;
-    width: 95px;
-    height: 95px;
+    align-self: center;
+    width: 94px;
+    height: 94px;
     border-radius: 10px;
     overflow: hidden;
 
@@ -32,7 +34,13 @@
   }
 
   &__title {
-    @include h5();
+    font-family: $font-main;
+    font-size: 25px;
+    font-weight: 400;
+    line-height: 32.5px;
+    text-align: left;
+    text-transform: uppercase;
+    color: $main3;
 
     @include r($tablet) {
       font-size: 16px;
@@ -42,7 +50,7 @@
   }
 
   &__text {
-    @include text1($gray);
+    @include text1(#7682A7);
 
     overflow: hidden;
     display: -webkit-box;
@@ -65,11 +73,11 @@
 
   &__date {
     font-family: $font-accent;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 19.92px;
+    line-height: 21.6px;
     text-align: center;
-    color: $gray;
+    color: #7682A7;
 
     @include r($tablet) {
       font-size: 9px;

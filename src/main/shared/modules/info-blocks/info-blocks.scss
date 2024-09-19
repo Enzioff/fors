@@ -1,7 +1,7 @@
 .info-blocks {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
 
   .card {
     &:nth-child(n+2):nth-last-child(n+2) {

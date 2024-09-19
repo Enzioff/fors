@@ -8,7 +8,6 @@
   background-color: $white;
   overflow: hidden;
   cursor: pointer;
-  transition: .2s linear;
 
   @include r($tablet) {
     height: 230px;

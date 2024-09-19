@@ -4,10 +4,12 @@
   left: 0;
   right: 0;
   display: none;
-  @include r($mobile) {
+
+  @include r($tablet) {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
+    padding-top: 32px;
+    z-index: 3;
   }
 
   &__wrapper {

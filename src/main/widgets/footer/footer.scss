@@ -65,18 +65,6 @@
       font-weight: 400;
       line-height: 14.4px;
     }
-
-    &--copyright {
-      font-family: 'Inter', sans-serif;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 22px;
-
-      @include r($tablet) {
-        font-size: 12px;
-        line-height: 14.4px;
-      }
-    }
   }
 
   &__bottom {
@@ -121,8 +109,7 @@
   &__meta {
     display: flex;
     flex-direction: column;
-    gap: 10px;
-    padding-bottom: 44px;
+    gap: 20px;
     text-align: right;
 
     @include r($tablet) {

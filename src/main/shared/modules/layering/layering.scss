@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 621px;
+  max-height: 625px;
   overflow: hidden;
 
   @include r($tablet) {
@@ -17,8 +17,8 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 274px;
-    background: linear-gradient(179.11deg, rgba(19, 74, 255, 0) 24.56%, #134AFF 52.18%);
+    height: 176px;
+    background: linear-gradient(180deg, rgba(19, 74, 255, 0) -96.68%, #134AFF 71.96%);
 
     @include r($tablet) {
       height: 89px;
@@ -27,7 +27,7 @@
   }
 
   &--light {
-    height: 631px;
+    height: 632px;
 
     @include r($tablet) {
       gap: 10px;
@@ -36,7 +36,7 @@
 
     &::after {
       height: 225px;
-      background: linear-gradient(180deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+      background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
 
       @include r($tablet) {
         height: 50px;

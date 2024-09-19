@@ -3,8 +3,7 @@
   align-items: center;
   justify-content: center;
   width: max-content;
-  gap: 5px;
-  padding: 7px 10px 8px;
+  padding: 2.5px 15px 2.5px 10px;
   border-radius: 4px;
   background-color: $main1;
 
@@ -15,8 +14,8 @@
 
   &__icon {
     display: flex;
-    width: 12px;
-    height: 14px;
+    width: 25px;
+    height: 25px;
 
     @include r($tablet) {
       width: 8px;
@@ -44,5 +43,9 @@
     span {
       color: $main3;
     }
+  }
+
+  &--default {
+    padding: 7.5px 10px;
   }
 }

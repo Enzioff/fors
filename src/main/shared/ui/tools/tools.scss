@@ -1,0 +1,11 @@
+.tools {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: flex-end;
+
+  &__title {
+    @include h3();
+    text-transform: uppercase;
+  }
+}

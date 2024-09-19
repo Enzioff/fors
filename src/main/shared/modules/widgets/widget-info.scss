@@ -5,7 +5,6 @@
 
   @include r($tablet) {
     grid-column: span 1;
-    padding-bottom: 11px;
     max-height: 110px;
   }
 
@@ -20,15 +19,19 @@
     gap: 10px;
     justify-content: space-between;
     align-items: flex-start;
+
+    @include r($tablet) {
+      gap: 5px;
+    }
   }
 
   &__top {
     position: relative;
-    padding-bottom: 15px;
+    padding-bottom: 14px;
     border-bottom: 1px solid $gray;
 
     @include r($tablet) {
-      padding-bottom: 10px;
+      padding-bottom: 6px;
     }
 
     @include r($mobile) {
@@ -52,10 +55,10 @@
 
   &__bottom {
     align-items: flex-end;
-    padding-top: 15px;
+    padding-top: 14px;
 
     @include r($tablet) {
-      padding-top: 10px;
+      padding-top: 6px;
     }
 
     @include r($mobile) {
@@ -66,6 +69,11 @@
   &__detail {
     display: flex;
     flex-direction: column;
+    gap: 13px;
+
+    @include r($tablet) {
+      gap: 5px;
+    }
   }
 
   &__icon {
@@ -73,11 +81,6 @@
     flex-shrink: 0;
     width: 25px;
     height: 25px;
-
-    @include r($tablet) {
-      width: 17px;
-      height: 17px;
-    }
 
     @include r($mobile) {
       width: 26.5px;

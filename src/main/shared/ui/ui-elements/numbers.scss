@@ -2,7 +2,7 @@
   font-family: $font-main;
   font-size: 32px;
   font-weight: 400;
-  line-height: 47px;
+  line-height: 35.2px;
   text-align: left;
   color: $main1;
 
@@ -17,6 +17,6 @@
   }
 
   &--dark {
-    color: $dark;
+    color: $main3;
   }
 }
