@@ -6,7 +6,7 @@ import {Spline} from "../spline/spline";
 class Animation {
     spline;
 
-    constructor(spline?: Spline) {
+    constructor(spline: Spline) {
         this.spline = spline;
         this.init()
     }
