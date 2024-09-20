@@ -33,27 +33,27 @@ class Animation {
     section1() {
         const tl = gsap.timeline();
 
-        // gsap.to('.header', {
-        //     yPercent: -100,
-        //     duration: 1,
-        // })
-        //
-        // ScrollTrigger.create({
-        //     trigger: '.section--bg',
-        //     start: 'top top',
-        //     onEnterBack: () => {
-        //         gsap.to('.header', {
-        //             yPercent: -100,
-        //             duration: 1,
-        //         })
-        //     },
-        //     onLeave: () => {
-        //         gsap.to('.header', {
-        //             yPercent: 0,
-        //             duration: 1,
-        //         })
-        //     }
-        // })
+        gsap.to('.header', {
+            yPercent: -100,
+            duration: 1,
+        })
+
+        ScrollTrigger.create({
+            trigger: '.section--bg',
+            start: 'top top',
+            onEnterBack: () => {
+                gsap.to('.header', {
+                    yPercent: -100,
+                    duration: 1,
+                })
+            },
+            onLeave: () => {
+                gsap.to('.header', {
+                    yPercent: 0,
+                    duration: 1,
+                })
+            }
+        })
 
         tl
             .from('.logo', {
