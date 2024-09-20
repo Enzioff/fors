@@ -1,6 +1,7 @@
 .nav {
   display: flex;
   flex-direction: column;
+  gap: 2px;
 
   &__link {
     font-family: $font-accent;

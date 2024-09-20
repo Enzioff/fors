@@ -5,14 +5,22 @@
   gap: 5px;
 
   @include r($tablet) {
-    grid-template-columns: repeat(3, 25px);
+    grid-template-columns: repeat(3, 18px);
+  }
+
+  @include r($mobile) {
+    grid-template-columns: repeat(3, 30px);
   }
 
   &--slim {
     grid-template-columns: repeat(2, 40px);
 
     @include r($tablet) {
-      grid-template-columns: repeat(2, 25px);
+      grid-template-columns: repeat(2, 18px);
+    }
+
+    @include r($mobile) {
+      grid-template-columns: repeat(2, 30px);
     }
   }
 
@@ -25,8 +33,13 @@
     cursor: pointer;
 
     @include r($tablet) {
-      width: 25px;
-      height: 25px;
+      width: 18px;
+      height: 18px;
+    }
+
+    @include r($mobile) {
+      width: 30px;
+      height: 30px;
     }
 
     &.active {

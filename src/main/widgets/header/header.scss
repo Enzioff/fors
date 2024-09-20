@@ -1,15 +1,20 @@
 .header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  display: none;
+  display: flex;
+  flex-direction: column;
+  padding-top: 30px;
+  width: 100%;
+  z-index: 3;
 
   @include r($tablet) {
-    display: flex;
-    flex-direction: column;
-    padding-top: 32px;
-    z-index: 3;
+
+  }
+
+  @include r($mobile) {
+    padding-top: 20px;
   }
 
   &__wrapper {

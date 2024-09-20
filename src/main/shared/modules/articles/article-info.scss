@@ -12,6 +12,11 @@
   @include r($tablet) {
     padding: 15px;
     height: 240px;
+    border-radius: 15px;
+  }
+
+  @include r($mobile) {
+    height: 230px;
   }
 
   &:not(:first-child) {
@@ -66,7 +71,8 @@
     display: flex;
 
     @include r($tablet) {
-      height: 41px;
+      width: 40px;
+      height: 40px;
     }
   }
 
@@ -84,9 +90,16 @@
     color: $main3_40;
 
     @include r($tablet) {
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 15.6px;
+      font-size: 14px;
+      line-height: 16.8px;
+    }
+
+    @include r($mobile) {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
   }
 
@@ -117,21 +130,26 @@
     height: 381px;
 
     @include r($tablet) {
+      gap: 10px;
       height: 240px;
       border-radius: 15px;
     }
 
-    &:nth-child(3) {
-      top: -285px;
+    @include r($mobile) {
+      height: 230px;
     }
 
-    &:nth-child(4) {
-      top: -616px;
-    }
-
-    &:nth-child(5) {
-      top: -947px;
-    }
+    //&:nth-child(3) {
+    //  top: -285px;
+    //}
+    //
+    //&:nth-child(4) {
+    //  top: -616px;
+    //}
+    //
+    //&:nth-child(5) {
+    //  top: -947px;
+    //}
 
     .article-info__top {
       gap: 15px;
@@ -154,6 +172,13 @@
 
   &__pretitle {
     @include text2($main3_40);
+
+    @include r($tablet) {
+      font-family: $font-accent;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+    }
 
     &--dark {
       color: $main3;

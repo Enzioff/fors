@@ -3,6 +3,10 @@
   flex-direction: column;
   gap: 10px;
 
+  @include r($mobile) {
+    gap: 5px;
+  }
+
   .card {
     &:nth-child(n+2):nth-last-child(n+2) {
       border-radius: 0;

@@ -38,6 +38,14 @@
     padding: 19.5px 20px;
     width: 100%;
     height: auto;
+
+    @include r($tablet) {
+      padding: 5px;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16.8px;
+      text-align: center;
+    }
   }
 }
 
@@ -58,8 +66,8 @@
 
   @include r($tablet) {
     gap: 5px;
-    width: 135px;
-    height: 135px;
+    width: 122px;
+    height: 122px;
   }
 
   &__icon {
@@ -114,11 +122,6 @@
     .button-circle__icon {
       width: 44px;
       height: 44px;
-
-      @include r($tablet) {
-        width: 24px;
-        height: 24px;
-      }
     }
 
     span {

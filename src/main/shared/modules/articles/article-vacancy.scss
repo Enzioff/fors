@@ -5,8 +5,14 @@
 
   @include r($tablet) {
     gap: 10px;
-    padding: 10px;
-    min-height: 150px;
+    padding: 15px 10px;
+    min-height: 170px;
+  }
+
+  @include r($mobile) {
+    gap: 5px;
+    padding: 10px 10px 21px;
+    min-height: 163px;
   }
 
   &__title {
@@ -16,9 +22,20 @@
     @include r($tablet) {
       min-height: 40px;
     }
+
+    @include r($mobile) {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 23.4px;
+    }
   }
 
   &__text {
     @include text3($main3_40);
+
+    @include r($mobile) {
+      font-size: 12px;
+      line-height: 14.4px;
+    }
   }
 }

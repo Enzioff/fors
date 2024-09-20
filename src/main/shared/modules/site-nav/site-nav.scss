@@ -31,6 +31,11 @@
       font-weight: 400;
       line-height: 20.8px;
     }
+
+    @include r($mobile) {
+      font-size: 18px;
+      line-height: 23.4px;
+    }
   }
 
   &__item {
@@ -47,9 +52,18 @@
   &__list {
     display: flex;
     flex-direction: column;
+
+    @include r($tablet) {
+      gap: 8px;
+    }
   }
 
   &__link {
     @include text3($main3_40);
+
+    @include r($mobile) {
+      font-size: 12px;
+      line-height: 14.4px;
+    }
   }
 }

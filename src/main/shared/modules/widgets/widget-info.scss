@@ -9,8 +9,10 @@
   }
 
   @include r($mobile) {
-    width: 110px;
-    height: 110px;
+    width: 163px;
+    height: 163px;
+    max-height: 163px;
+    padding: 15px;
   }
 
   &__top,
@@ -35,7 +37,7 @@
     }
 
     @include r($mobile) {
-      padding-bottom: 17.9px;
+      padding-bottom: 15.5px;
     }
 
     .widget-info__icon {
@@ -47,8 +49,6 @@
 
       @include r($mobile) {
         position: static;
-        width: 26.5px;
-        height: 26.5px;
       }
     }
   }
@@ -62,7 +62,13 @@
     }
 
     @include r($mobile) {
-      padding-top: 15.9px;
+      padding-top: 15.5px;
+    }
+
+    .widget-info__icon {
+      @include r($mobile) {
+        align-self: flex-start;
+      }
     }
   }
 
@@ -74,6 +80,10 @@
     @include r($tablet) {
       gap: 5px;
     }
+
+    @include r($mobile) {
+      gap: 3px;
+    }
   }
 
   &__icon {
@@ -81,10 +91,5 @@
     flex-shrink: 0;
     width: 25px;
     height: 25px;
-
-    @include r($mobile) {
-      width: 26.5px;
-      height: 26.5px;
-    }
   }
 }

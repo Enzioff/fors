@@ -16,6 +16,11 @@
       height: 43px;
       border-radius: 0 0 44px 44px;
     }
+
+    @include r($mobile) {
+      height: 72px;
+      border-radius: 0 0 22px 22px;
+    }
   }
 
   &__wrapper {
@@ -29,6 +34,7 @@
 
     @include r($tablet) {
       background-image: none;
+      gap: 28px;
     }
 
     &::before {
@@ -76,7 +82,7 @@
     z-index: 1;
 
     @include r($tablet) {
-      padding: 20px 0 10px;
+      padding: 20px 0 30px;
     }
 
     @include r($mobile) {
@@ -91,8 +97,8 @@
 
     @include r($tablet) {
       margin-bottom: 0;
-      width: 24px !important;
-      height: 24px !important;
+      width: 50px !important;
+      height: 50px !important;
     }
   }
 
@@ -113,8 +119,7 @@
     text-align: right;
 
     @include r($tablet) {
-      align-self: flex-start;
-      padding-bottom: 0;
+      gap: 10px;
     }
 
     @include r($mobile) {

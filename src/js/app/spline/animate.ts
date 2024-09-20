@@ -4,7 +4,11 @@ import {AnimationKey, callInnerAnimation} from "./callInnerAnimation";
 
 const animationActions: { [key: number]: (app: Application, el?: any) => void } = {
     0: (app, el) => rotateObject(el, RotateKey.SET_DEFAULT),
-    1: (app, el) => rotateObject(el, RotateKey.SCENE_1),
+    1: (app, el) => {
+        rotateObject(el, RotateKey.SCENE_1);
+        callInnerAnimation(app, AnimationKey.MAKE_NORMAL_COLOR);
+        callInnerAnimation(app, AnimationKey.MAKE_NORMAL_BG);
+    },
     2: (app) => {
         callInnerAnimation(app, AnimationKey.MAKE_BLUE_COLOR);
         callInnerAnimation(app, AnimationKey.MAKE_BLUE_BG);

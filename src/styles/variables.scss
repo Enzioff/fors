@@ -37,8 +37,8 @@ $mobile: 767;
   }
 
   @include r($mobile) {
-    font-size: 29px;
-    line-height: 35px;
+    font-size: 32px;
+    line-height: 38.4px;
   }
 }
 
@@ -51,8 +51,8 @@ $mobile: 767;
   color: $main3;
 
   @include r($tablet) {
-    font-size: 43px;
-    line-height: 58px;
+    font-size: 42px;
+    line-height: 56px;
   }
 
   @include r($mobile) {
@@ -72,11 +72,6 @@ $mobile: 767;
   @include r($tablet) {
     font-size: 20px;
     line-height: 26px;
-  }
-
-  @include r($mobile) {
-    font-size: 18px;
-    line-height: 23px;
   }
 }
 

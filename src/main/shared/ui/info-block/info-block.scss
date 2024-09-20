@@ -5,6 +5,15 @@
   gap: 10px;
   min-height: 155px;
 
+  @include r($tablet) {
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 10px 15px;
+    min-height: auto;
+    padding: 15px;
+    border-radius: 15px;
+  }
+
   &__picture {
     display: flex;
     flex-shrink: 0;
@@ -15,9 +24,10 @@
     overflow: hidden;
 
     @include r($tablet) {
-      width: 42px;
-      height: 42px;
-      border-radius: 5px;
+      align-self: flex-start;
+      width: 58px;
+      height: 58px;
+      border-radius: 10px;
     }
 
     img {
@@ -31,6 +41,10 @@
     gap: 5px;
     justify-content: space-between;
     max-width: 360px;
+
+    @include r($tablet) {
+      gap: 10px;
+    }
   }
 
   &__title {
@@ -44,8 +58,12 @@
 
     @include r($tablet) {
       font-size: 16px;
-      font-weight: 600;
-      line-height: 16px;
+      line-height: 20.8px;
+    }
+
+    @include r($mobile) {
+      font-size: 18px;
+      line-height: 23.4px;
     }
   }
 
@@ -59,9 +77,8 @@
     -webkit-box-orient: vertical;
 
     @include r($tablet) {
-      font-size: 13px;
-      font-weight: 400;
-      line-height: 15.6px;
+      font-size: 14px;
+      line-height: 16.8px;
     }
   }
 
@@ -69,6 +86,15 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    @include r($tablet) {
+      grid-row: 1 / 2;
+      grid-column: span 2;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 15px;
+    }
   }
 
   &__date {
@@ -80,9 +106,8 @@
     color: #7682A7;
 
     @include r($tablet) {
-      font-size: 9px;
-      font-weight: 400;
-      line-height: 10.8px;
+      font-size: 14px;
+      line-height: 16.8px;
     }
   }
 

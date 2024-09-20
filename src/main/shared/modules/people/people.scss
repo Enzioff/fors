@@ -8,8 +8,13 @@
   overflow: hidden;
 
   @include r($tablet) {
-    gap: 42px;
-    padding: 20px 20px 22px;
+    gap: 32px;
+    padding: 20px;
+  }
+
+  @include r($mobile) {
+    gap: 57px;
+    padding: 15px;
   }
 
   &__footer {
@@ -17,6 +22,10 @@
     align-items: flex-end;
     justify-content: space-between;
     gap: 25px;
+
+    @include r($tablet) {
+      gap: 8px;
+    }
   }
 
   &__title {
@@ -27,5 +36,10 @@
     text-align: left;
     text-transform: uppercase;
     color: $white;
+
+    @include r($tablet) {
+      font-size: 20px;
+      line-height: 26px;
+    }
   }
 }

@@ -5,6 +5,10 @@
     @include r($tablet) {
       border-radius: 60px;
     }
+
+    @include r($mobile) {
+      border-radius: 30px;
+    }
   }
 
   &--blue {

@@ -1,8 +1,13 @@
 .tools {
   display: flex;
   flex-direction: column;
-  gap: 30px;
   align-items: flex-end;
+  gap: 30px;
+
+  @include r($mobile) {
+    align-items: flex-start;
+    gap: 20px;
+  }
 
   &__title {
     @include h3();

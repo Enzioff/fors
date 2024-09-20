@@ -13,6 +13,12 @@
     height: 230px;
   }
 
+  @include r($mobile) {
+    grid-column: span 2;
+    grid-row-end: span 16;
+    height: 165px;
+  }
+
   &:hover {
     box-shadow: 0 0 30.5px 0 #0A274D26;
   }
@@ -33,6 +39,18 @@
 
     @include r($tablet) {
       height: 110px;
+    }
+
+    @include r($mobile) {
+      grid-row-end: span 8;
+      height: 77px;
+    }
+  }
+
+  &--wide {
+    @include r($mobile) {
+      grid-column: span 4;
+
     }
   }
 }

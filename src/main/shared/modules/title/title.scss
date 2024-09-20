@@ -26,4 +26,13 @@
       width: 352px;
     }
   }
+
+  &--big {
+    font-family: $font-main;
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 51.3px;
+    text-align: left;
+    color: $main3;
+  }
 }

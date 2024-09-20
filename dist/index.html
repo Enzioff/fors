@@ -27,18 +27,18 @@
     </div>
 </header>
 
+<canvas class="spline-canvas"></canvas>
 <main class="main">
-    <canvas class="spline-canvas"></canvas>
-    <section class="section section--bg pt-50 ptt-158 ptm-120 pb-50 pbt-24 pbm-30 mb-150 mbt-0">
+    <section class="section section--bg pt-50 ptt-158 ptm-126 pb-50 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-34 mbt-20 mbm-20">
+            <div class="grid mb-36 mbt-20 mbm-20 order-mob--2">
                 <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
                     <a href="/" class="logo tab-hidden">
                         <img src="./assets/images/logo.svg" alt="">
                     </a>
                 </div>
                 <div class="grid__item grid__item--2 mob-hidden"></div>
-                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--3">
+                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--3 mbm-10">
                     <div class="card widget-info">
                         <div class="widget-info__top">
                             <div class="widget-info__detail">
@@ -60,17 +60,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4">
+                <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4 mbt-10">
                     <div class="card widget-stats">
                         <div class="widget-stats__top">
                             <picture class="widget-stats__picture">
+                                <source srcset="./assets/images/graphic-mob.svg" media="(max-width: 767px)">
                                 <source srcset="./assets/images/graphic-tab.svg" media="(max-width: 1439px)">
                                 <img src="./assets/images/graphic.svg" alt="">
                             </picture>
                         </div>
                         <div class="widget-stats__bottom">
                             <div class="widget-stats__detail">
-                                <h3 class="numbers widget-stats__numbers">&gt; 2000</h3>
+                                <h3 class="numbers widget-stats__numbers">&gt; 2 000</h3>
                                 <p class="caption widget-stats__caption">Выполненных работ</p>
                             </div>
                             <div class="widget-stats__detail">
@@ -90,7 +91,7 @@
                     </a>
                 </div>
             </div>
-            <div class="grid grid--end">
+            <div class="grid grid--end order-mob--1 mbm-20">
                 <div class="grid__item grid__item--3 grid__item-tab--5 grid__item-mob--3">
                     <h1 class="title title--main">
                         <span>Инновации,</span>
@@ -132,26 +133,13 @@
             </div>
         </div>
     </section>
-    <section class="section section--radial section-second ptt-60 pbt-60 pbm-60 mb-150 mbt-0">
+    <section class="section section--radial section-second ptt-70 ptm-60 pbt-70 pbm-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid">
-                <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <div class="direction tab-hidden-min">
-                        <ul class="direction__list">
-                            <li class="direction__item">
-                                <span>Контроль и надзор</span>
-                            </li>
-                            <li class="direction__item">
-                                <span>Медицина</span>
-                            </li>
-                            <li class="direction__item">
-                                <span>Спорт</span>
-                            </li>
-                            <li class="direction__item">
-                                <span>ЖКХ</span>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="grid__item grid__item--3 grid__item-tab--6 order-mob--2">
+                    <h2 class="title title--big desktop-hidden tab-hidden-min mbm-30">
+                        Активно Участвуем в технологических событиях
+                    </h2>
                     <div class="news-block">
                         <div class="news-item">
                             <picture class="news-item__picture">
@@ -159,7 +147,7 @@
                             </picture>
                             <div class="news-item__detail">
                                 <div class="news-item__info">
-                                    <h3 class="news-item__title">IT форум</h3>
+                                    <h3 class="news-item__title">IT-форум</h3>
                                     <p class="news-item__text">«Цифровая эволюция - 2024»</p>
                                 </div>
                                 <div class="news-item__meta">
@@ -227,8 +215,8 @@
                         <a href="#" class="button button--wide">все новости</a>
                     </div>
                 </div>
-                <div class="grid__item grid__item--between grid__item--3 grid__item-tab--6">
-                    <div class="direction mob-hidden">
+                <div class="grid__item grid__item--between grid__item--3 grid__item-tab--6 order-mob--1 mbm-40">
+                    <div class="direction">
                         <ul class="direction__list">
                             <li class="direction__item">
                                 <span>Контроль и надзор</span>
@@ -263,9 +251,9 @@
             </div>
         </div>
     </section>
-    <section class="section section--blue section--radius pt-150 ptt-100 pb-150 pbt-100 mb-150 mbt-0">
+    <section class="section section--blue section--radius pt-150 ptt-60 pb-150 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-100 mbt-60">
+            <div class="grid mb-100 mbt-60 mbm-50">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title title--light">
@@ -490,7 +478,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2">
-                    <div class="layering">
+                    <div class="layering layering--shadow">
                         <div class="article-info article-info--1">
                             <div class="article-info__top">
                                 <div class="article-info__head">
@@ -561,7 +549,13 @@
                             </div>
                             <div class="article-info__footer">
                                 <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-proprietar.svg" alt="">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-info__picture">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-info__picture">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
                                 </picture>
                             </div>
                         </div>
@@ -629,7 +623,13 @@
                             </div>
                             <div class="article-info__footer">
                                 <picture class="article-info__picture">
-                                    <img src="./assets/images/icon-proprietar.svg" alt="">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-info__picture">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-info__picture">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
                                 </picture>
                             </div>
                         </div>
@@ -686,7 +686,7 @@
                             </div>
                         </div>
                         <div class="widget-slider__bottom">
-                            <p class="numbers numbers--dark">1/5</p>
+                            <p class="widget-slider__numbers numbers numbers--dark">1/5</p>
                             <p class="widget-slider__caption">ВНЕДРЯЕМЫЕ РЕШЕНИЯ</p>
                         </div>
                     </div>
@@ -699,7 +699,7 @@
                     </a>
                 </div>
                 <div class="grid__item grid__item-tab--10 grid__item-mob--4 order-tab--2 desktop-hidden"></div>
-                <div class="grid__item grid__item-tab--2 order-tab--2 grid__item-mob--2 desktop-hidden">
+                <div class="grid__item grid__item-tab--2 order-tab--2 grid__item-mob--4 grid__item--end desktop-hidden">
                     <a href="#" class="button-circle button-circle--right button-circle--light button-circle--small">
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
@@ -724,7 +724,7 @@
                 </div>
             </div>
             <div class="grid grid--anim">
-                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--3">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-2.jpg" alt="">
@@ -743,8 +743,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
-                    <div class="layering layering--light mbt-62">
+                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
+                    <div class="layering layering--shadow layering--light mbt-62">
                         <div class="article-info article-info--text article-info--01">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle">{01}</div>
@@ -812,7 +812,7 @@
                     </a>
                 </div>
                 <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden"></div>
-                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--1 order-tab--1">
+                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--2 order-tab--1 order-mob--1 mbm-10">
                     <div class="card widget-slider mb-auto">
                         <div class="widget-slider__top">
                             <div class="pagination pagination--slim">
@@ -823,7 +823,7 @@
                             </div>
                         </div>
                         <div class="widget-slider__bottom">
-                            <p class="numbers numbers--dark">1/4</p>
+                            <p class="widget-slider__numbers numbers numbers--dark">1/4</p>
                             <p class="widget-slider__caption">ВЕСЬ СПЕКТР<br>IT-УСЛУГ</p>
                         </div>
                     </div>
@@ -837,9 +837,9 @@
             </div>
         </div>
     </section>
-    <section class="section section--cards pt-70 ptt-60 pb-50 pbt-60 mb-150 mbt-0">
+    <section class="section section--cards pt-70 ptt-60 pb-50 pbt-50 pbm-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-60">
+            <div class="grid mb-70 mbt-60 mbm-50">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title">
@@ -862,12 +862,12 @@
                                 <img src="./assets/images/grid-2.png" alt="">
                             </picture>
                         </a>
-                        <a href="#" target="_blank" class="article-card">
+                        <a href="#" target="_blank" class="article-card article-card--wide order-mob--3">
                             <picture class="article-card__picture">
                                 <img src="./assets/images/grid-3.png" alt="">
                             </picture>
                         </a>
-                        <a href="#" target="_blank" class="article-card">
+                        <a href="#" target="_blank" class="article-card article-card--wide">
                             <picture class="article-card__picture">
                                 <img src="./assets/images/grid-4.png" alt="">
                             </picture>
@@ -877,17 +877,17 @@
                                 <img src="./assets/images/grid-5.png" alt="">
                             </picture>
                         </a>
-                        <a href="#" target="_blank" class="article-card">
+                        <a href="#" target="_blank" class="article-card order-mob--2">
                             <picture class="article-card__picture">
                                 <img src="./assets/images/grid-6.png" alt="">
                             </picture>
                         </a>
-                        <a href="#" target="_blank" class="article-card article-card--small">
+                        <a href="#" target="_blank" class="article-card article-card--small order-mob--2">
                             <picture class="article-card__picture">
                                 <img src="./assets/images/grid-7.png" alt="">
                             </picture>
                         </a>
-                        <a href="#" target="_blank" class="article-card article-card--small">
+                        <a href="#" target="_blank" class="article-card article-card--small order-mob--1">
                             <picture class="article-card__picture">
                                 <img src="./assets/images/grid-8.png" alt="">
                             </picture>
@@ -897,9 +897,9 @@
             </div>
         </div>
     </section>
-    <section class="section section--anim-top-2 pt-70 ptt-60 pb-70 pbt-50 mb-150 mbt-0">
+    <section class="section section--anim-top-2 pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-60">
+            <div class="grid mb-70 mbt-60 mbm-160">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title">
@@ -910,7 +910,7 @@
                 </div>
             </div>
             <div class="grid grid--anim">
-                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--3">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-3.jpg" alt="">
@@ -930,8 +930,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--3 order-tab--2 order-mob--1">
-                    <div class="layering layering--light mbt-73">
+                <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--1 order-mob--2">
+                    <div class="layering layering--shadow layering--light mbt-73">
                         <div class="article-info article-info--text article-info--01">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
@@ -979,11 +979,11 @@
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
-                        <span>все<br>услуги</span>
+                        <span>все<br class="tab-hidden"> услуги</span>
                     </a>
                 </div>
                 <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden order-tab--1"></div>
-                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--1 order-tab--1">
+                <div class="grid__item grid__item--between grid__item--1 grid__item-tab--2 grid__item-mob--2 order-tab--1 order-mob--1">
                     <div class="card widget-slider mb-auto">
                         <div class="widget-slider__top">
                             <div class="pagination pagination--slim">
@@ -993,7 +993,7 @@
                             </div>
                         </div>
                         <div class="widget-slider__bottom">
-                            <p class="numbers numbers--dark">1/3</p>
+                            <p class="widget-slider__numbers numbers numbers--dark">1/3</p>
                             <p class="widget-slider__caption">СЕРВИСНЫЕ<br>УСЛУГИ</p>
                         </div>
                     </div>
@@ -1012,7 +1012,7 @@
             <div class="grid">
                 <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 mob-hidden"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
-                    <h2 class="title mb-70 mbt-60">
+                    <h2 class="title mb-70 mbt-60 mbm-30">
                         Развиваем<br>
                         и воспитываем
                         национальную<br>
@@ -1021,8 +1021,8 @@
                 </div>
             </div>
             <div class="grid grid--anim-in grid--end mb-30 mbt-20">
-                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 order-mob--2">
-                    <h3 class="title title--small mb-30">&gt;30 направлений</h3>
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 order-mob--2 mob-hidden">
+                    <h3 class="title title--small mb-30 mbt-20">&gt;30 направлений</h3>
                     <div class="tags tags--left">
                         <a href="#" class="tag">PostgreSQL</a>
                         <a href="#" class="tag">Oracle</a>
@@ -1122,7 +1122,7 @@
                     </div>
                 </div>
             </div>
-            <div class="grid grid--anim-cards">
+            <div class="grid grid--anim-cards mbm-160">
                 <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 mob-hidden"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
                     <div class="news-block">
@@ -1185,11 +1185,28 @@
                     </div>
                 </div>
             </div>
+            <div class="grid tab-hidden-min">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <h3 class="title title--small mb-30 mbt-20">&gt;30 направлений</h3>
+                    <div class="tags tags--left">
+                        <a href="#" class="tag">PostgreSQL</a>
+                        <a href="#" class="tag">Oracle</a>
+                        <a href="#" class="tag">MangoDB</a>
+                        <a href="#" class="tag">Astra Linux</a>
+                        <a href="#" class="tag">Atlassian Jira</a>
+                        <a href="#" class="tag">Chat GPT</a>
+                        <a href="#" class="tag">Ansible</a>
+                        <a href="#" class="tag">РЭД ОС</a>
+                        <a href="#" class="tag">Linux</a>
+                        <a href="#" class="tag">Python</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
     <section class="section pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
-            <div class="grid mb-70 mbt-40">
+            <div class="grid mb-70 mbt-60 mbm-30">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
                     <h2 class="title mb-35 mbt-20">
@@ -1204,8 +1221,8 @@
                     </p>
                 </div>
             </div>
-            <div class="grid">
-                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--5 grid__item-mob--4 order-mob--2">
+            <div class="grid grid--last">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4 order-mob--2">
                     <div class="widget-video">
                         <div class="widget-video__picture">
                             <img src="./assets/images/pic-4.jpg" alt="">
@@ -1234,7 +1251,7 @@
                             </p>
                         </div>
                         <div class="card anim-el-in article-vacancy">
-                            <h3 class="article-vacancy__title">Техлид BI<br class="tab-hidden">решений</h3>
+                            <h3 class="article-vacancy__title">Техлид BI<br class="tab-hidden"> решений</h3>
                             <p class="article-vacancy__text">
                                 Участие в пресейл активностях, подготовка и проведение демонстраций
                             </p>
@@ -1350,7 +1367,7 @@
                         <img src="./assets/images/logo-small.svg" alt="">
                     </a>
                     <p class="footer__text">1991–2024. © ФОРС</p>
-                    <p class="footer__text footer__text--copyright">© 2020,  Zephyr / design by <a href="#">Roman Kvatalnov</a></p>
+                    <p class="footer__text footer__text--copyright">© 2020,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvatalnov</a></p>
                 </div>
                 <div class="footer__meta">
                     <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>

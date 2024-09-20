@@ -17,17 +17,17 @@
   border-radius: 37px;
 
   @include r($tablet) {
-    padding: 12px 20px;
+    padding: 11.5px 20px 11.5px 19px;
 
-    font-size: 13px;
-    font-weight: 400;
-    line-height: 15.6px;
+    font-size: 14px;
+    line-height: 16.8px;
   }
 
   @include r($mobile) {
-    padding: 10px 20px;
+    padding: 9px 20px;
 
-    font-size: 12px;
-    line-height: 14.4px;
+    font-size: 14px;
+    line-height: 16.8px;
+
   }
 }

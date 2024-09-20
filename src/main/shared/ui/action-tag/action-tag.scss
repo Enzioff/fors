@@ -8,8 +8,12 @@
   background-color: $main1;
 
   @include r($tablet) {
-    gap: 2px;
-    padding: 3px 7px;
+    gap: 5px;
+    padding: 5px;
+  }
+
+  @include r($mobile) {
+    padding: 5px 10px;
   }
 
   &__icon {
@@ -18,8 +22,8 @@
     height: 25px;
 
     @include r($tablet) {
-      width: 8px;
-      height: 9.33px;
+      width: 12px;
+      height: 12px;
     }
   }
 
@@ -32,8 +36,8 @@
     color: $white;
 
     @include r($tablet) {
-      font-size: 8px;
-      line-height: 8px;
+      font-size: 12px;
+      line-height: 12px;
     }
   }
   
@@ -47,5 +51,9 @@
 
   &--default {
     padding: 7.5px 10px;
+
+    @include r($tablet) {
+      padding: 5px;
+    }
   }
 }

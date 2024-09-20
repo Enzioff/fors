@@ -12,10 +12,6 @@
     font-weight: 400;
     line-height: 14.4px;
     text-align: left;
-  }
-
-  @include r($mobile) {
-    font-size: 6.63px;
-    line-height: 7.95px;
+    text-transform: lowercase;
   }
 }
