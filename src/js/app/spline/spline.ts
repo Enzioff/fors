@@ -5,12 +5,9 @@ import {animateSpline} from "./animate";
 class Spline {
     application: Application;
     cube: SPEObject;
-    canvas: HTMLCanvasElement;
 
     constructor(el: HTMLCanvasElement, url: string) {
         this.setApplication(el, url);
-        this.canvas = document.querySelector('.spline-canvas')
-        this.canvas.style.opacity = '0';
     }
 
     setApplication = (el: HTMLCanvasElement, url: string) => {
@@ -18,7 +15,6 @@ class Spline {
         this.application.load(url).then(() => {
             this.cube = this.application.findObjectByName('cube');
             animateSpline(this.application, 0);
-            this.canvas.style.opacity = '1';
         })
     }
 
