@@ -44,6 +44,7 @@
 
     &.active {
       background-color: $main1;
+      transition: .2s linear;
     }
   }
 }

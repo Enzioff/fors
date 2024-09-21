@@ -36,7 +36,10 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     13: (app, el) => rotateObject(el, RotateKey.SCENE_13),
     14: (app) => callInnerAnimation(app, AnimationKey.ROTATE_REVERSE_SIDE_1),
     15: (app, el) => rotateObject(el, RotateKey.SCENE_15),
-    16: (app, el) => rotateObject(el, RotateKey.SCENE_16),
+    16: (app, el) => {
+        callInnerAnimation(app, AnimationKey.JOIN_MODEL);
+        rotateObject(el, RotateKey.SCENE_16);
+    },
     17: (app, el) => {
         callInnerAnimation(app, AnimationKey.BREAK_MODEL);
         rotateObject(el, RotateKey.SCENE_17);

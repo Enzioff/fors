@@ -43,21 +43,21 @@ class Spline {
         animateSpline(this.application, buttonID);
     }
 
-    // handleResize = () => {
-    //     console.log('Теперь ресайз');
-    //
-    //     const resizeHandler = () => {
-    //         const width = window.innerWidth;
-    //         const height = window.innerHeight;
-    //
-    //         if (this.application) {
-    //             this.application.setSize(width, height);
-    //         }
-    //     };
-    //
-    //     resizeHandler();
-    //     window.addEventListener('resize', resizeHandler);
-    // }
+    handleResize = () => {
+        console.log('Теперь ресайз');
+
+        const resizeHandler = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+
+            if (this.application) {
+                this.application.setSize(width, height);
+            }
+        };
+
+        resizeHandler();
+        window.addEventListener('resize', resizeHandler);
+    }
 }
 
 export {

@@ -2,6 +2,7 @@ import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {animateSpline} from "../spline/animate";
 import {Spline} from "../spline/spline";
+import {getTotalElements} from "../../helpers/getTotalElements";
 
 class Animation {
     spline;
@@ -14,12 +15,12 @@ class Animation {
     init() {
         gsap.registerPlugin(ScrollTrigger)
 
+        this.menu()
         this.section1()
         this.section2()
         this.section3()
         this.marquee()
         this.section4()
-        this.section5()
         this.section6()
         this.section7()
         this.section8()
@@ -38,21 +39,46 @@ class Animation {
             duration: 1,
         })
 
-        ScrollTrigger.create({
-            trigger: '.section--bg',
-            start: 'top top',
-            onEnterBack: () => {
-                gsap.to('.header', {
-                    yPercent: -100,
-                    duration: 1,
-                })
-            },
-            onLeave: () => {
-                gsap.to('.header', {
-                    yPercent: 0,
-                    duration: 1,
-                })
-            }
+        const mm = gsap.matchMedia();
+
+        mm.add("(min-width: 1440px)", () => {
+            this.spline.application.setZoom(1.2)
+
+            ScrollTrigger.create({
+                trigger: '.section--bg',
+                start: 'top top',
+                end: "bottom top",
+                onEnterBack: () => {
+                    gsap.to('.header', {
+                        yPercent: -100,
+                        duration: 1,
+                    })
+                },
+                onLeave: () => {
+                    gsap.to('.header', {
+                        yPercent: 0,
+                        duration: 1,
+                    })
+                }
+            })
+            return () => ScrollTrigger.refresh();
+        });
+
+        mm.add("(max-width: 1439px)", () => {
+            this.spline.application.setZoom(0.8)
+            this.spline.handleResize()
+
+            gsap.to('.header', {
+                yPercent: 0,
+                duration: 1,
+            })
+
+            ScrollTrigger.create({
+                trigger: '.section--bg',
+                start: 'top top',
+                end: "bottom top"
+            })
+            return () => ScrollTrigger.refresh();
         })
 
         tl
@@ -101,13 +127,10 @@ class Animation {
             scrollTrigger: {
                 trigger: '.section-second',
                 pin: false,
-                start: 'top bottom',
-                end: '+=500',
+                start: "center bottom",
+                end: "bottom top",
                 onEnter: () => {
                     animateSpline(this.spline.application, 1)
-                },
-                onLeaveBack: () => {
-                    animateSpline(this.spline.application, 0)
                 }
             }
         });
@@ -144,14 +167,24 @@ class Animation {
     }
 
     section3() {
+        const mm = gsap.matchMedia();
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section--blue',
                 start: 'top bottom',
-                onEnter: () => {
+                end: "bottom top",
+                onToggle: () => {
                     animateSpline(this.spline.application, 2)
-                    gsap.to('.spline-canvas', {
-                        xPercent: -20,
+                    mm.add("(min-width: 768px)", () => {
+                        gsap.to('.spline-canvas', {
+                            xPercent: -20,
+                        })
+                    })
+                    mm.add("(max-width: 767px)", () => {
+                        gsap.to('.spline-canvas', {
+                            xPercent: 0,
+                        })
                     })
                 },
                 onLeaveBack: () => {
@@ -182,6 +215,7 @@ class Animation {
             scrollTrigger: {
                 trigger: '.marquee--anim',
                 start: 'top bottom',
+                end: "bottom top",
                 scrub: 1,
             },
         });
@@ -215,24 +249,61 @@ class Animation {
     }
 
     section4() {
+        const mm = gsap.matchMedia();
+        const paginationList = document.querySelectorAll('.section--blue .pagination__item');
+        const paginationCount = document.querySelector('.section--blue .widget-slider__numbers');
+        const listItems = document.querySelectorAll('.section--blue .article-info');
         const container = document.querySelector('.section--blue .layering');
-        const blockTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.anim-stay',
-                pin: true,
-                pinSpacing: true,
-                start: 'center center',
-                end: 'bottom',
-                scrub: 1,
-            },
-        });
+        let blockTimeline = null;
+        mm.add("(min-width: 768px)", () => {
+            blockTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.anim-stay',
+                    pin: true,
+                    pinSpacing: true,
+                    start: 'center center',
+                    end: "bottom top",
+                    scrub: 1,
+                    onLeaveBack: () => animateSpline(this.spline.application, 2)
+                },
+            });
+        })
+        mm.add("(max-width: 767px)", () => {
+            blockTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.anim-stay',
+                    pin: true,
+                    pinSpacing: true,
+                    start: 'center center+=100',
+                    end: "bottom top",
+                    scrub: 1,
+                    onLeaveBack: () => {
+                        animateSpline(this.spline.application, 2)
+                        gsap.to('.spline-canvas', {
+                            yPercent: 0
+                        })
+                    },
+                    onEnter: () => {
+                        gsap.to('.spline-canvas', {
+                            yPercent: -20
+                        })
+                    },
+                    onLeave: () => {
+                        animateSpline(this.spline.application, 8)
+                        gsap.to('.spline-canvas', {
+                            yPercent: 0
+                        })
+                    }
+                },
+            });
+        })
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.section--blue .layering',
                 start: 'center center',
-                end: 'bottom',
-                scrub: 1,
+                end: "bottom top",
+                scrub: 1
             },
             onComplete: () => animateSpline(this.spline.application, 8),
         });
@@ -242,41 +313,53 @@ class Animation {
             delay: 1,
             ease: "power1.out",
             onStart: () => animateSpline(this.spline.application, 3),
-            onUpdate: () => container.classList.add('layering--shadow'),
+            onUpdate: () => container.classList.add('layering--shadow')
         })
         tl.to('.article-info--2', {
             yPercent: -100,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 4),
-            onComplete: () => container.classList.remove('layering--shadow')
+            onStart: () => {
+                animateSpline(this.spline.application, 4)
+                paginationList[1].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            },
+            onComplete: () => container.classList.remove('.layering--shadow'),
         })
         tl.to('.article-info--3', {
             yPercent: -200,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 5)
+            onStart: () => {
+                animateSpline(this.spline.application, 5)
+                paginationList[2].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            },
         })
         tl.to('.article-info--4', {
             yPercent: -300,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 6)
+            onStart: () => {
+                animateSpline(this.spline.application, 6)
+                paginationList[3].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            }
         })
         tl.to('.article-info--5', {
             yPercent: -400,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 7)
+            onStart: () => {
+                animateSpline(this.spline.application, 7)
+                paginationList[4].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            }
         })
-    }
-
-    section5() {
-
     }
 
     section6() {
@@ -321,10 +404,25 @@ class Animation {
                         start: 'center center+=200',
                         end: 'bottom top-=200px',
                         scrub: true,
-                        onLeave: () => animateSpline(this.spline.application, 15),
                         onUpdate: () => {
                             gsap.set(".section--anim-top", {clearProps: "all"});
                             gsap.set(".section--blue", {clearProps: "all"});
+                        },
+                        onLeaveBack: () => {
+                            gsap.to('.spline-canvas', {
+                                yPercent: 0
+                            })
+                        },
+                        onEnter: () => {
+                            gsap.to('.spline-canvas', {
+                                yPercent: -20
+                            })
+                        },
+                        onLeave: () => {
+                            animateSpline(this.spline.application, 15)
+                            gsap.to('.spline-canvas', {
+                                yPercent: 0
+                            })
                         }
                     },
                 });
@@ -338,6 +436,7 @@ class Animation {
             scrollTrigger: {
                 trigger: '.section--anim-top .layering',
                 start: 'center center',
+                end: "bottom top",
                 scrub: 1,
             },
             onComplete: () => animateSpline(this.spline.application, 14)
@@ -380,11 +479,12 @@ class Animation {
         ScrollTrigger.create({
             trigger: '.section--cards .title',
             start: 'top bottom',
+            end: "bottom top",
             onEnter: () => animateSpline(this.spline.application, 16),
         });
 
         ScrollTrigger.matchMedia({
-            "(min-width: 1440px)": () => {
+            "(min-width: 768px)": () => {
                 tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.section--cards',
@@ -397,8 +497,20 @@ class Animation {
                                 xPercent: 0,
                             })
                         },
+                        onEnterBack: () => {
+                            animateSpline(this.spline.application, 17)
+                            gsap.to('.spline-canvas', {
+                                xPercent: 0,
+                            })
+                        },
                         onLeave: () => {
                             animateSpline(this.spline.application, 18)
+                            gsap.to('.spline-canvas', {
+                                xPercent: -20,
+                            })
+                        },
+                        onLeaveBack: () => {
+                            animateSpline(this.spline.application, 16)
                             gsap.to('.spline-canvas', {
                                 xPercent: -20,
                             })
@@ -416,7 +528,7 @@ class Animation {
                     tl.kill();
                 };
             },
-            "(max-width: 1439px)": () => {
+            "(max-width: 767px)": () => {
                 tl = gsap.timeline({
                     scrollTrigger: {
                         trigger: '.section--cards',
@@ -432,7 +544,7 @@ class Animation {
                         onLeave: () => {
                             animateSpline(this.spline.application, 18)
                             gsap.to('.spline-canvas', {
-                                xPercent: -20,
+                                xPercent: 0,
                             })
                         }
                     },
@@ -452,19 +564,52 @@ class Animation {
     }
 
     section8() {
+        const mm = gsap.matchMedia()
         const container = document.querySelector('.section--anim-top-2 .layering')
-        const blockTimeline = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.section--anim-top-2 .grid--anim',
-                pin: true,
-                pinSpacing: true,
-                start: 'center center',
-                end: '+=1500',
-                onEnter: () => {
-                    animateSpline(this.spline.application, 19)
+        let blockTimeline = null;
+
+        mm.add('(min-width: 768px)', () => {
+            blockTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.section--anim-top-2 .grid--anim',
+                    pin: true,
+                    pinSpacing: true,
+                    start: 'center center',
+                    end: 'bottom top-=200px',
+                    onEnter: () => {
+                        animateSpline(this.spline.application, 19)
+                    }
                 }
-            }
-        });
+            });
+        })
+        mm.add('(max-width: 767px)', () => {
+            blockTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: '.section--anim-top-2 .grid--anim',
+                    pin: true,
+                    pinSpacing: true,
+                    start: 'center center+=200',
+                    end: 'bottom top-=200px',
+                    onLeaveBack: () => {
+                        gsap.to('.spline-canvas', {
+                            yPercent: 0
+                        })
+                    },
+                    onEnter: () => {
+                        animateSpline(this.spline.application, 19)
+                        gsap.to('.spline-canvas', {
+                            yPercent: -20
+                        })
+                    },
+                    onLeave: () => {
+                        animateSpline(this.spline.application, 15)
+                        gsap.to('.spline-canvas', {
+                            yPercent: 0
+                        })
+                    }
+                }
+            });
+        })
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -505,6 +650,7 @@ class Animation {
                 trigger: '.grid--anim-in .tags',
                 pin: false,
                 start: 'top bottom',
+                end: "bottom top",
                 onEnter: () => animateSpline(this.spline.application, 23),
                 onLeave: () => animateSpline(this.spline.application, 24),
             }
@@ -525,6 +671,7 @@ class Animation {
                 trigger: '.grid--anim-cards',
                 pin: false,
                 start: 'top bottom',
+                end: "bottom top",
                 onEnter: () => animateSpline(this.spline.application, 25),
                 onLeave: () => animateSpline(this.spline.application, 26),
             }
@@ -543,6 +690,7 @@ class Animation {
             scrollTrigger: {
                 trigger: '.marquee--anim-2',
                 start: 'top bottom',
+                end: "bottom top",
             }
         });
 
@@ -579,12 +727,14 @@ class Animation {
         ScrollTrigger.create({
             trigger: '.grid--last',
             start: 'top bottom',
+            end: "bottom top",
         });
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.grid--widgets--anim',
-                start: 'top bottom-=100'
+                start: 'top bottom-=100',
+                end: "bottom top",
             },
             onComplete: () => {
                 animateSpline(this.spline.application, 27)
@@ -604,12 +754,20 @@ class Animation {
             scrollTrigger: {
                 trigger: '.footer',
                 start: 'top bottom',
+                end: "bottom top",
                 onToggle: () => {
                     animateSpline(this.spline.application, 28)
                     gsap.to('.spline-canvas', {
                         zIndex: 1,
                         xPercent: 0,
                         yPercent: 30,
+                    })
+                },
+                onLeaveBack: () => {
+                    gsap.to('.spline-canvas', {
+                        zIndex: 1,
+                        xPercent: -20,
+                        yPercent: 0,
                     })
                 }
             },
@@ -621,6 +779,26 @@ class Animation {
             opacity: 0,
             stagger: 0.5,
         }, '-=0.9')
+    }
+
+    menu() {
+        const burger = document.querySelector('.burger');
+        const menu = document.querySelector('.menu');
+        const body = document.querySelector('body');
+        const burgerIcons = burger.querySelectorAll('img');
+
+        burger.addEventListener('click', () => {
+            menu.classList.toggle('active')
+            body.classList.toggle('fixed')
+
+            if (menu.classList.contains('active')) {
+                burgerIcons[0].setAttribute('hidden', '')
+                burgerIcons[1].removeAttribute('hidden')
+            } else {
+                burgerIcons[1].setAttribute('hidden', '')
+                burgerIcons[0].removeAttribute('hidden')
+            }
+        })
     }
 }
 

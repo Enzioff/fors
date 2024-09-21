@@ -9,6 +9,11 @@
     gap: 10px;
   }
 
+  &--row {
+    display: flex;
+    justify-content: flex-start;
+  }
+
   &__link {
     display: flex;
     align-items: center;

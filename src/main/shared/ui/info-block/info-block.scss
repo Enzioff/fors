@@ -8,6 +8,7 @@
   @include r($tablet) {
     display: grid;
     grid-template-columns: 58px 1fr;
+    grid-template-rows: 1fr;
     gap: 10px 15px;
     min-height: auto;
     padding: 15px;

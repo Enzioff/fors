@@ -1,0 +1,62 @@
+.menu {
+  position: absolute;
+  top: -30px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 168px 30px 60px;
+  height: 100vh;
+  background-color: $bg;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  z-index: 3;
+  transition: .2s linear;
+
+  @include r($tablet) {
+    display: flex;
+  }
+
+  @include r($mobile) {
+    padding: 116px 20px 20px;
+  }
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    @include r($mobile) {
+      gap: 20px;
+    }
+  }
+
+  &__links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__link {
+    font-family: $font-accent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19.2px;
+    color: $main3;
+
+    &--big {
+      font-family: $font-main;
+      font-size: 28px;
+      line-height: 33.6px;
+    }
+  }
+}
