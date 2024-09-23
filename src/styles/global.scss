@@ -159,3 +159,7 @@ body {
     }
   }
 }
+
+*[disabled] {
+  pointer-events: none;
+}

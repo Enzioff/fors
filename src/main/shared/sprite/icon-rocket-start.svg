@@ -1,29 +1,29 @@
-<svg width="72" height="72" viewBox="0 0 72 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="41.3023" cy="7.98325" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 33.3516 5.33325)" fill="white"/>
-<circle cx="36.0016" cy="2.65" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="36.0016" cy="53.3167" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="36.0016" cy="69.3167" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="32.6891" cy="61.3167" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="39.9762" cy="61.3167" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="29.3785" cy="53.3167" r="2.65" fill="white"/>
-<circle opacity="0.4" cx="42.6266" cy="53.3167" r="2.65" fill="white"/>
-<circle cx="46.6012" cy="13.3167" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 10.6667)" fill="white"/>
-<circle cx="46.6012" cy="19.9833" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 17.3333)" fill="white"/>
-<circle cx="46.6012" cy="26.65" r="2.65" fill="white"/>
-<circle cx="46.6012" cy="39.9833" r="2.65" fill="white"/>
-<circle cx="46.6012" cy="46.65" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 24)" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 37.3333)" fill="white"/>
-<circle cx="46.6012" cy="33.3167" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 30.6667)" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 20.1016 34.6667)" fill="white"/>
-<circle cx="54.5504" cy="37.3167" r="2.65" fill="white"/>
-<circle opacity="0.9" cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 14.8027 40)" fill="white"/>
-<circle opacity="0.9" cx="59.8492" cy="42.65" r="2.65" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0508 44)" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 35.3359 44)" fill="white"/>
-<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 42.627 44)" fill="white"/>
+<svg width="72" height="72" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">
+<circle cx="41.3023" cy="7.98325" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 33.3516 5.33325)" />
+<circle cx="36.0016" cy="2.65" r="2.65" />
+<circle opacity="0.4" cx="36.0016" cy="53.3167" r="2.65" />
+<circle opacity="0.4" cx="36.0016" cy="69.3167" r="2.65" />
+<circle opacity="0.4" cx="32.6891" cy="61.3167" r="2.65" />
+<circle opacity="0.4" cx="39.9762" cy="61.3167" r="2.65" />
+<circle opacity="0.4" cx="29.3785" cy="53.3167" r="2.65" />
+<circle opacity="0.4" cx="42.6266" cy="53.3167" r="2.65" />
+<circle cx="46.6012" cy="13.3167" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 10.6667)" />
+<circle cx="46.6012" cy="19.9833" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 17.3333)" />
+<circle cx="46.6012" cy="26.65" r="2.65" />
+<circle cx="46.6012" cy="39.9833" r="2.65" />
+<circle cx="46.6012" cy="46.65" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 24)" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 37.3333)" />
+<circle cx="46.6012" cy="33.3167" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0527 30.6667)" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 20.1016 34.6667)" />
+<circle cx="54.5504" cy="37.3167" r="2.65" />
+<circle opacity="0.9" cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 14.8027 40)" />
+<circle opacity="0.9" cx="59.8492" cy="42.65" r="2.65" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 28.0508 44)" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 35.3359 44)" />
+<circle cx="2.65" cy="2.65" r="2.65" transform="matrix(-1 0 0 1 42.627 44)" />
 </svg>

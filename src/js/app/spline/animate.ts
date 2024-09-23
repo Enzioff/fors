@@ -7,11 +7,9 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     1: (app, el) => {
         rotateObject(el, RotateKey.SCENE_1);
         callInnerAnimation(app, AnimationKey.MAKE_NORMAL_COLOR);
-        callInnerAnimation(app, AnimationKey.MAKE_NORMAL_BG);
     },
     2: (app) => {
         callInnerAnimation(app, AnimationKey.MAKE_BLUE_COLOR);
-        callInnerAnimation(app, AnimationKey.MAKE_BLUE_BG);
     },
     3: (app, el) => rotateObject(el, RotateKey.SCENE_3),
     4: (app, el) => rotateObject(el, RotateKey.SCENE_4),
@@ -20,7 +18,6 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     7: (app, el) => rotateObject(el, RotateKey.SCENE_7),
     8: (app, el) => {
         callInnerAnimation(app, AnimationKey.MAKE_NORMAL_COLOR);
-        callInnerAnimation(app, AnimationKey.MAKE_NORMAL_BG);
         rotateObject(el, RotateKey.SCENE_8);
     },
     9: (app, el) => rotateObject(el, RotateKey.SCENE_9),

@@ -20,8 +20,16 @@
   transition: .2s linear;
 
   &:hover {
-    background: transparent;
-    border-color: $white;
+    background-color: $blue_hover;
+  }
+
+  &:active {
+    background-color: $blue_active;
+  }
+
+  &:focus {
+    outline: 3px solid $outline;
+    outline-offset: 4px;
   }
 
   @include r($tablet) {
@@ -64,6 +72,35 @@
   background-color: $main1;
   border-radius: 50%;
 
+  transition: .2s linear;
+
+  &:hover {
+    background-color: $blue_hover;
+  }
+
+  &:active {
+    background-color: $blue_active;
+    outline: none;
+  }
+
+  &:focus {
+    outline: 3px solid $outline;
+    outline-offset: 4px;
+  }
+
+  &[disabled] {
+    background-color: $bg;
+    border-color: $bg;
+
+    span {
+      color: $disabled_text;
+    }
+
+    .button-circle__icon {
+      fill: $disabled_text;
+    }
+  }
+
   @include r($tablet) {
     gap: 5px;
     width: 122px;
@@ -74,6 +111,7 @@
     display: flex;
     width: 72px;
     height: 72px;
+    fill: $white;
 
     @include r($tablet) {
       width: 42px;
@@ -135,6 +173,48 @@
 
   &--light {
     border-color: $white;
+
+    &:hover {
+      background-color: $white;
+
+      span {
+        color: $main1;
+      }
+
+      .button-circle__icon {
+        fill: $main1;
+      }
+    }
+
+    &:active {
+      background-color: $white;
+
+      span {
+        color: $blue_active;
+      }
+
+      .button-circle__icon {
+        fill: $blue_active;
+      }
+    }
+
+    &:focus {
+      outline: 3px solid $outline;
+      outline-offset: 4px;
+    }
+
+    &[disabled] {
+      background-color: transparent;
+      border-color: $outline;
+
+      span {
+        color: $disabled_text;
+      }
+
+      .button-circle__icon {
+        fill: $disabled_text;
+      }
+    }
   }
 
   &--right {

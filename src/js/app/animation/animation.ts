@@ -65,7 +65,7 @@ class Animation {
         });
 
         mm.add("(max-width: 1439px)", () => {
-            this.spline.application.setZoom(0.8)
+            this.spline.application.setZoom(0.2)
             this.spline.handleResize()
 
             gsap.to('.header', {
@@ -174,7 +174,7 @@ class Animation {
                 trigger: '.section--blue',
                 start: 'top bottom',
                 end: "bottom top",
-                onToggle: () => {
+                onEnter: () => {
                     animateSpline(this.spline.application, 2)
                     mm.add("(min-width: 768px)", () => {
                         gsap.to('.spline-canvas', {
@@ -735,9 +735,7 @@ class Animation {
                 trigger: '.grid--widgets--anim',
                 start: 'top bottom-=100',
                 end: "bottom top",
-            },
-            onComplete: () => {
-                animateSpline(this.spline.application, 27)
+                onEnter: () => animateSpline(this.spline.application, 27)
             }
         });
 
@@ -755,10 +753,10 @@ class Animation {
                 trigger: '.footer',
                 start: 'top bottom',
                 end: "bottom top",
-                onToggle: () => {
+                onEnter: () => {
                     animateSpline(this.spline.application, 28)
                     gsap.to('.spline-canvas', {
-                        zIndex: 1,
+                        zIndex: 2,
                         xPercent: 0,
                         yPercent: 30,
                     })
