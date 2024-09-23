@@ -220,4 +220,8 @@
   &--right {
     align-self: flex-end;
   }
+
+  &--stay {
+    transition: initial;
+  }
 }

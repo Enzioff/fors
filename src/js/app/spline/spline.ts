@@ -15,6 +15,7 @@ class Spline {
         this.application.load(url).then(() => {
             this.cube = this.application.findObjectByName('cube');
             animateSpline(this.application, 0);
+            this.application.setZoom(1.4)
         })
     }
 

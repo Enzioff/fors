@@ -2,10 +2,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
   background-color: $main1;
   border-radius: 50%;
+  cursor: pointer;
+
+  @include r($tablet) {
+    width: 40px;
+    height: 40px;
+  }
 
   &__wrapper {
     position: relative;
@@ -16,6 +23,4 @@
     width: 30px;
     height: 30px;
   }
-
-
 }

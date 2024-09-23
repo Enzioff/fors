@@ -325,7 +325,9 @@ class Animation {
                 paginationList[1].classList.add('active')
                 paginationCount.textContent = getTotalElements(paginationList, listItems);
             },
-            onComplete: () => container.classList.remove('.layering--shadow'),
+            onComplete: () => {
+                container.classList.remove('layering--shadow')
+            },
         })
         tl.to('.article-info--3', {
             yPercent: -200,
@@ -363,6 +365,9 @@ class Animation {
     }
 
     section6() {
+        const paginationList = document.querySelectorAll('.section--anim-top .pagination__item');
+        const paginationCount = document.querySelector('.section--anim-top .widget-slider__numbers');
+        const listItems = document.querySelectorAll('.section--anim-top .article-info');
         const container = document.querySelector('.section--anim-top .layering')
         let blockTimeline: gsap.core.Timeline = null;
 
@@ -447,14 +452,21 @@ class Animation {
             delay: 1,
             ease: "power1.out",
             onUpdate: () => container.classList.add('layering--shadow'),
-            onStart: () => animateSpline(this.spline.application, 10)
+            onStart: () => {
+                animateSpline(this.spline.application, 10)
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            }
         })
         tl.to('.section--anim-top .article-info--02', {
             yPercent: -88,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 11),
+            onStart: () => {
+                animateSpline(this.spline.application, 11)
+                paginationList[1].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            },
             onComplete: () => container.classList.remove('layering--shadow')
         })
         tl.to('.section--anim-top .article-info--03', {
@@ -462,14 +474,22 @@ class Animation {
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 12),
+            onStart: () => {
+                paginationList[2].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+                animateSpline(this.spline.application, 12)
+            },
         })
         tl.to('.section--anim-top .article-info--04', {
             yPercent: -264,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 13),
+            onStart: () => {
+                paginationList[3].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+                animateSpline(this.spline.application, 13)
+            },
         })
     }
 
@@ -565,6 +585,9 @@ class Animation {
 
     section8() {
         const mm = gsap.matchMedia()
+        const paginationList = document.querySelectorAll('.section--anim-top-2 .pagination__item');
+        const paginationCount = document.querySelector('.section--anim-top-2 .widget-slider__numbers');
+        const listItems = document.querySelectorAll('.section--anim-top-2 .article-info');
         const container = document.querySelector('.section--anim-top-2 .layering')
         let blockTimeline = null;
 
@@ -625,7 +648,10 @@ class Animation {
             delay: 1,
             ease: "power1.out",
             onUpdate: () => container.classList.add('layering--shadow'),
-            onStart: () => animateSpline(this.spline.application, 20),
+            onStart: () => {
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+                animateSpline(this.spline.application, 20)
+            },
         })
         tl.to('.section--anim-top-2 .article-info--02', {
             yPercent: -88,
@@ -633,14 +659,22 @@ class Animation {
             delay: 1,
             ease: "power1.out",
             onComplete: () => container.classList.remove('layering--shadow'),
-            onStart: () => animateSpline(this.spline.application, 21),
+            onStart: () => {
+                paginationList[1].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+                animateSpline(this.spline.application, 21)
+            },
         })
         tl.to('.section--anim-top-2 .article-info--03', {
             yPercent: -176,
             duration: 12,
             delay: 1,
             ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 22),
+            onStart: () => {
+                paginationList[2].classList.add('active')
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+                animateSpline(this.spline.application, 22)
+            },
         })
     }
 
@@ -735,16 +769,36 @@ class Animation {
                 trigger: '.grid--widgets--anim',
                 start: 'top bottom-=100',
                 end: "bottom top",
-                onEnter: () => animateSpline(this.spline.application, 27)
+                onEnter: () => animateSpline(this.spline.application, 27),
+                onLeave: () => {
+                    animateSpline(this.spline.application, 28)
+                    gsap.to('.spline-canvas', {
+                        zIndex: 2,
+                        xPercent: 0,
+                        yPercent: 50,
+                    })
+                },
+                onEnterBack: () => {
+                    animateSpline(this.spline.application, 26)
+                    gsap.to('.spline-canvas', {
+                        zIndex: 1,
+                        xPercent: -20,
+                        yPercent: 0,
+                    })
+                },
+            },
+            onComplete: () => {
+                const btn = document.querySelector('.button-circle.anim-el-in');
+                btn.classList.remove('button-circle--stay')
             }
         });
 
         tl.from('.anim-el-in', {
             y: 50,
             duration: 1,
-            opacity: 0.4,
+            opacity: 0,
             stagger: 0.3,
-        }, '-=0.9')
+        })
     }
 
     footer() {
@@ -758,7 +812,7 @@ class Animation {
                     gsap.to('.spline-canvas', {
                         zIndex: 2,
                         xPercent: 0,
-                        yPercent: 30,
+                        yPercent: 50,
                     })
                 },
                 onLeaveBack: () => {
@@ -776,26 +830,87 @@ class Animation {
             duration: 1,
             opacity: 0,
             stagger: 0.5,
-        }, '-=0.9')
+        })
     }
 
     menu() {
+        const mm = gsap.matchMedia();
         const burger = document.querySelector('.burger');
         const menu = document.querySelector('.menu');
+        const desktopMenu = document.querySelector('.desktop-menu');
         const body = document.querySelector('body');
         const burgerIcons = burger.querySelectorAll('img');
 
-        burger.addEventListener('click', () => {
-            menu.classList.toggle('active')
-            body.classList.toggle('fixed')
+        gsap.to(desktopMenu, {
+            width: 0,
+            padding: '19px 0',
+            margin: 0,
+        })
 
-            if (menu.classList.contains('active')) {
+        const checkBurgerStatus = (desktop?: boolean) => {
+            if (burger.classList.contains('active')) {
                 burgerIcons[0].setAttribute('hidden', '')
-                burgerIcons[1].removeAttribute('hidden')
+                if (desktop) {
+                    burgerIcons[2].removeAttribute('hidden')
+                } else {
+                    burgerIcons[1].removeAttribute('hidden')
+                }
             } else {
-                burgerIcons[1].setAttribute('hidden', '')
+                if (desktop) {
+                    burgerIcons[2].setAttribute('hidden', '')
+                } else {
+                    burgerIcons[1].setAttribute('hidden', '')
+                }
                 burgerIcons[0].removeAttribute('hidden')
             }
+        }
+
+        function toggleMobileMenu() {
+            menu.classList.toggle('active')
+            burger.classList.toggle('active')
+            body.classList.toggle('fixed')
+            checkBurgerStatus()
+        }
+
+        function toggleDesktopMenu() {
+            burger.classList.toggle('active')
+            if (burger.classList.contains('active')) {
+                gsap.to(desktopMenu, {
+                    width: '100%',
+                    padding: '19px 56px',
+                    margin: '0 0 0 15px',
+                    duration: 1,
+                })
+                gsap.from('.desktop-menu__link', {
+                    yPercent: -100,
+                    opacity: 0,
+                    stagger: 0.1,
+                    duration: 0.5,
+                    ease: "back.out(1.7)",
+                })
+            } else {
+                gsap.to(desktopMenu, {
+                    width: '0%',
+                    padding: '19px 0',
+                    margin: 0,
+                })
+            }
+            checkBurgerStatus(true)
+        }
+
+        mm.add('(min-width: 1440px)', () => {
+            burger.addEventListener('click', toggleDesktopMenu)
+
+            return function () {
+                burger.removeEventListener('click', toggleDesktopMenu)
+            };
+        })
+
+        mm.add('(max-width: 1439px)', () => {
+            burger.addEventListener('click', toggleMobileMenu)
+            return function () {
+                burger.removeEventListener('click', toggleMobileMenu)
+            };
         })
     }
 }
