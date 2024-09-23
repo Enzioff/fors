@@ -899,12 +899,12 @@ class Animation {
         }
 
         mm.add('(min-width: 1440px)', () => {
-            burger.addEventListener('mouseenter', toggleDesktopMenu)
-            burger.addEventListener('mouseleave', toggleDesktopMenu)
+            burger.addEventListener('mouseover', toggleDesktopMenu)
+            burger.addEventListener('mouseout', toggleDesktopMenu)
 
             return function () {
-                burger.removeEventListener('mouseenter', toggleDesktopMenu)
-                burger.removeEventListener('mouseleave', toggleDesktopMenu)
+                burger.removeEventListener('mouseover', toggleDesktopMenu)
+                burger.removeEventListener('mouseout', toggleDesktopMenu)
             };
         })
 
