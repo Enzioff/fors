@@ -55,10 +55,16 @@
 
     .marquee__track {
       gap: 30px;
-      margin-left: -26%;
+      margin-left: 0;
 
       @include r($tablet) {
         gap: 15px;
+      }
+
+      &--revert {
+        flex-direction: row-reverse;
+        margin-left: -215%;
+        margin-right: initial;
       }
     }
 

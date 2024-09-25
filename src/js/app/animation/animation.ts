@@ -306,7 +306,6 @@ class Animation {
         tl.to('.article-info--1', {
             yPercent: 0,
             duration: 12,
-            delay: 1,
             ease: "power1.out",
             onStart: () => animateSpline(this.spline.application, 3),
             onUpdate: () => container.classList.add('layering--shadow')
@@ -314,7 +313,6 @@ class Animation {
         tl.to('.article-info--2', {
             yPercent: -100,
             duration: 12,
-            delay: 1,
             ease: "power1.out",
             onStart: () => {
                 animateSpline(this.spline.application, 4)
@@ -333,13 +331,6 @@ class Animation {
             },
             onComplete: () => {
                 container.classList.remove('layering--shadow')
-                gsap.to('.article-notification--1', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
             },
             onReverseComplete: () => {
                 gsap.to('.article-notification--1', {
@@ -353,8 +344,8 @@ class Animation {
         })
         tl.to('.article-info--3', {
             yPercent: -200,
+            margin: 0,
             duration: 12,
-            delay: 1,
             ease: "power1.out",
             onStart: () => {
                 animateSpline(this.spline.application, 5)
@@ -362,6 +353,13 @@ class Animation {
                 paginationCount.textContent = getTotalElements(paginationList, listItems);
             },
             onUpdate: () => {
+                gsap.to('.article-notification--1', {
+                    x: 0,
+                    y: 0,
+                    scale: 0.3,
+                    duration: 0.5,
+                    opacity: 0,
+                })
                 mm.add('(min-width: 1440px)', () => {
                     gsap.to('.article-notification--2', {
                         x: -200,
@@ -384,13 +382,7 @@ class Animation {
                 })
             },
             onComplete: () => {
-                gsap.to('.article-notification--2', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
+
             },
             onReverseComplete: () => {
                 gsap.to('.article-notification--2', {
@@ -405,7 +397,7 @@ class Animation {
         tl.to('.article-info--4', {
             yPercent: -300,
             duration: 12,
-            delay: 1,
+            margin: 0,
             ease: "power1.out",
             onStart: () => {
                 animateSpline(this.spline.application, 6)
@@ -413,6 +405,13 @@ class Animation {
                 paginationCount.textContent = getTotalElements(paginationList, listItems);
             },
             onUpdate: () => {
+                gsap.to('.article-notification--2', {
+                    x: 0,
+                    y: 0,
+                    scale: 0.3,
+                    duration: 0.5,
+                    opacity: 0,
+                })
                 mm.add('(min-width: 1440px)', () => {
                     gsap.to('.article-notification--3', {
                         x: 150,
@@ -435,13 +434,7 @@ class Animation {
                 })
             },
             onComplete: () => {
-                gsap.to('.article-notification--3', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
+
             },
             onReverseComplete: () => {
                 gsap.to('.article-notification--3', {
@@ -456,7 +449,7 @@ class Animation {
         tl.to('.article-info--5', {
             yPercent: -400,
             duration: 12,
-            delay: 1,
+            margin: 0,
             ease: "power1.out",
             onStart: () => {
                 animateSpline(this.spline.application, 7)
@@ -464,6 +457,13 @@ class Animation {
                 paginationCount.textContent = getTotalElements(paginationList, listItems);
             },
             onUpdate: () => {
+                gsap.to('.article-notification--3', {
+                    x: 0,
+                    y: 0,
+                    scale: 0.3,
+                    duration: 0.5,
+                    opacity: 0,
+                })
                 mm.add('(min-width: 1440px)', () => {
                     gsap.to('.article-notification--4', {
                         x: -260,
@@ -999,6 +999,11 @@ class Animation {
     }
 
     section11() {
+        const marqueeContainerTop = document.querySelector('.marquee__track--anim-01')
+        const marqueeContainerBottom = document.querySelector('.marquee__track--anim-02')
+        const totalWidthTop = marqueeContainerTop.scrollWidth;
+        const totalWidthBottom = marqueeContainerBottom.scrollWidth;
+
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.marquee--anim-2',
@@ -1007,33 +1012,19 @@ class Animation {
             }
         });
 
-        ScrollTrigger.matchMedia({
-            // desktop
-            "(min-width: 1440px)": function () {
-                tl.to('.marquee__track--anim-01', {
-                    x: -243,
-                    duration: 1,
-                }).to('.marquee__track--anim-02', {
-                    x: 160,
-                    duration: 1,
-                }, "<")
-                return function () {
-                    tl.kill();
-                };
-            },
-            "(max-width: 1439px)": function () {
-                tl.to('.marquee__track--anim-01', {
-                    x: -143,
-                    duration: 1,
-                }).to('.marquee__track--anim-02', {
-                    x: 73,
-                    duration: 1,
-                }, "<")
-                return function () {
-                    tl.kill();
-                };
-            },
-        });
+        marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
+        marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
+        tl.to('.marquee__track--anim-01', {
+            x: -totalWidthTop / 2,
+            duration: 20,
+            ease: "linear",
+            repeat: -1,
+        }).to('.marquee__track--anim-02', {
+            x: totalWidthBottom / 2,
+            duration: 20,
+            ease: "linear",
+            repeat: -1,
+        }, "<")
     }
 
     section12() {
