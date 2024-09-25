@@ -1009,22 +1009,26 @@ class Animation {
                 trigger: '.marquee--anim-2',
                 start: 'top bottom',
                 end: "bottom top",
+                onEnter: () => {
+                    marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
+                    marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
+                    tl.to('.marquee__track--anim-01', {
+                        x: -totalWidthTop / 2,
+                        duration: 20,
+                        ease: "linear",
+                        repeat: -1,
+                    }).to('.marquee__track--anim-02', {
+                        x: totalWidthBottom / 2,
+                        duration: 20,
+                        ease: "linear",
+                        repeat: -1,
+                    }, "<")
+                },
+                onLeave: () => {
+                    tl.paused()
+                }
             }
         });
-
-        marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
-        marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
-        tl.to('.marquee__track--anim-01', {
-            x: -totalWidthTop / 2,
-            duration: 20,
-            ease: "linear",
-            repeat: -1,
-        }).to('.marquee__track--anim-02', {
-            x: totalWidthBottom / 2,
-            duration: 20,
-            ease: "linear",
-            repeat: -1,
-        }, "<")
     }
 
     section12() {
