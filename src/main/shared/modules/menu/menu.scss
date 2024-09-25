@@ -8,14 +8,13 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 168px 30px 60px;
-  height: calc(100vh - env(safe-area-inset-top));
+  height: 100svh;
   background-color: $bg;
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   z-index: 3;
   transition: .2s linear;
-  min-height: -webkit-fill-available;
 
   @include r($tablet) {
     display: flex;
