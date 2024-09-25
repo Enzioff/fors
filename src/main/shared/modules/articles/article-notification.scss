@@ -1,58 +1,98 @@
 .article-notification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 46px;
   width: 100%;
   max-width: 306px;
-  padding: 24px 30px;
+  padding: 15px;
   border-radius: 25px;
   background-color: rgba(#142271, .15);
   backdrop-filter: blur(7.5px);
-  z-index: 1;
+  z-index: 0;
+  opacity: 0;
+  transform: scale(0.3);
+
+  @include r($tablet) {
+    max-width: 227px;
+    padding: 12px 15px;
+    border-radius: 15px;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    @include r($tablet) {
+      gap: 0;
+    }
+  }
 
   &__picture {
     display: flex;
     width: 75px;
     height: 75px;
     flex-shrink: 0;
+
+    @include r($tablet) {
+      width: 45px;
+      height: 45px;
+    }
   }
 
   &__title {
     margin-bottom: 5px;
     font-family: $font-main;
-    font-size: 45px;
-    font-weight: 300;
-    line-height: 45px;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 54.6px;
     text-align: left;
     color: $white;
+
+    @include r($tablet) {
+      font-size: 35px;
+      line-height: 42px;
+    }
   }
 
   &__text {
     font-family: $font-accent;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: 400;
-    line-height: 16px;
+    line-height: 18px;
     text-align: left;
     color: $white;
+
+    @include r($tablet) {
+      font-size: 12px;
+      line-height: 14.4px;
+    }
   }
 
   &--big {
-    align-items: flex-start;
+    align-items: center;
     max-height: 130px;
-    padding: 20px 20px 20px;
+    padding: 15px;
+
+    @include r($tablet) {
+      padding: 13px 15px;
+    }
 
     .article-notification__title {
       margin-bottom: 0;
-      font-size: 60px;
-      font-weight: 300;
-      line-height: 60px;
-    }
-
-    .article-notification__text {
-      font-size: 18.25px;
+      font-family: $font-main;
+      font-size: 82px;
       font-weight: 400;
-      line-height: 18.25px;
+      line-height: 1;
+      text-align: left;
+
+      @include r($tablet) {
+        font-size: 42px;
+      }
     }
 
     .article-notification__item {
@@ -60,33 +100,111 @@
       flex-direction: column;
       gap: 10px;
     }
+
+    &-2 {
+      align-items: flex-start;
+      padding: 15px;
+      gap: 0;
+
+      @include r($tablet) {
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+        max-width: 229px;
+      }
+
+      .article-notification__title {
+        margin-bottom: 0;
+        font-family: $font-main;
+        font-size: 70px;
+        font-weight: 400;
+        line-height: 91px;
+        text-align: left;
+
+        @include r($tablet) {
+          font-size: 35px;
+          line-height: 42px;
+        }
+      }
+
+      .article-notification__item {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        width: min-content;
+
+        @include r($tablet) {
+          width: auto;
+        }
+      }
+    }
   }
 
   &--small {
-    padding: 17px 10px;
+    padding: 0 15px 12px;
     width: 130px;
     height: 130px;
 
-    .article-notification__title {
-      margin-bottom: 0;
-      font-size: 70px;
-      font-weight: 300;
-      line-height: 70px;
-      text-align: center;
+    @include r($tablet) {
+      width: 100px;
+      height: 100px;
     }
 
-    .article-notification__text {
-      font-size: 20px;
+    .article-notification__title {
+      margin-bottom: 0;
+      font-family: $font-main;
+      font-size: 70px;
       font-weight: 400;
-      line-height: 20px;
+      line-height: 91px;
+      text-align: left;
+
+      @include r($tablet) {
+        font-size: 42px;
+        line-height: 56.7px;
+      }
     }
 
     .article-notification__item {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
+      gap: 0;
       width: 100%;
+    }
+
+    &-2 {
+      padding: 0 15px 12px;
+      width: 130px;
+      height: 130px;
+
+      @include r($tablet) {
+        padding: 10px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .article-notification__title {
+        margin-bottom: 0;
+        font-family: $font-main;
+        font-size: 42px;
+        font-weight: 400;
+        line-height: 54.6px;
+
+        @include r($tablet) {
+          font-size: 35px;
+          line-height: 42px;
+        }
+      }
+
+      .article-notification__item {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 0;
+        width: 100%;
+      }
     }
   }
 

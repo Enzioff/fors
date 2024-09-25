@@ -70,6 +70,11 @@ body {
   z-index: 1;
 }
 
+.visible {
+  overflow: visible;
+  max-height: 302px;
+}
+
 .fixed {
   overflow: hidden;
 }

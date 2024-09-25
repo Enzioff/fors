@@ -5,9 +5,15 @@ import {animateSpline} from "./animate";
 class Spline {
     application: Application;
     cube: SPEObject;
+    desktopWidthMediaQuery
+    tabletWidthMediaQuery
+    mobileWidthMediaQuery
 
     constructor(el: HTMLCanvasElement, url: string) {
         this.setApplication(el, url);
+        this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1440px)')
+        this.tabletWidthMediaQuery = window.matchMedia('(min-width: 768px)')
+        this.mobileWidthMediaQuery = window.matchMedia('(min-width: 320px)')
     }
 
     setApplication = (el: HTMLCanvasElement, url: string) => {
@@ -15,8 +21,18 @@ class Spline {
         this.application.load(url).then(() => {
             this.cube = this.application.findObjectByName('cube');
             animateSpline(this.application, 0);
-            this.application.setZoom(1.4)
+            this.checkWidthMediaQuery();
         })
+    }
+
+    checkWidthMediaQuery = () => {
+        if (this.desktopWidthMediaQuery.matches) {
+            this.application.setZoom(1.4)
+        } else if (this.tabletWidthMediaQuery.matches) {
+            this.application.setZoom(0.8)
+        } else if (this.mobileWidthMediaQuery.matches) {
+            this.application.setZoom(0.8)
+        }
     }
 
     initAnimateButton = () => {
@@ -44,21 +60,21 @@ class Spline {
         animateSpline(this.application, buttonID);
     }
 
-    handleResize = () => {
-        console.log('Теперь ресайз');
-
-        const resizeHandler = () => {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-
-            if (this.application) {
-                this.application.setSize(width, height);
-            }
-        };
-
-        resizeHandler();
-        window.addEventListener('resize', resizeHandler);
-    }
+    // handleResize = () => {
+    //     console.log('Теперь ресайз');
+    //
+    //     const resizeHandler = () => {
+    //         const width = window.innerWidth;
+    //         const height = window.innerHeight;
+    //
+    //         if (this.application) {
+    //             this.application.setSize(width, height);
+    //         }
+    //     };
+    //
+    //     resizeHandler();
+    //     window.addEventListener('resize', resizeHandler);
+    // }
 }
 
 export {

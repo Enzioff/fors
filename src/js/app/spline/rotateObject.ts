@@ -58,10 +58,12 @@ const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
 };
 
 function rotateObject(el: SPEObject, key: RotateKey) {
-    gsap.killTweensOf(el.rotation);
+    if (el?.rotation) {
+        gsap.killTweensOf(el.rotation);
+    }
 
     const params = rotationParams[key];
-    if (params) {
+    if (params && el?.rotation) {
         gsap.to(el.rotation, params);
     }
 }
