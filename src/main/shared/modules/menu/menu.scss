@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   padding: 168px 30px 60px;
-  height: 100svh;
+  height: calc(100svh + 20px);
   background-color: $bg;
   opacity: 0;
   visibility: hidden;
