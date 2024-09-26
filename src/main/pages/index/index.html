@@ -3,9 +3,11 @@
 <%= htmlWebpackPlugin.options.widgets.head %>
 <body>
 <%= htmlWebpackPlugin.options.widgets.header %>
-<canvas class="spline-canvas"></canvas>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
 <main class="main">
-    <section class="section section--bg pt-50 ptt-158 ptm-126 pb-50 pbt-60 mb-150 mbt-0">
+    <section class="section section--bg animate-section-1 pt-50 ptt-158 ptm-126 pb-50 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-36 mbt-20 mbm-20 order-mob--2">
                 <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
@@ -109,7 +111,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--radial section-second ptt-70 ptm-60 pbt-70 pbm-60 mb-150 mbt-0">
+    <section class="section section--radial animate-section-2 ptt-70 ptm-60 pbt-70 pbm-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid">
                 <div class="grid__item grid__item--3 grid__item-tab--6 order-mob--2">
@@ -209,7 +211,7 @@
                         </ul>
                     </div>
                     <div class="tools">
-                        <div class="tools__title">&gt;30 технологий</div>
+                        <div class="tools__title title-in">&gt;30 технологий</div>
                         <div class="tags">
                             <a href="#" class="tag">PostgreSQL</a>
                             <a href="#" class="tag">Oracle</a>
@@ -227,12 +229,12 @@
             </div>
         </div>
     </section>
-    <section class="section section--blue section--radius pt-150 ptt-60 pb-150 pbt-60 mb-150 mbt-0">
+    <section class="section section--blue section--radius animate-section-3 pt-150 ptt-60 pb-150 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-100 mbt-60 mbm-50">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
                 <div class="grid__item grid__item--3 grid__item-tab--6">
-                    <h2 class="title title--light">
+                    <h2 class="title animate-title title--light">
                         ИТ ОПЫТ—ОСНОВА
                         ДЛЯ РАЗРАБОТКИ
                         ИННОВАЦИОННЫХ
@@ -477,7 +479,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2">
-                    <div class="layering layering--shadow">
+                    <div class="layering">
                         <div class="article-info article-info--1">
                             <div class="article-info__top">
                                 <div class="article-info__head">
@@ -670,6 +672,7 @@
                                 </picture>
                             </div>
                         </div>
+                        <div class="layering__shadow"></div>
                     </div>
                 </div>
                 <div class="grid__item grid__item-tab--10 grid__item-mob--4 desktop-hidden order-tab--1"></div>
@@ -709,7 +712,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--anim-top pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
+    <section class="section animate-section-4 pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-70 mbt-60">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
@@ -743,7 +746,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--2">
-                    <div class="layering layering--shadow layering--light mbt-62">
+                    <div class="layering layering--light mbt-62">
                         <div class="article-info article-info--text article-info--01">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle">{01}</div>
@@ -802,6 +805,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="layering__shadow"></div>
                     </div>
                     <a href="#" class="button-circle button-circle--right button-circle--small desktop-hidden">
                         <svg class="button-circle__icon">
@@ -904,7 +908,7 @@
             </div>
         </div>
     </section>
-    <section class="section section--anim-top-2 pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
+    <section class="section animate-section-5 pt-70 ptt-60 pb-70 pbt-60 mb-150 mbt-0">
         <div class="container">
             <div class="grid mb-70 mbt-60 mbm-160">
                 <div class="grid__item grid__item--3 grid__item-tab--6"></div>
@@ -938,7 +942,7 @@
                     </div>
                 </div>
                 <div class="grid__item grid__item--between grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 order-mob--1 order-mob--2">
-                    <div class="layering layering--shadow layering--light mbt-73">
+                    <div class="layering layering--light mbt-73">
                         <div class="article-info article-info--text article-info--01">
                             <div class="article-info__top">
                                 <div class="article-info__pretitle article-info__pretitle--dark">24/7</div>
@@ -981,6 +985,7 @@
                                 </div>
                             </div>
                         </div>
+                        <div class="layering__shadow"></div>
                     </div>
                     <a href="#" class="button-circle button-circle--right button-circle--small desktop-hidden">
                         <svg class="button-circle__icon">

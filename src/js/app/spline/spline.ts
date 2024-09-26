@@ -1,5 +1,4 @@
 import {Application, SPEObject} from '@splinetool/runtime';
-import {callInnerAnimation, AnimationKey} from "./callInnerAnimation";
 import {animateSpline} from "./animate";
 
 class Spline {
@@ -10,7 +9,7 @@ class Spline {
     mobileWidthMediaQuery
 
     constructor(el: HTMLCanvasElement, url: string) {
-        this.setApplication(el, url);
+        this.setApplication(el, url)
         this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1440px)')
         this.tabletWidthMediaQuery = window.matchMedia('(min-width: 768px)')
         this.mobileWidthMediaQuery = window.matchMedia('(min-width: 320px)')
@@ -18,10 +17,22 @@ class Spline {
 
     setApplication = (el: HTMLCanvasElement, url: string) => {
         this.application = new Application(el);
-        this.application.load(url).then(() => {
-            this.cube = this.application.findObjectByName('cube');
-            animateSpline(this.application, 0);
-            this.checkWidthMediaQuery();
+        window.addEventListener('load', () => {
+            const delayBeforeLoad = 400;
+            let timeout: string | number | NodeJS.Timeout = null;
+
+            timeout = setTimeout(() => {
+                this.application.load(url, {
+                    credentials: 'include',
+                    mode: 'no-cors',
+                }).then(() => {
+                    this.cube = this.application.findObjectByName('cube');
+                    this.handleResize()
+                    this.checkWidthMediaQuery();
+                    animateSpline(this.application, 0);
+                })
+                clearTimeout(timeout)
+            }, delayBeforeLoad)
         })
     }
 
@@ -35,46 +46,19 @@ class Spline {
         }
     }
 
-    initAnimateButton = () => {
-        const elementsDemo = document.querySelectorAll('.button');
-        const elementsActive = document.querySelectorAll('.button-active');
+    handleResize = () => {
+        const resizeHandler = () => {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
 
-        elementsDemo.forEach((item) => {
-            item.addEventListener('click', () => {
-                this.triggerButtonEvent(item.id as AnimationKey);
-            })
-        });
+            if (this.application) {
+                this.application.setSize(width, height);
+            }
+        };
 
-        elementsActive.forEach((item) => {
-            item.addEventListener('click', () => {
-                this.triggerButtonActiveEvent(Number(item.id));
-            })
-        });
+        resizeHandler();
+        window.addEventListener('resize', resizeHandler);
     }
-
-    triggerButtonEvent = (buttonID: AnimationKey) => {
-        callInnerAnimation(this.application, buttonID);
-    }
-
-    triggerButtonActiveEvent = (buttonID: number) => {
-        animateSpline(this.application, buttonID);
-    }
-
-    // handleResize = () => {
-    //     console.log('Теперь ресайз');
-    //
-    //     const resizeHandler = () => {
-    //         const width = window.innerWidth;
-    //         const height = window.innerHeight;
-    //
-    //         if (this.application) {
-    //             this.application.setSize(width, height);
-    //         }
-    //     };
-    //
-    //     resizeHandler();
-    //     window.addEventListener('resize', resizeHandler);
-    // }
 }
 
 export {

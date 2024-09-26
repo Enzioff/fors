@@ -3,18 +3,25 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {animateSpline} from "../spline/animate";
 import {Spline} from "../spline/spline";
 import {getTotalElements} from "../../helpers/getTotalElements";
+import HeaderAnimation from "./header";
+import {animateType, breakPoints} from "../../types";
+import {breakPointsValues} from "../../types/types";
 
 class Animation {
-    spline;
+    spline: Spline;
+    mm: gsap.MatchMedia;
+    headerAnimation: HeaderAnimation;
+    breakPoints: breakPoints;
 
-    constructor(spline: Spline) {
+    constructor(spline?: Spline) {
         this.spline = spline;
         this.init()
     }
 
     init() {
-        gsap.registerPlugin(ScrollTrigger)
 
+        this.global()
+        this.globalAnimations()
         this.menu()
         this.section1()
         this.section2()
@@ -31,178 +38,224 @@ class Animation {
         this.footer()
     }
 
+    global() {
+        gsap.registerPlugin(ScrollTrigger);
+        this.mm = gsap.matchMedia();
+        this.breakPoints = {
+            desktop: breakPointsValues.DESKTOP,
+            tabletMax: breakPointsValues.TABLET_MAX,
+            tablet: breakPointsValues.TABLET,
+            mobileMax: breakPointsValues.MOBILE_MAX,
+            mobile: breakPointsValues.MOBILE,
+        }
+
+        this.headerAnimation = new HeaderAnimation()
+    }
+
+    globalAnimations = () => {
+        this.headerAnimation.animate(animateType.FIRST);
+    }
+
     section1() {
-        const tl = gsap.timeline();
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax} = context.conditions;
 
-        gsap.to('.header', {
-            yPercent: -100,
-            duration: 1,
-        })
+            if (isTabletMax) {
+                this.headerAnimation.animate(animateType.VISIBLE)
+            }
 
-        const mm = gsap.matchMedia();
-
-        mm.add("(min-width: 1440px)", () => {
             ScrollTrigger.create({
-                trigger: '.section--bg',
+                trigger: '.animate-section-1',
                 start: 'top top',
-                end: "bottom top",
+                end: "bottom center",
                 onEnterBack: () => {
-                    gsap.to('.header', {
-                        yPercent: -100,
-                        duration: 1,
-                    })
+                    isDesktop && this.headerAnimation.animate(animateType.HIDE);
+                    animateSpline(this.spline.application, 0)
                 },
                 onLeave: () => {
-                    gsap.to('.header', {
-                        yPercent: 0,
-                        duration: 1,
-                    })
+                    isDesktop && this.headerAnimation.animate(animateType.VISIBLE)
+                    animateSpline(this.spline.application, 1)
                 }
-            })
-            return () => ScrollTrigger.refresh();
-        });
+            });
 
-        mm.add("(max-width: 1439px)", () => {
-            gsap.to('.header', {
-                yPercent: 0,
-                duration: 1,
-            })
-
-            ScrollTrigger.create({
-                trigger: '.section--bg',
-                start: 'top top',
-                end: "bottom top"
-            })
-            return () => ScrollTrigger.refresh();
+            return () => {
+                ScrollTrigger.refresh()
+                ScrollTrigger.update()
+                this.headerAnimation.updateStyles();
+            };
         })
 
-        tl
-            .from('.logo', {
-                y: -50,
-                opacity: 0,
-                duration: 0.8,
-            })
-            .from('.anim-in-right', {
-                x: 50,
-                opacity: 0,
-                duration: 0.8,
-            }, "-=0.6")
-            .from('.anim-in-bottom', {
-                y: 50,
-                opacity: 0,
-                duration: 0.8,
-            }, "-=0.6")
-            .from('.anim-in-bottom-stagger', {
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-            }, "-=0.8")
-            .from('.title--main span', {
-                y: 30,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-                ease: "expo.out",
-            }, "-=1")
-            .from('.widget-info', {
-                y: -50,
-                opacity: 0,
-                duration: 0.8,
-            }, "-=1")
-            .from('.widget-stats', {
-                y: -50,
-                opacity: 0,
-                duration: 0.8,
-            }, "-=0.9")
+        gsap.from('.logo', {
+            y: -50,
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => gsap.killTweensOf('.logo')
+        })
+
+        gsap.from('.anim-in-right', {
+            x: 100,
+            opacity: 0,
+            duration: 0.8,
+            onComplete: () => gsap.killTweensOf('.anim-in-right')
+        })
+
+        gsap.from('.anim-in-bottom', {
+            y: 100,
+            opacity: 0,
+            duration: 1,
+            onComplete: () => gsap.killTweensOf('.anim-in-bottom')
+        })
+
+        gsap.from('.anim-in-bottom-stagger', {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            onComplete: () => gsap.killTweensOf('.anim-in-bottom-stagger')
+        })
+
+        gsap.from('.title--main span', {
+            y: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            ease: "expo.out",
+            onComplete: () => gsap.killTweensOf('.title--main span')
+        })
+
+        gsap.from(['.widget-info', '.widget-stats'], {
+            y: -50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            onComplete: () => gsap.killTweensOf(['.widget-info', '.widget-stats'])
+        })
     }
 
     section2() {
-        const tl = gsap.timeline({
+        gsap.from('.direction .direction__item', {
+            x: 50,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
             scrollTrigger: {
-                trigger: '.section-second',
-                pin: false,
-                start: "center bottom",
-                end: "bottom top",
-                onEnter: () => {
-                    animateSpline(this.spline.application, 1)
-                }
+                trigger: '.direction',
+                start: 'center bottom',
             }
-        });
+        })
 
-        tl
-            .from('.section-second .direction__item', {
-                x: 50,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-            })
-            .from('.section-second .news-item', {
-                y: 100,
-                opacity: 0,
-                duration: 0.8,
-            }, "-=0.9")
-            .from('.section-second .info-block', {
-                y: 100,
-                opacity: 0,
-                duration: 0.8,
-                stagger: 0.1,
-            }, "-=0.9")
+        gsap.from('.info-blocks .info-block', {
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            stagger: 0.2,
+            scrollTrigger: {
+                trigger: '.info-blocks',
+                start: 'center bottom',
+            }
+        })
 
-        gsap.from('.section-second .tags .tag', {
+        gsap.from('.news-item', {
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: '.news-item',
+                start: 'center bottom',
+            }
+        })
+
+        gsap.from('.tags .tag', {
             scale: 0.3,
             opacity: 0,
             duration: 0.6,
             stagger: 0.1,
             ease: "power3.out",
             scrollTrigger: {
-                trigger: '.section-second .tags'
+                trigger: '.tags',
+                start: 'center bottom',
+            }
+        })
+
+        gsap.from('.title-in', {
+            y: 100,
+            opacity: 0,
+            duration: 0.8,
+            scrollTrigger: {
+                trigger: '.title-in',
+                start: 'center bottom',
             }
         })
     }
 
     section3() {
-        const mm = gsap.matchMedia();
+        ScrollTrigger.create({
+            trigger: '.animate-section-3',
+            start: 'top bottom',
+            onEnter: () => {
+                animateSpline(this.spline.application, 2)
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.section--blue',
-                start: 'top bottom',
-                end: "bottom top",
-                onEnter: () => {
-                    animateSpline(this.spline.application, 2)
-                    mm.add("(min-width: 768px)", () => {
+                this.mm.add({
+                    isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+                    isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+                }, (context) => {
+                    const {isTablet, isMobileMax} = context.conditions;
+
+                    if (isTablet) {
                         gsap.to('.spline-canvas', {
                             xPercent: -20,
                         })
-                    })
-                    mm.add("(max-width: 767px)", () => {
+                    }
+
+                    if (isMobileMax) {
                         gsap.to('.spline-canvas', {
                             xPercent: 0,
                         })
-                    })
-                },
-                onLeaveBack: () => {
-                    animateSpline(this.spline.application, 1)
-                    gsap.to('.spline-canvas', {
-                        xPercent: 0,
-                    })
-                }
+                    }
+                })
             },
-            onComplete: () => {
-                gsap.set(".section--anim-top", {clearProps: "all"});
-                gsap.set(".section--blue", {clearProps: "all"});
-                ScrollTrigger.refresh()
+            onLeaveBack: () => {
+                animateSpline(this.spline.application, 1)
+                gsap.to('.spline-canvas', {
+                    xPercent: 0,
+                })
             }
-        });
+        })
 
-        tl.from('.section--blue', {
+        gsap.from('.animate-section-3', {
             y: 400,
             duration: 1,
-        }).from('.section--blue .title', {
+            lazy: true,
+            scrollTrigger: {
+                trigger: '.animate-section-3',
+                start: 'top bottom',
+                once: true,
+                onLeave: () => animateSpline(this.spline.application, 8),
+            },
+            onComplete: () => {
+                gsap.set('.animate-section-3', {clearProps: "all"})
+                gsap.killTweensOf('.animate-section-3')
+                ScrollTrigger.refresh(true)
+            },
+        })
+
+        gsap.from('.animate-section-3 .animate-title', {
             y: -400,
             duration: 1,
-        }, '-=1')
+            scrollTrigger: {
+                trigger: '.animate-section-3',
+                start: 'top bottom',
+                once: true,
+            },
+            onComplete: () => {
+                gsap.set('.animate-section-3 .animate-title', {clearProps: "all"})
+                gsap.killTweensOf('.animate-section-3 .animate-title')
+                ScrollTrigger.refresh(true)
+            }
+        })
     }
 
     marquee() {
@@ -215,153 +268,146 @@ class Animation {
             },
         });
 
-        ScrollTrigger.matchMedia({
-            "(min-width: 768px)": function () {
-                tl.to('.marquee__track--anim-1', {
-                    x: -600,
-                    duration: 1,
-                }).to('.marquee__track--anim-2', {
-                    x: 600,
-                    duration: 1,
-                }, "<")
-                return function () {
-                    tl.kill();
-                };
-            },
-            "(max-width: 767px)": function () {
-                tl.to('.marquee__track--anim-1', {
-                    x: -200,
-                    duration: 1,
-                }).to('.marquee__track--anim-2', {
-                    x: 200,
-                    duration: 1,
-                }, "<")
-                return function () {
-                    tl.kill();
-                };
-            },
-        });
+        this.mm.add({
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+        }, (context) => {
+            const {isTabletMax} = context.conditions;
+
+            tl.to('.marquee__track--anim-1', {
+                x: isTabletMax ? -200 : -600,
+                duration: 1,
+                lazy: true,
+            }).to('.marquee__track--anim-2', {
+                x: isTabletMax ? 200 : 600,
+                duration: 1,
+                lazy: true,
+            }, "<")
+
+            return () => {
+                tl.kill();
+            }
+        })
     }
 
     section4() {
-        const mm = gsap.matchMedia();
         const paginationList = document.querySelectorAll('.section--blue .pagination__item');
         const paginationCount = document.querySelector('.section--blue .widget-slider__numbers');
         const listItems = document.querySelectorAll('.section--blue .article-info');
         const container = document.querySelector('.section--blue .layering');
-        let blockTimeline = null;
-        mm.add("(min-width: 768px)", () => {
-            blockTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.anim-stay',
-                    pin: true,
-                    pinSpacing: true,
-                    start: 'center center',
-                    end: "bottom top",
-                    scrub: 1,
-                    onLeaveBack: () => animateSpline(this.spline.application, 2)
-                },
-            });
-        })
-        mm.add("(max-width: 767px)", () => {
-            blockTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.anim-stay',
-                    pin: true,
-                    pinSpacing: true,
-                    start: 'center center+=100',
-                    end: "bottom top",
-                    scrub: 1,
-                    onLeaveBack: () => {
-                        animateSpline(this.spline.application, 2)
-                        gsap.to('.spline-canvas', {
-                            yPercent: 0
-                        })
-                    },
-                    onEnter: () => {
-                        gsap.to('.spline-canvas', {
-                            yPercent: -20,
-                            zIndex: 1,
-                        })
-                    },
-                    onLeave: () => {
-                        animateSpline(this.spline.application, 8)
-                        gsap.to('.spline-canvas', {
-                            yPercent: 0
-                        })
-                    }
-                },
-            });
-        })
+        const shadow = container.querySelector('.layering__shadow');
+
+        const resizeShadow = (flag?: boolean): void => {
+            const shadowHeight = shadow.getBoundingClientRect().height
+
+            gsap.to(shadow, {
+                height: !flag ? shadowHeight - 20 : shadowHeight + 20,
+                duration: 0,
+            })
+        }
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.section--blue .layering',
+                trigger: '.animate-section-3 .layering',
                 start: 'center center',
                 end: "bottom top",
-                scrub: 1
+                scrub: 1,
+                onEnterBack: () => animateSpline(this.spline.application, 7)
             },
-            onComplete: () => animateSpline(this.spline.application, 8),
         });
-        tl.to('.article-info--1', {
-            yPercent: 0,
-            duration: 12,
-            ease: "power1.out",
-            onStart: () => animateSpline(this.spline.application, 3),
-            onUpdate: () => container.classList.add('layering--shadow')
-        })
-        tl.to('.article-info--2', {
-            yPercent: -100,
-            duration: 12,
-            ease: "power1.out",
-            onStart: () => {
-                animateSpline(this.spline.application, 4)
-                paginationList[1].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            },
-            onUpdate: () => {
-                gsap.to('.article-notification--1', {
-                    x: -150,
-                    y: 80,
-                    scale: 1,
-                    duration: 0.5,
-                    opacity: 1,
-                    zIndex: 2,
-                })
-            },
-            onComplete: () => {
-                container.classList.remove('layering--shadow')
-            },
-            onReverseComplete: () => {
-                gsap.to('.article-notification--1', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            }
-        })
-        tl.to('.article-info--3', {
-            yPercent: -200,
-            margin: 0,
-            duration: 12,
-            ease: "power1.out",
-            onStart: () => {
-                animateSpline(this.spline.application, 5)
-                paginationList[2].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            },
-            onUpdate: () => {
-                gsap.to('.article-notification--1', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-                mm.add('(min-width: 1440px)', () => {
-                    gsap.to('.article-notification--2', {
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: '.anim-stay',
+                pin: true,
+                pinSpacing: true,
+                start: isTablet ? 'center center' : 'center center+=100',
+                end: "bottom+=300 top",
+                scrub: 1,
+                onLeaveBack: () => {
+                    animateSpline(this.spline.application, 2)
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: 0
+                    })
+                },
+                onEnter: () => {
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: -20,
+                        zIndex: 1,
+                    })
+                },
+                onLeave: () => {
+                    animateSpline(this.spline.application, 8)
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: 0
+                    })
+                }
+            })
+
+            tl.to('.article-info--1', {
+                yPercent: 0,
+                duration: 100,
+                ease: "linear",
+                lazy: true,
+                onStart: () => animateSpline(this.spline.application, 3),
+            })
+            tl.to('.article-info--2', {
+                yPercent: -100,
+                duration: 100,
+                ease: "linear",
+                lazy: true,
+                onStart: () => {
+                    animateSpline(this.spline.application, 4)
+                    paginationList[1].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                },
+                onUpdate: () => {
+                    gsap.to('.article-notification--1', {
+                        x: -150,
+                        y: 80,
+                        scale: 1,
+                        duration: 0.5,
+                        opacity: 1,
+                        zIndex: 2,
+                    })
+                },
+                onReverseComplete: () => {
+                    gsap.to('.article-notification--1', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                }
+            })
+            tl.to('.article-info--3', {
+                yPercent: -121,
+                duration: 100,
+                ease: "linear",
+                lazy: true,
+                onStart: () => {
+                    animateSpline(this.spline.application, 5)
+                    paginationList[2].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                },
+                onUpdate: () => {
+                    gsap.to('.article-notification--1', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+
+                    isDesktop && gsap.to('.article-notification--2', {
                         x: -200,
                         y: -300,
                         scale: 1,
@@ -369,9 +415,8 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-                mm.add('(max-width: 1439px)', () => {
-                    gsap.to('.article-notification--2', {
+
+                    isTabletMax && gsap.to('.article-notification--2', {
                         x: -120,
                         y: -150,
                         scale: 1,
@@ -379,41 +424,37 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-            },
-            onComplete: () => {
+                },
+                onReverseComplete: () => {
+                    gsap.to('.article-notification--2', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                }
+            })
+            tl.to('.article-info--4', {
+                yPercent: -115,
+                duration: 100,
+                ease: "linear",
+                lazy: true,
+                onStart: () => {
+                    animateSpline(this.spline.application, 6)
+                    paginationList[3].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                },
+                onUpdate: () => {
+                    gsap.to('.article-notification--2', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
 
-            },
-            onReverseComplete: () => {
-                gsap.to('.article-notification--2', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            }
-        })
-        tl.to('.article-info--4', {
-            yPercent: -300,
-            duration: 12,
-            margin: 0,
-            ease: "power1.out",
-            onStart: () => {
-                animateSpline(this.spline.application, 6)
-                paginationList[3].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            },
-            onUpdate: () => {
-                gsap.to('.article-notification--2', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-                mm.add('(min-width: 1440px)', () => {
-                    gsap.to('.article-notification--3', {
+                    isDesktop && gsap.to('.article-notification--3', {
                         x: 150,
                         y: -300,
                         scale: 1,
@@ -421,9 +462,8 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-                mm.add('(max-width: 1439px)', () => {
-                    gsap.to('.article-notification--3', {
+
+                    isTabletMax && gsap.to('.article-notification--3', {
                         x: 70,
                         y: -180,
                         scale: 1,
@@ -431,41 +471,36 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-            },
-            onComplete: () => {
-
-            },
-            onReverseComplete: () => {
-                gsap.to('.article-notification--3', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            }
-        })
-        tl.to('.article-info--5', {
-            yPercent: -400,
-            duration: 12,
-            margin: 0,
-            ease: "power1.out",
-            onStart: () => {
-                animateSpline(this.spline.application, 7)
-                paginationList[4].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            },
-            onUpdate: () => {
-                gsap.to('.article-notification--3', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-                mm.add('(min-width: 1440px)', () => {
-                    gsap.to('.article-notification--4', {
+                },
+                onReverseComplete: () => {
+                    gsap.to('.article-notification--3', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                }
+            })
+            tl.to('.article-info--5', {
+                yPercent: -109,
+                duration: 120,
+                ease: "linear",
+                lazy: true,
+                onStart: () => {
+                    animateSpline(this.spline.application, 7)
+                    paginationList[4].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                },
+                onUpdate: () => {
+                    gsap.to('.article-notification--3', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                    isDesktop && gsap.to('.article-notification--4', {
                         x: -260,
                         y: -300,
                         scale: 1,
@@ -473,9 +508,8 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-                mm.add('(max-width: 1439px)', () => {
-                    gsap.to('.article-notification--4', {
+
+                    isTabletMax && gsap.to('.article-notification--4', {
                         x: -160,
                         y: -200,
                         scale: 1,
@@ -483,172 +517,134 @@ class Animation {
                         opacity: 1,
                         zIndex: 2,
                     })
-                })
-            },
-            onComplete: () => {
-                gsap.to('.article-notification--4', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            },
-            onReverseComplete: () => {
-                gsap.to('.article-notification--4', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            }
+                },
+                onComplete: () => {
+                    gsap.to('.article-notification--4', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                },
+                onReverseComplete: () => {
+                    gsap.to('.article-notification--4', {
+                        x: 0,
+                        y: 0,
+                        scale: 0.3,
+                        duration: 0.5,
+                        opacity: 0,
+                    })
+                }
+            })
         })
     }
 
     section6() {
-        const mm = gsap.matchMedia()
-        const paginationList = document.querySelectorAll('.section--anim-top .pagination__item');
-        const paginationCount = document.querySelector('.section--anim-top .widget-slider__numbers');
-        const listItems = document.querySelectorAll('.section--anim-top .article-info');
-        const container = document.querySelector('.section--anim-top .layering')
-        let blockTimeline: gsap.core.Timeline = null;
-
-        ScrollTrigger.create({
-            trigger: '.section--anim-top .title',
-            start: 'top center',
-            onEnter: () => animateSpline(this.spline.application, 9),
-        });
-
-        ScrollTrigger.matchMedia({
-            "(min-width: 768px)": () => {
-                blockTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '.section--anim-top .grid--anim',
-                        pin: true,
-
-                        pinSpacing: true,
-                        start: 'center center',
-                        end: 'bottom top-=200px',
-                        scrub: true,
-                        onLeave: () => animateSpline(this.spline.application, 15),
-                        onUpdate: () => {
-                            gsap.set(".section--anim-top", {clearProps: "all"});
-                            gsap.set(".section--blue", {clearProps: "all"});
-                        }
-                    },
-                });
-                return function () {
-                    blockTimeline.kill();
-                };
-            },
-            "(max-width: 767px)": () => {
-                blockTimeline = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '.section--anim-top .grid--anim',
-                        pin: true,
-
-                        pinSpacing: true,
-                        start: 'center center+=200',
-                        end: 'bottom top-=200px',
-                        scrub: true,
-                        onUpdate: () => {
-                            gsap.set(".section--anim-top", {clearProps: "all"});
-                            gsap.set(".section--blue", {clearProps: "all"});
-                        },
-                        onLeaveBack: () => {
-                            gsap.to('.spline-canvas', {
-                                yPercent: 0
-                            })
-                        },
-                        onEnter: () => {
-                            gsap.to('.spline-canvas', {
-                                yPercent: -20
-                            })
-                        },
-                        onLeave: () => {
-                            animateSpline(this.spline.application, 15)
-                            gsap.to('.spline-canvas', {
-                                yPercent: 0
-                            })
-                        }
-                    },
-                });
-                return function () {
-                    blockTimeline.kill();
-                };
-            },
-        });
+        const paginationList = document.querySelectorAll('.animate-section-4 .pagination__item');
+        const paginationCount = document.querySelector('.animate-section-4 .widget-slider__numbers');
+        const listItems = document.querySelectorAll('.animate-section-4 .article-info');
+        const container = document.querySelector('.animate-section-4 .layering')
 
         const tl = gsap.timeline({
             scrollTrigger: {
-                trigger: '.section--anim-top .layering',
+                trigger: '.animate-section-4 .layering',
                 start: 'center center',
                 end: "bottom top",
                 scrub: 1,
             },
             onComplete: () => animateSpline(this.spline.application, 14)
         });
-        tl.to('.section--anim-top .article-info--01', {
-            yPercent: 0,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onUpdate: () => {
-                container.classList.add('layering--shadow')
-                mm.add('(max-width: 1439px)', () => {
-                    container.classList.remove('visible')
-                })
-            },
-            onStart: () => {
-                animateSpline(this.spline.application, 10)
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            }
-        })
-        tl.to('.section--anim-top .article-info--02', {
-            yPercent: -88,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onStart: () => {
-                animateSpline(this.spline.application, 11)
-                paginationList[1].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-            },
-            onComplete: () => {
-                container.classList.remove('layering--shadow')
-                mm.add('(max-width: 1439px)', () => {
-                    container.classList.add('visible')
-                })
-            }
-        })
-        tl.to('.section--anim-top .article-info--03', {
-            yPercent: -176,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onStart: () => {
-                paginationList[2].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-                animateSpline(this.spline.application, 12)
-            },
-        })
-        tl.to('.section--anim-top .article-info--04', {
-            yPercent: -264,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onStart: () => {
-                paginationList[3].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-                animateSpline(this.spline.application, 13)
-            },
+
+        ScrollTrigger.create({
+            trigger: '.animate-section-4 .title',
+            start: 'top center',
+            onEnter: () => animateSpline(this.spline.application, 9),
+        });
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: '.animate-section-4 .grid--anim',
+                pin: true,
+                pinSpacing: true,
+                start: isTablet ? 'center center' : 'center center+=200',
+                end: 'bottom top-=200px',
+                scrub: true,
+                onLeave: () => {
+                    animateSpline(this.spline.application, 15)
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: 0
+                    })
+                },
+                onLeaveBack: () => {
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: 0
+                    })
+                },
+                onEnter: () => {
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: -20
+                    })
+                },
+            })
+
+            tl.to('.animate-section-4 .article-info--01', {
+                yPercent: 0,
+                duration: 12,
+                delay: 1,
+                ease: "linear",
+                onStart: () => {
+                    animateSpline(this.spline.application, 10)
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                }
+            })
+            tl.to('.animate-section-4 .article-info--02', {
+                yPercent: -90,
+                duration: 12,
+                delay: 1,
+                ease: "linear",
+                onStart: () => {
+                    animateSpline(this.spline.application, 11)
+                    paginationList[1].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                },
+                onComplete: () => {
+                    isTabletMax && container.classList.add('visible')
+                }
+            })
+            tl.to('.animate-section-4 .article-info--03', {
+                yPercent: -118,
+                duration: 12,
+                delay: 1,
+                ease: "linear",
+                onStart: () => {
+                    paginationList[2].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                    animateSpline(this.spline.application, 12)
+                },
+            })
+            tl.to('.animate-section-4 .article-info--04', {
+                yPercent: -100,
+                duration: 12,
+                delay: 1,
+                ease: "linear",
+                onStart: () => {
+                    paginationList[3].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                    animateSpline(this.spline.application, 13)
+                },
+            })
         })
     }
 
     section7() {
-        let tl: gsap.core.Timeline = null;
-
         ScrollTrigger.create({
             trigger: '.section--cards .title',
             start: 'top bottom',
@@ -656,188 +652,142 @@ class Animation {
             onEnter: () => animateSpline(this.spline.application, 16),
         });
 
-        ScrollTrigger.matchMedia({
-            "(min-width: 768px)": () => {
-                tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '.section--cards',
-                        start: 'top center-=100',
-                        end: 'bottom center+=100',
-                        scrub: 1,
-                        onEnter: () => {
-                            animateSpline(this.spline.application, 17)
-                            gsap.to('.spline-canvas', {
-                                xPercent: 0,
-                            })
-                        },
-                        onEnterBack: () => {
-                            animateSpline(this.spline.application, 17)
-                            gsap.to('.spline-canvas', {
-                                xPercent: 0,
-                            })
-                        },
-                        onLeave: () => {
-                            animateSpline(this.spline.application, 18)
-                            gsap.to('.spline-canvas', {
-                                xPercent: -20,
-                            })
-                        },
-                        onLeaveBack: () => {
-                            animateSpline(this.spline.application, 16)
-                            gsap.to('.spline-canvas', {
-                                xPercent: -20,
-                            })
-                        }
-                    },
-                });
+        this.mm.add({
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isTablet, isMobileMax} = context.conditions;
 
-                tl.from('.article-card', {
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.3,
-                })
-                return function () {
-                    tl.kill();
-                };
-            },
-            "(max-width: 767px)": () => {
-                tl = gsap.timeline({
-                    scrollTrigger: {
-                        trigger: '.section--cards',
-                        start: 'top bottom',
-                        end: 'bottom bottom',
-                        scrub: 1,
-                        onEnter: () => {
-                            animateSpline(this.spline.application, 17)
-                            gsap.to('.spline-canvas', {
-                                xPercent: 0,
-                            })
-                        },
-                        onLeave: () => {
-                            animateSpline(this.spline.application, 18)
-                            gsap.to('.spline-canvas', {
-                                xPercent: 0,
-                            })
-                        }
-                    },
-                });
-
-                tl.from('.article-card', {
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.8,
-                    stagger: 0.3,
-                })
-                return function () {
-                    tl.kill();
-                };
-            },
-        });
-    }
-
-    section8() {
-        const mm = gsap.matchMedia()
-        const paginationList = document.querySelectorAll('.section--anim-top-2 .pagination__item');
-        const paginationCount = document.querySelector('.section--anim-top-2 .widget-slider__numbers');
-        const listItems = document.querySelectorAll('.section--anim-top-2 .article-info');
-        const container = document.querySelector('.section--anim-top-2 .layering')
-        let blockTimeline = null;
-
-        mm.add('(min-width: 768px)', () => {
-            blockTimeline = gsap.timeline({
+            const tl = gsap.timeline({
                 scrollTrigger: {
-                    trigger: '.section--anim-top-2 .grid--anim',
-                    pin: true,
-                    pinSpacing: true,
-                    start: 'center center',
-                    end: 'bottom top-=200px',
+                    trigger: '.section--cards',
+                    start: isMobileMax ? 'top bottom' : 'top center-=100',
+                    end: isMobileMax ? 'bottom bottom' : 'bottom center+=100',
+                    scrub: 1,
                     onEnter: () => {
-                        animateSpline(this.spline.application, 19)
-                    }
-                }
-            });
-        })
-        mm.add('(max-width: 767px)', () => {
-            blockTimeline = gsap.timeline({
-                scrollTrigger: {
-                    trigger: '.section--anim-top-2 .grid--anim',
-                    pin: true,
-                    pinSpacing: true,
-                    start: 'center center+=200',
-                    end: 'bottom top-=200px',
-                    onLeaveBack: () => {
+                        animateSpline(this.spline.application, 17)
                         gsap.to('.spline-canvas', {
-                            yPercent: 0
+                            xPercent: 0,
                         })
                     },
-                    onEnter: () => {
-                        animateSpline(this.spline.application, 19)
+                    onEnterBack: () => {
+                        animateSpline(this.spline.application, 17)
                         gsap.to('.spline-canvas', {
-                            yPercent: -20
+                            xPercent: 0,
                         })
                     },
                     onLeave: () => {
+                        animateSpline(this.spline.application, 18)
+                        gsap.to('.spline-canvas', {
+                            xPercent: isTablet ? -20 : 0,
+                        })
+                    },
+                    onLeaveBack: () => {
+                        animateSpline(this.spline.application, 16)
+                        gsap.to('.spline-canvas', {
+                            xPercent: isTablet ? -20 : 0,
+                        })
+                    }
+                },
+            });
+
+            tl.from('.article-card', {
+                y: 50,
+                opacity: 0,
+                duration: 0.8,
+                stagger: 0.3,
+            })
+        })
+    }
+
+    section8() {
+        const paginationList = document.querySelectorAll('.animate-section-5 .pagination__item');
+        const paginationCount = document.querySelector('.animate-section-5 .widget-slider__numbers');
+        const listItems = document.querySelectorAll('.animate-section-5 .article-info');
+        const container = document.querySelector('.animate-section-5 .layering')
+
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: '.animate-section-5 .layering',
+                start: 'center center',
+                end: '+=900',
+                scrub: 1,
+            }
+        });
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: '.animate-section-5 .grid--anim',
+                pin: true,
+                pinSpacing: true,
+                start: isMobileMax ? 'center center+=200' : 'center center',
+                end: 'bottom top-=200px',
+                onEnter: () => {
+                    animateSpline(this.spline.application, 19)
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: -20
+                    })
+                },
+                onLeaveBack: () => {
+                    isMobileMax && gsap.to('.spline-canvas', {
+                        yPercent: 0
+                    })
+                },
+                onLeave: () => {
+                    if (isMobileMax) {
                         animateSpline(this.spline.application, 15)
                         gsap.to('.spline-canvas', {
                             yPercent: 0
                         })
                     }
                 }
-            });
-        })
+            })
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.section--anim-top-2 .layering',
-                start: 'center center',
-                end: '+=900',
-                scrub: 1,
-            }
-        });
-        tl.to('.section--anim-top-2 .article-info--01', {
-            yPercent: 0,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onUpdate: () => {
-                container.classList.add('layering--shadow')
-                mm.add('(max-width: 1439px)', () => {
-                    container.classList.remove('visible')
-                })
-            },
-            onStart: () => {
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-                animateSpline(this.spline.application, 20)
-            },
-        })
-        tl.to('.section--anim-top-2 .article-info--02', {
-            yPercent: -88,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onComplete: () => {
-                container.classList.remove('layering--shadow')
-                mm.add('(max-width: 767px)', () => {
-                    container.classList.add('visible')
-                })
-            },
-            onStart: () => {
-                paginationList[1].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-                animateSpline(this.spline.application, 21)
-            },
-        })
-        tl.to('.section--anim-top-2 .article-info--03', {
-            yPercent: -176,
-            duration: 12,
-            delay: 1,
-            ease: "power1.out",
-            onStart: () => {
-                paginationList[2].classList.add('active')
-                paginationCount.textContent = getTotalElements(paginationList, listItems);
-                animateSpline(this.spline.application, 22)
-            },
+            tl.to('.animate-section-5 .article-info--01', {
+                yPercent: 0,
+                duration: 100,
+                delay: 1,
+                ease: "linear",
+                onUpdate: () => {
+                    isTabletMax && container.classList.remove('visible')
+                },
+                onStart: () => {
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                    animateSpline(this.spline.application, 20)
+                },
+            })
+            tl.to('.animate-section-5 .article-info--02', {
+                yPercent: -90,
+                duration: 100,
+                delay: 1,
+                ease: "linear",
+                onComplete: () => {
+                    isMobileMax && container.classList.add('visible')
+                },
+                onStart: () => {
+                    paginationList[1].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                    animateSpline(this.spline.application, 21)
+                },
+            })
+            tl.to('.animate-section-5 .article-info--03', {
+                yPercent: -118,
+                duration: 100,
+                delay: 1,
+                ease: "linear",
+                onStart: () => {
+                    paginationList[2].classList.add('active')
+                    paginationCount.textContent = getTotalElements(paginationList, listItems);
+                    animateSpline(this.spline.application, 22)
+                },
+            })
         })
     }
 
@@ -859,7 +809,7 @@ class Animation {
                         zIndex: 2,
                     })
                     gsap.to('.article-notification--12', {
-                        x:-300,
+                        x: -300,
                         y: 200,
                         scale: 1,
                         duration: 0.5,
@@ -913,7 +863,7 @@ class Animation {
                         zIndex: 2,
                     })
                     gsap.to('.article-notification--12', {
-                        x:-300,
+                        x: -300,
                         y: 200,
                         scale: 1,
                         duration: 0.5,
@@ -1096,21 +1046,21 @@ class Animation {
                 end: "bottom top",
                 onEnter: () => {
                     animateSpline(this.spline.application, 28)
-                    mm.add('(min-width: 1440px)', () =>{
+                    mm.add('(min-width: 1440px)', () => {
                         gsap.to('.spline-canvas', {
                             zIndex: 2,
                             xPercent: 0,
                             yPercent: 50,
                         })
                     })
-                    mm.add('(max-width: 1439px)', () =>{
+                    mm.add('(max-width: 1439px)', () => {
                         gsap.to('.spline-canvas', {
                             zIndex: 2,
                             xPercent: 4,
                             yPercent: 50,
                         })
                     })
-                    mm.add('(max-width: 767px)', () =>{
+                    mm.add('(max-width: 767px)', () => {
                         gsap.to('.spline-canvas', {
                             zIndex: 2,
                             xPercent: 40,
@@ -1119,14 +1069,14 @@ class Animation {
                     })
                 },
                 onLeaveBack: () => {
-                    mm.add('(min-width: 768px)', () =>{
+                    mm.add('(min-width: 768px)', () => {
                         gsap.to('.spline-canvas', {
                             zIndex: 1,
                             xPercent: -20,
                             yPercent: 0,
                         })
                     })
-                    mm.add('(max-width: 767px)', () =>{
+                    mm.add('(max-width: 767px)', () => {
                         gsap.to('.spline-canvas', {
                             zIndex: 1,
                             xPercent: 0,
@@ -1208,8 +1158,8 @@ class Animation {
             console.log('leave')
             gsap.killTweensOf(desktopMenu);
             gsap.killTweensOf('.desktop-menu__link');
-            gsap.set(desktopMenu, { clearProps: "all" });
-            gsap.set('.desktop-menu__link', { clearProps: "all" });
+            gsap.set(desktopMenu, {clearProps: "all"});
+            gsap.set('.desktop-menu__link', {clearProps: "all"});
             gsap.to(desktopMenu, {
                 width: '0%',
                 padding: '19px 0',

@@ -6,12 +6,12 @@ class App {
     splineURL: string;
 
     constructor() {
-        this.splineURL = 'https://prod.spline.design/FZ2Ht20VBW0OQNDL/scene.splinecode';
+        this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
         this.init();
     }
 
     init = () => {
-        this.createSlider()
+        // this.createSlider()
         this.createAnimation()
     }
 

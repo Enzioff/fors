@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
-  max-height: 625px;
+  height: 625px;
   overflow: hidden;
 
   @include r($tablet) {
@@ -15,20 +15,18 @@
     max-height: 272px;
   }
 
-  &.layering--shadow {
-    &::after {
-      content: '';
-      position: absolute;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      height: 176px;
-      background: linear-gradient(180deg, rgba(19, 74, 255, 0) -96.68%, #134AFF 71.96%);
+  &__shadow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 176px;
+    background: linear-gradient(180deg, rgba(19, 74, 255, 0) -96.68%, #134AFF 71.96%);
+    z-index: 2;
 
-      @include r($tablet) {
-        height: 40px;
-        background: linear-gradient(181.54deg, rgba(19, 74, 255, 0) -151.64%, #134AFF 87.26%);
-      }
+    @include r($tablet) {
+      height: 40px;
+      background: linear-gradient(181.54deg, rgba(19, 74, 255, 0) -151.64%, #134AFF 87.26%);
     }
   }
 
@@ -44,15 +42,18 @@
       max-height: 272px;
     }
 
-    &.layering--shadow {
-      &::after {
-        height: 225px;
-        background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+    .layering__shadow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 225px;
+      background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+      z-index: 2;
 
-        @include r($tablet) {
-          height: 42px;
-          background: linear-gradient(180.82deg, rgba(240, 240, 255, 0) -85.26%, #F0F0FF 105.04%);
-        }
+      @include r($tablet) {
+        height: 42px;
+        background: linear-gradient(180.82deg, rgba(240, 240, 255, 0) -85.26%, #F0F0FF 105.04%);
       }
     }
   }

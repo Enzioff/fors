@@ -7,7 +7,8 @@
   flex-direction: column;
   padding-top: 30px;
   width: 100%;
-  z-index: 3;
+  opacity: 0;
+  z-index: -1;
 
   @include r($tablet) {
 
