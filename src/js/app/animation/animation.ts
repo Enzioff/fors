@@ -265,6 +265,10 @@ class Animation {
                 start: 'top bottom',
                 end: "bottom top",
                 scrub: 1,
+                onEnter: () => tl.play(),
+                onEnterBack: () => tl.play(),
+                onLeave: () => tl.pause(),
+                onLeaveBack: () => tl.pause(),
             },
         });
 
@@ -296,6 +300,7 @@ class Animation {
         const listItems = document.querySelectorAll('.section--blue .article-info');
         const container = document.querySelector('.section--blue .layering');
         const shadow = container.querySelector('.layering__shadow');
+        const cardsList = container.querySelectorAll('.article-info')
 
         const resizeShadow = (flag?: boolean): void => {
             const shadowHeight = shadow.getBoundingClientRect().height
@@ -310,7 +315,7 @@ class Animation {
             scrollTrigger: {
                 trigger: '.animate-section-3 .layering',
                 start: 'center center',
-                end: "bottom top",
+                end: `${cardsList.length * (cardsList[0].getBoundingClientRect().height)} top`,
                 scrub: 1,
                 onEnterBack: () => animateSpline(this.spline.application, 7)
             },
@@ -329,7 +334,7 @@ class Animation {
                 pin: true,
                 pinSpacing: true,
                 start: isTablet ? 'center center' : 'center center+=100',
-                end: "bottom+=300 top",
+                end: `${cardsList.length * (cardsList[0].getBoundingClientRect().height)} top`,
                 scrub: 1,
                 onLeaveBack: () => {
                     animateSpline(this.spline.application, 2)
@@ -792,159 +797,104 @@ class Animation {
     }
 
     section9() {
-        const mm = gsap.matchMedia()
-        ScrollTrigger.create({
-            trigger: '.anim-cube',
-            pin: false,
-            start: 'center center',
-            end: 'center+=200 center',
-            onEnter: () => {
-                mm.add('(min-width: 1440px)', () => {
-                    gsap.to('.article-notification--11', {
-                        x: 120,
-                        y: -300,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                    gsap.to('.article-notification--12', {
-                        x: -300,
-                        y: 200,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                })
-                mm.add('(max-width: 1439px)', () => {
-                    gsap.to('.article-notification--11', {
-                        x: 80,
-                        y: -200,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                    gsap.to('.article-notification--12', {
-                        x: -180,
-                        y: 100,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                })
-            },
-            onLeave: () => {
-                gsap.to('.article-notification--11', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-                gsap.to('.article-notification--12', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            },
-            onEnterBack: () => {
-                mm.add('(min-width: 1440px)', () => {
-                    gsap.to('.article-notification--11', {
-                        x: 120,
-                        y: -300,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                    gsap.to('.article-notification--12', {
-                        x: -300,
-                        y: 200,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                })
-                mm.add('(max-width: 1439px)', () => {
-                    gsap.to('.article-notification--11', {
-                        x: 80,
-                        y: -200,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                    gsap.to('.article-notification--12', {
-                        x: -180,
-                        y: 100,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                })
-            },
-            onLeaveBack: () => {
-                gsap.to('.article-notification--11', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-                gsap.to('.article-notification--12', {
-                    x: 0,
-                    y: 0,
-                    scale: 0.3,
-                    duration: 0.5,
-                    opacity: 0,
-                })
-            }
-        })
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
+            ScrollTrigger.create({
+                trigger: '.anim-cube',
+                pin: true,
+                pinSpacing: false,
+                start: 'center center',
+                end: 'center+=300 center',
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        if (isDesktop) {
+                            gsap.to('.article-notification--11', {
+                                x: 120,
+                                y: -300,
+                                scale: 1,
+                                duration: 0.5,
+                                opacity: 1,
+                                zIndex: 2,
+                            })
+                            gsap.to('.article-notification--12', {
+                                x: -300,
+                                y: 200,
+                                scale: 1,
+                                duration: 0.5,
+                                opacity: 1,
+                                zIndex: 2,
+                            })
+                        }
+                        if (isTabletMax) {
+                            gsap.to('.article-notification--11', {
+                                x: 80,
+                                y: -200,
+                                scale: 1,
+                                duration: 0.5,
+                                opacity: 1,
+                                zIndex: 2,
+                            })
+                            gsap.to('.article-notification--12', {
+                                x: -180,
+                                y: 100,
+                                scale: 1,
+                                duration: 0.5,
+                                opacity: 1,
+                                zIndex: 2,
+                            })
+                        }
+                    } else {
+                        gsap.to('.article-notification--11', {
+                            x: 0,
+                            y: 0,
+                            scale: 0.3,
+                            duration: 0.5,
+                            opacity: 0,
+                        })
+                        gsap.to('.article-notification--12', {
+                            x: 0,
+                            y: 0,
+                            scale: 0.3,
+                            duration: 0.5,
+                            opacity: 0,
+                        })
+                    }
+                },
+            })
+
+            ScrollTrigger.create({
                 trigger: '.grid--anim-in .tags',
                 pin: false,
                 start: 'top bottom',
                 end: "bottom top",
                 onEnter: () => animateSpline(this.spline.application, 23),
                 onLeave: () => animateSpline(this.spline.application, 24),
-            }
-        });
-
-        tl.from('.grid--anim-in .tags .tag', {
-            scale: 0.3,
-            opacity: 0,
-            duration: 0.6,
-            stagger: 0.1,
-            ease: "power3.out",
+            })
         })
     }
 
     section10() {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.grid--anim-cards',
-                pin: false,
-                start: 'top bottom',
-                end: "bottom top",
-                onEnter: () => animateSpline(this.spline.application, 25),
-                onLeave: () => animateSpline(this.spline.application, 26),
-            }
-        });
-
-        tl.from('.grid--anim-cards .info-block', {
-            y: 100,
-            opacity: 0,
-            duration: 0.8,
-            stagger: 0.1,
+        ScrollTrigger.create({
+            trigger: '.grid--anim-cards',
+            pin: false,
+            start: 'top bottom',
+            end: "bottom top",
+            onEnter: () => {
+                animateSpline(this.spline.application, 25);
+                gsap.from('.grid--anim-cards .info-block', {
+                    y: 100,
+                    opacity: 0,
+                    duration: 0.8,
+                    stagger: 0.1,
+                })
+            },
+            onLeave: () => animateSpline(this.spline.application, 26),
         })
     }
 
@@ -953,32 +903,35 @@ class Animation {
         const marqueeContainerBottom = document.querySelector('.marquee__track--anim-02')
         const totalWidthTop = marqueeContainerTop.scrollWidth;
         const totalWidthBottom = marqueeContainerBottom.scrollWidth;
+        const tl = gsap.timeline();
 
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: '.marquee--anim-2',
-                start: 'top bottom',
-                end: "bottom top",
-                onEnter: () => {
-                    marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
-                    marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
-                    tl.to('.marquee__track--anim-01', {
-                        x: -totalWidthTop / 2,
-                        duration: 20,
-                        ease: "linear",
-                        repeat: -1,
-                    }).to('.marquee__track--anim-02', {
-                        x: totalWidthBottom / 2,
-                        duration: 20,
-                        ease: "linear",
-                        repeat: -1,
-                    }, "<")
-                },
-                onLeave: () => {
-                    tl.paused()
-                }
-            }
-        });
+        ScrollTrigger.create({
+            trigger: '.marquee--anim-2',
+            start: 'top bottom',
+            end: "bottom top",
+            onEnter: () => {
+                marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
+                marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
+                tl.to('.marquee__track--anim-01', {
+                    x: -totalWidthTop / 2,
+                    duration: 20,
+                    ease: "linear",
+                    repeat: -1,
+                })
+
+                tl.to('.marquee__track--anim-02', {
+                    x: totalWidthBottom / 2,
+                    duration: 20,
+                    ease: "linear",
+                    repeat: -1,
+                }, "<")
+
+                tl.play();
+            },
+            onEnterBack: () => tl.play(),
+            onLeave: () => tl.pause(),
+            onLeaveBack: () => tl.pause()
+        })
     }
 
     section12() {
