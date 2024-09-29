@@ -42,4 +42,11 @@
       line-height: 26px;
     }
   }
+
+  .button-circle {
+    @include r($mobile) {
+      width: 105px;
+      height: 108px;
+    }
+  }
 }

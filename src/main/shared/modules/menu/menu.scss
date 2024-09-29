@@ -1,6 +1,6 @@
 .menu {
   position: absolute;
-  top: -30px;
+  top: 0;
   left: 0;
   right: 0;
   bottom: 0;
@@ -19,14 +19,14 @@
   @include r($tablet) {
     display: flex;
     background-image: url("../assets/images/menu-cube.png");
-    background-position: 150% 90%;
+    background-position: right -165px bottom 30%;
     background-repeat: no-repeat;
     background-size: 430px;
   }
 
   @include r($mobile) {
-    padding: 116px 20px 20px;
-    background-position: 300% 75%;
+    padding: 116px 0 20px;
+    background-position: right -165px bottom 30%;
     background-repeat: no-repeat;
     background-size: 300px;
   }
@@ -64,6 +64,21 @@
       font-family: $font-main;
       font-size: 28px;
       line-height: 33.6px;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .container {
+    height: 100%;
+
+    @include r($mobile) {
+      height: calc(100% - 20px)
     }
   }
 }

@@ -40,7 +40,7 @@ class Spline {
         if (this.desktopWidthMediaQuery.matches) {
             this.application.setZoom(1.4)
         } else if (this.tabletWidthMediaQuery.matches) {
-            this.application.setZoom(0.8)
+            this.application.setZoom(0.7)
         } else if (this.mobileWidthMediaQuery.matches) {
             this.application.setZoom(0.8)
         }

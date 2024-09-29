@@ -31,4 +31,10 @@
     align-items: center;
     justify-content: flex-end;
   }
+
+  & > .container {
+    @include r($tablet) {
+      z-index: 4;
+    }
+  }
 }

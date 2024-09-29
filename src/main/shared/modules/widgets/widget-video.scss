@@ -75,7 +75,7 @@
   &__button {
     height: auto;
     padding: 18px 12px;
-    text-transform: none;
+    text-transform: uppercase;
 
     @include r($tablet) {
       width: max-content;

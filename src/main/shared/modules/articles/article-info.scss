@@ -91,14 +91,17 @@
     @include r($tablet) {
       font-size: 14px;
       line-height: 16.8px;
+
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 5;
+      line-clamp: 5;
+      -webkit-box-orient: vertical;
     }
 
     @include r($mobile) {
-      overflow: hidden;
-      display: -webkit-box;
       -webkit-line-clamp: 3;
       line-clamp: 3;
-      -webkit-box-orient: vertical;
     }
   }
 

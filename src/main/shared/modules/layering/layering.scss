@@ -8,7 +8,7 @@
 
   @include r($tablet) {
     gap: 10px;
-    max-height: 290px;
+    max-height: 307px;
   }
 
   @include r($mobile) {
@@ -25,8 +25,12 @@
     z-index: 2;
 
     @include r($tablet) {
-      height: 40px;
+      height: 60px;
       background: linear-gradient(181.54deg, rgba(19, 74, 255, 0) -151.64%, #134AFF 87.26%);
+    }
+
+    @include r($mobile) {
+      height: 50px;
     }
   }
 
@@ -35,11 +39,11 @@
 
     @include r($tablet) {
       gap: 10px;
-      max-height: 290px;
+      max-height: 332px;
     }
 
     @include r($mobile) {
-      max-height: 272px;
+      max-height: 320px;
     }
 
     .layering__shadow {
@@ -52,8 +56,44 @@
       z-index: 2;
 
       @include r($tablet) {
-        height: 42px;
+        height: 90px;
         background: linear-gradient(180.82deg, rgba(240, 240, 255, 0) -85.26%, #F0F0FF 105.04%);
+      }
+
+      @include r($mobile) {
+        height: 80px;
+      }
+    }
+  }
+
+  &--small {
+    height: 632px;
+
+    @include r($tablet) {
+      gap: 10px;
+      max-height: 332px;
+    }
+
+    @include r($mobile) {
+      max-height: 290px;
+    }
+
+    .layering__shadow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 225px;
+      background: linear-gradient(179.11deg, rgba(240, 240, 255, 0) 14.82%, #F0F0FF 38.8%);
+      z-index: 2;
+
+      @include r($tablet) {
+        height: 90px;
+        background: linear-gradient(180.82deg, rgba(240, 240, 255, 0) -85.26%, #F0F0FF 105.04%);
+      }
+
+      @include r($mobile) {
+        height: 50px;
       }
     }
   }
