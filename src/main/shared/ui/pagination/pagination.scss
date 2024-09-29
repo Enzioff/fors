@@ -31,6 +31,7 @@
     border-radius: 50%;
     background-color: rgba($main1, .07);
     cursor: pointer;
+    transition: .2s linear;
 
     @include r($tablet) {
       width: 18px;

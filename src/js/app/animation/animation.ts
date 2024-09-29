@@ -4,8 +4,7 @@ import {animateSpline} from "../spline/animate";
 import {Spline} from "../spline/spline";
 import {getTotalElements} from "../../helpers/getTotalElements";
 import HeaderAnimation from "./header";
-import {animateType, breakPoints} from "../../types";
-import {breakPointsValues} from "../../types/types";
+import {animateType, breakPoints, breakPointsValues, PopupsAnimation} from "../../types";
 
 class Animation {
     spline: Spline;
@@ -19,7 +18,6 @@ class Animation {
     }
 
     init() {
-
         this.global()
         this.globalAnimations()
         this.menu()
@@ -54,6 +52,13 @@ class Animation {
 
     globalAnimations = () => {
         this.headerAnimation.animate(animateType.FIRST);
+    }
+
+    moveCanvas = (value: number, props?: gsap.TweenVars) => {
+        gsap.to('.spline-canvas', {
+            xPercent: value,
+            ...props,
+        })
     }
 
     section1() {
@@ -205,23 +210,13 @@ class Animation {
                     const {isTablet, isMobileMax} = context.conditions;
 
                     if (isTablet) {
-                        gsap.to('.spline-canvas', {
-                            xPercent: -20,
-                        })
-                    }
-
-                    if (isMobileMax) {
-                        gsap.to('.spline-canvas', {
-                            xPercent: 0,
-                        })
+                        this.moveCanvas(-20);
                     }
                 })
             },
             onLeaveBack: () => {
                 animateSpline(this.spline.application, 1)
-                gsap.to('.spline-canvas', {
-                    xPercent: 0,
-                })
+                this.moveCanvas(0);
             }
         })
 
@@ -233,7 +228,6 @@ class Animation {
                 trigger: '.animate-section-3',
                 start: 'top bottom',
                 once: true,
-                onLeave: () => animateSpline(this.spline.application, 8),
             },
             onComplete: () => {
                 gsap.set('.animate-section-3', {clearProps: "all"})
@@ -295,19 +289,18 @@ class Animation {
     }
 
     section4() {
-        const paginationList = document.querySelectorAll('.section--blue .pagination__item');
-        const paginationCount = document.querySelector('.section--blue .widget-slider__numbers');
-        const listItems = document.querySelectorAll('.section--blue .article-info');
-        const container = document.querySelector('.section--blue .layering');
+        const paginationList = document.querySelectorAll('.animate-section-3 .pagination__item');
+        const paginationCount = document.querySelector('.animate-section-3 .widget-slider__numbers');
+        const popups = document.querySelectorAll('.animate-section-3 .article-notification')
+        const listItems = document.querySelectorAll('.animate-section-3 .article-info');
+        const container = document.querySelector('.animate-section-3 .layering');
         const shadow = container.querySelector('.layering__shadow');
-        const cardsList = container.querySelectorAll('.article-info')
+        const shadowHeight = shadow.getBoundingClientRect().height;
 
-        const resizeShadow = (flag?: boolean): void => {
-            const shadowHeight = shadow.getBoundingClientRect().height
-
+        const resizeShadow = (idx: number = 0): void => {
             gsap.to(shadow, {
-                height: !flag ? shadowHeight - 20 : shadowHeight + 20,
-                duration: 0,
+                height: shadowHeight - (idx * 25),
+                duration: 0.2,
             })
         }
 
@@ -315,10 +308,11 @@ class Animation {
             scrollTrigger: {
                 trigger: '.animate-section-3 .layering',
                 start: 'center center',
-                end: `${cardsList.length * (cardsList[0].getBoundingClientRect().height)} top`,
+                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200)}`,
                 scrub: 1,
-                onEnterBack: () => animateSpline(this.spline.application, 7)
-            },
+                onEnterBack: () => animateSpline(this.spline.application, 7),
+                onLeave: () => animateSpline(this.spline.application, 8)
+            }
         });
 
         this.mm.add({
@@ -329,218 +323,114 @@ class Animation {
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
 
+            const popupsAnimation: PopupsAnimation = {
+                'anim-1': {
+                    x: -150,
+                    y: 80,
+                    scale: 1,
+                    duration: 0.5,
+                    opacity: 1,
+                    zIndex: 2,
+                },
+                'anim-2': {
+                    x: isTabletMax ? -120 : -200,
+                    y: isTabletMax ? -150 : -300,
+                    scale: 1,
+                    duration: 0.5,
+                    opacity: 1,
+                    zIndex: 2,
+                },
+                'anim-3': {
+                    x: isTabletMax ? 70 : 150,
+                    y: isTabletMax ? -180 : -300,
+                    scale: 1,
+                    duration: 0.5,
+                    opacity: 1,
+                    zIndex: 2,
+                },
+                'anim-4': {
+                    x: isTabletMax ? -160 : -260,
+                    y: isTabletMax ? -200 : -300,
+                    scale: 1,
+                    duration: 0.5,
+                    opacity: 1,
+                    zIndex: 2,
+                },
+                'back': {
+                    x: 0,
+                    y: 0,
+                    scale: 0.3,
+                    duration: 0.5,
+                    opacity: 0,
+                }
+            }
+
             ScrollTrigger.create({
-                trigger: '.anim-stay',
+                trigger: '.animate-section-3 .anim-stay',
                 pin: true,
                 pinSpacing: true,
-                start: isTablet ? 'center center' : 'center center+=100',
-                end: `${cardsList.length * (cardsList[0].getBoundingClientRect().height)} top`,
                 scrub: 1,
+                start: 'center center',
+                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200) + 300}`,
+                markers: true,
                 onLeaveBack: () => {
                     animateSpline(this.spline.application, 2)
-                    isMobileMax && gsap.to('.spline-canvas', {
-                        yPercent: 0
-                    })
+                    isMobileMax && this.moveCanvas(0);
                 },
                 onEnter: () => {
-                    isMobileMax && gsap.to('.spline-canvas', {
-                        yPercent: -20,
-                        zIndex: 1,
-                    })
+                    isMobileMax && this.moveCanvas(-20, {zIndex: 1})
                 },
                 onLeave: () => {
-                    animateSpline(this.spline.application, 8)
-                    isMobileMax && gsap.to('.spline-canvas', {
-                        yPercent: 0
-                    })
+                    isMobileMax && this.moveCanvas(0);
                 }
             })
 
-            tl.to('.article-info--1', {
-                yPercent: 0,
-                duration: 100,
-                ease: "linear",
-                lazy: true,
-                onStart: () => animateSpline(this.spline.application, 3),
-            })
-            tl.to('.article-info--2', {
-                yPercent: -100,
-                duration: 100,
-                ease: "linear",
-                lazy: true,
-                onStart: () => {
-                    animateSpline(this.spline.application, 4)
-                    paginationList[1].classList.add('active')
-                    paginationCount.textContent = getTotalElements(paginationList, listItems);
-                },
-                onUpdate: () => {
-                    gsap.to('.article-notification--1', {
-                        x: -150,
-                        y: 80,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                },
-                onReverseComplete: () => {
-                    gsap.to('.article-notification--1', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
+            const updatePagination = (isActive: boolean, idx: number) => {
+                if (isActive) {
+                    paginationList[idx].classList.add('active');
+                } else {
+                    paginationList[idx].classList.remove('active');
                 }
-            })
-            tl.to('.article-info--3', {
-                yPercent: -121,
-                duration: 100,
-                ease: "linear",
-                lazy: true,
-                onStart: () => {
-                    animateSpline(this.spline.application, 5)
-                    paginationList[2].classList.add('active')
-                    paginationCount.textContent = getTotalElements(paginationList, listItems);
-                },
-                onUpdate: () => {
-                    gsap.to('.article-notification--1', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
+                paginationCount.textContent = getTotalElements(paginationList, listItems);
+            };
 
-                    isDesktop && gsap.to('.article-notification--2', {
-                        x: -200,
-                        y: -300,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
+            listItems.forEach((card, idx) => {
+                const isFirstCard = idx === 0;
+                const animationIdx = idx + 3;
 
-                    isTabletMax && gsap.to('.article-notification--2', {
-                        x: -120,
-                        y: -150,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                },
-                onReverseComplete: () => {
-                    gsap.to('.article-notification--2', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-                }
-            })
-            tl.to('.article-info--4', {
-                yPercent: -115,
-                duration: 100,
-                ease: "linear",
-                lazy: true,
-                onStart: () => {
-                    animateSpline(this.spline.application, 6)
-                    paginationList[3].classList.add('active')
-                    paginationCount.textContent = getTotalElements(paginationList, listItems);
-                },
-                onUpdate: () => {
-                    gsap.to('.article-notification--2', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-
-                    isDesktop && gsap.to('.article-notification--3', {
-                        x: 150,
-                        y: -300,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-
-                    isTabletMax && gsap.to('.article-notification--3', {
-                        x: 70,
-                        y: -180,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                },
-                onReverseComplete: () => {
-                    gsap.to('.article-notification--3', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-                }
-            })
-            tl.to('.article-info--5', {
-                yPercent: -109,
-                duration: 120,
-                ease: "linear",
-                lazy: true,
-                onStart: () => {
-                    animateSpline(this.spline.application, 7)
-                    paginationList[4].classList.add('active')
-                    paginationCount.textContent = getTotalElements(paginationList, listItems);
-                },
-                onUpdate: () => {
-                    gsap.to('.article-notification--3', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-                    isDesktop && gsap.to('.article-notification--4', {
-                        x: -260,
-                        y: -300,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-
-                    isTabletMax && gsap.to('.article-notification--4', {
-                        x: -160,
-                        y: -200,
-                        scale: 1,
-                        duration: 0.5,
-                        opacity: 1,
-                        zIndex: 2,
-                    })
-                },
-                onComplete: () => {
-                    gsap.to('.article-notification--4', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-                },
-                onReverseComplete: () => {
-                    gsap.to('.article-notification--4', {
-                        x: 0,
-                        y: 0,
-                        scale: 0.3,
-                        duration: 0.5,
-                        opacity: 0,
-                    })
-                }
+                tl.from(card, {
+                    y: () => idx === 0 ? 0 : card.getBoundingClientRect().height + (idx === 1 ? 0 : 100),
+                    duration: 1,
+                    ease: 'linear',
+                    onStart: () => {
+                        !isFirstCard && updatePagination(true, idx)
+                        resizeShadow(idx)
+                        animateSpline(this.spline.application, animationIdx)
+                    },
+                    onComplete: () => {
+                        !isFirstCard && gsap.to(popups[idx - 1], {
+                            ...popupsAnimation[`back`]
+                        })
+                    },
+                    onUpdate: () => {
+                        popups.forEach(el => {
+                            gsap.to(el, {
+                                ...popupsAnimation[`back`]
+                            })
+                        })
+                        !isFirstCard && gsap.to(popups[idx - 1], {
+                            ...popupsAnimation[`anim-${idx}`]
+                        })
+                    },
+                    onReverseComplete: () => {
+                        animateSpline(this.spline.application, animationIdx - 1)
+                        resizeShadow(!isFirstCard ? idx - 1 : idx)
+                        !isFirstCard && updatePagination(false, idx)
+                        gsap.to(popups[idx - 1], {
+                            ...popupsAnimation[`back`]
+                        })
+                    }
+                })
             })
         })
     }
@@ -600,7 +490,7 @@ class Animation {
                 },
             })
 
-            tl.to('.animate-section-4 .article-info--01', {
+            tl.to('.animate-section-4 .article-info--1', {
                 yPercent: 0,
                 duration: 12,
                 delay: 1,
@@ -610,7 +500,7 @@ class Animation {
                     paginationCount.textContent = getTotalElements(paginationList, listItems);
                 }
             })
-            tl.to('.animate-section-4 .article-info--02', {
+            tl.to('.animate-section-4 .article-info--2', {
                 yPercent: -90,
                 duration: 12,
                 delay: 1,
@@ -624,7 +514,7 @@ class Animation {
                     isTabletMax && container.classList.add('visible')
                 }
             })
-            tl.to('.animate-section-4 .article-info--03', {
+            tl.to('.animate-section-4 .article-info--3', {
                 yPercent: -118,
                 duration: 12,
                 delay: 1,
@@ -635,7 +525,7 @@ class Animation {
                     animateSpline(this.spline.application, 12)
                 },
             })
-            tl.to('.animate-section-4 .article-info--04', {
+            tl.to('.animate-section-4 .article-info--4', {
                 yPercent: -100,
                 duration: 12,
                 delay: 1,
@@ -755,7 +645,7 @@ class Animation {
                 }
             })
 
-            tl.to('.animate-section-5 .article-info--01', {
+            tl.to('.animate-section-5 .article-info--1', {
                 yPercent: 0,
                 duration: 100,
                 delay: 1,
@@ -768,7 +658,7 @@ class Animation {
                     animateSpline(this.spline.application, 20)
                 },
             })
-            tl.to('.animate-section-5 .article-info--02', {
+            tl.to('.animate-section-5 .article-info--2', {
                 yPercent: -90,
                 duration: 100,
                 delay: 1,
@@ -782,7 +672,7 @@ class Animation {
                     animateSpline(this.spline.application, 21)
                 },
             })
-            tl.to('.animate-section-5 .article-info--03', {
+            tl.to('.animate-section-5 .article-info--3', {
                 yPercent: -118,
                 duration: 100,
                 delay: 1,

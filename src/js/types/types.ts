@@ -19,3 +19,16 @@ export interface breakPoints {
     mobileMax: breakPointsValues.MOBILE_MAX,
     mobile: breakPointsValues.MOBILE,
 }
+
+export interface AnimationProperties {
+    x: number;
+    y: number;
+    scale: number;
+    duration: number;
+    opacity: number;
+    zIndex?: number;
+}
+
+export interface PopupsAnimation {
+    [key: string]: AnimationProperties;
+}

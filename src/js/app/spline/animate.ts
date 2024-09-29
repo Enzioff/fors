@@ -15,7 +15,10 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     4: (app, el) => rotateObject(el, RotateKey.SCENE_4),
     5: (app, el) => rotateObject(el, RotateKey.SCENE_5),
     6: (app, el) => rotateObject(el, RotateKey.SCENE_6),
-    7: (app, el) => rotateObject(el, RotateKey.SCENE_7),
+    7: (app, el) => {
+        callInnerAnimation(app, AnimationKey.MAKE_BLUE_COLOR);
+        rotateObject(el, RotateKey.SCENE_7)
+    },
     8: (app, el) => {
         callInnerAnimation(app, AnimationKey.MAKE_NORMAL_COLOR);
         rotateObject(el, RotateKey.SCENE_8);

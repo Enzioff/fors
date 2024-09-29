@@ -1,2 +1,6 @@
-export {animateType} from "./types";
-export {breakPoints} from "./types";
+export {
+    animateType,
+    breakPoints,
+    breakPointsValues,
+    PopupsAnimation
+} from "./types";

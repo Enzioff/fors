@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 10px;
 
-  @include r($mobile) {
+  @include r($tablet) {
     gap: 5px;
   }
 

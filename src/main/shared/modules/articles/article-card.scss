@@ -14,9 +14,9 @@
   }
 
   @include r($mobile) {
-    grid-column: span 2;
-    grid-row-end: span 16;
-    height: 165px;
+    grid-column: span 1;
+    grid-row: span 2;
+    height: auto;
     border-radius: 15px;
   }
 
@@ -43,15 +43,15 @@
     }
 
     @include r($mobile) {
-      grid-row-end: span 8;
-      height: 77px;
+      grid-row: span 1;
+      grid-column: span 1;
+      height: auto;
     }
   }
 
   &--wide {
     @include r($mobile) {
-      grid-column: span 4;
-
+      grid-column: span 2;
     }
   }
 }

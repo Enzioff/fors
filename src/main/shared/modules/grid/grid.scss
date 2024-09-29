@@ -24,7 +24,7 @@
     }
 
     @include r($mobile) {
-      grid-template-columns: repeat(2, 163px);
+      grid-template-columns: repeat(2, 1fr);
       gap: 10px;
     }
 
