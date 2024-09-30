@@ -319,11 +319,11 @@ class Animation {
 
             const calcHeight = (idx: number) => {
                 if (isDesktop) {
-                    return shadowHeight - (idx * 25)
+                    return shadowHeight - (idx * 45)
                 }else if (isTablet) {
-                    return shadowHeight - (idx * 15)
+                    return shadowHeight - (idx * 25)
                 } else if (isMobileMax) {
-                    return shadowHeight - (idx * 12)
+                    return shadowHeight - (idx * 25)
                 }
             }
 

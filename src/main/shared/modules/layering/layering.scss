@@ -20,17 +20,17 @@
     left: 0;
     right: 0;
     bottom: 0;
-    height: 176px;
-    background: linear-gradient(180deg, rgba(19, 74, 255, 0) -96.68%, #134AFF 71.96%);
+    height: 373px;
+    background: linear-gradient(180deg, rgba(19, 74, 255, 0) 39.61%, #134AFF 70.12%);
     z-index: 2;
 
     @include r($tablet) {
-      height: 60px;
-      background: linear-gradient(181.54deg, rgba(19, 74, 255, 0) -151.64%, #134AFF 87.26%);
+      height: 138px;
+      background: linear-gradient(180deg, rgba(19, 74, 255, 0) 56.5%, #134AFF 87.49%);
     }
 
     @include r($mobile) {
-      height: 50px;
+      height: 116px;
     }
   }
 
