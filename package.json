@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/KennyNobody/polosatik#readme",
   "devDependencies": {
+    "@splinetool/runtime": "^1.9.28",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^18.14.1",
     "@types/svg-sprite-loader": "^3.9.9",
@@ -65,7 +66,6 @@
   ],
   "dependencies": {
     "@fancyapps/ui": "^5.0.36",
-    "@splinetool/runtime": "^1.9.25",
     "gsap": "npm:@gsap/business@^3.12.5",
     "inputmask": "^5.0.9",
     "swiper": "^11.1.4",

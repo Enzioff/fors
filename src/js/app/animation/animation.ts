@@ -902,7 +902,7 @@ class Animation {
                 onEnter: () => {
                     animateSpline(this.spline.application, 28)
                     mm.add('(min-width: 1440px)', () => {
-                        gsap.to('.spline-container', {
+                        gsap.to('.spline-canvas', {
                             zIndex: 2,
                             xPercent: 0,
                             yPercent: 50,
@@ -910,17 +910,13 @@ class Animation {
                     })
                     mm.add('(max-width: 1439px)', () => {
                         gsap.to('.spline-canvas', {
-                            xPercent: 0,
-                            yPercent: 0,
-                        })
-                        gsap.to('.spline-container', {
                             zIndex: 2,
                             xPercent: 4,
                             yPercent: 50,
                         })
                     })
                     mm.add('(max-width: 767px)', () => {
-                        gsap.to('.spline-container', {
+                        gsap.to('.spline-canvas', {
                             zIndex: 2,
                             xPercent: 40,
                             yPercent: 50,
@@ -929,14 +925,14 @@ class Animation {
                 },
                 onLeaveBack: () => {
                     mm.add('(min-width: 768px)', () => {
-                        gsap.to('.spline-container', {
+                        gsap.to('.spline-canvas', {
                             zIndex: 1,
                             xPercent: -20,
                             yPercent: 0,
                         })
                     })
                     mm.add('(max-width: 767px)', () => {
-                        gsap.to('.spline-container', {
+                        gsap.to('.spline-canvas', {
                             zIndex: 1,
                             xPercent: 0,
                             yPercent: 0,
