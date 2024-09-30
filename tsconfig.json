@@ -12,7 +12,8 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
+      "module": "CommonJS",
+      "sourceMap": false,
     }
   }
 }

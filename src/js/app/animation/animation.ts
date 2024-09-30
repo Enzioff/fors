@@ -220,35 +220,37 @@ class Animation {
             },
         })
 
-        // gsap.from('.animate-section-3', {
-        //     y: 400,
-        //     duration: 1,
-        //     scrollTrigger: {
-        //         trigger: '.animate-section-3',
-        //         start: 'top bottom',
-        //         once: true,
-        //     },
-        //     onComplete: () => {
-        //         gsap.set('.animate-section-3', {clearProps: "all"})
-        //         gsap.killTweensOf('.animate-section-3')
-        //         ScrollTrigger.refresh(true)
-        //     },
-        // })
-        //
-        // gsap.from('.animate-section-3 .animate-title', {
-        //     y: -400,
-        //     duration: 1,
-        //     scrollTrigger: {
-        //         trigger: '.animate-section-3',
-        //         start: 'top bottom',
-        //         once: true,
-        //     },
-        //     onComplete: () => {
-        //         gsap.set('.animate-section-3 .animate-title', {clearProps: "all"})
-        //         gsap.killTweensOf('.animate-section-3 .animate-title')
-        //         ScrollTrigger.refresh(true)
-        //     }
-        // })
+        gsap.from('.animate-section-3', {
+            y: 400,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.animate-section-3',
+                start: 'top bottom',
+                once: true,
+            },
+            onComplete: () => {
+                gsap.set('.animate-section-3', {clearProps: "all"})
+                gsap.killTweensOf('.animate-section-3')
+                ScrollTrigger.refresh()
+                ScrollTrigger.update()
+            },
+        })
+
+        gsap.from('.animate-section-3 .animate-title', {
+            y: -400,
+            duration: 1,
+            scrollTrigger: {
+                trigger: '.animate-section-3',
+                start: 'top bottom',
+                once: true,
+            },
+            onComplete: () => {
+                gsap.set('.animate-section-3 .animate-title', {clearProps: "all"})
+                gsap.killTweensOf('.animate-section-3 .animate-title')
+                ScrollTrigger.refresh()
+                ScrollTrigger.update()
+            }
+        })
     }
 
     marquee() {
@@ -772,6 +774,7 @@ class Animation {
                 end: "bottom top",
                 onEnter: () => animateSpline(this.spline.application, 23),
                 onLeave: () => animateSpline(this.spline.application, 24),
+                onLeaveBack: () => animateSpline(this.spline.application, 22),
             })
         })
     }
@@ -792,6 +795,7 @@ class Animation {
                 })
             },
             onLeave: () => animateSpline(this.spline.application, 26),
+            onLeaveBack: () => animateSpline(this.spline.application, 24),
         })
     }
 
@@ -855,6 +859,7 @@ class Animation {
                         })
                     })
                 },
+                onLeaveBack: () => animateSpline(this.spline.application, 26),
                 onEnterBack: () => {
                     animateSpline(this.spline.application, 26)
                     mm.add('(min-width: 768px)', () => {
@@ -897,7 +902,7 @@ class Animation {
                 onEnter: () => {
                     animateSpline(this.spline.application, 28)
                     mm.add('(min-width: 1440px)', () => {
-                        gsap.to('.spline-canvas', {
+                        gsap.to('.spline-container', {
                             zIndex: 2,
                             xPercent: 0,
                             yPercent: 50,
@@ -905,29 +910,33 @@ class Animation {
                     })
                     mm.add('(max-width: 1439px)', () => {
                         gsap.to('.spline-canvas', {
+                            xPercent: 0,
+                            yPercent: 0,
+                        })
+                        gsap.to('.spline-container', {
                             zIndex: 2,
                             xPercent: 4,
                             yPercent: 50,
                         })
                     })
                     mm.add('(max-width: 767px)', () => {
-                        gsap.to('.spline-canvas', {
+                        gsap.to('.spline-container', {
                             zIndex: 2,
                             xPercent: 40,
-                            yPercent: 45,
+                            yPercent: 50,
                         })
                     })
                 },
                 onLeaveBack: () => {
                     mm.add('(min-width: 768px)', () => {
-                        gsap.to('.spline-canvas', {
+                        gsap.to('.spline-container', {
                             zIndex: 1,
                             xPercent: -20,
                             yPercent: 0,
                         })
                     })
                     mm.add('(max-width: 767px)', () => {
-                        gsap.to('.spline-canvas', {
+                        gsap.to('.spline-container', {
                             zIndex: 1,
                             xPercent: 0,
                             yPercent: 0,
