@@ -24,6 +24,11 @@
 @import "./menu/menu";
 @import "./desktop-menu/desktop-menu";
 @import "./popup-container/popup-container";
+@import "./intro/intro";
+@import "./services/services";
+@import "./timeline/timeline";
+@import "./form/form";
+@import "./contacts-block/contacts-block";
 
 
 // widgets
@@ -37,4 +42,6 @@
 @import "./articles/article-notification";
 @import "./articles/article-card";
 @import "./articles/article-vacancy";
+@import "./articles/article-service";
+@import "./articles/article-contact";
 

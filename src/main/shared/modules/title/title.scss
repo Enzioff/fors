@@ -21,6 +21,10 @@
     @include h3();
   }
 
+  &--extra-small {
+    @include h4()
+  }
+
   &--temp {
     @include r($tablet) {
       width: 352px;

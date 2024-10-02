@@ -46,4 +46,13 @@
       }
     }
   }
+
+  &--intro {
+    height: 100vh;
+    max-height: 851px;
+
+    @include r($tablet) {
+      max-height: 650px;
+    }
+  }
 }

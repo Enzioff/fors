@@ -75,6 +75,7 @@
   border-radius: 50%;
 
   transition: .2s linear;
+  cursor: pointer;
 
   &:hover {
     background-color: $blue_hover;

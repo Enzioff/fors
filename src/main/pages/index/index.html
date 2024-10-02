@@ -3,6 +3,11 @@
 <%= htmlWebpackPlugin.options.widgets.head %>
 <body>
 <%= htmlWebpackPlugin.options.widgets.header %>
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
 <div class="spline-container">
     <canvas class="spline-canvas"></canvas>
 </div>
@@ -1339,6 +1344,6 @@
     </section>
 </main>
 <%= htmlWebpackPlugin.options.widgets.footer %>
-<!--<%= htmlWebpackPlugin.options.widgets.temp %>-->
+<%= htmlWebpackPlugin.options.widgets.temp %>
 </body>
 </html>

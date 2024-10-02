@@ -30,4 +30,27 @@
     line-height: 16.8px;
 
   }
+
+  &--slim {
+    padding: 15px;
+
+    font-family: $font-accent;
+    font-size: 15px;
+    line-height: 13px;
+    text-align: center;
+
+    background-color: transparent;
+
+    @include r($tablet) {
+      padding: 10px;
+
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+  &--light {
+    color: $white;
+    border-color: $white;
+  }
 }

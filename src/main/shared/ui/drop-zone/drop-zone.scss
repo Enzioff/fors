@@ -1,0 +1,63 @@
+.drop-zone {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 26px 17px;
+  border: 1px dashed $lines;
+  border-radius: 10px;
+  transition: .2s linear;
+  cursor: pointer;
+
+  &:hover {
+    border-color: $main1;
+  }
+
+  @include r($tablet) {
+    padding: 15px;
+  }
+
+  &._active {
+    border-color: $main1;
+  }
+
+  &.danger {
+    border-color: $red !important;
+
+    .drop-zone__notation {
+      color: $red !important;;
+    }
+    .drop-zone__icon {
+      display: none;
+
+      &--error {
+        display: flex;
+      }
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 44px;
+    height: 44px;
+
+    @include r($tablet) {
+      width: 24px;
+      height: 24px;
+    }
+
+    &--error {
+      display: none;
+    }
+  }
+
+  &__caption,
+  &__notation {
+    @include text3($gray);
+    text-align: center;
+  }
+
+  &__notation {
+    color: $main1;
+  }
+}

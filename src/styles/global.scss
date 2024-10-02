@@ -13,7 +13,7 @@ body {
 
 .main {
   flex-grow: 1;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 .centered {
@@ -22,6 +22,10 @@ body {
 
 .mb-auto {
   margin-bottom: auto;
+}
+
+.hidden {
+  display: none;
 }
 
 .logo {
@@ -71,6 +75,7 @@ body {
   display: flex;
   width: 100%;
   height: 100%;
+  pointer-events: none;
 }
 
 .spline-canvas {
@@ -80,6 +85,10 @@ body {
   pointer-events: none;
   z-index: 1;
   margin: 0 auto;
+}
+
+.spline-video {
+  display: none;
 }
 
 .visible {

@@ -3,3 +3,5 @@ import './icon-arrow-right.svg';
 import './icon-play.svg';
 import './icon-rocket.svg';
 import './icon-rocket-start.svg';
+import './icon-upload-doc.svg';
+import './icon-upload-error.svg';

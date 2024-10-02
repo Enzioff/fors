@@ -1,0 +1,26 @@
+.input {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+
+  @include text3($gray);
+
+  background-color: $bg;
+  border-radius: 15px;
+
+  @include r($tablet) {
+    padding: 15px;
+  }
+
+  &--area {
+    min-height: 190px;
+
+    @include r($tablet) {
+      min-height: 164px;
+    }
+
+    &.input--small {
+      min-height: 100px;
+    }
+  }
+}

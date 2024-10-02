@@ -21,19 +21,19 @@ class Animation {
         this.global()
         this.globalAnimations()
         this.menu()
-        this.section1()
-        this.section2()
-        this.section3()
-        this.marquee()
-        this.section4()
-        this.section6()
-        this.section7()
-        this.section8()
-        this.section9()
-        this.section10()
-        this.section11()
-        this.section12()
-        this.footer()
+        // this.section1()
+        // this.section2()
+        // this.section3()
+        // this.marquee()
+        // this.section4()
+        // this.section6()
+        // this.section7()
+        // this.section8()
+        // this.section9()
+        // this.section10()
+        // this.section11()
+        // this.section12()
+        // this.footer()
     }
 
     global() {
@@ -51,7 +51,12 @@ class Animation {
     }
 
     globalAnimations = () => {
+        const header = document.querySelector('.header');
+
         this.headerAnimation.animate(animateType.FIRST);
+        if (header.classList.contains('header--page')) {
+            this.headerAnimation.animate(animateType.VISIBLE);
+        }
     }
 
     moveCanvas = (value: number, props?: gsap.TweenVars) => {
@@ -320,7 +325,7 @@ class Animation {
             const calcHeight = (idx: number) => {
                 if (isDesktop) {
                     return shadowHeight - (idx * 45)
-                }else if (isTablet) {
+                } else if (isTablet) {
                     return shadowHeight - (idx * 25)
                 } else if (isMobileMax) {
                     return shadowHeight - (idx * 25)
@@ -481,7 +486,7 @@ class Animation {
             const calcHeight = (idx: number) => {
                 if (isDesktop) {
                     return shadowHeight - (idx * 60)
-                }else if (isTablet) {
+                } else if (isTablet) {
                     return shadowHeight - (idx * 30)
                 } else if (isMobileMax) {
                     return shadowHeight - (idx * 20)
@@ -528,7 +533,7 @@ class Animation {
                 const animationIdx = idx + 10;
 
                 tl.from(card, {
-                    y: () => idx === 0 ? 0 : card.getBoundingClientRect().height + (idx === 1 ? isTabletMax ? -14: -50 : 20),
+                    y: () => idx === 0 ? 0 : card.getBoundingClientRect().height + (idx === 1 ? isTabletMax ? -14 : -50 : 20),
                     duration: 1,
                     ease: 'linear',
                     onStart: () => {
@@ -631,7 +636,7 @@ class Animation {
             const calcHeight = (idx: number) => {
                 if (isDesktop) {
                     return shadowHeight - (idx * 60)
-                }else if (isTablet) {
+                } else if (isTablet) {
                     return shadowHeight - (idx * 30)
                 } else if (isMobileMax) {
                     return shadowHeight - (idx * 30)
@@ -677,7 +682,7 @@ class Animation {
                 const animationIdx = idx + 20;
 
                 tl.from(card, {
-                    y: () => idx === 0 ? 0 : card.getBoundingClientRect().height + (idx === 1 ? isTabletMax ? -14: -50 : 20),
+                    y: () => idx === 0 ? 0 : card.getBoundingClientRect().height + (idx === 1 ? isTabletMax ? -14 : -50 : 20),
                     duration: 1,
                     ease: 'linear',
                     onStart: () => {
@@ -991,7 +996,6 @@ class Animation {
         }
 
         function openDesktopMenu() {
-            console.log('enter')
             gsap.killTweensOf(desktopMenu);
             gsap.to(desktopMenu, {
                 width: '100%',
@@ -1006,11 +1010,11 @@ class Animation {
                 duration: 0.5,
                 ease: "back.out(1.7)",
             })
+            burger.classList.add('active')
             checkBurgerStatus(true)
         }
 
         function closeDesktopMenu() {
-            console.log('leave')
             gsap.killTweensOf(desktopMenu);
             gsap.killTweensOf('.desktop-menu__link');
             gsap.set(desktopMenu, {clearProps: "all"});
@@ -1020,6 +1024,7 @@ class Animation {
                 padding: '19px 0',
                 margin: 0,
             })
+            burger.classList.remove('active')
             checkBurgerStatus(true)
         }
 

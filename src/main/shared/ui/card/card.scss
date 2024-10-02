@@ -10,4 +10,24 @@
     padding: 10px;
     border-radius: 15px;
   }
+
+  &--offset {
+    padding: 30px;
+
+    @include r($tablet) {
+      padding: 30px 20px;
+    }
+
+    @include r($mobile) {
+      padding: 25px 15px;
+    }
+  }
+
+  &--height {
+    min-height: 720px;
+
+    @include r($tablet) {
+      min-height: 584px;
+    }
+  }
 }

@@ -1,0 +1,158 @@
+.article-service {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 30px 40px;
+  background-color: $main3;
+  border-radius: 35px;
+  box-shadow: 0 0 30px 0 #0A274D26;
+
+  @include r($tablet) {
+    gap: 30px;
+    padding: 25px 20px 25px 25px;
+    border-radius: 25px;
+  }
+
+  @include r($mobile) {
+    gap: 20px;
+    padding: 20px 15px;
+  }
+
+  &--light {
+    background-color: $main1;
+
+    .projects__item {
+      border-color: $main1;
+    }
+  }
+
+  &__header,
+  &__info,
+  &__footer {
+    display: grid;
+    align-items: center;
+    grid-template-columns: minmax(400px, 610px) minmax(400px, 630px);
+    gap: 40px;
+
+    @include r($tablet) {
+      grid-template-columns: minmax(200px, 293px) minmax(250px, 350px);
+      gap: 20px;
+    }
+
+    @include r($mobile) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__footer {
+    @include r($mobile) {
+      flex-direction: column-reverse;
+    }
+  }
+
+  &__title {
+    font-family: $font-main;
+    font-size: 42px;
+    font-weight: 400;
+    line-height: 55px;
+
+    @include r($tablet) {
+      font-size: 20px;
+      line-height: 26px;
+    }
+  }
+
+  &__title,
+  &__head {
+    color: $white;
+
+    @include r($tablet) {
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__text {
+    max-width: 400px;
+    @include text2($white)
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    
+    @include r($tablet) {
+      gap: 10px;
+    }
+  }
+
+  &__element {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+
+    @include r($tablet) {
+      gap: 5px;
+      width: auto;
+    }
+
+    @include r($mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    span {
+      font-family: $font-accent;
+      font-size: 13px;
+      font-weight: 500;
+      line-height: 15px;
+      text-align: left;
+      color: $white;
+
+      @include r($tablet) {
+        font-size: 12px;
+        line-height: 12px;
+      }
+
+      &:first-child {
+        font-family: $font-main;
+        font-size: 32px;
+        line-height: 35px;
+        text-align: left;
+
+        @include r($tablet) {
+          font-size: 18px;
+          font-weight: 400;
+          line-height: 22px;
+        }
+
+        @include r($mobile) {
+          font-size: 28px;
+          font-weight: 400;
+          line-height: 34px;
+        }
+      }
+    }
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include r($mobile) {
+      gap: 10px;
+    }
+  }
+
+  &__tags {
+    margin-left: auto;
+    max-width: 450px;
+  }
+}

@@ -1,0 +1,11 @@
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: 100%;
+
+  @include r($mobile) {
+    justify-content: flex-start;
+    padding-top: 176px;
+  }
+}

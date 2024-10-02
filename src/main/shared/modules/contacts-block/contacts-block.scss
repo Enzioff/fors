@@ -1,0 +1,10 @@
+.contacts-block {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+
+  @include r($tablet) {
+    gap: 15px;
+  }
+}
