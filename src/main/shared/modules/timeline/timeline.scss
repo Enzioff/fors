@@ -5,6 +5,18 @@
   max-height: 686px;
   overflow: hidden;
 
+  &::after {
+    content: "";
+    position: absolute;
+    left:0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    width:100%;
+    height: 500px;
+    background: linear-gradient(182.77deg, rgba(240, 240, 255, 0) -113.9%, #F0F0FF 94.5%);
+  }
+
   &__item {
     display: flex;
     flex-shrink: 0;

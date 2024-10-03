@@ -11,6 +11,7 @@ class Animation {
     mm: gsap.MatchMedia;
     headerAnimation: HeaderAnimation;
     breakPoints: breakPoints;
+    logos: NodeListOf<Element>;
 
     constructor(spline?: Spline) {
         this.spline = spline;
@@ -21,19 +22,20 @@ class Animation {
         this.global()
         this.globalAnimations()
         this.menu()
-        // this.section1()
-        // this.section2()
-        // this.section3()
-        // this.marquee()
-        // this.section4()
-        // this.section6()
-        // this.section7()
-        // this.section8()
-        // this.section9()
-        // this.section10()
-        // this.section11()
-        // this.section12()
-        // this.footer()
+        this.section1()
+        this.section2()
+        this.section3()
+        this.marquee()
+        this.section4()
+        this.section6()
+        this.section7()
+        this.section8()
+        this.section9()
+        this.section10()
+        this.section11()
+        this.section12()
+        this.footer()
+        this.about()
     }
 
     global() {
@@ -46,6 +48,7 @@ class Animation {
             mobileMax: breakPointsValues.MOBILE_MAX,
             mobile: breakPointsValues.MOBILE,
         }
+        this.logos = document.querySelectorAll('.logo img');
 
         this.headerAnimation = new HeaderAnimation()
     }
@@ -56,6 +59,16 @@ class Animation {
         this.headerAnimation.animate(animateType.FIRST);
         if (header.classList.contains('header--page')) {
             this.headerAnimation.animate(animateType.VISIBLE);
+        }
+    }
+
+    changeLogos = (flag: boolean) => {
+        if (flag) {
+            this.logos[0].setAttribute('hidden', '')
+            this.logos[1].removeAttribute('hidden')
+        } else {
+            this.logos[1].setAttribute('hidden', '')
+            this.logos[0].removeAttribute('hidden')
         }
     }
 
@@ -82,14 +95,25 @@ class Animation {
                 start: 'top top',
                 end: "bottom center",
                 onEnterBack: () => {
-                    isDesktop && this.headerAnimation.animate(animateType.HIDE);
                     animateSpline(this.spline.application, 0)
+                    ScrollTrigger.refresh()
                 },
                 onLeave: () => {
-                    isDesktop && this.headerAnimation.animate(animateType.VISIBLE)
                     animateSpline(this.spline.application, 1)
                 }
             });
+
+            ScrollTrigger.create({
+                trigger: '.animate-section-2',
+                start: 'top top+=100',
+                onEnter: () => {
+                    isDesktop && this.headerAnimation.animate(animateType.VISIBLE)
+                },
+                onLeaveBack: () => {
+                    animateSpline(this.spline.application, 0)
+                    isDesktop && this.headerAnimation.animate(animateType.HIDE);
+                }
+            })
 
             return () => {
                 ScrollTrigger.refresh()
@@ -295,19 +319,30 @@ class Animation {
     }
 
     section4() {
+        const section = document.querySelector('.animate-section-3') as HTMLElement
         const paginationList = document.querySelectorAll('.animate-section-3 .pagination__item');
         const paginationCount = document.querySelector('.animate-section-3 .widget-slider__numbers');
         const popups = document.querySelectorAll('.animate-section-3 .article-notification')
         const listItems = document.querySelectorAll('.animate-section-3 .article-info');
         const container = document.querySelector('.animate-section-3 .layering');
-        const shadow = container.querySelector('.layering__shadow');
-        const shadowHeight = shadow.getBoundingClientRect().height;
+        const shadow = container?.querySelector('.layering__shadow');
+        const shadowHeight = shadow?.getBoundingClientRect().height;
+
+        ScrollTrigger.create({
+            trigger: '.animate-section-3',
+            start: 'top top+=100',
+            end: `bottom+=${(listItems?.length * (listItems[0]?.getBoundingClientRect().height)) + (section.getBoundingClientRect().height / 1.6)} top+=100`,
+            onEnter: () => this.changeLogos(true),
+            onEnterBack: () => this.changeLogos(true),
+            onLeave: () => this.changeLogos(false),
+            onLeaveBack: () => this.changeLogos(false)
+        })
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: '.animate-section-3 .layering',
                 start: 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200)}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                 scrub: 1,
                 onEnterBack: () => animateSpline(this.spline.application, 7),
                 onLeave: () => animateSpline(this.spline.application, 8)
@@ -387,7 +422,7 @@ class Animation {
                 pinSpacing: true,
                 scrub: 1,
                 start: 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200) + 300}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200) + 300}`,
                 onLeaveBack: () => {
                     animateSpline(this.spline.application, 2)
                     isMobileMax && this.moveCanvas(0);
@@ -456,8 +491,8 @@ class Animation {
         const listItems = document.querySelectorAll('.animate-section-4 .article-info');
         const container = document.querySelector('.animate-section-4 .layering');
         const stayElement = document.querySelector('.animate-section-4 .grid--anim')
-        const shadow = container.querySelector('.layering__shadow');
-        const shadowHeight = shadow.getBoundingClientRect().height;
+        const shadow = container?.querySelector('.layering__shadow');
+        const shadowHeight = shadow?.getBoundingClientRect().height;
 
         ScrollTrigger.create({
             trigger: '.animate-section-4 .title',
@@ -469,7 +504,7 @@ class Animation {
             scrollTrigger: {
                 trigger: container,
                 start: 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200)}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                 scrub: 1,
                 onLeave: () => animateSpline(this.spline.application, 14),
             }
@@ -506,15 +541,17 @@ class Animation {
                 pinSpacing: true,
                 scrub: 1,
                 start: isMobileMax ? 'top center-=40%' : 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200) + 300}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200) + 300}`,
                 onLeave: () => {
                     animateSpline(this.spline.application, 15)
+                    isDesktop && this.moveCanvas(0, {xPercent: -20, y: 0})
                     isMobileMax && this.moveCanvas(0, {yPercent: 0})
                 },
                 onLeaveBack: () => {
                     isMobileMax && this.moveCanvas(0, {yPercent: 0})
                 },
                 onEnter: () => {
+                    isDesktop && this.moveCanvas(0, {xPercent: -20, y: -120})
                     isMobileMax && this.moveCanvas(0, {yPercent: -20})
                 }
             })
@@ -612,14 +649,14 @@ class Animation {
         const paginationCount = document.querySelector('.animate-section-5 .widget-slider__numbers');
         const listItems = document.querySelectorAll('.animate-section-5 .article-info');
         const container = document.querySelector('.animate-section-5 .layering');
-        const shadow = container.querySelector('.layering__shadow');
-        const shadowHeight = shadow.getBoundingClientRect().height;
+        const shadow = container?.querySelector('.layering__shadow');
+        const shadowHeight = shadow?.getBoundingClientRect().height;
 
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: container,
                 start: 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200)}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                 scrub: 1,
                 onLeave: () => animateSpline(this.spline.application, 14),
             }
@@ -656,14 +693,16 @@ class Animation {
                 pinSpacing: true,
                 scrub: 1,
                 start: isMobileMax ? 'top center-=40%' : 'center center',
-                end: () => `+=${listItems.length * (listItems[0].getBoundingClientRect().height + 200) + 300}`,
+                end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200) + 300}`,
                 onLeave: () => {
+                    isDesktop && this.moveCanvas(0, {xPercent: -20, y: 0})
                     isMobileMax && this.moveCanvas(0, {yPercent: 0})
                 },
                 onLeaveBack: () => {
                     isMobileMax && this.moveCanvas(0, {yPercent: 0})
                 },
                 onEnter: () => {
+                    isDesktop && this.moveCanvas(0, {xPercent: -20, y: -120})
                     isMobileMax && this.moveCanvas(0, {yPercent: -20})
                 }
             })
@@ -714,7 +753,7 @@ class Animation {
                 pin: true,
                 pinSpacing: false,
                 start: isTabletMax ? 'top-=150px 30%' : 'top-=200px 20%',
-                end: isTabletMax ? 'center+=100 center' : 'center+=300 center',
+                end: isTabletMax ? 'center+=100 center' : 'center+=420 center',
                 onToggle: (self) => {
                     if (self.isActive) {
                         if (isDesktop) {
@@ -807,8 +846,8 @@ class Animation {
     section11() {
         const marqueeContainerTop = document.querySelector('.marquee__track--anim-01')
         const marqueeContainerBottom = document.querySelector('.marquee__track--anim-02')
-        const totalWidthTop = marqueeContainerTop.scrollWidth;
-        const totalWidthBottom = marqueeContainerBottom.scrollWidth;
+        const totalWidthTop = marqueeContainerTop?.scrollWidth;
+        const totalWidthBottom = marqueeContainerBottom?.scrollWidth;
         const tl = gsap.timeline();
 
         ScrollTrigger.create({
@@ -816,8 +855,10 @@ class Animation {
             start: 'top bottom',
             end: "bottom top",
             onEnter: () => {
-                marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
-                marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
+                if (marqueeContainerTop && marqueeContainerBottom) {
+                    marqueeContainerTop.innerHTML += marqueeContainerTop.innerHTML;
+                    marqueeContainerBottom.innerHTML += marqueeContainerBottom.innerHTML;
+                }
                 tl.to('.marquee__track--anim-01', {
                     x: -totalWidthTop / 2,
                     duration: 20,
@@ -885,7 +926,7 @@ class Animation {
             },
             onComplete: () => {
                 const btn = document.querySelector('.button-circle.anim-el-in');
-                btn.classList.remove('button-circle--stay')
+                btn?.classList.remove('button-circle--stay')
             }
         });
 
@@ -1043,6 +1084,17 @@ class Animation {
             return function () {
                 burger.removeEventListener('click', toggleMobileMenu)
             };
+        })
+    }
+
+    about = () => {
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+
         })
     }
 }

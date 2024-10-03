@@ -11,13 +11,13 @@
 
   @include r($tablet) {
     height: 230px;
+    border-radius: 15px;
   }
 
   @include r($mobile) {
     grid-column: span 1;
     grid-row: span 2;
     height: auto;
-    border-radius: 15px;
   }
 
   &:hover {

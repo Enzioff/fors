@@ -52,6 +52,10 @@
         font-size: 35px;
         line-height: 42px;
       }
+
+      @include r($mobile) {
+        font-size: 32px;
+      }
     }
 
     &.active {

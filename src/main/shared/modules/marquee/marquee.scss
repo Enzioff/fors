@@ -38,6 +38,11 @@
       height: 100px;
       padding: 28px;
     }
+
+    @include r($mobile) {
+      width: 80px;
+      height: 80px;
+    }
   }
 
   &__picture {

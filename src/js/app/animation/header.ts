@@ -13,7 +13,7 @@ class HeaderAnimation {
             [animateType.HIDE]: () => {
                 gsap.to(this.header, {
                     yPercent: -100,
-                    duration: 1,
+                    duration: 0.7,
                 })
             },
             [animateType.FIRST]: () => {

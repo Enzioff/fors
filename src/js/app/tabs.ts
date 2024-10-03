@@ -43,8 +43,11 @@ class Tabs {
         const widgetCount = this.widget.querySelector('.widget-slider__numbers');
         const widgetCaption = this.widget.querySelector('.widget-slider__caption');
 
-        this.clearClasses([paginationList]);
-        this.addClasses([paginationList], idx);
+        Array.from(paginationList).filter((element, innerIdx) => {
+            innerIdx <= idx
+                ? element.classList.add('active')
+                : element.classList.remove('active')
+        })
 
         widgetCount.textContent = `${idx + 1}/${paginationList.length}`;
         widgetCaption.textContent = this.textArray[idx];

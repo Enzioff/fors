@@ -8,6 +8,10 @@
     gap: 10px;
   }
 
+  @include r($mobile) {
+    gap: 20px;
+  }
+
   &__picture {
     position: relative;
     display: flex;
@@ -52,6 +56,10 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 10px;
+
+    @include r($mobile) {
+      gap: 20px;
+    }
   }
 
   &__info {
@@ -70,6 +78,10 @@
 
   &__text {
     @include text3();
+    @include r($mobile) {
+      font-size: 12px;
+      line-height: 12px;
+    }
   }
 
   &__button {

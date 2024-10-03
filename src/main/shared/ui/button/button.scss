@@ -44,6 +44,10 @@
     border-radius: 15px;
   }
 
+  @include r($mobile) {
+    font-size: 11px;
+  }
+
   &--wide {
     padding: 19px 20px;
     width: 100%;
@@ -55,6 +59,10 @@
       font-weight: 400;
       line-height: 17px;
       text-align: center;
+    }
+
+    @include r($mobile) {
+      font-size: 11px;
     }
   }
 }
@@ -169,6 +177,11 @@
       height: 122px;
     }
 
+    @include r($mobile) {
+      width: 108px;
+      height: 108px;
+    }
+
 
     .button-circle__icon {
       width: 44px;
@@ -180,6 +193,11 @@
         font-size: 14px;
         font-weight: 400;
         line-height: 17px;
+      }
+
+      @include r($mobile) {
+        font-size: 11px;
+        line-height: 14px;
       }
     }
   }

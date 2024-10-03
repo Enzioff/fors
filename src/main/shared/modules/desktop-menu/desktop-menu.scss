@@ -19,6 +19,10 @@
     font-weight: 400;
     line-height: 21.6px;
     text-align: left;
-    color: $main1;
+    color: $gray;
+
+    &:hover {
+      color: $main1;
+    }
   }
 }
