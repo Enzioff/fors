@@ -1,8 +1,9 @@
-import Slider from "./slider";
-import Animation from "./animation/animation";
 import {Spline} from "./spline/spline";
 import Tabs from "./tabs";
 import DropZone from "./dropZone";
+import {AboutPage} from "./animation/AboutPage";
+import {MainPage} from "./animation/MainPage";
+import {AnimationConfig} from "./animation/AnimationConfig";
 
 class App {
     splineURL: string;
@@ -13,25 +14,18 @@ class App {
     }
 
     init = () => {
-        // this.createSlider()
         this.createAnimation()
         this.createTabs()
         this.createDropZone()
-    }
-
-    createSlider = () => {
-        const sliders = document.querySelectorAll('[data-slider]')
-        if (!sliders) return
-        sliders.forEach(slider => {
-            new Slider(slider)
-        })
     }
 
     createAnimation = () => {
         const el: HTMLCanvasElement = document.querySelector('.spline-canvas');
         const spline = new Spline(el, this.splineURL)
 
-        new Animation(spline)
+        new AnimationConfig(spline)
+        new MainPage(spline)
+        new AboutPage(spline)
     }
 
     createTabs = () => {

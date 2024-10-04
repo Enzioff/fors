@@ -1,9 +1,10 @@
 .desktop-menu {
-  margin-left: 15px;
-  padding: 19px 56px;
+  padding: 19px 0;
   background-color: $white;
   border-radius: 100px;
   overflow: hidden;
+  width: 0;
+  margin: 0;
 
   &__wrapper {
     display: flex;

@@ -19,7 +19,6 @@
   border-radius: 35px;
 
   vertical-align: middle;
-  transition: .2s linear;
 
   &:hover {
     background-color: $blue_hover;
@@ -82,7 +81,6 @@
   background-color: $main1;
   border-radius: 50%;
 
-  transition: .2s linear;
   cursor: pointer;
 
   &:hover {

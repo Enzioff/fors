@@ -69,8 +69,14 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     },
     23: (app, el) => rotateObject(el, RotateKey.SCENE_23),
     24: (app, el) => rotateObject(el, RotateKey.SCENE_24),
-    25: (app, el) => rotateObject(el, RotateKey.SCENE_25),
-    26: (app, el) => rotateObject(el, RotateKey.SCENE_26),
+    25: (app, el) => {
+        rotateObject(el, RotateKey.SCENE_25)
+        callInnerAnimation(app, AnimationKey.JOIN_MODEL)
+    },
+    26: (app, el) => {
+        rotateObject(el, RotateKey.SCENE_26)
+        callInnerAnimation(app, AnimationKey.JOIN_MODEL)
+    },
     27: (app) => callInnerAnimation(app, AnimationKey.BREAK_MODEL),
     28: (app, el) => {
         rotateObject(el, RotateKey.SCENE_28);
@@ -81,7 +87,7 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
 function animateSpline(app: Application, key: number): void {
     const el = app.findObjectByName('cube');
     const action = animationActions[key];
-
+    console.log(key)
     if (action) {
         action(app, el);
     }

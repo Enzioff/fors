@@ -1,3 +1,4 @@
+import './logo.svg';
 import './icon-arrow-down.svg';
 import './icon-arrow-right.svg';
 import './icon-play.svg';

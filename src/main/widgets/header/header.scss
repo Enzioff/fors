@@ -7,8 +7,8 @@
   flex-direction: column;
   padding-top: 30px;
   width: 100%;
-  opacity: 0;
-  z-index: -1;
+  z-index: 3;
+  transform: translate(0, -100%);
 
   @include r($tablet) {
 
@@ -35,6 +35,34 @@
   & > .container {
     @include r($tablet) {
       z-index: 4;
+    }
+  }
+
+  &__logo {
+    display: flex;
+
+    &.light {
+      .header__icon-logo {
+        fill: $bg;
+      }
+    }
+  }
+
+  &__icon-logo {
+    display: flex;
+    width: 208px;
+    height: 108px;
+    fill: $main3;
+    transition: .2s linear;
+
+    @include r($tablet) {
+      width: 124px;
+      height: 66px;
+    }
+
+    @include r($mobile) {
+      width: 94px;
+      height: 56px;
     }
   }
 }

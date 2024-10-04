@@ -1,7 +1,8 @@
 export enum animateType {
     HIDE = 'HIDE',
-    FIRST = 'FIRST',
     VISIBLE = 'VISIBLE',
+    LOGO_BLUE = 'LOGO_BLUE',
+    LOGO_WHITE = 'LOGO_WHITE'
 }
 
 export enum breakPointsValues {
@@ -31,4 +32,12 @@ export interface AnimationProperties {
 
 export interface PopupsAnimation {
     [key: string]: AnimationProperties;
+}
+
+export interface AnimationClassList {
+    [key: string]: AnimationClassConfig
+}
+
+export interface AnimationClassConfig {
+    headerIsFixed: boolean,
 }
