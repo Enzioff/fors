@@ -1,5 +1,6 @@
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
+import {ScrollToPlugin} from "gsap/ScrollToPlugin";
 import {Spline} from "../spline/spline";
 import {breakPoints, breakPointsValues} from "../../types";
 import HeaderAnimation from "./header";
@@ -11,7 +12,7 @@ export class MainGsap {
     headerAnimation: HeaderAnimation;
 
     constructor(spline: Spline) {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
         this.spline = spline
         this.mm = gsap.matchMedia()

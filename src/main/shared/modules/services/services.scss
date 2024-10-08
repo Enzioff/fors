@@ -27,6 +27,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+
+    @include r($tablet) {
+      min-height: 483px;
+    }
+
+    @include r($mobile) {
+      min-height: 709px;
+    }
   }
 
   &__item {
