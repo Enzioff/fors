@@ -13,6 +13,24 @@
     min-width: 100%;
   }
 
+  &--counter {
+    min-height: 754px;
+
+    @include r($tablet) {
+      min-height: 549px;
+    }
+
+    @include r($mobile) {
+      min-height: 660px;
+    }
+
+    .services__content {
+      @include r($mobile) {
+        min-height: auto;
+      }
+    }
+  }
+
   &__header {
     display: flex;
     align-items: center;

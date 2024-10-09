@@ -44,6 +44,19 @@
     box-shadow: 0 0 30.5px 0 #7B869426;
   }
 
+  &--author {
+    height: auto;
+    min-height: 372px;
+
+    @include r($tablet) {
+      min-height: 320px;
+    }
+
+    .article-info__body {
+      margin-bottom: 20px;
+    }
+  }
+
   &__top {
     display: flex;
     flex-direction: column;

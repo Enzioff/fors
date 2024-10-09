@@ -15,6 +15,7 @@ export class AnimationConfig extends MainGsap {
     private initAnimationConfig() {
         this.initIntroSection()
         this.animationInBottom()
+        this.animationInBottomPin()
         this.animationInBottomStagger()
         this.animationInRight()
         this.animationInRightStagger()
@@ -165,6 +166,32 @@ export class AnimationConfig extends MainGsap {
                     onToggle: self => {
                         self.refresh()
                     },
+                }
+            })
+        })
+    }
+
+    public animationInBottomPin() {
+        const selectors = document.querySelectorAll('.anim-in-bottom-pin');
+
+        if (!selectors) return
+
+        selectors.forEach(selector => {
+            const children = selector.children;
+
+            gsap.from(children, {
+                y: 50,
+                opacity: 0,
+                stagger: 0.2,
+                duration: 0.8,
+                scrollTrigger: {
+                    trigger: selector,
+                    start: 'top-=50 bottom',
+                    end: 'bottom top',
+                    scrub: 1,
+                    onToggle: self => {
+                        self.refresh()
+                    }
                 }
             })
         })

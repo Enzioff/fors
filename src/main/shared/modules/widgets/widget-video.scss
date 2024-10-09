@@ -12,6 +12,10 @@
     gap: 20px;
   }
 
+  &--center {
+    align-items: center;
+  }
+
   &__picture {
     position: relative;
     display: flex;

@@ -97,4 +97,32 @@
       }
     }
   }
+
+  &--author {
+    height: 530px;
+
+    @include r($tablet) {
+      height: 100%;
+      min-height: 383px;
+    }
+
+    .layering__shadow {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 138px;
+      background: linear-gradient(180deg, rgba(240, 240, 255, 0) -61.58%, #F0F0FF 59.37%);
+      z-index: 2;
+
+      @include r($tablet) {
+        height: 50px;
+        background: linear-gradient(180deg, rgba(240, 240, 255, 0) -66.64%, #F0F0FF 104.35%);
+      }
+
+      @include r($mobile) {
+        height: 45px;
+      }
+    }
+  }
 }

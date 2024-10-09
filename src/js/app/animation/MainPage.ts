@@ -148,6 +148,9 @@ export class MainPage extends MainGsap {
                 start: 'center center',
                 end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                 scrub: 1,
+                onToggle: self => {
+                    self.refresh()
+                }
             }
         });
 
@@ -233,6 +236,9 @@ export class MainPage extends MainGsap {
                 },
                 onLeave: () => {
                     isMobileMax && this.moveCanvas(0);
+                },
+                onToggle: self => {
+                    self.refresh()
                 }
             })
 
@@ -439,6 +445,7 @@ export class MainPage extends MainGsap {
             onEnter: () => animateSpline(this.application, 17),
             onEnterBack: () => animateSpline(this.application, 17),
             onLeaveBack: () => animateSpline(this.application, 16),
+            onToggle: self => self.refresh()
         })
     }
 

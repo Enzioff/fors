@@ -3,6 +3,7 @@ import {Spline} from "../spline/spline";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {MainGsap} from "./MainGsap";
 import {animateType} from "../../types";
+import {animateSpline} from "../spline/animate";
 
 export class AboutPage extends MainGsap {
     constructor(spline: Spline) {
@@ -36,10 +37,14 @@ export class AboutPage extends MainGsap {
                 start: 'top center',
                 end: 'bottom center',
                 onEnter: () => {
-                    isTablet && this.moveCanvas(-20)
+                    animateSpline(this.application, 1)
                 },
                 onLeaveBack: () => this.moveCanvas(0),
-                onLeave: () => isTablet && this.moveCanvas(-20)
+                onLeave: () => {
+                },
+                onToggle: self => {
+                    self.refresh()
+                }
             })
         })
     }
@@ -76,6 +81,7 @@ export class AboutPage extends MainGsap {
                     } else {
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
+                    self.refresh()
                 },
             })
 
@@ -86,6 +92,9 @@ export class AboutPage extends MainGsap {
                 pin: true,
                 pinSpacing: true,
                 scrub: 1,
+                onToggle: self => {
+                    self.refresh()
+                }
             })
 
             const cardsTimeline = gsap.timeline({
@@ -175,6 +184,7 @@ export class AboutPage extends MainGsap {
                     self.isActive
                         ? isTablet && this.moveCanvas(20)
                         : isTablet && this.moveCanvas(-20)
+                    self.refresh()
                 }
             })
         })
@@ -188,6 +198,7 @@ export class AboutPage extends MainGsap {
         const timeline = timelinePinnedBlock.querySelector('.timeline');
         const timelineItems = timeline.querySelectorAll('.timeline__item');
         const timelineWrapper = timeline.querySelector('.timeline__wrapper');
+        const shadow = timeline.querySelector('.timeline__shadow')
 
         ScrollTrigger.refresh()
 
@@ -212,14 +223,26 @@ export class AboutPage extends MainGsap {
                     scrollTrigger: {
                         trigger: timelinePinnedBlock,
                         start: 'center center',
-                        end: () => `+=${Math.abs(totalHeight)}`,
+                        end: () => `+=${Math.abs(totalHeight * 1.5)}`,
                         pin: true,
                         scrub: 1,
+                        onToggle: self => {
+                            self.refresh()
+                            ScrollTrigger.getAll().forEach(el => {
+                                if (el.trigger.classList.contains('footer')) {
+                                    el.refresh()
+                                }
+                            })
+                            self.isActive
+                                ? timeline.classList.add('active')
+                                : timeline.classList.remove('active')
+                        }
                     }
                 })
 
                 let offsetY = 0;
-                timelineItems.forEach((element) => {
+                let shadowSize = shadow.getBoundingClientRect().height
+                timelineItems.forEach((element, idx) => {
                     const elementHeight = element.getBoundingClientRect().height
                     sectionTimeline.to(timelineWrapper, {
                         y: offsetY >= limitY ? offsetY : limitY,
@@ -247,10 +270,27 @@ export class AboutPage extends MainGsap {
                     scrollTrigger: {
                         trigger: timelineTablet,
                         start: 'center center',
-                        end: () => `+=${Math.abs(totalWidth)}`,
+                        end: () => `+=${Math.abs(totalWidth * 1.5)}`,
                         pin: true,
                         pinSpacing: true,
                         scrub: 1,
+                        onToggle: self => {
+                            self.refresh()
+                            ScrollTrigger.getAll().forEach(el => {
+                                if (el.trigger.classList.contains('footer')) {
+                                    el.refresh()
+                                }
+                            })
+                            if (self.isActive) {
+                                timeline.classList.add('active')
+                                isTabletMax && this.moveCanvas(-20, {yPercent: -20})
+                                isMobileMax && this.moveCanvas(0, {yPercent: 0})
+                            } else {
+                                timeline.classList.remove('active')
+                                isTabletMax && this.moveCanvas(-20, {yPercent: 0})
+                                isMobileMax && this.moveCanvas(0, {yPercent: 0})
+                            }
+                        }
                     }
                 })
 
