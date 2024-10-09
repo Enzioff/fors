@@ -51,9 +51,11 @@ export class MvcPage extends MainGsap {
                         animateSpline(this.application, 2)
                         if (isDesktop) {
                             this.application.setZoom(0.8)
-                        } else if (isTablet) {
+                        }
+                        if (isTabletMax) {
                             this.application.setZoom(0.7)
-                        } else if (isMobileMax) {
+                        }
+                        if (isMobileMax) {
                             this.application.setZoom(0.6)
                         }
                     } else {
@@ -62,10 +64,12 @@ export class MvcPage extends MainGsap {
                         if (isDesktop) {
                             this.application.setZoom(1.4)
                             this.moveCanvas(-20, {yPercent: 0, zIndex: 0})
-                        } else if (isTablet) {
+                        }
+                        if (isTabletMax) {
                             this.application.setZoom(0.7)
                             this.moveCanvas(-20, {yPercent: 0, zIndex: 0})
-                        } else if (isMobileMax) {
+                        }
+                        if (isMobileMax) {
                             this.application.setZoom(0.8)
                             this.moveCanvas(0, {yPercent: 0, zIndex: 0})
                         }

@@ -17,6 +17,7 @@ export class AboutPage extends MainGsap {
         this.bigCards()
         this.newsSection()
         this.timelineSection()
+        this.sectionForm()
     }
 
     protected cardsSection = () => {
@@ -242,7 +243,6 @@ export class AboutPage extends MainGsap {
                 })
 
                 let offsetY = 0;
-                let shadowSize = shadow.getBoundingClientRect().height
                 timelineItems.forEach((element, idx) => {
                     const elementHeight = element.getBoundingClientRect().height
                     sectionTimeline.to(timelineWrapper, {
@@ -311,4 +311,33 @@ export class AboutPage extends MainGsap {
             }
         })
     }
+
+    protected sectionForm = () => {
+        const section = document.querySelector('.trigger-form');
+
+        if (!section) return;
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top center',
+                end: 'bottom top',
+                onToggle: self => {
+                    if (self.isActive) {
+                        isDesktop && this.moveCanvas(-20, {yPercent: 20})
+                    } else {
+                        isDesktop && this.moveCanvas(-20, {yPercent: 0})
+                    }
+                }
+            })
+        })
+    }
+
 }
