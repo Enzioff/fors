@@ -7,6 +7,12 @@
     gap: 30px;
   }
 
+  @include r($mobile) {
+    margin-left: -20px;
+    margin-right: -20px;
+    min-width: 100%;
+  }
+
   &__header {
     display: flex;
     align-items: center;
@@ -34,6 +40,29 @@
 
     @include r($mobile) {
       min-height: 709px;
+    }
+
+    &--gradient {
+      & > article {
+        &:nth-child(1) {
+          background-color: #032183;
+        }
+        &:nth-child(2) {
+          background-color: #002DBF;
+        }
+        &:nth-child(3) {
+          background-color: #0234D5;
+        }
+        &:nth-child(4) {
+          background-color: #0238E7;
+        }
+        &:nth-child(5) {
+          background-color: #043BEB;
+        }
+        &:nth-child(6) {
+          background-color: #134AFF;
+        }
+      }
     }
   }
 

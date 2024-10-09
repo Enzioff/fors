@@ -2,7 +2,11 @@
   display: flex;
   flex-direction: column;
   max-height: 686px;
-  overflow: hidden;
+
+  @include r($tablet) {
+    max-height: 100%;
+    margin-bottom: 50px;
+  }
 
   //&::after {
   //  content: "";
@@ -20,6 +24,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
+
+    @include r($tablet) {
+      flex-direction: row;
+    }
   }
 
   &__item {
@@ -27,10 +35,24 @@
     flex-shrink: 0;
     gap: 20px;
     min-height: 168px;
+    transition: .2s linear;
+
+    @include r($tablet) {
+      flex-shrink: 1;
+      gap: 10px;
+      width: 100%;
+      min-width: 289px;
+      min-height: auto;
+      height: auto;
+    }
 
     &:not(:last-of-type) {
       .timeline__content {
         padding-bottom: 30px;
+
+        @include r($tablet) {
+          padding-right: 10px;
+        }
       }
     }
 
@@ -44,9 +66,15 @@
     }
 
     &.active {
+      transition: .2s linear;
       .timeline__date {
         font-size: 82px;
         color: $main1;
+
+        @include r($tablet) {
+          font-size: 42px;
+          line-height: 57px;
+        }
       }
 
       .timeline__text {
@@ -96,6 +124,8 @@
 
     @include r($tablet) {
       justify-content: flex-start;
+      font-size: 42px;
+      line-height: 57px;
     }
   }
 
@@ -107,6 +137,7 @@
 
     @include r($tablet) {
       padding-left: 0;
+      height: 100%;
     }
 
     &::before {
@@ -164,5 +195,10 @@
     font-weight: 400;
     line-height: 24px;
     color: $gray_light;
+
+    @include r($tablet) {
+      font-size: 16px;
+      line-height: 19px;
+    }
   }
 }

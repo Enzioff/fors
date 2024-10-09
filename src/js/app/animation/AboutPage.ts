@@ -35,9 +35,11 @@ export class AboutPage extends MainGsap {
                 trigger: section,
                 start: 'top center',
                 end: 'bottom center',
-                onEnter: () => isTablet && this.moveCanvas(-20),
+                onEnter: () => {
+                    isTablet && this.moveCanvas(-20)
+                },
                 onLeaveBack: () => this.moveCanvas(0),
-                onLeave: () => isTablet && this.moveCanvas(-20),
+                onLeave: () => isTablet && this.moveCanvas(-20)
             })
         })
     }
@@ -75,7 +77,6 @@ export class AboutPage extends MainGsap {
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
                 },
-                onEnter: () => ScrollTrigger.refresh()
             })
 
             ScrollTrigger.create({
@@ -95,13 +96,6 @@ export class AboutPage extends MainGsap {
                     scrub: 1,
                 }
             });
-
-            servicesHeaderItems.forEach((headItem, idx) => {
-                headItem.addEventListener('click', () => {
-                    gsap.to(window, {
-                    })
-                })
-            })
 
             const mediaOffset = () => {
                 if (isDesktop) {
@@ -188,59 +182,92 @@ export class AboutPage extends MainGsap {
 
     protected timelineSection = () => {
         const timelinePinnedBlock = document.querySelector('.trigger-timeline');
-        if (!timelinePinnedBlock) return
+        if (!timelinePinnedBlock) return;
 
+        const timelineTablet = document.querySelector('.trigger-timeline-tab');
         const timeline = timelinePinnedBlock.querySelector('.timeline');
         const timelineItems = timeline.querySelectorAll('.timeline__item');
         const timelineWrapper = timeline.querySelector('.timeline__wrapper');
 
-        const getTotalHeight = Array.from(timelineItems).reduce((height, item) => {
-            return height + item.getBoundingClientRect().height
-        }, 0)
+        ScrollTrigger.refresh()
 
-        const containerHeight = timeline.getBoundingClientRect().height;
-        const maxY = containerHeight - getTotalHeight;
-        const limitY = maxY < 0 ? maxY : 0;
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            if (isDesktop) {
+                const totalHeight = Array.from(timelineItems).reduce((height, item) => {
+                    return height + item.getBoundingClientRect().height;
+                }, 0);
 
-        const stopAnim = gsap.timeline({
-            scrollTrigger: {
-                trigger: timelinePinnedBlock,
-                start: 'center center',
-                end: () => `+=${getTotalHeight}`,
-                pin: true,
-                pinSpacing: true,
+                const containerHeight = timeline.getBoundingClientRect().height;
+
+                const maxY = containerHeight - totalHeight;
+                const limitY = maxY < 0 ? maxY : 0;
+
+                const sectionTimeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: timelinePinnedBlock,
+                        start: 'center center',
+                        end: () => `+=${Math.abs(totalHeight)}`,
+                        pin: true,
+                        scrub: 1,
+                    }
+                })
+
+                let offsetY = 0;
+                timelineItems.forEach((element) => {
+                    const elementHeight = element.getBoundingClientRect().height
+                    sectionTimeline.to(timelineWrapper, {
+                        y: offsetY >= limitY ? offsetY : limitY,
+                        ease: 'none',
+                        onUpdate: () => {
+                            timelineItems.forEach(temp => temp.classList.remove('active'))
+                            element.classList.add('active')
+                        }
+                    })
+                    offsetY -= elementHeight
+                })
+            }
+
+            if (isTabletMax) {
+                const totalWidth = Array.from(timelineItems).reduce((width, item) => {
+                    return width + item.getBoundingClientRect().width;
+                }, 0);
+
+                const containerWidth = timeline.getBoundingClientRect().width;
+
+                const maxX = containerWidth - totalWidth;
+                const limitY = maxX < 0 ? maxX : 0;
+
+                const sectionTimeline = gsap.timeline({
+                    scrollTrigger: {
+                        trigger: timelineTablet,
+                        start: 'center center',
+                        end: () => `+=${Math.abs(totalWidth)}`,
+                        pin: true,
+                        pinSpacing: true,
+                        scrub: 1,
+                    }
+                })
+
+                let offsetX = 0;
+                timelineItems.forEach((element) => {
+                    const elementWidth = element.getBoundingClientRect().width
+                    sectionTimeline.to(timelineWrapper, {
+                        x: offsetX >= limitY ? offsetX : limitY,
+                        ease: 'none',
+                        onUpdate: () => {
+                            timelineItems.forEach(temp => temp.classList.remove('active'))
+                            element.classList.add('active')
+                        }
+                    })
+                    offsetX -= elementWidth
+                })
             }
         })
-
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: timeline,
-                start: "top top",
-                end: () => `+=${Math.abs(limitY) + containerHeight}`,
-                scrub: 1,
-            }
-        });
-
-        tl.to(timelineWrapper, {
-            y: limitY,
-            ease: "none",
-        });
-
-        timelineItems.forEach(item => {
-            ScrollTrigger.create({
-                trigger: item,
-                start: () => "top center",
-                end: () => "bottom center",
-                markers: true,
-                scroller: timelinePinnedBlock,
-                onToggle: (self) => {
-                    if (self.isActive) {
-                        item.classList.add('active');
-                    } else {
-                        item.classList.remove('active');
-                    }
-                }
-            });
-        });
     }
 }

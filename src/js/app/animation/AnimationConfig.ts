@@ -52,6 +52,7 @@ export class AnimationConfig extends MainGsap {
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
                 }
+                self.refresh()
             }
         })
     }
@@ -70,7 +71,10 @@ export class AnimationConfig extends MainGsap {
                 delay: delay ? delay : null,
                 scrollTrigger: {
                     trigger: selector,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -90,7 +94,10 @@ export class AnimationConfig extends MainGsap {
                 stagger: 0.2,
                 scrollTrigger: {
                     trigger: children,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -110,7 +117,10 @@ export class AnimationConfig extends MainGsap {
                 delay: delay ? delay : null,
                 scrollTrigger: {
                     trigger: selector,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -128,7 +138,10 @@ export class AnimationConfig extends MainGsap {
                 stagger: 0.2,
                 scrollTrigger: {
                     trigger: selector,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -148,7 +161,10 @@ export class AnimationConfig extends MainGsap {
                 delay: delay ? delay : null,
                 scrollTrigger: {
                     trigger: selector,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -168,7 +184,11 @@ export class AnimationConfig extends MainGsap {
                 duration: 0.8,
                 scrollTrigger: {
                     trigger: children,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    toggleActions: "play pause pause reset",
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -191,7 +211,10 @@ export class AnimationConfig extends MainGsap {
                 delay: delay ? delay : null,
                 scrollTrigger: {
                     trigger: children,
-                    start: 'top bottom'
+                    start: 'top bottom',
+                    onToggle: self => {
+                        self.refresh()
+                    },
                 }
             })
         })
@@ -211,6 +234,8 @@ export class AnimationConfig extends MainGsap {
                     self.isActive
                         ? tl.play()
                         : tl.pause()
+
+                    self.refresh()
                 }
             },
         });
@@ -277,7 +302,10 @@ export class AnimationConfig extends MainGsap {
             },
             onEnterBack: () => tl.play(),
             onLeave: () => tl.pause(),
-            onLeaveBack: () => tl.pause()
+            onLeaveBack: () => tl.pause(),
+            onToggle: self => {
+                self.refresh()
+            },
         })
     }
 
@@ -318,7 +346,10 @@ export class AnimationConfig extends MainGsap {
                     if (isMobileMax) {
                         this.moveCanvas(0, {yPercent: 0, zIndex: 1})
                     }
-                }
+                },
+                onToggle: self => {
+                    self.refresh()
+                },
             })
         })
     }

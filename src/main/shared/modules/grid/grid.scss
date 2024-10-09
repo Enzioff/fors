@@ -178,4 +178,12 @@
       }
     }
   }
+
+  &__item--center {
+    @include r($tablet) {
+      grid-row: span 2;
+      align-self: flex-end;
+      justify-self: flex-end;
+    }
+  }
 }

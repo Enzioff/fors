@@ -5,6 +5,7 @@
   gap: 49px;
   padding: 20px;
   height: auto;
+  aspect-ratio: 1/1;
 
   @include r($tablet) {
     position: relative;

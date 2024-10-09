@@ -5,13 +5,17 @@
   gap: 40px;
   padding: 30px 40px;
   height: 100%;
+  width: 100%;
   background-color: $main3;
   border-radius: 35px;
   box-shadow: 0 0 30px 0 #0A274D26;
 
+  @include r($tablet) {
+    height: auto;
+  }
+
   @include r($mobile) {
     max-height: 664px;
-    height: auto;
   }
 
   &:not(:first-child) {
@@ -19,6 +23,7 @@
     top: 20px;
     left: 0;
   }
+
   //
   //&:nth-child(2) {
   //  top: 60px
@@ -73,6 +78,71 @@
     }
   }
 
+  &--info {
+    justify-content: space-between;
+    min-height: 504px;
+    padding: 40px;
+
+    @include r($tablet) {
+      min-height: 319px;
+      padding: 20px;
+    }
+
+    @include r($mobile) {
+      min-height: 470px;
+      justify-content: flex-start;
+    }
+
+    .article-service__header,
+    .article-service__info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .article-service__header {
+      @include r($mobile) {
+        flex-direction: row;
+      }
+    }
+
+    .article-service__info {
+      align-items: flex-end;
+    }
+
+    .article-service__text {
+      @include r($tablet) {
+        max-width: 260px;
+      }
+
+      @include r($mobile) {
+        max-width: 100%;
+      }
+    }
+  }
+
+  &__count {
+    font-family: $font-main;
+    font-size: 158px;
+    font-weight: 400;
+    line-height: 158px;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 16.28%, rgba(255, 255, 255, 0) 130.98%);
+    background-clip: text;
+    color: transparent;
+    opacity: .2;
+
+    @include r($tablet) {
+      font-size: 90px;
+      line-height: 121px;
+    }
+
+    @include r($mobile) {
+      display: none;
+    }
+  }
+
   &__footer {
     margin-top: auto;
     @include r($mobile) {
@@ -113,7 +183,7 @@
     align-items: center;
     width: 100%;
     gap: 20px;
-    
+
     @include r($tablet) {
       gap: 10px;
     }

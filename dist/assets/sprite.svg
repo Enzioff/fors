@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style>
     .sprite-symbol-usage {display: none;}
     .sprite-symbol-usage:target {display: inline;}
-  </style><symbol viewBox="0 0 25 25" fill="none" id="icon-arrow-down">
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 19)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 15.4282)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 13.043 19)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 13.043 15.4282)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 10.3672 12.7446)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 7.68359 10.0674)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 5 7.3833)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 9.46875 19)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 5.89062 19)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 11.8501)" fill="#134AFF" />
-<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 8.27783)" fill="#134AFF" />
+  </style><symbol viewBox="0 0 25 25" id="icon-arrow-down">
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 19)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 15.4282)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 13.043 19)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 13.043 15.4282)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 10.3672 12.7446)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 7.68359 10.0674)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 5 7.3833)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 9.46875 19)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 5.89062 19)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 11.8501)" />
+<ellipse cx="1.19169" cy="1.19157" rx="1.19169" ry="1.19157" transform="matrix(1 0 0 -1 16.6172 8.27783)" />
 </symbol><symbol viewBox="0 0 72 72" id="icon-arrow-right">
 <ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 55.918 32.501)" />
 <ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 49.0684 32.501)" />

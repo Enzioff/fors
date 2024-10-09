@@ -1,0 +1,23 @@
+.link-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 58px;
+  height: 58px;
+  border: 1px solid $white;
+  border-radius: 100%;
+
+  @include r($tablet) {
+    width: 40px;
+    height: 40px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    fill: $white;
+    transform: rotate(-90deg);
+  }
+}
