@@ -75,13 +75,14 @@ export class AboutPage extends MainGsap {
                 start: `top top+=${headerOffset}`,
                 end: `${cards.length * firstCardheight} top`,
                 onToggle: (self) => {
+                    self.refresh()
                     if (self.isActive) {
                         this.headerAnimation.animate(animateType.HIDE)
                         this.moveCanvas(0)
                     } else {
+                        this.moveCanvas(-20)
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
-                    self.refresh()
                 },
             })
 

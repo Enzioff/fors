@@ -30,12 +30,11 @@ export class MainGsap {
     public moveCanvas = (xPercent: number, props?: gsap.TweenVars) => {
         gsap.to('.spline-canvas', {
             xPercent: xPercent,
-            zIndex: props.zIndex ? props.zIndex : null,
             ...props,
         })
 
         gsap.to('.spline-container', {
-            zIndex: props.zIndex ? props.zIndex : null,
+            zIndex: props?.zIndex ? props?.zIndex : null,
         })
     }
 

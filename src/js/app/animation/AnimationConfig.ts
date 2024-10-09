@@ -53,7 +53,6 @@ export class AnimationConfig extends MainGsap {
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
                 }
-                self.refresh()
             }
         })
     }

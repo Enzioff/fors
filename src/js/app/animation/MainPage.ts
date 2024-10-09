@@ -79,6 +79,9 @@ export class MainPage extends MainGsap {
                 end: 'bottom center',
                 onEnter: () => {
                     animateSpline(this.application, 2)
+                    if (isDesktop) {
+                        this.moveCanvas(-20)
+                    }
                     if (isTablet) {
                         this.moveCanvas(-20)
                     }
@@ -109,7 +112,9 @@ export class MainPage extends MainGsap {
                     delay: 0.2,
                 })
                 ScrollTrigger.getAll().forEach(trigger => {
-                    trigger.refresh()
+                    if (!trigger.trigger.classList.contains('layering')) {
+                        trigger.refresh()
+                    }
                 })
             },
             onLeave: () => {
