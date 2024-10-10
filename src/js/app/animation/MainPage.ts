@@ -1,15 +1,16 @@
 import gsap from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger";
-import {MainGsap} from "./MainGsap";
 import {animateSpline} from "../spline/animate";
 import {animateType, PopupsAnimation} from "../../types";
-import {Spline} from "../spline/spline";
 import {getTotalElements} from "../../helpers/getTotalElements";
+import {AnimationConfig} from "./AnimationConfig";
+import {Spline} from "../spline/spline";
 
-export class MainPage extends MainGsap {
+export class MainPage extends AnimationConfig {
     constructor(spline: Spline) {
-        super(spline);
+        super(spline)
 
+        this.initAnimationConfig()
         this.initMainPage()
     }
 
@@ -59,6 +60,7 @@ export class MainPage extends MainGsap {
             start: `top top+=${headerOffset}`,
             end: `bottom top+=${headerOffset}`,
             onToggle: (self) => {
+                self.refresh()
                 self.isActive
                     ? this.headerAnimation.animate(animateType.LOGO_WHITE)
                     : this.headerAnimation.animate(animateType.LOGO_BLUE)
@@ -111,11 +113,6 @@ export class MainPage extends MainGsap {
                     duration: 1,
                     delay: 0.2,
                 })
-                ScrollTrigger.getAll().forEach(trigger => {
-                    if (!trigger.trigger.classList.contains('layering')) {
-                        trigger.refresh()
-                    }
-                })
             },
             onLeave: () => {
                 gsap.to(section, {
@@ -153,9 +150,6 @@ export class MainPage extends MainGsap {
                 start: 'center center',
                 end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                 scrub: 1,
-                onToggle: self => {
-                    self.refresh()
-                }
             }
         });
 

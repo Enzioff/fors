@@ -1,16 +1,15 @@
 import {Spline} from "./spline/spline";
 import Tabs from "./tabs";
 import DropZone from "./dropZone";
+import {MvcPage} from "./animation/MvcPage";
 import {AboutPage} from "./animation/AboutPage";
 import {MainPage} from "./animation/MainPage";
-import {AnimationConfig} from "./animation/AnimationConfig";
-import {MvcPage} from "./animation/MvcPage";
 
 class App {
     splineURL: string;
 
     constructor() {
-        this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
+        // this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
         this.init();
     }
 
@@ -24,10 +23,9 @@ class App {
         const el: HTMLCanvasElement = document.querySelector('.spline-canvas');
         const spline = new Spline(el, this.splineURL)
 
-        new AnimationConfig(spline)
         new MainPage(spline)
-        new AboutPage(spline)
         new MvcPage(spline)
+        new AboutPage(spline)
     }
 
     createTabs = () => {

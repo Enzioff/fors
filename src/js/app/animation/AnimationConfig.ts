@@ -6,13 +6,11 @@ import {Spline} from "../spline/spline";
 import {animateSpline} from "../spline/animate";
 
 export class AnimationConfig extends MainGsap {
-    constructor(spline: Spline) {
+    constructor(spline?: Spline) {
         super(spline);
-
-        this.initAnimationConfig()
     }
 
-    private initAnimationConfig() {
+    public initAnimationConfig() {
         this.initIntroSection()
         this.animationInBottom()
         this.animationInBottomPin()
@@ -27,7 +25,7 @@ export class AnimationConfig extends MainGsap {
         this.animationFooter()
     }
 
-    private initIntroSection = () => {
+    public initIntroSection = () => {
         const introSection = document.querySelector('.animate-intro');
 
         if (!introSection) return
@@ -148,6 +146,7 @@ export class AnimationConfig extends MainGsap {
     }
 
     public animationInBottom() {
+        console.trace('Функция была вызвана из:');
         const selectors = document.querySelectorAll('.anim-in-bottom')
         if (!selectors) return
 
@@ -186,7 +185,7 @@ export class AnimationConfig extends MainGsap {
                 scrollTrigger: {
                     trigger: selector,
                     start: 'top-=50 bottom',
-                    end: 'bottom top',
+                    end: 'bottom center',
                     scrub: 1,
                     onToggle: self => {
                         self.refresh()
@@ -376,6 +375,107 @@ export class AnimationConfig extends MainGsap {
                 onToggle: self => {
                     self.refresh()
                 },
+            })
+        })
+    }
+
+    public animationBigCards = (offsetGap: number = 20, offsetTop: number = 60) => {
+        const section = document.querySelector('.trigger-big-cards')
+        const headerOffset = this.headerAnimation.getHeaderSize.height / 2
+
+        if (!section) return
+
+        const servicesHeader = section.querySelector('.services__header')
+        const servicesHeaderItems = section.querySelectorAll('.services__item')
+        const cards = section.querySelectorAll('.article-service')
+        const listCards = section.querySelector('.trigger-list-cards')
+
+        const firstCardheight = cards[0].getBoundingClientRect().height;
+        const listCardsHeight = listCards.getBoundingClientRect().height;
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: `top top+=${headerOffset}`,
+                end: `${cards.length * firstCardheight} top`,
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        this.headerAnimation.animate(animateType.HIDE)
+                        this.moveCanvas(0)
+                    } else {
+                        this.moveCanvas(-20)
+                        this.headerAnimation.animate(animateType.VISIBLE)
+                    }
+                },
+            })
+
+            ScrollTrigger.create({
+                trigger: section,
+                start: `top-=40 top`,
+                end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                pin: true,
+                pinSpacing: true,
+                scrub: 1,
+            })
+
+            const cardsTimeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: listCards,
+                    start: 'top top',
+                    end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                    scrub: 1,
+                }
+            });
+
+            cards.forEach((card: HTMLElement, idx) => {
+                const cardHeight = card.offsetHeight;
+
+                cardsTimeline.fromTo(card, {
+                    y: (cardHeight + offsetGap) * idx,
+                    duration: 1,
+                }, {
+                    y: idx <= 3 ? offsetTop * idx : offsetTop * 2,
+                    duration: 1,
+                    onUpdate: () => {
+                        const progress = cardsTimeline.progress();
+                        if (progress > 0) {
+                            if (isMobileMax) {
+                                gsap.to(servicesHeader, {
+                                    scrollTo: servicesHeaderItems[idx],
+                                    ease: 'none',
+                                })
+                            }
+                            servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
+                            servicesHeaderItems[idx].classList.add('active')
+                        }
+                    }
+                })
+
+                if (idx >= 3) {
+                    cardsTimeline.to(cards[idx - 3], {
+                        scale: isTablet ? 0.9 : 1,
+                        opacity: 0,
+                        duration: 1,
+                    }, '<')
+
+                    cardsTimeline.to(cards[idx - 2], {
+                        y: idx >= 3 ? 0 : null,
+                        scale: isTablet ? 0.95 : 1,
+                        duration: 1,
+                    }, '<')
+
+                    cardsTimeline.to(cards[idx - 1], {
+                        y: idx >= 3 ? offsetTop : null,
+                        duration: 1,
+                    }, '<')
+                }
             })
         })
     }

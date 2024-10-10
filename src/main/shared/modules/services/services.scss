@@ -14,19 +14,15 @@
   }
 
   &--counter {
-    min-height: 754px;
-
-    @include r($tablet) {
-      min-height: 549px;
-    }
-
-    @include r($mobile) {
-      min-height: 660px;
-    }
-
     .services__content {
+      min-height: 624px;
+
+      @include r($tablet) {
+        min-height: 439px;
+      }
+
       @include r($mobile) {
-        min-height: auto;
+        min-height: 590px;
       }
     }
   }
@@ -51,13 +47,14 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    min-height: 755px;
 
     @include r($tablet) {
-      min-height: 483px;
+      min-height: 517px;
     }
 
     @include r($mobile) {
-      min-height: 709px;
+      min-height: 697px;
     }
 
     &--gradient {
