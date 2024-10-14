@@ -21,7 +21,7 @@ export class MvcPage extends AnimationConfig {
         const offsetGap = 20;
         const offsetTop = 60;
 
-        const section = document.querySelector('.trigger-a-cards')
+        const section = document.querySelector('.trigger-big-cards-custom')
         const headerOffset = this.headerAnimation.getHeaderSize.height / 2
 
         if (!section) return
@@ -87,29 +87,30 @@ export class MvcPage extends AnimationConfig {
                 onEnter: () => {
                     if (isDesktop) {
                         this.application.setZoom(0.8)
+                        this.moveCanvas(0, {zIndex: 2})
                     }
                     if (isTabletMax) {
-                        this.moveCanvas(10, {yPercent: -15})
+                        this.moveCanvas(10, {yPercent: -15, zIndex: 2})
                         this.application.setZoom(0.6)
                     }
                     if (isMobileMax) {
-                        this.moveCanvas(0, {yPercent: 15})
+                        this.moveCanvas(0, {yPercent: 15, zIndex: 2})
                     }
                     animateSpline(this.application, 2)
                 },
                 onEnterBack: () => {
                     if (isDesktop) {
-                        this.moveCanvas(0)
+                        this.moveCanvas(0, {zIndex: 2})
                         animateSpline(this.application, 2)
                         this.application.setZoom(0.8)
                     }
                     if (isTabletMax) {
-                        this.moveCanvas(10)
+                        this.moveCanvas(10, {zIndex: 2})
                         this.application.setZoom(0.6)
                         animateSpline(this.application, 2)
                     }
                     if (isMobileMax) {
-                        this.moveCanvas(0, {yPercent: 15})
+                        this.moveCanvas(0, {yPercent: 15, zIndex: 2})
                     }
                 }
             })
@@ -171,10 +172,10 @@ export class MvcPage extends AnimationConfig {
                     onStart: () => {
                         animateSpline(this.application, 3 + idx - 1)
                         if (isTabletMax) {
-                            this.moveCanvas(10, {yPercent: -15 + (idx + 3)})
+                            this.moveCanvas(10, {yPercent: -15 + (idx + 3), zIndex: 2})
                         }
                         if (isMobileMax) {
-                            this.moveCanvas(0, {yPercent: 12})
+                            this.moveCanvas(0, {yPercent: 12, zIndex: 2})
                         }
                     },
                     onReverseComplete: () => {

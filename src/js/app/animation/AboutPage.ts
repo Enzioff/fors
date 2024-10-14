@@ -219,7 +219,9 @@ export class AboutPage extends AnimationConfig {
                 })
 
                 let offsetX = 0;
-                timelineItems.forEach((element) => {
+                let animCounter = 0;
+                const animCounterMax = 5;
+                timelineItems.forEach((element, idx) => {
                     const elementWidth = element.getBoundingClientRect().width
                     sectionTimeline.to(timelineWrapper, {
                         x: offsetX >= limitY ? offsetX : limitY,
@@ -227,6 +229,12 @@ export class AboutPage extends AnimationConfig {
                         onUpdate: () => {
                             timelineItems.forEach(temp => temp.classList.remove('active'))
                             element.classList.add('active')
+                        },
+                        onStart: () => {
+                            if (idx % 2 === 0 && animCounter < animCounterMax) {
+                                animCounter += 1;
+                                animateSpline(this.application, 9 + animCounter)
+                            }
                         }
                     })
                     offsetX -= elementWidth
