@@ -556,7 +556,7 @@ export class AnimationConfig extends MainGsap {
 
                             gsap.to(card, {
                                 backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
-                                ease: 'none',
+                                duration: 0,
                             })
                         }
                     }
