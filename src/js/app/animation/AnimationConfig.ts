@@ -512,6 +512,7 @@ export class AnimationConfig extends MainGsap {
                 end: () => `${cards.length * firstCardheight}`,
                 pin: true,
                 pinSpacing: true,
+                anticipatePin: 1,
                 scrub: 1,
             })
 

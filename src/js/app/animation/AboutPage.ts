@@ -197,6 +197,7 @@ export class AboutPage extends AnimationConfig {
                         end: () => `+=${Math.abs(totalWidth * 1.5)}`,
                         pin: true,
                         pinSpacing: true,
+                        anticipatePin: 1,
                         scrub: 1,
                         onToggle: self => {
                             self.refresh()
