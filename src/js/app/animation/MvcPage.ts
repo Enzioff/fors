@@ -85,6 +85,10 @@ export class MvcPage extends AnimationConfig {
                     animateSpline(this.application, 8)
                 },
                 onEnter: () => {
+                    gsap.from('.spline-canvas', {
+                        opacity: 0,
+                        duration: 2,
+                    })
                     if (isDesktop) {
                         this.application.setZoom(0.8)
                         this.moveCanvas(0, {zIndex: 2})
@@ -132,15 +136,6 @@ export class MvcPage extends AnimationConfig {
                     scrub: 1,
                 }
             });
-
-            servicesHeaderItems.forEach((headItem, idx) => {
-                headItem.addEventListener('click', () => {
-                    cardsTimeline.tweenTo(`point${idx}`, {
-                        ease: 'none',
-                        duration: 0.6,
-                    })
-                })
-            })
 
             cards.forEach((card: HTMLElement, idx) => {
                 const cardHeight = card.offsetHeight;

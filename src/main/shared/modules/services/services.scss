@@ -103,8 +103,6 @@
     border-radius: 100px;
     transition: .2s linear;
 
-    cursor: pointer;
-
     @include r($tablet) {
       padding: 13px 10px;
       font-size: 12px;

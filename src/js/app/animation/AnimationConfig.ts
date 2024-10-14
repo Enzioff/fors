@@ -525,15 +525,6 @@ export class AnimationConfig extends MainGsap {
                 }
             });
 
-            servicesHeaderItems.forEach((headItem, idx) => {
-                headItem.addEventListener('click', () => {
-                    cardsTimeline.tweenTo(`point${idx}`, {
-                        ease: 'none',
-                        duration: 0.6,
-                    })
-                })
-            })
-
             cards.forEach((card: HTMLElement, idx) => {
                 const cardHeight = card.offsetHeight;
 
