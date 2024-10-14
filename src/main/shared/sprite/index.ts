@@ -7,3 +7,5 @@ import './icon-rocket-start.svg';
 import './icon-upload-doc.svg';
 import './icon-upload-error.svg';
 import './icon-people.svg';
+import './icon-cross.svg';
+import './icon-docs.svg';

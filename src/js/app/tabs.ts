@@ -1,3 +1,5 @@
+import {LoadDataType} from "../types/types";
+
 class Tabs {
     container;
     headerElements;

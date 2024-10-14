@@ -18,6 +18,10 @@
     padding-top: 20px;
   }
 
+  &--page {
+    padding-top: 47px;
+  }
+
   &__wrapper {
     position: relative;
     display: flex;
@@ -30,6 +34,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+
+    @include r($tablet) {
+      align-items: flex-start;
+    }
   }
 
   & > .container {

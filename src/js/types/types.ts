@@ -1,3 +1,5 @@
+import gsap from "gsap";
+
 export enum animateType {
     HIDE = 'HIDE',
     VISIBLE = 'VISIBLE',
@@ -41,3 +43,10 @@ export interface AnimationClassList {
 export interface AnimationClassConfig {
     headerIsFixed: boolean,
 }
+
+export interface LoadDataType {
+    title: string,
+    size: string,
+}
+
+export type TemplateType = () => string;

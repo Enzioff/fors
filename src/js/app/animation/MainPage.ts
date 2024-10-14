@@ -98,7 +98,8 @@ export class MainPage extends AnimationConfig {
                 },
                 onLeave: () => {
                     animateSpline(this.application, 8)
-                }
+                },
+                onToggle: self => self.refresh()
             })
         })
 

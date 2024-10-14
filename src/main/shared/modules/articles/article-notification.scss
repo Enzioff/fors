@@ -22,6 +22,12 @@
     border-radius: 15px;
   }
 
+  @include r($mobile) {
+    gap: 10px;
+    max-width: 173px;
+    padding: 8px 10px;
+  }
+
   &__item {
     display: flex;
     flex-direction: column;
@@ -29,6 +35,10 @@
 
     @include r($tablet) {
       gap: 0;
+    }
+
+    @include r($mobile) {
+      gap: 16px;
     }
   }
 
@@ -150,6 +160,12 @@
       height: 100px;
     }
 
+    @include r($mobile) {
+      width: 108px;
+      height: 108px;
+      padding: 4px 10px 10px 10px;
+    }
+
     .article-notification__title {
       margin-bottom: 0;
       font-family: $font-main;
@@ -162,6 +178,11 @@
         font-size: 42px;
         line-height: 56.7px;
       }
+
+      @include r($mobile) {
+        font-size: 38px;
+        line-height: 51px;
+      }
     }
 
     .article-notification__item {
@@ -171,6 +192,11 @@
       justify-content: center;
       gap: 0;
       width: 100%;
+
+      @include r($mobile) {
+        height: 100%;
+        justify-content: space-between;
+      }
     }
 
     &-2 {

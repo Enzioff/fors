@@ -3,6 +3,7 @@
   gap: 20px;
   width: 100%;
   max-width: 496px;
+  z-index: 0;
 
   @include r($tablet) {
     gap: 10px;
@@ -61,6 +62,10 @@
     justify-content: space-between;
     gap: 10px;
 
+    @include r($tablet) {
+      gap: 19px;
+    }
+
     @include r($mobile) {
       gap: 20px;
     }
@@ -90,13 +95,19 @@
 
   &__button {
     height: auto;
-    padding: 18px 12px;
+    padding: 20px 12px;
     text-transform: uppercase;
+    min-width: 256px;
 
     @include r($tablet) {
       width: max-content;
       padding: 9px 20px;
       text-transform: uppercase;
+      min-width: 169px;
+    }
+
+    @include r($mobile) {
+      min-width: 145px;
     }
   }
 
@@ -157,6 +168,14 @@
     .widget-video__title,
     .widget-video__text {
       color: $white;
+    }
+  }
+
+  .button {
+    font-size: 15px;
+
+    @include r($tablet) {
+      font-size: 12px;
     }
   }
 }

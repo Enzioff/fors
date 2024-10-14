@@ -27,7 +27,11 @@
     min-height: 720px;
 
     @include r($tablet) {
-      min-height: 584px;
+      min-height: 606px;
+    }
+
+    @include r($mobile) {
+      min-height: 567px;
     }
   }
 }

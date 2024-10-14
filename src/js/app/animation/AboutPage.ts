@@ -16,6 +16,7 @@ export class AboutPage extends AnimationConfig {
         this.newsSection()
         this.timelineSection()
         this.sectionForm()
+        this.animationBigCards()
     }
 
     protected cardsSection = () => {
@@ -35,15 +36,11 @@ export class AboutPage extends AnimationConfig {
                 trigger: section,
                 start: 'top center',
                 end: 'bottom center',
-                onEnter: () => {
-                    animateSpline(this.application, 1)
-                },
+                onEnter: () => animateSpline(this.application, 1),
                 onLeaveBack: () => this.moveCanvas(0),
-                onLeave: () => {
-                },
                 onToggle: self => {
                     self.refresh()
-                }
+                },
             })
         })
     }
@@ -66,11 +63,25 @@ export class AboutPage extends AnimationConfig {
                 start: 'top center',
                 end: 'bottom center',
                 onToggle: (self) => {
-                    self.isActive
-                        ? isTablet && this.moveCanvas(20)
-                        : isTablet && this.moveCanvas(-20)
                     self.refresh()
-                }
+                    if (self.isActive) {
+                        if (isTablet) {
+                            this.moveCanvas(20)
+                        }
+                        if (isMobileMax) {
+                            this.moveCanvas(0)
+                        }
+                    } else {
+                        if (isTablet) {
+                            this.moveCanvas(-20)
+                        }
+                        if (isMobileMax) {
+                            this.moveCanvas(0)
+                        }
+                    }
+                },
+                onEnter: () => animateSpline(this.application, 19),
+                onLeave: () => animateSpline(this.application, 20),
             })
         })
     }
@@ -84,8 +95,6 @@ export class AboutPage extends AnimationConfig {
         const timelineItems = timeline.querySelectorAll('.timeline__item');
         const timelineWrapper = timeline.querySelector('.timeline__wrapper');
         const shadow = timeline.querySelector('.timeline__shadow')
-
-        ScrollTrigger.refresh()
 
         this.mm.add({
             isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
@@ -112,20 +121,27 @@ export class AboutPage extends AnimationConfig {
                         pin: true,
                         scrub: 1,
                         onToggle: self => {
-                            self.refresh()
                             ScrollTrigger.getAll().forEach(el => {
                                 if (el.trigger.classList.contains('footer')) {
                                     el.refresh()
                                 }
                             })
-                            self.isActive
-                                ? timeline.classList.add('active')
-                                : timeline.classList.remove('active')
-                        }
+                            if (self.isActive) {
+                                self.refresh()
+                                timeline.classList.add('active')
+                            } else {
+                                timeline.classList.remove('active')
+                            }
+                        },
+                        onLeave: () => animateSpline(this.application, 18),
                     }
                 })
 
                 let offsetY = 0;
+                let shadowSize = shadow.getBoundingClientRect().height
+                let animCounter = 0;
+                const animCounterMax = 5;
+
                 timelineItems.forEach((element, idx) => {
                     const elementHeight = element.getBoundingClientRect().height
                     sectionTimeline.to(timelineWrapper, {
@@ -134,6 +150,30 @@ export class AboutPage extends AnimationConfig {
                         onUpdate: () => {
                             timelineItems.forEach(temp => temp.classList.remove('active'))
                             element.classList.add('active')
+                        },
+                        onStart: () => {
+                            if (idx % 2 === 0 && animCounter < animCounterMax) {
+                                animCounter += 1;
+                                animateSpline(this.application, 9 + animCounter)
+                            }
+                            if (idx >= timelineItems.length - 3) {
+                                shadowSize -= elementHeight
+
+                                gsap.to(shadow, {
+                                    height: shadowSize,
+                                    ease: 'none',
+                                })
+                            }
+                        },
+                        onReverseComplete: () => {
+                            if (idx >= timelineItems.length - 3) {
+                                shadowSize += elementHeight
+
+                                gsap.to(shadow, {
+                                    height: shadowSize,
+                                    ease: 'none',
+                                })
+                            }
                         }
                     })
                     offsetY -= elementHeight
@@ -174,7 +214,7 @@ export class AboutPage extends AnimationConfig {
                                 isTabletMax && this.moveCanvas(-20, {yPercent: 0})
                                 isMobileMax && this.moveCanvas(0, {yPercent: 0})
                             }
-                        }
+                        },
                     }
                 })
 
@@ -213,12 +253,13 @@ export class AboutPage extends AnimationConfig {
                 start: 'top center',
                 end: 'bottom top',
                 onToggle: self => {
+                    self.refresh()
                     if (self.isActive) {
                         isDesktop && this.moveCanvas(-20, {yPercent: 20})
-                    } else {
-                        isDesktop && this.moveCanvas(-20, {yPercent: 0})
                     }
-                }
+                },
+                onEnter: () => animateSpline(this.application, 21),
+                onLeaveBack: () => isDesktop && this.moveCanvas(-20, {yPercent: 0})
             })
         })
     }

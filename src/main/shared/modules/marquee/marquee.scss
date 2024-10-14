@@ -7,6 +7,14 @@
     gap: 10px;
   }
 
+  &--page {
+    gap: 25px;
+
+    @include r($tablet) {
+      gap: 10px;
+    }
+  }
+
   &__track {
     display: flex;
     align-items: center;

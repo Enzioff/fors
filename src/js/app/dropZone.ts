@@ -1,12 +1,17 @@
+import {LoadDataType, TemplateType} from "../types/types";
+
 class DropZone {
     dropZone;
     statusText;
     uploadInput: HTMLInputElement;
     maxSize;
+    filesBlock: HTMLElement;
+
 
     constructor(container: Element) {
         this.dropZone = container
         this.statusText = this.dropZone.querySelector(".drop-zone__notation")
+        this.filesBlock = document.querySelector('.loaded-block')
         this.uploadInput = this.dropZone.querySelector('input[type="file"]')
         this.maxSize = 10 * 1024 * 1024;
         this.init()
@@ -70,7 +75,7 @@ class DropZone {
 
             const file = target.files
             if (!file) {
-                return
+                return false
             }
 
             if (file[0].size > this.maxSize) {
@@ -79,15 +84,40 @@ class DropZone {
                 return false
             }
 
-            if (file[0].type.startsWith("image/")) {
-                this.uploadInput.files = target.files
+            if (this.filesBlock.children.length >= 2) {
+                return false
+            }
+
+            if (file[0].type.startsWith("image/") || file[0].type.startsWith('application/pdf')) {
+                this.uploadInput.files = target.files;
+                this.render(this.filesBlock, this.showLoad({
+                    title: this.uploadInput.files[0].name,
+                    size: this.calculateFileSize(file[0].size)
+                }), 'beforeend')
+                const articlesLoad = this.filesBlock.querySelectorAll('.article-load');
+                articlesLoad.forEach(element => {
+                    const removeBtn = element.querySelector('.article-load__close')
+                    if (removeBtn) {
+                        removeBtn.addEventListener('click', () => {
+                            element.remove()
+                            this.visibleDropZone()
+                        })
+                    }
+                })
+                this.visibleDropZone()
             } else {
                 this.setStatus("Ошибка при загрузке файла")
                 return false
             }
-
-            console.log(this.uploadInput.files, this.calculateFileSize(file[0].size))
         })
+    }
+
+    visibleDropZone = () => {
+        if (this.filesBlock.children.length >= 2) {
+            this.dropZone.classList.add('hidden')
+        } else if (this.filesBlock.children.length < 2) {
+            this.dropZone.classList.remove('hidden')
+        }
     }
 
     initDropZone = () => {
@@ -115,6 +145,39 @@ class DropZone {
 
             console.log(this.uploadInput.files, this.calculateFileSize(file.size))
         })
+    }
+
+    showLoad = (data: LoadDataType): string => {
+        const {title, size} = data;
+
+        return `
+            <article class="article-load">
+                <div class="article-load__wrapper">
+                    <svg class="article-load__picture">
+                        <use xlink:href="./assets/sprite.svg#icon-docs"></use>
+                    </svg>
+                    <div class="article-load__info">
+                        <h4 class="article-load__title">${title}</h4>
+                        <p class="article-load__size">${size}</p>
+                    </div>
+                    <button class="article-load__close" type="button">
+                        <svg>
+                            <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                        </svg>
+                    </button>
+                </div>
+                <div class="article-load__footer">
+                    <div class="article-load__load">
+                        <span></span>
+                    </div>
+                    <p class="article-load__percent">0%</p>
+                </div>
+            </article>
+        `
+    }
+
+    render = (container: HTMLElement, template: string, position?: InsertPosition) => {
+        container.insertAdjacentHTML(position, template)
     }
 }
 

@@ -30,28 +30,110 @@ export class AnimationConfig extends MainGsap {
 
         if (!introSection) return
 
+        const introWidgets = document.querySelectorAll('.anim-notification');
+
         this.headerAnimation.isFixed
             ? this.headerAnimation.animate(animateType.VISIBLE)
             : this.headerAnimation.animate(animateType.HIDE)
 
-        ScrollTrigger.create({
-            trigger: introSection,
-            start: 'top-=50 top',
-            end: 'bottom top',
-            onToggle: (self) => {
-                if (self.isActive) {
-                    this.moveCanvas(0)
-                    if (this.headerAnimation.isFixed) {
-                        this.headerAnimation.animate(animateType.VISIBLE)
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            ScrollTrigger.create({
+                trigger: introSection,
+                start: 'top-=50 top',
+                end: 'bottom top',
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        if (isDesktop) {
+                            this.moveCanvas(0)
+                        }
+                        if (isTabletMax) {
+                            this.moveCanvas(0, {yPercent: -25})
+                        }
+                        if (isMobileMax) {
+                            this.moveCanvas(0, {yPercent: 15})
+                        }
+                        if (this.headerAnimation.isFixed) {
+                            this.headerAnimation.animate(animateType.VISIBLE)
+                        } else {
+                            this.headerAnimation.animate(animateType.HIDE)
+                        }
+
+                        if (isDesktop) {
+                            gsap.to(introWidgets[0], {
+                                x: -316,
+                                y: -91,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 1,
+                            })
+                            gsap.to(introWidgets[1], {
+                                x: 321,
+                                y: -235,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 0,
+                            })
+                        }
+                        if (isTabletMax) {
+                            gsap.to(introWidgets[0], {
+                                x: -210,
+                                y: -31,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 1,
+                            })
+                            gsap.to(introWidgets[1], {
+                                x: 133,
+                                y: -197,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 0,
+                            })
+                        }
+                        if (isMobileMax) {
+                            gsap.to(introWidgets[0], {
+                                x: -168,
+                                y: 272,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 1,
+                            })
+                            gsap.to(introWidgets[1], {
+                                x: 59,
+                                y: 30,
+                                opacity: 1,
+                                scale: 1,
+                                zIndex: 0,
+                            })
+                        }
                     } else {
-                        this.headerAnimation.animate(animateType.HIDE)
-                    }
-                } else {
-                    if (!this.headerAnimation.isFixed) {
-                        this.headerAnimation.animate(animateType.VISIBLE)
+                        if (!this.headerAnimation.isFixed) {
+                            this.headerAnimation.animate(animateType.VISIBLE)
+                        }
+                        if (isTabletMax) {
+                            this.moveCanvas(0, {yPercent: 0})
+                        }
+                        gsap.to(introWidgets[0], {
+                            x: 0,
+                            y: 0,
+                            scale: 0.3,
+                            opacity: 0,
+                        })
+                        gsap.to(introWidgets[1], {
+                            x: 0,
+                            y: 0,
+                            scale: 0.3,
+                            opacity: 0,
+                        })
                     }
                 }
-            }
+            })
         })
     }
 
@@ -393,6 +475,12 @@ export class AnimationConfig extends MainGsap {
         const firstCardheight = cards[0].getBoundingClientRect().height;
         const listCardsHeight = listCards.getBoundingClientRect().height;
 
+        const cardColors = [
+            '#032183',
+            '#002DBF',
+            '#134AFF',
+        ]
+
         this.mm.add({
             isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
             isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
@@ -404,22 +492,24 @@ export class AnimationConfig extends MainGsap {
             ScrollTrigger.create({
                 trigger: section,
                 start: `top top+=${headerOffset}`,
-                end: `${cards.length * firstCardheight} top`,
+                end: () => `${cards.length * firstCardheight + listCardsHeight}`,
                 onToggle: (self) => {
                     if (self.isActive) {
-                        this.headerAnimation.animate(animateType.HIDE)
-                        this.moveCanvas(0)
+                        this.headerAnimation.animate(animateType.HIDE);
                     } else {
-                        this.moveCanvas(-20)
                         this.headerAnimation.animate(animateType.VISIBLE)
                     }
                 },
+                onLeave: () => {
+                    isTablet && this.moveCanvas(-20)
+                    animateSpline(this.application, 8)
+                }
             })
 
             ScrollTrigger.create({
                 trigger: section,
                 start: `top-=40 top`,
-                end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                end: () => `${cards.length * firstCardheight}`,
                 pin: true,
                 pinSpacing: true,
                 scrub: 1,
@@ -429,10 +519,19 @@ export class AnimationConfig extends MainGsap {
                 scrollTrigger: {
                     trigger: listCards,
                     start: 'top top',
-                    end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                    end: () => `${cards.length * firstCardheight}`,
                     scrub: 1,
                 }
             });
+
+            servicesHeaderItems.forEach((headItem, idx) => {
+                headItem.addEventListener('click', () => {
+                    cardsTimeline.tweenTo(`point${idx}`, {
+                        ease: 'none',
+                        duration: 0.6,
+                    })
+                })
+            })
 
             cards.forEach((card: HTMLElement, idx) => {
                 const cardHeight = card.offsetHeight;
@@ -454,26 +553,35 @@ export class AnimationConfig extends MainGsap {
                             }
                             servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
                             servicesHeaderItems[idx].classList.add('active')
+
+                            gsap.to(card, {
+                                backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
+                                ease: 'none',
+                            })
                         }
                     }
-                })
+                }).add(`point${idx}`)
 
                 if (idx >= 3) {
                     cardsTimeline.to(cards[idx - 3], {
-                        scale: isTablet ? 0.9 : 1,
+                        scale: isTablet ? 0.8 : 1,
+                        backgroundColor: cardColors[0],
                         opacity: 0,
                         duration: 1,
                     }, '<')
 
                     cardsTimeline.to(cards[idx - 2], {
                         y: idx >= 3 ? 0 : null,
-                        scale: isTablet ? 0.95 : 1,
+                        scale: isTablet ? 0.90 : 1,
                         duration: 1,
+                        backgroundColor: cardColors[0],
                     }, '<')
 
                     cardsTimeline.to(cards[idx - 1], {
                         y: idx >= 3 ? offsetTop : null,
+                        scale: isTablet ? 0.95 : 1,
                         duration: 1,
+                        backgroundColor: cardColors[1],
                     }, '<')
                 }
             })
