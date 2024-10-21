@@ -17,6 +17,7 @@ class App {
         this.createAnimation()
         this.createTabs()
         this.createDropZone()
+        this.createInputAreaMaxValue()
     }
 
     createAnimation = () => {
@@ -44,6 +45,26 @@ class App {
         if (!dropZone) return
 
         new DropZone(dropZone)
+    }
+
+    createInputAreaMaxValue = () => {
+        const textAreas = document.querySelectorAll('.form__item--area');
+        if (!textAreas) return;
+
+        textAreas.forEach((element) => {
+            const area = element.querySelector('.input.input--area') as HTMLInputElement;
+            const textMax = element.querySelector('.form__max');
+            const maxLength = 1000;
+
+            area.addEventListener('input', (evt) => {
+                const target = evt.target as HTMLInputElement;
+
+                if (target.value.length >= maxLength) {
+                    area.value = target.value.slice(0, maxLength)
+                }
+                textMax.textContent = `${target.value.length}/${maxLength}`
+            })
+        })
     }
 }
 
