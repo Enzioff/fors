@@ -1,0 +1,126 @@
+.quote {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 40px;
+  background-color: #DCE4FF;
+  border-radius: 25px;
+
+  @include r($tablet) {
+    gap: 15px;
+    padding: 25px 25px 15px;
+  }
+
+  @include r($mobile) {
+    flex-direction: column-reverse;
+    padding: 20px;
+  }
+
+  & .quote__text {
+    font-family: $font-accent;
+    font-size: 28px;
+    font-weight: 400;
+    line-height: 36.68px;
+    text-align: left;
+    color: $main3;
+
+    @include r($tablet) {
+      font-size: 16px;
+      line-height: 21px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__user {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    max-width: 318px;
+
+    @include r($tablet) {
+      max-width: 382px;
+    }
+  }
+
+  &__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border: 3px solid $main1;
+    border-radius: 100px;
+    overflow: hidden;
+
+    @include r($mobile) {
+      width: 70px;
+      height: 70px;
+    }
+
+    img {
+      @include coverFull();
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  & .quote__title {
+    font-family: $font-accent;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: $main3;
+    text-transform: none;
+
+    @include r($tablet) {
+      font-size: 16px;
+      line-height: 19px;
+    }
+
+    @include r($mobile) {
+      font-size: 18px;
+      line-height: 18px;
+    }
+  }
+
+  & .quote__description {
+    font-family: $font-accent;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: $gray;
+
+    @include r($tablet) {
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    @include r($mobile) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 100px;
+    height: 100px;
+
+    @include r($mobile) {
+      display: none;
+    }
+  }
+}

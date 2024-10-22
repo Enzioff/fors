@@ -17,8 +17,8 @@ class Slider {
         this.sliderType = this.el.getAttribute('data-slider');
         this.slidesCount = this.el.getAttribute('data-slides')
 
-        this.buttonPrev = this.el.querySelector('.slider__btn--prev');
-        this.buttonNext = this.el.querySelector('.slider__btn--next');
+        this.buttonPrev = this.el.querySelector('.swiper-button--prev');
+        this.buttonNext = this.el.querySelector('.swiper-button--next');
         this.pagination = this.el.querySelector('.swiper-pagination');
 
         this.media = matchMedia('(max-width: 1199px)');
@@ -42,13 +42,17 @@ class Slider {
     initDefaultSlider() {
         const slider = this.el.querySelector('.swiper');
         const swiperOptions = {
-            modules: [Navigation],
-            slidesPerView: 'auto',
-            spaceBetween: 10,
+            modules: [Navigation, Pagination],
+            slidesPerView: this.slidesCount ? this.slidesCount : 'auto',
+            spaceBetween: 0,
             navigation: {
                 prevEl: this.buttonPrev,
                 nextEl: this.buttonNext,
-                disabledClass: 'slider__btn--disabled'
+                disabledClass: 'swiper-button--disabled'
+            },
+            pagination: {
+                el: this.pagination,
+                clickable: true,
             },
             breakpoints: {
                 1199: {

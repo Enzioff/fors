@@ -12,3 +12,4 @@ import './icon-cross.svg';
 import './icon-docs.svg';
 import './icon-search.svg';
 import './icon-search-error.svg';
+import './icon-quotes.svg';

@@ -19,6 +19,18 @@
       padding: 12px 20px;
       border-radius: 10px;
     }
+
+    &:hover {
+      border-color: $blue_active;
+
+      .custom-select__text {
+        color: $blue_active;
+      }
+
+      .custom-select__icon {
+        fill: $main3;
+      }
+    }
   }
 
   &.active {

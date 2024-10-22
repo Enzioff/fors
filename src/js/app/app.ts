@@ -6,6 +6,7 @@ import {AboutPage} from "./animation/AboutPage";
 import {MainPage} from "./animation/MainPage";
 import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
+import Slider from "./slider";
 
 class App {
     splineURL: string;
@@ -22,6 +23,15 @@ class App {
         this.createInputAreaMaxValue()
         this.createCustomSelect()
         this.createSearchBlock()
+        this.createSlider()
+    }
+
+    createSlider = () => {
+        const sliders = document.querySelectorAll('[data-slider]');
+        if (!sliders) return
+        sliders.forEach(slider => {
+            new Slider(slider)
+        })
     }
 
     createAnimation = () => {

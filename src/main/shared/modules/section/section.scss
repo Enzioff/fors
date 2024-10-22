@@ -92,4 +92,17 @@ root {
       min-height: 1100px;
     }
   }
+
+  &--preview {
+    height: 100vh;
+    max-height: 600px;
+
+    @include r($tablet) {
+      max-height: 381px;
+    }
+
+    @include r($mobile) {
+      max-height: 720px;
+    }
+  }
 }

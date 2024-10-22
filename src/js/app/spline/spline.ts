@@ -9,10 +9,12 @@ class Spline {
     mobileWidthMediaQuery
 
     constructor(el: HTMLCanvasElement, url: string) {
-        this.setApplication(el, url)
-        this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1440px)')
-        this.tabletWidthMediaQuery = window.matchMedia('(min-width: 768px)')
-        this.mobileWidthMediaQuery = window.matchMedia('(min-width: 320px)')
+        if (el) {
+            this.setApplication(el, url)
+            this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1440px)')
+            this.tabletWidthMediaQuery = window.matchMedia('(min-width: 768px)')
+            this.mobileWidthMediaQuery = window.matchMedia('(min-width: 320px)')
+        }
     }
 
     setApplication = (el: HTMLCanvasElement, url: string) => {
