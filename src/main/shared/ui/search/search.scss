@@ -1,0 +1,62 @@
+.search {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding-right: 30px;
+  background-color: $white;
+  border-radius: 15px;
+
+  @include r($tablet) {
+    padding-right: 20px;
+    border-radius: 10px;
+  }
+
+  &__input {
+    display: flex;
+    flex-grow: 1;
+    padding: 19px 15px 19px 30px;
+    font-family: $font-accent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: $gray;
+
+    @include r($tablet) {
+      padding: 18px 15px 17px 20px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__button {
+    flex-shrink: 0;
+    cursor: pointer;
+
+    &--reset {
+      opacity: 0;
+      transition: .2s linear;
+
+      &.visible {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  &__icon {
+    display: flex;
+    width: 25px;
+    height: 25px;
+
+    &--remove {
+      fill: $disabled_text;
+    }
+  }
+}

@@ -85,4 +85,11 @@ root {
       max-height: 650px;
     }
   }
+
+  &--full {
+    @include r($mobile) {
+      max-height: 100%;
+      min-height: 1100px;
+    }
+  }
 }

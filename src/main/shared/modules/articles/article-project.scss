@@ -1,0 +1,109 @@
+.article-project {
+  display: grid;
+  grid-template-columns: 400px 647px;
+  justify-content: space-between;
+  gap: 20px;
+  width: 100%;
+  min-height: 300px;
+  padding: 25px 25px 25px 40px;
+  background-color: $white;
+  border-radius: 25px;
+
+  @include r($tablet) {
+    grid-template-columns: 259px 399px;
+    min-height: 240px;
+    padding: 20px 10px 20px 20px;
+    border-radius: 15px;
+  }
+
+  @include r($mobile) {
+    display: flex;
+    flex-direction: column;
+    min-height: 230px;
+    padding: 15px;
+  }
+
+  &__side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    @include r($mobile) {
+      flex-grow: 1;
+      gap: 10px;
+    }
+
+    &:first-child {
+      @include r($mobile) {
+        display: none;
+      }
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+
+    @include r($tablet) {
+      gap: 15px;
+    }
+  }
+
+  &__title {
+    @include h4();
+    text-transform: uppercase;
+  }
+
+  &__picture {
+    display: flex;
+    width: 70px;
+    height: 70px;
+
+    @include r($tablet) {
+      width: 40px;
+      height: 40px;
+    }
+
+    img {
+      @include coverFull();
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    @include r($mobile) {
+      margin-top: auto;
+    }
+  }
+
+  &__text {
+    @include text2();
+
+    @include r($mobile) {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      color: $gray;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    width: 64px;
+    height: 64px;
+
+    @include r($tablet) {
+      width: 40px;
+      height: 40px;
+    }
+
+    img {
+      @include coverFull();
+    }
+  }
+}

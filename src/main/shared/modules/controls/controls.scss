@@ -1,0 +1,13 @@
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  @include r($tablet) {
+    gap: 10px;
+  }
+
+  @include r($mobile) {
+    flex-direction: column;
+  }
+}

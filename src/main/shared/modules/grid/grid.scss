@@ -37,6 +37,10 @@
     align-items: end;
   }
 
+  &--center {
+    align-items: center;
+  }
+
   &__item--self-end {
     justify-self: flex-end;
   }

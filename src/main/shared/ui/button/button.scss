@@ -19,6 +19,7 @@
   border-radius: 35px;
 
   vertical-align: middle;
+  cursor: pointer;
 
   &:hover {
     background-color: $blue_hover;
@@ -62,6 +63,34 @@
 
     @include r($mobile) {
       font-size: 11px;
+    }
+  }
+
+  &--center {
+    max-width: 257px;
+    margin: 0 auto;
+
+    @include r($tablet) {
+      max-width: 169px;
+    }
+  }
+
+  &--tight {
+    height: 60px;
+  }
+
+  &--slim {
+    height: auto;
+    padding: 0;
+    width: 100%;
+    color: $main1;
+    background-color: transparent;
+    border: none;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: transparent;
     }
   }
 }

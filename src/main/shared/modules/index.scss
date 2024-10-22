@@ -30,6 +30,8 @@
 @import "./form/form";
 @import "./contacts-block/contacts-block";
 @import "./loaded-block/loaded-block";
+@import "./controls/controls";
+@import "./not-found/not-found";
 
 
 // widgets
@@ -46,4 +48,5 @@
 @import "./articles/article-service";
 @import "./articles/article-contact";
 @import "./articles/article-load";
+@import "./articles/article-project";
 

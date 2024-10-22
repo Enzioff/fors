@@ -4,6 +4,8 @@ import DropZone from "./dropZone";
 import {MvcPage} from "./animation/MvcPage";
 import {AboutPage} from "./animation/AboutPage";
 import {MainPage} from "./animation/MainPage";
+import CustomSelect from "./customSelect";
+import SearchBlock from "./SearchBlock";
 
 class App {
     splineURL: string;
@@ -18,6 +20,8 @@ class App {
         this.createTabs()
         this.createDropZone()
         this.createInputAreaMaxValue()
+        this.createCustomSelect()
+        this.createSearchBlock()
     }
 
     createAnimation = () => {
@@ -65,6 +69,20 @@ class App {
                 textMax.textContent = `${target.value.length}/${maxLength}`
             })
         })
+    }
+
+    createCustomSelect = () => {
+        const selects = document.querySelectorAll('.custom-select');
+        if (!selects) return
+        selects.forEach(select => {
+            new CustomSelect(select)
+        })
+    }
+
+    createSearchBlock = () => {
+        const searchBlock = document.querySelector('[data-search-block]')
+        if (!searchBlock) return;
+        new SearchBlock(searchBlock)
     }
 }
 

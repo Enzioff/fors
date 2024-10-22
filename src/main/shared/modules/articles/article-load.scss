@@ -53,6 +53,10 @@
     height: 24px;
     margin-left: auto;
     cursor: pointer;
+
+    svg {
+      fill: $main1;
+    }
   }
 
   &__percent {

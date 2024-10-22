@@ -1,0 +1,157 @@
+.custom-select {
+  position: relative;
+  width: 100%;
+  max-width: 325px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding: 20px 30px;
+    border: 1px solid $main1;
+    border-radius: 15px;
+    background-color: $bg;
+    cursor: pointer;
+    transition: .2s linear;
+
+    @include r($tablet) {
+      padding: 12px 20px;
+      border-radius: 10px;
+    }
+  }
+
+  &.active {
+    .custom-select__icon {
+      transform: rotate(180deg);
+
+      &--reset {
+        transform: none;
+      }
+    }
+    .custom-select__menu {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &.selected {
+    .custom-select__header {
+      background-color: $main1;
+    }
+    .custom-select__text {
+      color: $white;
+    }
+    .custom-select__icon {
+      fill: $white;
+
+      &--reset {
+        fill: $white;
+      }
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    background-color: $white;
+    border-radius: 15px;
+    box-shadow: 0 0 30px 0 #7B869426;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: .2s linear;
+    z-index: 2;
+  }
+
+  &__content {
+    max-height: 490px;
+    overflow-y: auto;
+
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: $lines;
+      border-radius: 20px;
+      border: none;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px 15px 20px;
+    border-top: 1px solid $lines;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 30px;
+    width: 100%;
+    cursor: pointer;
+    background-color: $white;
+    transition: .2s linear;
+
+    @include r($tablet) {
+      padding: 10px 20px;
+    }
+
+    &:hover {
+      background-color: $bg;
+    }
+
+    span {
+      @include text2();
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+  }
+
+  &__text {
+    font-family: $font-accent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-align: left;
+    color: $main1;
+    transition: .2s linear;
+
+    @include r($tablet) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    width: 25px;
+    height: 25px;
+    transition: .2s linear;
+    fill: $main1;
+
+    &--reset {
+      fill: $main1;
+    }
+  }
+
+  &__control {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+}
