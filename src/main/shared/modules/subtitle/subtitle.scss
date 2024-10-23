@@ -1,0 +1,5 @@
+.subtitle {
+  margin-bottom: 10px;
+  @include text2();
+  color: $gray;
+}

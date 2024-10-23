@@ -35,4 +35,9 @@
       height: 40px;
     }
   }
+
+  &__time {
+    @include text2();
+    color: $gray;
+  }
 }

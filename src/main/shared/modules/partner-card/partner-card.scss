@@ -1,0 +1,57 @@
+.partner-card {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 40px;
+  border-radius: 25px;
+  background-color: #DCE4FF;
+
+  &__detail {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__time {
+    margin-bottom: 25px;
+    font-family: $font-main;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 35px;
+    text-align: left;
+    color: $main3;
+  }
+
+  &__description {
+    margin-bottom: 10px;
+    @include text2();
+    color: $gray;
+  }
+
+  &__text {
+    @include text2();
+  }
+
+  &__picture {
+    display: flex;
+    flex-shrink: 0;
+    width: 234px;
+    height: 156px;
+    border-radius: 10px;
+    overflow: hidden;
+
+    img {
+      @include coverFull();
+    }
+  }
+
+  &__button {
+    min-width: 100%;
+  }
+}

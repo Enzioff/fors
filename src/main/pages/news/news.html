@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%= htmlWebpackPlugin.options.widgets.head %>
+<body>
+<%= htmlWebpackPlugin.options.widgets.headerPages %>
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section
+            class="section section--intro section--bg animate-intro pb-50 pbt-108 pbm-0 mb-150 mbt-0 mbm-20">
+        <div class="intro">
+            <div class="container">
+                <div class="grid mbm-20">
+                    <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                        <h1 class="title title--main anim-in-bottom-stagger">
+                            <span>активно Участвуем</span>
+                            <span>в технологических событиях</span>
+                        </h1>
+                    </div>
+                    <div class="grid__item grid__item--3 grid__item--self-end grid__item-tab--6 grid__item-mob--4 pt-20 ptt-10">
+                        <div class="widget-video">
+                            <div class="widget-video__picture">
+                                <img src="./assets/images/pic-2.jpg" alt="">
+                            </div>
+                            <div class="widget-video__detail">
+                                <div class="widget-video__info">
+                                    <h3 class="widget-video__title">Алиса Акулова</h3>
+                                    <p class="widget-video__text">Руководитель пресс-службы</p>
+                                </div>
+                                <a href="#" class="widget-video__button button">Связаться</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section mb-150 mbt-60 mbm-20">
+        <div class="container">
+            <div class="grid mb-30">
+                <div class="grid__item--3 grid__item-tab--6"></div>
+                <div class="grid__item--3 grid__item-tab--6">
+                    <h2 class="title">
+                        новости <br>
+                        и события
+                    </h2>
+                </div>
+            </div>
+            <div class="grid grid--center mb-40 mbt-30 mbm-80" data-search-block="url">
+                <div class="grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <form action="#" class="search">
+                        <input type="text" class="search__input" placeholder="Поиск">
+                        <div class="search__control">
+                            <button class="search__button search__button--reset" type="reset">
+                                <svg class="search__icon search__icon--remove">
+                                    <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                                </svg>
+                            </button>
+                            <button class="search__button">
+                                <svg class="search__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="grid__item--1 tab-hidden"></div>
+                <div class="grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <div class="controls">
+                        <div class="custom-select">
+                            <div class="custom-select__header">
+                                <p class="custom-select__text">Тип</p>
+                                <div class="custom-select__control">
+                                    <svg class="custom-select__icon custom-select__icon--reset hidden">
+                                        <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                                    </svg>
+                                    <svg class="custom-select__icon">
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-bottom"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="custom-select__menu">
+                                <div class="custom-select__content">
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Новость</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Новость СМИ</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Новость СМИ</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Видеоматериал</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>События</span>
+                                    </label>
+                                </div>
+                                <div class="custom-select__footer">
+                                    <button class="button button--tight" data-accept>Применить</button>
+                                    <button class="button button--slim" data-reset>отменить</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="custom-select">
+                            <div class="custom-select__header">
+                                <p class="custom-select__text">Год</p>
+                                <div class="custom-select__control">
+                                    <svg class="custom-select__icon custom-select__icon--reset hidden">
+                                        <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                                    </svg>
+                                    <svg class="custom-select__icon">
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-bottom"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="custom-select__menu">
+                                <div class="custom-select__content">
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2024</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2023</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2022</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2021</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2020</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2019</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2018</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2017</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="industries">
+                                        <span>2016</span>
+                                    </label>
+                                </div>
+                                <div class="custom-select__footer">
+                                    <button class="button button--tight" data-accept>Применить</button>
+                                    <button class="button button--slim" data-reset>отменить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slider mb-20" data-slider="default" data-slides="1">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <a href="#" class="news-item news-item--big">
+                                <picture class="news-item__picture">
+                                    <img src="./assets/images/news-img.png" alt="">
+                                </picture>
+                                <div class="news-item__detail">
+                                    <div class="news-item__info">
+                                        <h3 class="news-item__title">Форс представит на PGConf.СПб 2024 свою передовую
+                                            разработку PGARM</h3>
+                                        <p class="news-item__text">Эксперты Форс примут участие в Международной
+                                            технической конференции по открытой СУБД PostgreSQL от компании Postgres
+                                            Professional, которая состоится 1 октября в Санкт-Петербурге</p>
+                                    </div>
+                                    <div class="news-item__meta">
+                                        <div class="action-tag">
+                                            <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
+                                            <span>Событие</span>
+                                        </div>
+                                        <p class="news-item__text news-item__text--small">23.09.2024</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="news-item news-item--big">
+                                <picture class="news-item__picture">
+                                    <img src="./assets/images/news-img.png" alt="">
+                                </picture>
+                                <div class="news-item__detail">
+                                    <div class="news-item__info">
+                                        <h3 class="news-item__title">Форс представит на PGConf.СПб 2024 свою передовую
+                                            разработку PGARM</h3>
+                                        <p class="news-item__text">Эксперты Форс примут участие в Международной
+                                            технической конференции по открытой СУБД PostgreSQL от компании Postgres
+                                            Professional, которая состоится 1 октября в Санкт-Петербурге</p>
+                                    </div>
+                                    <div class="news-item__meta">
+                                        <div class="action-tag">
+                                            <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
+                                            <span>Событие</span>
+                                        </div>
+                                        <p class="news-item__text news-item__text--small">23.09.2024</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="swiper-slide">
+                            <a href="#" class="news-item news-item--big">
+                                <picture class="news-item__picture">
+                                    <img src="./assets/images/news-img.png" alt="">
+                                </picture>
+                                <div class="news-item__detail">
+                                    <div class="news-item__info">
+                                        <h3 class="news-item__title">Форс представит на PGConf.СПб 2024 свою передовую
+                                            разработку PGARM</h3>
+                                        <p class="news-item__text">Эксперты Форс примут участие в Международной
+                                            технической конференции по открытой СУБД PostgreSQL от компании Postgres
+                                            Professional, которая состоится 1 октября в Санкт-Петербурге</p>
+                                    </div>
+                                    <div class="news-item__meta">
+                                        <div class="action-tag">
+                                            <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
+                                            <span>Событие</span>
+                                        </div>
+                                        <p class="news-item__text news-item__text--small">23.09.2024</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-controls tab-hidden">
+                        <button class="swiper-button swiper-button--prev">
+                            <svg class="swiper-icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                        </button>
+                        <div class="swiper-pagination"></div>
+                        <button class="swiper-button swiper-button--next">
+                            <svg class="swiper-icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="grid" data-search-list>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Медиаконтент</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Видеоматериал</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__photos">
+                                <div class="article-project__preview article-project__preview--video">
+                                    <img src="./assets/images/preview-1.png" alt="">
+                                    <svg>
+                                        <use xlink:href="./assets/sprite.svg#icon-play"></use>
+                                    </svg>
+                                </div>
+                                <div class="article-project__preview article-project__preview--video">
+                                    <img src="./assets/images/preview-2.png" alt="">
+                                    <svg>
+                                        <use xlink:href="./assets/sprite.svg#icon-play"></use>
+                                    </svg>
+                                </div>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-3.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">
+                                    PGConf. Russia24: Форс анонсировал новый продукт
+                                    PGARM для диагностики и мониторинга баз данных PostgreSQL
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Форс принял участие и выступил золотым партнером PGConf.Russia 2024 — крупнейшей
+                                международной технической конференции по открытой СУБД PostgreSQL, которая собирает
+                                ежегодно почти тысячу разработчиков, администраторов баз данных и других ИТ-специалистов
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Медиаконтент</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Видеоматериал</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Медиаконтент</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__photos">
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-1.png" alt="">
+                                </picture>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-2.png" alt="">
+                                </picture>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-3.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">
+                                    Форс на Kazan Digital Week 2024
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Специалисты Форс приняли участие в работе Международного форума в Казани, проходившего с
+                                9 по 11 сентября. В этом году Форум состоялся в четвёртый раз
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Медиаконтент</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Видеоматериал</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Медиаконтент</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__photos">
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-1.png" alt="">
+                                </picture>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-2.png" alt="">
+                                </picture>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-3.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">
+                                    PGConf. Russia24: Форс анонсировал новый продукт
+                                    PGARM для диагностики и мониторинга баз данных PostgreSQL
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Форс принял участие и выступил золотым партнером PGConf.Russia 2024 — крупнейшей
+                                международной технической конференции по открытой СУБД PostgreSQL, которая собирает
+                                ежегодно почти тысячу разработчиков, администраторов баз данных и других ИТ-специалистов
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Медиаконтент</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Медиаконтент</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__photos">
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-1.png" alt="">
+                                </picture>
+                                <picture class="article-project__preview">
+                                    <img src="./assets/images/preview-2.png" alt="">
+                                </picture>
+                            </div>
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">
+                                    Учебный центр Форс получил благодарность за вклад в развитие образовательного
+                                    направления на конференции РЕД СОФТ
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Учебный центр Форс принял участие в «Партнерской конференции РЕД СОФТ 2024», которая
+                                состоялась в Москве 5 сентября
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость</span>
+                                    </div>
+                                    <div class="action-tag action-tag--light">
+                                        <span>Медиаконтент</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--text article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header article-project__header--col">
+                                <h3 class="article-project__title">
+                                    Ай-Форс принимает участие в пилотном проекте по тестированию технологии контроля
+                                    симптомов при болезни Паркинсона
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Компания «Ай-Форс» (ГК Форс) принимает участие в пилотном проекте по испытанию первого
+                                набора моторных тестов для контроля тремора и эффективности лечения при болезни
+                                Паркинсона в неврологическом отделении №3 «Федерального центра мозга и нейротехнологий»
+                                ФМБА России
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project article-project--text article-project--photos">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость СМИ</span>
+                                </div>
+                            </div>
+                            <time class="article-project__time">12.09.2024</time>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header article-project__header--col">
+                                <span class="article-project__link">
+                                    <span>forsd.ru</span>
+                                    <svg>
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </span>
+                                <h3 class="article-project__title">
+                                    Сервер «ДатаРу БС» продемонстрировал высокую производительность при работе с СУБД
+                                    Oracle
+                                </h3>
+                            </div>
+                            <p class="article-project__text clamp-text">
+                                Сервисный центр компании «ФОРС Дистрибуция», специализирующийся на оказании технической
+                                поддержки программных и аппаратных средств Oracle, и отечественный вендор
+                                технологических решений и сервисов компания DатаРу успешно провели тестирование
+                                производительности многопроцессорных серверов линейки «ДатаРу БС» при использовании
+                                их в качестве аппаратной платформы для работы СУБД Oracle Database Enterprise Edition
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="tags tags--card tab-hidden-min">
+                                    <div class="action-tag action-tag--light">
+                                        <span>Новость СМИ</span>
+                                    </div>
+                                </div>
+                                <time class="article-project__time">12.09.2024</time>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12 mt-20">
+                    <button class="button button--center" data-show-more="?_page=2">Показать ещё</button>
+                </div>
+            </div>
+            <div class="grid hidden" data-not-found>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <div class="not-found">
+                        <svg class="not-found__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-search-error"></use>
+                        </svg>
+                        <p class="not-found__text">
+                            Мы не нашли проекты по вашему запросу.<br>
+                            Попробуйте проверить и изменить условия поиска
+                        </p>
+                        <button class="button button--center">Сбросить поиск</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= htmlWebpackPlugin.options.widgets.footer %>
+<%= htmlWebpackPlugin.options.widgets.temp %>
+</body>
+</html>

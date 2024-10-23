@@ -7,12 +7,13 @@ import {MainPage} from "./animation/MainPage";
 import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
+import clamp from 'clamp-js';
 
 class App {
     splineURL: string;
 
     constructor() {
-        this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
+        // this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
         this.init();
     }
 
@@ -24,6 +25,7 @@ class App {
         this.createCustomSelect()
         this.createSearchBlock()
         this.createSlider()
+        // this.createClampForText()
     }
 
     createSlider = () => {
@@ -93,6 +95,14 @@ class App {
         const searchBlock = document.querySelector('[data-search-block]')
         if (!searchBlock) return;
         new SearchBlock(searchBlock)
+    }
+
+    createClampForText = () => {
+        const texts = document.querySelectorAll('.clamp-text');
+        if (!texts) return
+        texts.forEach((text: HTMLElement) => {
+            clamp(text, {clamp: 'auto'});
+        })
     }
 }
 

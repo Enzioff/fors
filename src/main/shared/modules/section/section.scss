@@ -54,6 +54,10 @@ root {
     @include r($tablet) {
       background-image: url("../assets/images/intro-bg-tab.png");
     }
+
+    @include r($mobile) {
+      background-image: url("../assets/images/intro-bg-mob.png");
+    }
   }
 
   &--radial {
@@ -96,6 +100,19 @@ root {
   &--preview {
     height: 100vh;
     max-height: 600px;
+
+    @include r($tablet) {
+      max-height: 381px;
+    }
+
+    @include r($mobile) {
+      max-height: 720px;
+    }
+  }
+
+  &--event {
+    height: 100vh;
+    max-height: 500px;
 
     @include r($tablet) {
       max-height: 381px;

@@ -33,17 +33,8 @@
   div {
     display: block;
     width: 100%;
-    height: 447px;
     border-radius: 15px;
     overflow: hidden;
-
-    @include r($tablet) {
-      height: 473px;
-    }
-
-    @include r($mobile) {
-      height: 356px;
-    }
 
     img {
       @include coverFull();

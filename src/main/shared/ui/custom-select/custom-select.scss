@@ -3,6 +3,27 @@
   width: 100%;
   max-width: 325px;
 
+  &:nth-child(1) {
+    .custom-select__menu {
+      @include r($tablet) {
+        right: initial;
+      }
+      @include r($mobile) {
+        right: 0;
+      }
+    }
+  }
+  &:nth-child(2) {
+    .custom-select__menu {
+      @include r($tablet) {
+        left: initial;
+      }
+      @include r($mobile) {
+        left: 0;
+      }
+    }
+  }
+
   &__header {
     display: flex;
     align-items: center;
@@ -79,6 +100,10 @@
     visibility: hidden;
     transition: .2s linear;
     z-index: 2;
+
+    @include r($tablet) {
+      min-width: 289px;
+    }
   }
 
   &__content {
@@ -131,6 +156,11 @@
       -webkit-line-clamp: 2;
       line-clamp: 2;
       -webkit-box-orient: vertical;
+
+      @include r($mobile) {
+        font-size: 14px;
+        line-height: 16px;
+      }
     }
   }
 
