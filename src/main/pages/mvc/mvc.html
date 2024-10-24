@@ -29,7 +29,7 @@
                         </p>
                     </div>
                     <div class="grid__item grid__item--center grid__item--1 grid__item-tab--4 grid__item-mob--4">
-                        <a href="#" class="button-circle button-circle--big anim-in-right">
+                        <a href="#" class="button-circle button-circle--big anim-in-right" data-fancybox data-src="#cooperation">
                             <svg class="button-circle__icon">
                                 <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                             </svg>
@@ -196,12 +196,12 @@
                                 <h3 class="widget-video__title">Елена Александровна<br>Борхарт</h3>
                                 <p class="widget-video__text">Руководитель отдела продаж и<br>развития сервисных продуктов</p>
                             </div>
-                            <a href="#" class="widget-video__button button tab-hidden-min">Обсудить проект</a>
+                            <a href="#" class="widget-video__button button tab-hidden-min" data-fancybox data-src="#cooperation">Обсудить проект</a>
                         </div>
                     </div>
                 </div>
                 <div class="grid__item grid__item--self-end grid__item--3 grid__item-tab--6 grid__item-mob--4 pt-20 ptt-10 mob-hidden">
-                    <a href="#" class="button-circle anim-in-right">
+                    <a href="#" class="button-circle anim-in-right" data-fancybox data-src="#cooperation">
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
@@ -930,5 +930,6 @@
 </main>
 <%= htmlWebpackPlugin.options.widgets.footer %>
 <%= htmlWebpackPlugin.options.widgets.temp %>
+<%= htmlWebpackPlugin.options.widgets.hidden %>
 </body>
 </html>
