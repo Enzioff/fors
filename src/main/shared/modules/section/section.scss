@@ -119,7 +119,7 @@ root {
     }
 
     @include r($mobile) {
-      max-height: 720px;
+      max-height: 400px;
     }
   }
 }

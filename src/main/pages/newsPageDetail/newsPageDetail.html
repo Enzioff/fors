@@ -8,8 +8,8 @@
         <div class="intro">
             <div class="container">
                 <div class="grid grid--end mbm-20">
-                    <div class="grid__item grid__item--6 grid__item-tab--6 grid__item-mob--4 mbm-20">
-                        <p class="subtitle">Новости и события</p>
+                    <div class="grid__item grid__item--6 grid__item-tab--12 grid__item-mob--4 mbm-20">
+                        <p class="subtitle anim-in-bottom" data-anim-delay="0.1">Новости и события</p>
                         <h1 class="title title--main anim-in-bottom-stagger">
                             <span>Форс представит на PGConf.СПб 2024 свою передовую разработку PGARM</span>
                         </h1>
@@ -21,8 +21,8 @@
     <section class="section pt-70 pbt-60 mbm-20">
         <div class="container">
             <div class="grid">
-                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60">
-                    <div class="detail-ui">
+                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60 mbm-20">
+                    <div class="detail-ui detail-ui--row">
                         <div class="action-tag">
                             <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
                             <span>Событие</span>
@@ -36,6 +36,9 @@
                             <div class="partner-card__detail">
                                 <div class="partner-card__info">
                                     <time class="partner-card__time" datetime="2024.10.01">1 окт 2024</time>
+                                    <picture class="partner-card__picture tab-hidden-min">
+                                        <img src="./assets/images/partner-1.png" alt="">
+                                    </picture>
                                     <p class="partner-card__description">Место проведения</p>
                                     <p class="partner-card__text">
                                         Гостиница «Санкт-Петербург»,<br>
@@ -43,7 +46,7 @@
                                         набережная, д. 5/2
                                     </p>
                                 </div>
-                                <picture class="partner-card__picture">
+                                <picture class="partner-card__picture mob-hidden">
                                     <img src="./assets/images/partner-1.png" alt="">
                                 </picture>
                             </div>
@@ -69,9 +72,10 @@
                         <br>
                         <br>
                         <figure class="media-block">
-                            <div>
+                            <picture>
+                                <source srcset="./assets/images/news-img-mob.png" media="(max-width: 767px)">
                                 <img src="./assets/images/news-img.png" alt="">
-                            </div>
+                            </picture>
                             <figcaption>Заголовок фото (опционально)</figcaption>
                         </figure>
                         <br>

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
-<link href="css/main.d32e.css" rel="stylesheet"></head>
+<link href="css/main.8ab7.css" rel="stylesheet"></head>
 <body>
 <header class="header header--page">
     <div class="container">
@@ -85,8 +85,8 @@
         <div class="intro">
             <div class="container">
                 <div class="grid grid--end mbm-20">
-                    <div class="grid__item grid__item--6 grid__item-tab--6 grid__item-mob--4 mbm-20">
-                        <p class="subtitle">Новости и события</p>
+                    <div class="grid__item grid__item--6 grid__item-tab--12 grid__item-mob--4 mbm-20">
+                        <p class="subtitle anim-in-bottom" data-anim-delay="0.1">Новости и события</p>
                         <h1 class="title title--main anim-in-bottom-stagger">
                             <span>Форс представит на PGConf.СПб 2024 свою передовую разработку PGARM</span>
                         </h1>
@@ -98,8 +98,8 @@
     <section class="section pt-70 pbt-60 mbm-20">
         <div class="container">
             <div class="grid">
-                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60">
-                    <div class="detail-ui">
+                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60 mbm-20">
+                    <div class="detail-ui detail-ui--row">
                         <div class="action-tag">
                             <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
                             <span>Событие</span>
@@ -113,6 +113,9 @@
                             <div class="partner-card__detail">
                                 <div class="partner-card__info">
                                     <time class="partner-card__time" datetime="2024.10.01">1 окт 2024</time>
+                                    <picture class="partner-card__picture tab-hidden-min">
+                                        <img src="./assets/images/partner-1.png" alt="">
+                                    </picture>
                                     <p class="partner-card__description">Место проведения</p>
                                     <p class="partner-card__text">
                                         Гостиница «Санкт-Петербург»,<br>
@@ -120,7 +123,7 @@
                                         набережная, д. 5/2
                                     </p>
                                 </div>
-                                <picture class="partner-card__picture">
+                                <picture class="partner-card__picture mob-hidden">
                                     <img src="./assets/images/partner-1.png" alt="">
                                 </picture>
                             </div>
@@ -146,9 +149,10 @@
                         <br>
                         <br>
                         <figure class="media-block">
-                            <div>
+                            <picture>
+                                <source srcset="./assets/images/news-img-mob.png" media="(max-width: 767px)">
                                 <img src="./assets/images/news-img.png" alt="">
-                            </div>
+                            </picture>
                             <figcaption>Заголовок фото (опционально)</figcaption>
                         </figure>
                         <br>
@@ -300,6 +304,8 @@
             <a href="./newsDetail.html" class="temp__link">Детальная страница</a>
             <a href="./news.html" class="temp__link">Новости</a>
             <a href="./newsPageDetail.html" class="temp__link">Новости детальная страница</a>
+            <a href="./services.html" class="temp__link">Услуги</a>
+            <a href="./servicesDetail.html" class="temp__link">Услуги детальная</a>
         </div>
     </div>
 </div>

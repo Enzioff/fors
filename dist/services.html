@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ФОРС</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+<link href="css/main.8ab7.css" rel="stylesheet"></head>
+<body>
+<header class="header header--page">
+    <div class="container">
+        <div class="header__wrapper">
+            <a href="/" class="logo">
+                <img src="./assets/images/logo.svg" alt="">
+            </a>
+            <div class="header__user-nav">
+                <div class="burger">
+                    <div class="burger__wrapper">
+                        <img src="./assets/images/icon-burger.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-cross.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="desktop-menu">
+                    <div class="desktop-menu__wrapper">
+                        <a href="#" class="desktop-menu__link">Компания</a>
+                        <a href="#" class="desktop-menu__link">Проекты</a>
+                        <a href="#" class="desktop-menu__link">Продукты</a>
+                        <a href="#" class="desktop-menu__link">Техническая поддержка</a>
+                        <a href="#" class="desktop-menu__link">Учебный центр</a>
+                        <a href="#" class="desktop-menu__link">Вакансии</a>
+                        <a href="#" class="desktop-menu__link">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu__wrapper">
+                <nav class="nav">
+                    <a href="#" class="nav__link">Компания</a>
+                    <a href="#" class="nav__link">Проекты</a>
+                    <a href="#" class="nav__link">Продукты</a>
+                    <a href="#" class="nav__link">Техническая поддержка</a>
+                    <a href="#" class="nav__link">Учебный центр</a>
+                    <a href="#" class="nav__link">Вакансии</a>
+                    <a href="#" class="nav__link">Контакты</a>
+                </nav>
+                <div class="menu__footer">
+                    <div class="menu__links">
+                        <a href="tel:+74957877040" class="menu__link menu__link--big">+7 (495) 787-70-40</a>
+                        <a href="mailto:info@fors.ru" class="menu__link">info@fors.ru</a>
+                    </div>
+                    <div class="menu__social social social--row">
+                        <a href="#" class="social__link social__link--red">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-youtube.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--turquoise">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-telegram.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--brown">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-github.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section class="section section--intro section--bg animate-intro pb-50 pbt-108 pbm-0 mb-150 mbt-0 mbm-20">
+        <div class="intro">
+            <div class="container">
+                <div class="grid mbm-20">
+                    <div class="grid__item grid__item--3 grid__item-tab--12 grid__item-mob--4">
+                        <h1 class="title title--main anim-in-bottom-stagger">
+                            <span>комплексные услуги в области IT</span>
+                        </h1>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 pt-20 ptt-10">
+                        <p class="text anim-in-bottom">
+                            Мы предоставляем IT-услуги от консалтинга до технической поддержки и обучения, гарантируя
+                            надежность и эффективность ваших бизнес-процессов.
+                        </p>
+                    </div>
+                    <div class="grid__item grid__item--center grid__item--1 grid__item-tab--6 grid__item-mob--4">
+                        <a href="#" class="button-circle button-circle--big anim-in-right">
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Обсудить проект</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section mb-150 mbt-60 mbm-20">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Бизнес анализ</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Технологический консалтинг</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">Консалтинг</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Бизнес анализ</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Технологический консалтинг</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Команда ФОРС обладает опытом работы в проектах любого масштаба и сложности.
+                                Консалтинговые проекты были реализованы в ФНС России, ФСС России, Росфинмониторинге,
+                                МГФОМС, ОАО «Ростелеком», ОАО «МТС», Альфа-Банк, ГУП «Водоканал Санкт-Петербурга»,
+                                правительстве ХМАО — Югры Архангельской области, Республики Карелия, Хабаровского края
+                                и других.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Технологическая безопасность</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Отечественное ПО</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">Консалтинг</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Технологическая безопасность</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Отечественное ПО</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Команда ФОРС обладает опытом работы в проектах любого масштаба и сложности.
+                                Консалтинговые проекты были реализованы в ФНС России, ФСС России, Росфинмониторинге,
+                                МГФОМС, ОАО «Ростелеком», ОАО «МТС», Альфа-Банк, ГУП «Водоканал Санкт-Петербурга»,
+                                правительстве ХМАО — Югры Архангельской области, Республики Карелия, Хабаровского края
+                                и других.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка ПО</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Цифровые решения</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">Проектирование, разработка<br> и внедрение</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка ПО</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Цифровые решения</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В активе ФОРС свыше 2 000 масштабных ИТ-проектов, создан ряд уникальных информационных
+                                систем для государственных и коммерческих структур. В портфеле компании решения
+                                от лидеров мирового ИТ-рынка, а также широкий спектр собственных разработок
+                                по построению и модернизации корпоративных информационных систем.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Многовендорная поддержка</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Обслуживание ПО</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header article-project__header--col">
+                                <span class="article-project__link">
+                                    <span>ts.fors.ru</span>
+                                    <svg>
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </span>
+                                <h3 class="article-project__title">
+                                    Техническая поддержка
+                                </h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Многовендорная поддержка</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Обслуживание ПО</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">Центр технической поддержки ФОРС оказывает полный комплекс
+                                услуг по сопровождению и поддержке бесперебойной работы БД</p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>ИТ обучение</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Цифровые навыки</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header article-project__header--col">
+                                <span class="article-project__link">
+                                    <span>edu.fors.ru</span>
+                                    <svg>
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                    </svg>
+                                </span>
+                                <h3 class="article-project__title">
+                                    Обучение
+                                </h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>ИТ обучение</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Цифровые навыки</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">Один из первых российских учебных центров, который получил
+                                авторизацию корпорации Oracle и начал вести обучение по программе авторизованных курсов
+                                Oracle. Нами пройден огромный путь — от отдела в компании «ФОРС», ведущего обучение
+                                курсам Oracle в единственном классе, до одного из крупнейших в Центральной и Восточной
+                                Европе авторизованных Учебных центров Oracle.</p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <div class="projects projects--small projects--light">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="grid hidden" data-not-found>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <div class="not-found">
+                        <svg class="not-found__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-search-error"></use>
+                        </svg>
+                        <p class="not-found__text">
+                            Мы не нашли проекты по вашему запросу.<br>
+                            Попробуйте проверить и изменить условия поиска
+                        </p>
+                        <button class="button button--center">Сбросить поиск</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__separator"></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="site-nav anim-in-bottom-stagger">
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">О компании</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Новости</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Проекты</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Решения</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Услуги</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Центр технической поддержки</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Разработка информационных систем</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Обучение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Импортозамещение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Консалтинг</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Карьера</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вакансии</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Начало карьеры</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Команда единомышленников</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Атмосфера</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вопросы и ответы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Контакты</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Где нас найти</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Контакты для прессы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <a href="#" class="footer__logo logo mob-hidden">
+                        <img src="./assets/images/logo-small.svg" alt="">
+                    </a>
+                    <p class="footer__text">1991–2024. © ФОРС</p>
+                    <p class="footer__text footer__text--copyright">© 2024,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvartalnov</a></p>
+                </div>
+                <div class="footer__meta">
+                    <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>
+                    <a href="#" class="footer__text">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .temp {
+        padding: 20px 0;
+        background-color: #FFFFFF;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .temp__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 40px;
+    }
+    .temp__link {
+        font-size: 14px;
+        transition: .2s linear;
+    }
+    .temp__link:hover {
+        opacity: .7;
+    }
+    .temp__title {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+</style>
+<div class="temp">
+    <div class="container">
+        <h2 class="temp__title">Временная секция для навигации по вёрстке</h2>
+        <div class="temp__wrapper">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./about.html" class="temp__link">О Компании</a>
+            <a href="./mvc.html" class="temp__link">МВЦ</a>
+            <a href="./projects.html" class="temp__link">Проекты</a>
+            <a href="./newsDetail.html" class="temp__link">Детальная страница</a>
+            <a href="./news.html" class="temp__link">Новости</a>
+            <a href="./newsPageDetail.html" class="temp__link">Новости детальная страница</a>
+            <a href="./services.html" class="temp__link">Услуги</a>
+            <a href="./servicesDetail.html" class="temp__link">Услуги детальная</a>
+        </div>
+    </div>
+</div>
+<script defer src="bundle.cc8e.js"></script></body>
+</html>

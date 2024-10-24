@@ -40,4 +40,18 @@
     @include text2();
     color: $gray;
   }
+
+  &--row {
+    @include r($mobile) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }

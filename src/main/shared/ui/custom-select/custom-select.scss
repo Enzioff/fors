@@ -3,6 +3,10 @@
   width: 100%;
   max-width: 325px;
 
+  @include r($mobile) {
+    max-width: 100%;
+  }
+
   &:nth-child(1) {
     .custom-select__menu {
       @include r($tablet) {
