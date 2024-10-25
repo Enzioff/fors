@@ -22,6 +22,7 @@
         font-family: $font-accent;
         font-size: 15px;
         line-height: 18px;
+        color: $main3;
 
         @include r($tablet) {
           font-size: 12px;

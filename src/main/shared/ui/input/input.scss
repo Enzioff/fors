@@ -10,6 +10,7 @@
 
   @include r($tablet) {
     padding: 15px;
+    border-radius: 10px;
   }
 
   @include r($mobile) {

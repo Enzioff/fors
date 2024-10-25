@@ -41,8 +41,13 @@
     transition: .2s linear;
 
     @include r($tablet) {
+      max-width: 169px;
       padding: 12px 20px;
       border-radius: 10px;
+    }
+
+    @include r($mobile) {
+      max-width: 100%;
     }
 
     &:hover {
@@ -176,6 +181,12 @@
     text-align: left;
     color: $main1;
     transition: .2s linear;
+
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
 
     @include r($tablet) {
       font-size: 14px;
