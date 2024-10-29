@@ -1,7 +1,11 @@
 .custom-select {
   position: relative;
   width: 100%;
-  max-width: 325px;
+  max-width: 440px;
+
+  @include r($tablet) {
+    max-width: 290px;
+  }
 
   @include r($mobile) {
     max-width: 100%;
@@ -41,7 +45,6 @@
     transition: .2s linear;
 
     @include r($tablet) {
-      max-width: 169px;
       padding: 12px 20px;
       border-radius: 10px;
     }
@@ -187,6 +190,7 @@
     -webkit-line-clamp: 1;
     line-clamp: 1;
     -webkit-box-orient: vertical;
+    word-break: break-word;
 
     @include r($tablet) {
       font-size: 14px;

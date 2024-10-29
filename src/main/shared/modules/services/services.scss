@@ -7,7 +7,7 @@
   @include r($tablet) {
     gap: 30px;
   }
-  
+
   @include r($mobile) {
     gap: 18px;
   }
@@ -67,18 +67,23 @@
         &:nth-child(1) {
           background-color: #032183;
         }
+
         &:nth-child(2) {
           background-color: #002DBF;
         }
+
         &:nth-child(3) {
           background-color: #0234D5;
         }
+
         &:nth-child(4) {
           background-color: #0238E7;
         }
+
         &:nth-child(5) {
           background-color: #043BEB;
         }
+
         &:nth-child(6) {
           background-color: #134AFF;
         }
@@ -107,6 +112,11 @@
       padding: 13px 10px;
       font-size: 12px;
       line-height: 14px;
+    }
+
+    &:first-child,
+    &:last-child {
+      cursor: pointer;
     }
 
     &.active {

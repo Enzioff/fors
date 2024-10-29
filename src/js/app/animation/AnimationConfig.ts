@@ -32,10 +32,6 @@ export class AnimationConfig extends MainGsap {
 
         const introWidgets = document.querySelectorAll('.anim-notification');
 
-        this.headerAnimation.isFixed
-            ? this.headerAnimation.animate(animateType.VISIBLE)
-            : this.headerAnimation.animate(animateType.HIDE)
-
         this.mm.add({
             isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
             isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
@@ -43,6 +39,14 @@ export class AnimationConfig extends MainGsap {
             isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            if (isDesktop) {
+                this.headerAnimation.isFixed
+                    ? this.headerAnimation.animate(animateType.VISIBLE)
+                    : this.headerAnimation.animate(animateType.HIDE)
+            }
+            if (isTabletMax) {
+                this.headerAnimation.animate(animateType.VISIBLE)
+            }
             ScrollTrigger.create({
                 trigger: introSection,
                 start: 'top-=50 top',
@@ -51,17 +55,16 @@ export class AnimationConfig extends MainGsap {
                     if (self.isActive) {
                         if (isDesktop) {
                             this.moveCanvas(0)
+                            this.headerAnimation.isFixed
+                                ? this.headerAnimation.animate(animateType.VISIBLE)
+                                : this.headerAnimation.animate(animateType.HIDE)
                         }
                         if (isTabletMax) {
                             this.moveCanvas(0, {yPercent: -25})
+                            this.headerAnimation.animate(animateType.VISIBLE)
                         }
                         if (isMobileMax) {
                             this.moveCanvas(0, {yPercent: 15})
-                        }
-                        if (this.headerAnimation.isFixed) {
-                            this.headerAnimation.animate(animateType.VISIBLE)
-                        } else {
-                            this.headerAnimation.animate(animateType.HIDE)
                         }
 
                         if (isDesktop) {
@@ -489,10 +492,23 @@ export class AnimationConfig extends MainGsap {
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
 
+            // servicesHeaderItems[0].addEventListener('click', () => {
+            //     gsap.to(window, {
+            //         scrollTo: cards[0],
+            //         duration: 1,
+            //     })
+            // })
+            // servicesHeaderItems[servicesHeaderItems.length - 1].addEventListener('click', () => {
+            //     gsap.to(window, {
+            //         scrollTo: cards[cards.length - 1],
+            //         duration: 1,
+            //     })
+            // })
+
             ScrollTrigger.create({
                 trigger: section,
                 start: `top top+=${headerOffset}`,
-                end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                end: () => `+=${cards.length * firstCardheight + listCardsHeight}`,
                 onToggle: (self) => {
                     if (self.isActive) {
                         this.headerAnimation.animate(animateType.HIDE);
@@ -509,10 +525,9 @@ export class AnimationConfig extends MainGsap {
             ScrollTrigger.create({
                 trigger: section,
                 start: `top-=40 top`,
-                end: () => `${cards.length * firstCardheight}`,
+                end: () => `+=${cards.length * firstCardheight}`,
                 pin: true,
                 pinSpacing: true,
-                anticipatePin: 1,
                 scrub: 1,
             })
 
@@ -520,7 +535,7 @@ export class AnimationConfig extends MainGsap {
                 scrollTrigger: {
                     trigger: listCards,
                     start: 'top top',
-                    end: () => `${cards.length * firstCardheight}`,
+                    end: () => `+=${cards.length * firstCardheight}`,
                     scrub: 1,
                 }
             });

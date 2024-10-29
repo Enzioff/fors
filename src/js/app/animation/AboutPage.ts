@@ -94,7 +94,22 @@ export class AboutPage extends AnimationConfig {
         const timeline = timelinePinnedBlock.querySelector('.timeline');
         const timelineItems = timeline.querySelectorAll('.timeline__item');
         const timelineWrapper = timeline.querySelector('.timeline__wrapper');
-        const shadow = timeline.querySelector('.timeline__shadow')
+        const switcher = timeline.querySelector('.timeline__switcher') as HTMLElement;
+        let isReversed = false;
+
+        if (switcher) {
+            switcher.addEventListener('click', () => {
+                if (timelineWrapper.classList.contains('reverse')) {
+                    timelineWrapper.classList.remove('reverse')
+                    timelineItems[0].classList.add('active')
+                    isReversed = false
+                } else {
+                    timelineWrapper.classList.add('reverse')
+                    timelineItems[timelineItems.length - 1].classList.add('active')
+                    isReversed = true
+                }
+            })
+        }
 
         this.mm.add({
             isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
@@ -110,7 +125,7 @@ export class AboutPage extends AnimationConfig {
 
                 const containerHeight = timeline.getBoundingClientRect().height;
 
-                const maxY = containerHeight - totalHeight;
+                const maxY = containerHeight - (totalHeight + 72);
                 const limitY = maxY < 0 ? maxY : 0;
 
                 const sectionTimeline = gsap.timeline({
@@ -129,8 +144,14 @@ export class AboutPage extends AnimationConfig {
                             if (self.isActive) {
                                 self.refresh()
                                 timeline.classList.add('active')
+                                if (switcher) {
+                                    switcher.style.opacity = '0';
+                                }
                             } else {
                                 timeline.classList.remove('active')
+                                if (switcher) {
+                                    switcher.style.opacity = '1';
+                                }
                             }
                         },
                         onLeave: () => animateSpline(this.application, 18),
@@ -138,7 +159,6 @@ export class AboutPage extends AnimationConfig {
                 })
 
                 let offsetY = 0;
-                let shadowSize = shadow.getBoundingClientRect().height
                 let animCounter = 0;
                 const animCounterMax = 5;
 
@@ -149,32 +169,18 @@ export class AboutPage extends AnimationConfig {
                         ease: 'none',
                         onUpdate: () => {
                             timelineItems.forEach(temp => temp.classList.remove('active'))
-                            element.classList.add('active')
+                            if (isReversed) {
+                                timelineItems[timelineItems.length - (idx + 1)].classList.add('active')
+                            } else {
+                                element.classList.add('active')
+                            }
                         },
                         onStart: () => {
                             if (idx % 2 === 0 && animCounter < animCounterMax) {
                                 animCounter += 1;
                                 animateSpline(this.application, 9 + animCounter)
                             }
-                            if (idx >= timelineItems.length - 3) {
-                                shadowSize -= elementHeight
-
-                                gsap.to(shadow, {
-                                    height: shadowSize,
-                                    ease: 'none',
-                                })
-                            }
                         },
-                        onReverseComplete: () => {
-                            if (idx >= timelineItems.length - 3) {
-                                shadowSize += elementHeight
-
-                                gsap.to(shadow, {
-                                    height: shadowSize,
-                                    ease: 'none',
-                                })
-                            }
-                        }
                     })
                     offsetY -= elementHeight
                 })
@@ -197,7 +203,6 @@ export class AboutPage extends AnimationConfig {
                         end: () => `+=${Math.abs(totalWidth * 1.5)}`,
                         pin: true,
                         pinSpacing: true,
-                        anticipatePin: 1,
                         scrub: 1,
                         onToggle: self => {
                             self.refresh()
@@ -215,11 +220,11 @@ export class AboutPage extends AnimationConfig {
                                 isTabletMax && this.moveCanvas(-20, {yPercent: 0})
                                 isMobileMax && this.moveCanvas(0, {yPercent: 0})
                             }
-                        },
+                        }
                     }
                 })
 
-                let offsetX = 0;
+                let offsetX = -timelineItems[0].getBoundingClientRect().width;
                 let animCounter = 0;
                 const animCounterMax = 5;
                 timelineItems.forEach((element, idx) => {

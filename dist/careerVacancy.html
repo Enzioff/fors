@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ФОРС</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+<link href="css/main.9ba7.css" rel="stylesheet"></head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <a href="/" class="header__logo">
+                <svg class="header__icon-logo">
+                    <use xlink:href="./assets/sprite.svg#logo"></use>
+                </svg>
+            </a>
+            <div class="header__user-nav">
+                <div class="burger">
+                    <div class="burger__wrapper">
+                        <img src="./assets/images/icon-burger.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-cross.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="desktop-menu">
+                    <div class="desktop-menu__wrapper">
+                        <a href="#" class="desktop-menu__link">Компания</a>
+                        <a href="#" class="desktop-menu__link">Проекты</a>
+                        <a href="#" class="desktop-menu__link">Продукты</a>
+                        <a href="#" class="desktop-menu__link">Техническая поддержка</a>
+                        <a href="#" class="desktop-menu__link">Учебный центр</a>
+                        <a href="#" class="desktop-menu__link">Вакансии</a>
+                        <a href="#" class="desktop-menu__link">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu__wrapper">
+                <nav class="nav">
+                    <a href="#" class="nav__link">Компания</a>
+                    <a href="#" class="nav__link">Проекты</a>
+                    <a href="#" class="nav__link">Продукты</a>
+                    <a href="#" class="nav__link">Техническая поддержка</a>
+                    <a href="#" class="nav__link">Учебный центр</a>
+                    <a href="#" class="nav__link">Вакансии</a>
+                    <a href="#" class="nav__link">Контакты</a>
+                </nav>
+                <div class="menu__footer">
+                    <div class="menu__links">
+                        <a href="tel:+74957877040" class="menu__link menu__link--big">+7 (495) 787-70-40</a>
+                        <a href="mailto:info@fors.ru" class="menu__link">info@fors.ru</a>
+                    </div>
+                    <div class="menu__social social social--row">
+                        <a href="#" class="social__link social__link--red">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-youtube.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--turquoise">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-telegram.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--brown">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-github.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section
+            class="section section--height section--bg animate-intro trigger-intro pt-50 ptt-158 ptm-126 pb-60 pbt-60 mb-150 mbt-0">
+        <div class="container container--full">
+            <div class="intro intro--between">
+                <div class="grid mb-36 mbt-20 mbm-20 order-mob--2">
+                    <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
+                        <a href="/" class="logo tab-hidden anim-in-top">
+                            <img src="./assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="grid__item grid__item--2 mob-hidden"></div>
+                    <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--3 mbm-10">
+                        <div class="card widget-info anim-in-top" data-anim-delay="0.2">
+                            <div class="widget-info__top">
+                                <div class="widget-info__detail">
+                                    <h3 class="numbers widget-info__numbers">410</h3>
+                                    <p class="caption widget-info__caption">рабочих мест</p>
+                                </div>
+                                <svg class="widget-info__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-rocket"></use>
+                                </svg>
+                            </div>
+                            <div class="widget-info__bottom">
+                                <div class="widget-info__detail">
+                                    <h3 class="numbers widget-info__numbers">12</h3>
+                                    <p class="caption widget-info__caption">Вакансий</p>
+                                </div>
+                                <svg class="widget-info__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4 mbt-10">
+                        <div class="card widget-stats anim-in-top" data-anim-delay="0.3">
+                            <div class="widget-stats__top">
+                                <div class="users users--big">
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user user--blue">+35</div>
+                                </div>
+                            </div>
+                            <div class="widget-stats__bottom">
+                                <div class="widget-stats__detail">
+                                    <h3 class="numbers widget-stats__numbers">&gt;40</h3>
+                                    <p class="caption widget-stats__caption">Специалистов в Форс</p>
+                                </div>
+                                <div class="widget-stats__detail">
+                                    <img src="./assets/images/icon-people.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid mbm-20 order-mob--1">
+                    <div class="grid__item grid__item--3 grid__item-tab--8 grid__item-mob--3">
+                        <h1 class="title title--main anim-in-bottom-stagger">
+                            <span>РАБОТА В КОМПАНИИ –</span>
+                            <span>ЛИДЕРЕ ИТ-РЫНКА</span>
+                        </h1>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4 pt-15 ptt-10">
+                        <p class="text anim-in-bottom">
+                            Создание высококачественных ИТ-продуктов и решений, формирование, развитие и воспитание
+                            национальной ИТ-элиты.
+                        </p>
+                    </div>
+                    <div class="grid__item grid__item--center grid__item--1 grid__item-tab--4 grid__item-mob--4 mob-hidden">
+                        <a href="#" class="button-circle button-circle--big button-circle--stay anim-el-in"
+                           data-fancybox
+                           data-src="#cooperation">
+                            <svg class="button-circle__icon button-circle__icon--long">
+                                <use xlink:href="./assets/sprite.svg#icon-rocket-start"></use>
+                            </svg>
+                            <span>стать частью команды</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid order-mob--2 tab-hidden-min">
+                    <div class="grid__item grid__item--4 grid__item--self-end">
+                        <a href="#" class="button-circle button-circle--big button-circle--stay anim-el-in"
+                           data-fancybox
+                           data-src="#cooperation">
+                            <svg class="button-circle__icon button-circle__icon--long">
+                                <use xlink:href="./assets/sprite.svg#icon-rocket-start"></use>
+                            </svg>
+                            <span>стать частью команды</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section mb-150 mbt-60 mbm-20">
+        <div class="container">
+            <div class="grid mb-30">
+                <div class="grid__item--3 grid__item-tab--6"></div>
+                <div class="grid__item--3 grid__item-tab--6">
+                    <h2 class="title">
+                        Актуальные вакансии
+                    </h2>
+                </div>
+            </div>
+            <div class="grid grid--center mb-40 mbt-30 mbm-80" data-search-block="url">
+                <div class="grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <form action="#" class="search">
+                        <input type="text" class="search__input" placeholder="Поиск">
+                        <div class="search__control">
+                            <button class="search__button search__button--reset" type="reset">
+                                <svg class="search__icon search__icon--remove">
+                                    <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                                </svg>
+                            </button>
+                            <button class="search__button">
+                                <svg class="search__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-search"></use>
+                                </svg>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                <div class="grid__item--1 tab-hidden"></div>
+                <div class="grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <div class="controls">
+                        <div class="custom-select">
+                            <div class="custom-select__header">
+                                <p class="custom-select__text">Направления</p>
+                                <div class="custom-select__control">
+                                    <svg class="custom-select__icon custom-select__icon--reset hidden">
+                                        <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                                    </svg>
+                                    <svg class="custom-select__icon">
+                                        <use xlink:href="./assets/sprite.svg#icon-arrow-bottom"></use>
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="custom-select__menu">
+                                <div class="custom-select__content">
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Аналитические системы </span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Биллинг</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>ИТ-консалтинг</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Кампусные системы</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Медицинские системы</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Портальные решения</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Разработка информационных систем</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Управление деловыми процессами</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Управление финансами</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Аналитические системы </span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Биллинг</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>ИТ-консалтинг</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Кампусные системы</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Медицинские системы</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Портальные решения</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Разработка информационных систем</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Управление деловыми процессами</span>
+                                    </label>
+                                    <label class="custom-select__item">
+                                        <input type="checkbox" class="checkbox" name="direction">
+                                        <span>Управление финансами</span>
+                                    </label>
+                                </div>
+                                <div class="custom-select__footer">
+                                    <button class="button button--tight" data-accept>Применить</button>
+                                    <button class="button button--slim" data-reset>отменить</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="grid" data-search-list>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <h3 class="article-project__title">java-разработчик</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Разработка и проектирование</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                В отделении разработки информационных систем ФОРС – Центр разработки открыта позиция:
+                                java-разработчик. Мы ищем специалиста с опытом в проектировании и разработке
+                                масштабируемых веб-приложений. Ваша работа будет связана с созданием высоконадежных
+                                решений для корпоративных клиентов, включая внедрение инновационных технологий и
+                                оптимизацию бизнес-процессов.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12 mt-20">
+                    <button class="button button--center" data-show-more="?_page=2">Показать ещё</button>
+                </div>
+            </div>
+            <div class="grid hidden" data-not-found>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <div class="not-found">
+                        <svg class="not-found__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-search-error"></use>
+                        </svg>
+                        <p class="not-found__text">
+                            Мы не нашли проекты по вашему запросу.<br>
+                            Попробуйте проверить и изменить условия поиска
+                        </p>
+                        <button class="button button--center">Сбросить поиск</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__separator"></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="site-nav anim-in-bottom-stagger">
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">О компании</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Новости</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Проекты</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Решения</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Услуги</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Центр технической поддержки</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Разработка информационных систем</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Обучение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Импортозамещение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Консалтинг</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Карьера</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вакансии</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Начало карьеры</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Команда единомышленников</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Атмосфера</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вопросы и ответы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Контакты</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Где нас найти</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Контакты для прессы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <a href="#" class="footer__logo logo mob-hidden">
+                        <img src="./assets/images/logo-small.svg" alt="">
+                    </a>
+                    <p class="footer__text">1991–2024. © ФОРС</p>
+                    <p class="footer__text footer__text--copyright">© 2024,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvartalnov</a></p>
+                </div>
+                <div class="footer__meta">
+                    <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>
+                    <a href="#" class="footer__text">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .temp {
+        padding: 20px 0;
+        background-color: #FFFFFF;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .temp__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 40px;
+    }
+    .temp__link {
+        font-size: 14px;
+        transition: .2s linear;
+    }
+    .temp__link:hover {
+        opacity: .7;
+    }
+    .temp__title {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+</style>
+<div class="temp">
+    <div class="container">
+        <h2 class="temp__title">Временная секция для навигации по вёрстке</h2>
+        <div class="temp__wrapper">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./about.html" class="temp__link">О Компании</a>
+            <a href="./mvc.html" class="temp__link">МВЦ</a>
+            <a href="./projects.html" class="temp__link">Проекты</a>
+            <a href="./newsDetail.html" class="temp__link">Детальная страница</a>
+            <a href="./news.html" class="temp__link">Новости</a>
+            <a href="./newsPageDetail.html" class="temp__link">Новости детальная страница</a>
+            <a href="./services.html" class="temp__link">Услуги</a>
+            <a href="./servicesDetail.html" class="temp__link">Услуги детальная</a>
+            <a href="./career.html" class="temp__link">Карьера</a>
+            <a href="./careerVacancy.html" class="temp__link">Карьера вакансии</a>
+            <a href="./careerDetail.html" class="temp__link">Карьера детальная</a>
+        </div>
+    </div>
+</div>
+<div class="hidden">
+    <div class="modal" id="cooperation">
+        <div class="modal__wrapper">
+                <div class="grid">
+                    <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                        <h2 class="title mb-15">
+                            Готовы обсудить сотрудничество?
+                        </h2>
+                        <picture class="picture-ui mob-hidden">
+                            <img src="./assets/images/menu-cube.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                        <div class="card card--offset card--height">
+                            <div class="tabs">
+                                <div class="tabs__header">
+                                    <button class="tabs__item active">Связаться</button>
+                                    <button class="tabs__item">Карьера</button>
+                                    <button class="tabs__item">Контакты</button>
+                                </div>
+                                <div class="tabs__content">
+                                    <div class="tabs__element active">
+                                        <form action="1" class="form">
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="ORGANISATION"
+                                                       placeholder="Название организации">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                            </label>
+                                            <label class="form__item form__item--area">
+                                            <textarea class="input input--area" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                                <span class="form__max">0/1000</span>
+                                            </label>
+                                            <label class="form__item form__item--meta">
+                                                <input type="checkbox" class="checkbox" name="POLICY">
+                                                <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                        href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                    <div class="tabs__element">
+                                        <form action="2" class="form">
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                            </label>
+                                            <div class="form__item">
+                                                <label class="drop-zone">
+                                                    <svg class="drop-zone__icon">
+                                                        <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
+                                                    </svg>
+                                                    <svg class="drop-zone__icon drop-zone__icon--error">
+                                                        <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
+                                                    </svg>
+                                                    <span class="drop-zone__caption">
+                                                    Перетащите файлы формата JPG, PNG or PDF (не больше 10MB)
+                                                </span>
+                                                    <span class="drop-zone__notation">
+                                                    Загрузите свое резюме
+                                                </span>
+                                                    <input type="file" hidden>
+                                                </label>
+                                                <div class="loaded-block"></div>
+                                            </div>
+                                            <label class="form__item form__item--area">
+                                            <textarea class="input input--area input--small" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                                <span class="form__max">0/1000</span>
+                                            </label>
+                                            <label class="form__item form__item--meta">
+                                                <input type="checkbox" class="checkbox" name="POLICY">
+                                                <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                        href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                    <div class="tabs__element">
+                                        <div class="contacts-block">
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Центр разработки</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:develop@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        develop@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Центр техподдержки</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:support@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        support@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Учебно-консультационный центр</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:edu@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        edu@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end">
+                        <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Все<br>контакты</span>
+                        </button>
+                    </div>
+                    <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end desktop-hidden">
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit" data-btn-mob
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" type="submit" data-btn-mob
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" data-btn-mob>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Все<br>контакты</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<script defer src="bundle.967b.js"></script></body>
+</html>

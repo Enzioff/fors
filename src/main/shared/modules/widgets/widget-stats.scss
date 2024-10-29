@@ -14,7 +14,7 @@
   }
 
   @include r($mobile) {
-    gap: 40px;
+    gap: 15px;
     height: 163px;
     max-height: 163px;
     padding: 15px;
@@ -33,6 +33,14 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
+  }
+
+  &__top {
+    @include r($mobile) {
+      display: flex;
+      align-items: flex-start;
+      height: 100%;
+    }
   }
 
   &__picture {

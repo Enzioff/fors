@@ -18,4 +18,9 @@
   img {
     @include coverFull();
   }
+
+  &--radius {
+    border-radius: 25px;
+    overflow: hidden;
+  }
 }

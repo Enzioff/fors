@@ -122,4 +122,18 @@ root {
       max-height: 400px;
     }
   }
+
+  &--height {
+    height: 100vh;
+    max-height: 850px;
+
+    @include r($tablet) {
+      max-height: 650px;
+    }
+
+    @include r($mobile) {
+      height: 100%;
+      max-height: 894px;
+    }
+  }
 }

@@ -13,3 +13,4 @@ import './icon-docs.svg';
 import './icon-search.svg';
 import './icon-search-error.svg';
 import './icon-quotes.svg';
+import './icon-switch.svg';

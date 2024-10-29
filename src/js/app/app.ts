@@ -26,7 +26,6 @@ class App {
         this.createCustomSelect()
         this.createSearchBlock()
         this.createSlider()
-        // this.createClampForText()
         this.createFancybox()
     }
 

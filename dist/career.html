@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ФОРС</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+          rel="stylesheet">
+<link href="css/main.9ba7.css" rel="stylesheet"></head>
+<body>
+<header class="header">
+    <div class="container">
+        <div class="header__wrapper">
+            <a href="/" class="header__logo">
+                <svg class="header__icon-logo">
+                    <use xlink:href="./assets/sprite.svg#logo"></use>
+                </svg>
+            </a>
+            <div class="header__user-nav">
+                <div class="burger">
+                    <div class="burger__wrapper">
+                        <img src="./assets/images/icon-burger.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-cross.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="desktop-menu">
+                    <div class="desktop-menu__wrapper">
+                        <a href="#" class="desktop-menu__link">Компания</a>
+                        <a href="#" class="desktop-menu__link">Проекты</a>
+                        <a href="#" class="desktop-menu__link">Продукты</a>
+                        <a href="#" class="desktop-menu__link">Техническая поддержка</a>
+                        <a href="#" class="desktop-menu__link">Учебный центр</a>
+                        <a href="#" class="desktop-menu__link">Вакансии</a>
+                        <a href="#" class="desktop-menu__link">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu__wrapper">
+                <nav class="nav">
+                    <a href="#" class="nav__link">Компания</a>
+                    <a href="#" class="nav__link">Проекты</a>
+                    <a href="#" class="nav__link">Продукты</a>
+                    <a href="#" class="nav__link">Техническая поддержка</a>
+                    <a href="#" class="nav__link">Учебный центр</a>
+                    <a href="#" class="nav__link">Вакансии</a>
+                    <a href="#" class="nav__link">Контакты</a>
+                </nav>
+                <div class="menu__footer">
+                    <div class="menu__links">
+                        <a href="tel:+74957877040" class="menu__link menu__link--big">+7 (495) 787-70-40</a>
+                        <a href="mailto:info@fors.ru" class="menu__link">info@fors.ru</a>
+                    </div>
+                    <div class="menu__social social social--row">
+                        <a href="#" class="social__link social__link--red">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-youtube.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--turquoise">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-telegram.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--brown">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-github.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section
+            class="section section--height section--bg animate-intro trigger-intro pt-50 ptt-158 ptm-126 pb-60 pbt-60 mb-150 mbt-0">
+        <div class="container container--full">
+            <div class="intro intro--between">
+                <div class="grid mb-36 mbt-20 mbm-20 order-mob--2">
+                    <div class="grid__item grid__item--1 grid__item-tab--3 mob-hidden">
+                        <a href="/" class="logo tab-hidden anim-in-top">
+                            <img src="./assets/images/logo.svg" alt="">
+                        </a>
+                    </div>
+                    <div class="grid__item grid__item--2 mob-hidden"></div>
+                    <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--3 mbm-10">
+                        <div class="card widget-info anim-in-top" data-anim-delay="0.2">
+                            <div class="widget-info__top">
+                                <div class="widget-info__detail">
+                                    <h3 class="numbers widget-info__numbers">410</h3>
+                                    <p class="caption widget-info__caption">рабочих мест</p>
+                                </div>
+                                <svg class="widget-info__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-rocket"></use>
+                                </svg>
+                            </div>
+                            <div class="widget-info__bottom">
+                                <div class="widget-info__detail">
+                                    <h3 class="numbers widget-info__numbers">12</h3>
+                                    <p class="caption widget-info__caption">Вакансий</p>
+                                </div>
+                                <svg class="widget-info__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4 mbt-10">
+                        <div class="card widget-stats anim-in-top" data-anim-delay="0.3">
+                            <div class="widget-stats__top">
+                                <div class="users users--big">
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user">
+                                        <img src="./assets/images/avatar-1.jpg" alt="">
+                                    </div>
+                                    <div class="user user--blue">+35</div>
+                                </div>
+                            </div>
+                            <div class="widget-stats__bottom">
+                                <div class="widget-stats__detail">
+                                    <h3 class="numbers widget-stats__numbers">&gt;40</h3>
+                                    <p class="caption widget-stats__caption">Специалистов в Форс</p>
+                                </div>
+                                <div class="widget-stats__detail">
+                                    <img src="./assets/images/icon-people.svg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid mbm-20 order-mob--1">
+                    <div class="grid__item grid__item--3 grid__item-tab--8 grid__item-mob--3">
+                        <h1 class="title title--main anim-in-bottom-stagger">
+                            <span>РАБОТА В КОМПАНИИ –</span>
+                            <span>ЛИДЕРЕ ИТ-РЫНКА</span>
+                        </h1>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--5 grid__item-mob--4 pt-15 ptt-10">
+                        <p class="text anim-in-bottom">
+                            Создание высококачественных ИТ-продуктов и решений, формирование, развитие и воспитание
+                            национальной ИТ-элиты.
+                        </p>
+                    </div>
+                    <div class="grid__item grid__item--center grid__item--1 grid__item-tab--4 grid__item-mob--4 mob-hidden">
+                        <a href="#" class="button-circle button-circle--big button-circle--stay anim-el-in"
+                           data-fancybox
+                           data-src="#cooperation">
+                            <svg class="button-circle__icon button-circle__icon--long">
+                                <use xlink:href="./assets/sprite.svg#icon-rocket-start"></use>
+                            </svg>
+                            <span>стать частью команды</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid order-mob--2 tab-hidden-min">
+                    <div class="grid__item grid__item--4 grid__item--self-end">
+                        <a href="#" class="button-circle button-circle--big button-circle--stay anim-el-in"
+                           data-fancybox
+                           data-src="#cooperation">
+                            <svg class="button-circle__icon button-circle__icon--long">
+                                <use xlink:href="./assets/sprite.svg#icon-rocket-start"></use>
+                            </svg>
+                            <span>стать частью команды</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<!--    <section class="section pt-70 ptt-65 ptm-48 pb-70 pbt-50 pbm-60 mb-150 mbt-0">-->
+<!--        <div class="container">-->
+<!--            <div class="grid mb-70 mbt-60 mbm-50">-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6"></div>-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6">-->
+<!--                    <h2 class="title">-->
+<!--                        Предлагаем лучшие условия-->
+<!--                    </h2>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="grid">-->
+<!--                <div class="grid__item grid__item&#45;&#45;6 grid__item-tab&#45;&#45;12">-->
+<!--                    <div class="pint-grid trigger-cards-break anim-in-bottom-pin mob-hidden">-->
+<!--                        <a href="#" target="_blank" class="article-card">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-1.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-1.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-1.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-2.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-2.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-2.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;wide order-mob&#45;&#45;3">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-3.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-3.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-3.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;wide">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-5.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-5.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-5.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-4.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-4.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-4.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small order-mob&#45;&#45;2">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-6.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-6.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-6.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                    <div class="pint-grid trigger-cards-break anim-in-bottom-pin tab-hidden-min">-->
+<!--                        <a href="#" target="_blank" class="article-card">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-1.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-1.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-1.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-2.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-2.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-2.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small order-mob&#45;&#45;2">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-6.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-6.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-6.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;wide">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-5.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-5.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-5.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;small">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-4.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-4.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-4.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                        <a href="#" target="_blank" class="article-card article-card&#45;&#45;wide order-mob&#45;&#45;3">-->
+<!--                            <picture class="article-card__picture">-->
+<!--                                <source srcset="./assets/images/grid-mvc-mob-3.png" media="(max-width: 767px)">-->
+<!--                                <source srcset="./assets/images/grid-mvc-tab-3.png" media="(max-width: 1439px)">-->
+<!--                                <img src="./assets/images/grid-mvc-3.png" alt="">-->
+<!--                            </picture>-->
+<!--                        </a>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+<!--    <section class="section pt-70 ptt-60 ptm-20 pb-70 pbt-60 pbm-0 mb-100 mbt-0 mbm-20">-->
+<!--        <div class="container">-->
+<!--            <div class="grid mb-100 mbt-60 mbm-160">-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6 mob-hidden"></div>-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6 grid__item-mob&#45;&#45;4 mb-80 mbt-60 mbm-50">-->
+<!--                    <h2 class="title">-->
+<!--                        КОМАНДА ФОРС-->
+<!--                    </h2>-->
+<!--                </div>-->
+<!--                <div class="grid__item grid__item&#45;&#45;6 grid__item-tab&#45;&#45;12 grid__item-mob&#45;&#45;4">-->
+<!--                    <div class="marquee marquee&#45;&#45;page trigger-marquee">-->
+<!--                        <div class="marquee__track marquee__track&#45;&#45;anim-1">-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-1.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-2.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-3.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-4.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-5.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-6.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-7.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-8.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-9.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-10.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-2.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-11.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-12.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-7.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-13.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-5.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-14.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-15.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="marquee__track marquee__track&#45;&#45;revert marquee__track&#45;&#45;anim-2">-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-13.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-16.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-17.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-18.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-19.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-20.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-21.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-22.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-23.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-24.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-25.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-26.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-27.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-28.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-29.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-21.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-30.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-31.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                            <div class="marquee__item">-->
+<!--                                <picture class="marquee__picture">-->
+<!--                                    <img src="./assets/images/logo-10.png" alt="">-->
+<!--                                </picture>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <div class="grid">-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6 mob-hidden"></div>-->
+<!--                <div class="grid__item grid__item&#45;&#45;3 grid__item-tab&#45;&#45;6 grid__item-mob&#45;&#45;4">-->
+<!--                    <div class="trigger-slim-cards">-->
+<!--                        <div class="anim-stay">-->
+<!--                            <div class="layering layering&#45;&#45;author layering&#45;&#45;light">-->
+<!--                                <div class="article-info article-info&#45;&#45;edit article-info&#45;&#45;author article-info&#45;&#45;1">-->
+<!--                                    <div class="article-info__top">-->
+<!--                                        <div class="article-info__head">-->
+<!--                                            <picture class="article-info__logo">-->
+<!--                                                <img src="./assets/images/avatar-2.jpg" alt="">-->
+<!--                                            </picture>-->
+<!--                                            <h3 class="article-info__title">-->
+<!--                                                Александр<br>александрович-->
+<!--                                            </h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="tags tags&#45;&#45;card">-->
+<!--                                            <div class="action-tag action-tag&#45;&#45;default action-tag&#45;&#45;light">-->
+<!--                                                <span>Руководитель проектов сопровождения</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-info__body">-->
+<!--                                        <div class="article-info__text">-->
+<!--                                            В компании ФОРС работать мне очень нравится. Во-первых, у нас замечательное-->
+<!--                                            руководство, которое слышит, помогает и видит всё, что ты делаешь для-->
+<!--                                            компании, даёт возможность расти как в плане личностном, так и карьерном. В-->
+<!--                                            компании имеется реальная возможность карьерного роста и развития-->
+<!--                                            сотрудников-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="article-info article-info&#45;&#45;edit article-info&#45;&#45;author article-info&#45;&#45;2">-->
+<!--                                    <div class="article-info__top">-->
+<!--                                        <div class="article-info__head">-->
+<!--                                            <picture class="article-info__logo">-->
+<!--                                                <img src="./assets/images/avatar-2.jpg" alt="">-->
+<!--                                            </picture>-->
+<!--                                            <h3 class="article-info__title">-->
+<!--                                                Александр<br>александрович-->
+<!--                                            </h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="tags tags&#45;&#45;card">-->
+<!--                                            <div class="action-tag action-tag&#45;&#45;default action-tag&#45;&#45;light">-->
+<!--                                                <span>Руководитель проектов сопровождения</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-info__body">-->
+<!--                                        <div class="article-info__text">-->
+<!--                                            В компании ФОРС работать мне очень нравится. Во-первых, у нас замечательное-->
+<!--                                            руководство, которое слышит, помогает и видит всё, что ты делаешь для-->
+<!--                                            компании, даёт возможность расти как в плане личностном, так и карьерном. В-->
+<!--                                            компании имеется реальная возможность карьерного роста и развития-->
+<!--                                            сотрудников-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="article-info article-info&#45;&#45;edit article-info&#45;&#45;author article-info&#45;&#45;3">-->
+<!--                                    <div class="article-info__top">-->
+<!--                                        <div class="article-info__head">-->
+<!--                                            <picture class="article-info__logo">-->
+<!--                                                <img src="./assets/images/avatar-2.jpg" alt="">-->
+<!--                                            </picture>-->
+<!--                                            <h3 class="article-info__title">-->
+<!--                                                Александр<br>александрович-->
+<!--                                            </h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="tags tags&#45;&#45;card">-->
+<!--                                            <div class="action-tag action-tag&#45;&#45;default action-tag&#45;&#45;light">-->
+<!--                                                <span>Руководитель проектов сопровождения</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-info__body">-->
+<!--                                        <div class="article-info__text">-->
+<!--                                            В компании ФОРС работать мне очень нравится. Во-первых, у нас замечательное-->
+<!--                                            руководство, которое слышит, помогает и видит всё, что ты делаешь для-->
+<!--                                            компании, даёт возможность расти как в плане личностном, так и карьерном. В-->
+<!--                                            компании имеется реальная возможность карьерного роста и развития-->
+<!--                                            сотрудников-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="article-info article-info&#45;&#45;edit article-info&#45;&#45;author article-info&#45;&#45;4">-->
+<!--                                    <div class="article-info__top">-->
+<!--                                        <div class="article-info__head">-->
+<!--                                            <picture class="article-info__logo">-->
+<!--                                                <img src="./assets/images/avatar-2.jpg" alt="">-->
+<!--                                            </picture>-->
+<!--                                            <h3 class="article-info__title">-->
+<!--                                                Александр<br>александрович-->
+<!--                                            </h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="tags tags&#45;&#45;card">-->
+<!--                                            <div class="action-tag action-tag&#45;&#45;default action-tag&#45;&#45;light">-->
+<!--                                                <span>Руководитель проектов сопровождения</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-info__body">-->
+<!--                                        <div class="article-info__text">-->
+<!--                                            В компании ФОРС работать мне очень нравится. Во-первых, у нас замечательное-->
+<!--                                            руководство, которое слышит, помогает и видит всё, что ты делаешь для-->
+<!--                                            компании, даёт возможность расти как в плане личностном, так и карьерном. В-->
+<!--                                            компании имеется реальная возможность карьерного роста и развития-->
+<!--                                            сотрудников-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="article-info article-info&#45;&#45;edit article-info&#45;&#45;author article-info&#45;&#45;5">-->
+<!--                                    <div class="article-info__top">-->
+<!--                                        <div class="article-info__head">-->
+<!--                                            <picture class="article-info__logo">-->
+<!--                                                <img src="./assets/images/avatar-2.jpg" alt="">-->
+<!--                                            </picture>-->
+<!--                                            <h3 class="article-info__title">-->
+<!--                                                Александр<br>александрович-->
+<!--                                            </h3>-->
+<!--                                        </div>-->
+<!--                                        <div class="tags tags&#45;&#45;card">-->
+<!--                                            <div class="action-tag action-tag&#45;&#45;default action-tag&#45;&#45;light">-->
+<!--                                                <span>Руководитель проектов сопровождения</span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="article-info__body">-->
+<!--                                        <div class="article-info__text">-->
+<!--                                            В компании ФОРС работать мне очень нравится. Во-первых, у нас замечательное-->
+<!--                                            руководство, которое слышит, помогает и видит всё, что ты делаешь для-->
+<!--                                            компании, даёт возможность расти как в плане личностном, так и карьерном. В-->
+<!--                                            компании имеется реальная возможность карьерного роста и развития-->
+<!--                                            сотрудников-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="layering__shadow"></div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </section>-->
+    <section class="section pt-70 ptm-54 pb-70 pbt-60 mb-100 mbt-0">
+        <div class="container">
+            <div class="trigger-timeline-tab">
+                <div class="grid">
+                    <div class="grid__item grid__item--3 grid__item-tab--7"></div>
+                    <div class="grid__item grid__item--3 grid__item-tab--5">
+                        <h2 class="title mb-105 mbt-73">
+                            НАША ЖИЗНЬ
+                        </h2>
+                    </div>
+                </div>
+                <div class="grid">
+                    <div class="grid__item grid__item--end grid__item--3 grid__item-tab--12 grid__item-mob--4 order-tab--2">
+                        <div class="widget-video">
+                            <div class="widget-video__picture">
+                                <img src="./assets/images/pic-2.jpg" alt="">
+                            </div>
+                            <div class="widget-video__detail">
+                                <div class="widget-video__info">
+                                    <h3 class="widget-video__title">30 лет опыта <br>компании ФОРС</h3>
+                                    <p class="widget-video__text">Скачать презентацию<br>
+                                        с нашей истории</p>
+                                </div>
+                                <a href="#" class="widget-video__button button">скачать</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item grid__item--3 grid__item-tab--7 grid__item-mob--4 order-tab--1 desktop-hidden mob-hidden"></div>
+                    <div class="grid__item trigger-timeline grid__item--3 grid__item-tab--5 grid__item-mob--4 order-tab--1">
+                        <div class="timeline timeline--small">
+                            <div class="timeline__wrapper">
+                                <div class="timeline__item active">
+                                    <h3 class="timeline__date">праздники</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            Одна из добрых традиций компании — проведение корпоративных праздников. Они
+                                            всегда разные — в офисе, на природе, в загородных и ночных клубах, лучших
+                                            пансионатах и горнолыжных курортах Подмосковья.
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">спорт</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            Мы любим спорт. В нашей компании есть страстные любители волейбола, лыж,
+                                            фигурного катания, сноуборда, настольного тенниса и конного спорта. Но к
+                                            футболу, наверное, особое отношение. поле. Название нашей футбольной команде
+                                            придумывать долго не пришлось, это — «ФОРС».
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">музыка</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            ФОРС — компания, где любят музыку. И у нас есть свой собственный музыкальный
+                                            коллектив — рок-группа «ФОРС», где я играю на бас-гитаре и стараюсь
+                                            организационно поддерживать весь процесс.
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">праздники</h3>
+                                    <div class="timeline__content">
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">спорт</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            Мы любим спорт. В нашей компании есть страстные любители волейбола, лыж,
+                                            фигурного катания, сноуборда, настольного тенниса и конного спорта. Но к
+                                            футболу, наверное, особое отношение. поле. Название нашей футбольной команде
+                                            придумывать долго не пришлось, это — «ФОРС».
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">музыка</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            ФОРС — компания, где любят музыку. И у нас есть свой собственный музыкальный
+                                            коллектив — рок-группа «ФОРС», где я играю на бас-гитаре и стараюсь
+                                            организационно поддерживать весь процесс.
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">праздники</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            Одна из добрых традиций компании — проведение корпоративных праздников. Они
+                                            всегда разные — в офисе, на природе, в загородных и ночных клубах, лучших
+                                            пансионатах и горнолыжных курортах Подмосковья.
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">спорт</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            Мы любим спорт. В нашей компании есть страстные любители волейбола, лыж,
+                                            фигурного катания, сноуборда, настольного тенниса и конного спорта. Но к
+                                            футболу, наверное, особое отношение. поле. Название нашей футбольной команде
+                                            придумывать долго не пришлось, это — «ФОРС».
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="timeline__item">
+                                    <h3 class="timeline__date">музыка</h3>
+                                    <div class="timeline__content">
+                                        <p class="timeline__text">
+                                            ФОРС — компания, где любят музыку. И у нас есть свой собственный музыкальный
+                                            коллектив — рок-группа «ФОРС», где я играю на бас-гитаре и стараюсь
+                                            организационно поддерживать весь процесс.
+                                        </p>
+                                        <picture class="timeline__picture">
+                                            <img src="./assets/images/timeline-pic.png" alt="">
+                                        </picture>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-70 ptt-60 ptm-132 pb-90 pbt-60 mb-100 mbt-0 mbm-20">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item grid__item--3 grid__item-tab--6 mob-hidden"></div>
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <h2 class="title mb-110 mbt-60">
+                        Актуальные вакансии для специалистов
+                    </h2>
+                </div>
+            </div>
+            <div class="services trigger-big-cards mb-40">
+                <div class="services__header">
+                    <button class="services__item active">Центр разработки</button>
+                    <button class="services__item">Ай-ФОРС</button>
+                    <button class="services__item">ФОРС Телеком</button>
+                    <button class="services__item">ФОРС-Технологии</button>
+                    <button class="services__item">Учебный центр</button>
+                    <button class="services__item">Дистрибуция</button>
+                </div>
+                <div class="services__content trigger-list-cards">
+                    <article class="article-service">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">Центр разработки</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>300+</span>
+                                    <span>реализовано<br>запусков</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>24/7</span>
+                                    <span>техническая<br>поддержка</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>30+</span>
+                                    <span>лет<br>опыта</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Создание информационных систем и приложений для решения задач любой сложности,
+                                консалтинговые услуги, техническая поддержка информационных систем и СУБД
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">Заказная разработка</a>
+                                    <a href="#" class="tag tag--light tag--slim">ИТ-консалтинг</a>
+                                    <a href="#" class="tag tag--light tag--slim">Создание ИТ-инфраструктуры</a>
+                                    <a href="#" class="tag tag--light tag--slim">Техническая поддержка</a>
+                                    <a href="#" class="tag tag--light tag--slim">Обучение</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Антон Шифман</h3>
+                                        <p class="widget-video__text">Генеральный директор<br>ФОРС — центр разработки
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> проекты</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-service article-service--light">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">Ай-ФОРС</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>>10</span>
+                                    <span>решений в<br>здравоохранении</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>20%</span>
+                                    <span>экономия<br>расходов</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>50+</span>
+                                    <span>моделей<br>оценки</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Интеграция готовых решений для автоматизации процессов в сфере здравоохранения, фармы и
+                                спорта
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">Платформа RemsMed</a>
+                                    <a href="#" class="tag tag--light tag--slim">Система EMMAREHA</a>
+                                    <a href="#" class="tag tag--light tag--slim">Инновационные решения</a>
+                                    <a href="#" class="tag tag--light tag--slim">Приложение REMSPHARM</a>
+                                    <a href="#" class="tag tag--light tag--slim">Автоматизация спорта</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Голосов Алексей</h3>
+                                        <p class="widget-video__text">
+                                            Генеральный директор,<br>
+                                            основатель Ай-Форс
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> проекты</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-service article-service--light">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">ФОРС Телеком</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>>10</span>
+                                    <span>решений в<br>здравоохранении</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>20%</span>
+                                    <span>экономия<br>расходов</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>50+</span>
+                                    <span>моделей<br>оценки</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Интеграция готовых решений для автоматизации процессов в сфере здравоохранения, фармы и
+                                спорта
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">ПО LUI</a>
+                                    <a href="#" class="tag tag--light tag--slim">Утилита для загрузки данных</a>
+                                    <a href="#" class="tag tag--light tag--slim">Инструмент LUI4Ora2Pg</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Голосов Алексей</h3>
+                                        <p class="widget-video__text">
+                                            Генеральный директор,<br>
+                                            основатель Ай-Форс
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> проекты</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-service article-service--light">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">ФОРС-Технологии</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>>200</span>
+                                    <span>профильных<br>сертификаций</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>>1000</span>
+                                    <span>сертификатов<br>
+                                            у специалистов
+                                        </span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>>30</span>
+                                    <span>лет<br>работы</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Проектирование, внедрение и сопровождение решений для ИТ-инфраструктуры
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">Проектная поддержка</a>
+                                    <a href="#" class="tag tag--light tag--slim">Подготовка ТЭО</a>
+                                    <a href="#" class="tag tag--light tag--slim">Технологический консалтинг</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Тамбовский Андрей</h3>
+                                        <p class="widget-video__text">
+                                            Директор по технологиям
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> проекты</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-service article-service--light">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">Учебный центр</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>>1000</span>
+                                    <span>авторизованых<br>IT-курсов</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>30+</span>
+                                    <span>авторизаций<br>IT-компаний мира
+                                        </span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>>900</span>
+                                    <span>лет<br>работы</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Проектирование, внедрение и сопровождение решений для ИТ-инфраструктуры
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">Проектная поддержка</a>
+                                    <a href="#" class="tag tag--light tag--slim">Подготовка ТЭО</a>
+                                    <a href="#" class="tag tag--light tag--slim">Технологический консалтинг</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Тамбовский Андрей</h3>
+                                        <p class="widget-video__text">
+                                            Директор по технологиям
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> технологии</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="article-service article-service--light">
+                        <div class="article-service__header">
+                            <h3 class="article-service__title title title--small">Дистрибуция</h3>
+                            <ul class="article-service__list">
+                                <li class="article-service__element">
+                                    <span>200%</span>
+                                    <span>ускорения<br>работы</span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>300+</span>
+                                    <span>реализовано<br>комплексов
+                                        </span>
+                                </li>
+                                <li class="article-service__element">
+                                    <span>7+</span>
+                                    <span>рекомендаций<br>по апргейду</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="article-service__info">
+                            <p class="article-service__text">
+                                Полный комплекс услуг по поставке и техподдержке программно-аппаратных комплексов и
+                                серверов отечественных и зарубежных производителей
+                            </p>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">услуги<br> компании</h4>
+                                <div class="article-service__tags tags">
+                                    <a href="#" class="tag tag--light tag--slim">Поставка и аренда оборудования</a>
+                                    <a href="#" class="tag tag--light tag--slim">Модернизация ПАК</a>
+                                    <a href="#" class="tag tag--light tag--slim">Установка и настройка ПАК</a>
+                                    <a href="#" class="tag tag--light tag--slim">Релокация ПАК</a>
+                                    <a href="#" class="tag tag--light tag--slim">Оптимизация ПАК</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="article-service__footer">
+                            <div class="widget-video widget-video--light widget-video--small">
+                                <div class="widget-video__picture">
+                                    <img src="./assets/images/user-3.jpg" alt="">
+                                </div>
+                                <div class="widget-video__detail">
+                                    <div class="widget-video__info">
+                                        <h3 class="widget-video__title">Шифман Антон</h3>
+                                        <p class="widget-video__text">
+                                            Генеральный директор
+                                        </p>
+                                    </div>
+                                    <a href="#" class="widget-video__button button" data-fancybox
+                                       data-src="#cooperation">Обсудить проект</a>
+                                </div>
+                            </div>
+                            <div class="article-service__detail">
+                                <h4 class="article-service__head title title--extra-small">Наши<br> технологии</h4>
+                                <div class="projects">
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-9.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-22.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-13.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-10.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-3.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-2.png" alt="">
+                                    </div>
+                                    <div class="projects__item">
+                                        <img src="./assets/images/logo-12.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="grid__item grid__item--end grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <div class="widget-video widget-video--default widget-video--blue widget-video--center">
+                        <div class="widget-video__picture">
+                            <img src="./assets/images/pic-3.jpg" alt="">
+                        </div>
+                        <div class="widget-video__detail">
+                            <div class="widget-video__info">
+                                <h3 class="widget-video__title">Не нашли нужную вакансию?</h3>
+                                <p class="widget-video__text">Отправьте свое резюме<br>и мы свяжемся с вами</p>
+                            </div>
+                            <a href="#" class="widget-video__button button tab-hidden-min" data-fancybox=""
+                               data-src="#cooperation">Обсудить проект</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item grid__item--self-end grid__item--3 grid__item-tab--6 grid__item-mob--4 pt-20 ptt-10 mob-hidden">
+                    <a href="#" class="button-circle" data-fancybox="" data-src="#cooperation">
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить<br>резюме</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section trigger-form pt-70 ptt-60 pb-70 pbt-60 pbm-52 mb-100 mbt-0 mbm-20">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 order-tab--1 mbm-150">
+                    <h2 class="title">
+                        Готовы обсудить сотрудничество?
+                    </h2>
+                </div>
+                <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 desktop-hidden mob-hidden"></div>
+                <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4 order-tab--2 mbt-10">
+                    <div class="card card--offset card--height">
+                        <div class="tabs">
+                            <div class="tabs__header">
+                                <button class="tabs__item active">Связаться</button>
+                                <button class="tabs__item">Карьера</button>
+                                <button class="tabs__item">Контакты</button>
+                            </div>
+                            <div class="tabs__content">
+                                <div class="tabs__element active">
+                                    <form action="1" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="ORGANISATION"
+                                                   placeholder="Название организации">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <label class="form__item form__item--area">
+                                                <textarea class="input input--area" name="COMMENT"
+                                                          placeholder="Комментарий"></textarea>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
+                                                    Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                    href="#">условиями политики конфиденциальности</a>
+                                                </span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <form action="2" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <div class="form__item">
+                                            <label class="drop-zone">
+                                                <svg class="drop-zone__icon">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
+                                                </svg>
+                                                <svg class="drop-zone__icon drop-zone__icon--error">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
+                                                </svg>
+                                                <span class="drop-zone__caption">
+                                                        Перетащите файлы формата JPG, PNG or PDF (не больше 10MB)
+                                                    </span>
+                                                <span class="drop-zone__notation">
+                                                        Загрузите свое резюме
+                                                    </span>
+                                                <input type="file" hidden>
+                                            </label>
+                                            <div class="loaded-block"></div>
+                                        </div>
+                                        <label class="form__item form__item--area">
+                                                <textarea class="input input--area input--small" name="COMMENT"
+                                                          placeholder="Комментарий"></textarea>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
+                                                    Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                    href="#">условиями политики конфиденциальности</a>
+                                                </span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <div class="contacts-block">
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр разработки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:develop@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    develop@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр техподдержки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:support@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    support@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Учебно-консультационный центр</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:edu@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    edu@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item grid__item-tab--4 order-tab--1 desktop-hidden mob-hidden"></div>
+                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end order-tab--1 mbt-9">
+                    <div class="card widget-slider mb-auto">
+                        <div class="widget-slider__top">
+                            <div class="pagination pagination--slim">
+                                <div class="pagination__item active"></div>
+                                <div class="pagination__item"></div>
+                                <div class="pagination__item"></div>
+                            </div>
+                        </div>
+                        <div class="widget-slider__bottom">
+                            <p class="widget-slider__numbers numbers numbers--dark">1/3</p>
+                            <p class="widget-slider__caption">подскажем решение</p>
+                        </div>
+                    </div>
+                    <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
+                </div>
+                <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end order-tab--2 desktop-hidden">
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit"
+                            data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            type="submit" data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            data-btn-mob>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__separator"></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="site-nav anim-in-bottom-stagger">
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">О компании</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Новости</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Проекты</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Решения</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Услуги</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Центр технической поддержки</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Разработка информационных систем</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Обучение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Импортозамещение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Консалтинг</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Карьера</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вакансии</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Начало карьеры</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Команда единомышленников</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Атмосфера</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вопросы и ответы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Контакты</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Где нас найти</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Контакты для прессы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <a href="#" class="footer__logo logo mob-hidden">
+                        <img src="./assets/images/logo-small.svg" alt="">
+                    </a>
+                    <p class="footer__text">1991–2024. © ФОРС</p>
+                    <p class="footer__text footer__text--copyright">© 2024,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvartalnov</a></p>
+                </div>
+                <div class="footer__meta">
+                    <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>
+                    <a href="#" class="footer__text">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .temp {
+        padding: 20px 0;
+        background-color: #FFFFFF;
+        border-top: 1px solid #eeeeee;
+    }
+
+    .temp__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 40px;
+    }
+    .temp__link {
+        font-size: 14px;
+        transition: .2s linear;
+    }
+    .temp__link:hover {
+        opacity: .7;
+    }
+    .temp__title {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+</style>
+<div class="temp">
+    <div class="container">
+        <h2 class="temp__title">Временная секция для навигации по вёрстке</h2>
+        <div class="temp__wrapper">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./about.html" class="temp__link">О Компании</a>
+            <a href="./mvc.html" class="temp__link">МВЦ</a>
+            <a href="./projects.html" class="temp__link">Проекты</a>
+            <a href="./newsDetail.html" class="temp__link">Детальная страница</a>
+            <a href="./news.html" class="temp__link">Новости</a>
+            <a href="./newsPageDetail.html" class="temp__link">Новости детальная страница</a>
+            <a href="./services.html" class="temp__link">Услуги</a>
+            <a href="./servicesDetail.html" class="temp__link">Услуги детальная</a>
+            <a href="./career.html" class="temp__link">Карьера</a>
+            <a href="./careerVacancy.html" class="temp__link">Карьера вакансии</a>
+            <a href="./careerDetail.html" class="temp__link">Карьера детальная</a>
+        </div>
+    </div>
+</div>
+<div class="hidden">
+    <div class="modal" id="cooperation">
+        <div class="modal__wrapper">
+                <div class="grid">
+                    <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                        <h2 class="title mb-15">
+                            Готовы обсудить сотрудничество?
+                        </h2>
+                        <picture class="picture-ui mob-hidden">
+                            <img src="./assets/images/menu-cube.png" alt="">
+                        </picture>
+                    </div>
+                    <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                        <div class="card card--offset card--height">
+                            <div class="tabs">
+                                <div class="tabs__header">
+                                    <button class="tabs__item active">Связаться</button>
+                                    <button class="tabs__item">Карьера</button>
+                                    <button class="tabs__item">Контакты</button>
+                                </div>
+                                <div class="tabs__content">
+                                    <div class="tabs__element active">
+                                        <form action="1" class="form">
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="ORGANISATION"
+                                                       placeholder="Название организации">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                            </label>
+                                            <label class="form__item form__item--area">
+                                            <textarea class="input input--area" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                                <span class="form__max">0/1000</span>
+                                            </label>
+                                            <label class="form__item form__item--meta">
+                                                <input type="checkbox" class="checkbox" name="POLICY">
+                                                <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                        href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                    <div class="tabs__element">
+                                        <form action="2" class="form">
+                                            <label class="form__item">
+                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                            </label>
+                                            <label class="form__item">
+                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                            </label>
+                                            <div class="form__item">
+                                                <label class="drop-zone">
+                                                    <svg class="drop-zone__icon">
+                                                        <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
+                                                    </svg>
+                                                    <svg class="drop-zone__icon drop-zone__icon--error">
+                                                        <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
+                                                    </svg>
+                                                    <span class="drop-zone__caption">
+                                                    Перетащите файлы формата JPG, PNG or PDF (не больше 10MB)
+                                                </span>
+                                                    <span class="drop-zone__notation">
+                                                    Загрузите свое резюме
+                                                </span>
+                                                    <input type="file" hidden>
+                                                </label>
+                                                <div class="loaded-block"></div>
+                                            </div>
+                                            <label class="form__item form__item--area">
+                                            <textarea class="input input--area input--small" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                                <span class="form__max">0/1000</span>
+                                            </label>
+                                            <label class="form__item form__item--meta">
+                                                <input type="checkbox" class="checkbox" name="POLICY">
+                                                <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                        href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                            </label>
+                                        </form>
+                                    </div>
+                                    <div class="tabs__element">
+                                        <div class="contacts-block">
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Центр разработки</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:develop@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        develop@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Центр техподдержки</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:support@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        support@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                            <article class="article-contact">
+                                                <h3 class="article-contact__title">Учебно-консультационный центр</h3>
+                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                    2</p>
+                                                <div class="article-contact__links">
+                                                    <a href="tel:+74957877040"
+                                                       class="article-contact__link">
+                                                        +7 (495) 787-70-40
+                                                    </a>
+                                                    <a href="mailto:edu@fors.ru"
+                                                       class="article-contact__link article-contact__link--small">
+                                                        edu@fors.ru
+                                                    </a>
+                                                </div>
+                                            </article>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end">
+                        <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Все<br>контакты</span>
+                        </button>
+                    </div>
+                    <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end desktop-hidden">
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit" data-btn-mob
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" type="submit" data-btn-mob
+                                data-form-submit>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Отправить</span>
+                        </button>
+                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" data-btn-mob>
+                            <svg class="button-circle__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                            </svg>
+                            <span>Все<br>контакты</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+<script defer src="bundle.967b.js"></script></body>
+</html>

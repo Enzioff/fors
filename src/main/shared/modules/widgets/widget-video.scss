@@ -17,6 +17,20 @@
     align-items: center;
   }
 
+  &--blue {
+    .widget-video__picture {
+      border-color: $main1;
+    }
+  }
+
+  &--default {
+    .widget-video__picture {
+      &::after {
+        display: none;
+      }
+    }
+  }
+
   &__picture {
     position: relative;
     display: flex;

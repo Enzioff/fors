@@ -9,4 +9,12 @@
     justify-content: flex-start;
     padding-top: 176px;
   }
+
+  &--between {
+    justify-content: space-between;
+
+    @include r($mobile) {
+      padding-top: 0;
+    }
+  }
 }

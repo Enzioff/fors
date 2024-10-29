@@ -7,4 +7,43 @@
       margin-left: -9px;
     }
   }
+
+  &--big {
+    @for $i from 2 through 10 {
+      .user:nth-child(#{$i}) {
+        margin-left: -16px;
+      }
+    }
+    @include r($tablet) {
+      @for $i from 2 through 10 {
+        .user:nth-child(#{$i}) {
+          margin-left: -8px;
+        }
+      }
+    }
+    @include r($mobile) {
+      @for $i from 2 through 10 {
+        .user:nth-child(#{$i}) {
+          margin-left: -12px;
+        }
+      }
+    }
+
+    .user {
+      width: 80px;
+      height: 80px;
+      border-width: 3px;
+
+      @include r($tablet) {
+        width: 40px;
+        height: 40px;
+        border-width: 2px;
+      }
+
+      @include r($mobile) {
+        width: 60px;
+        height: 60px;
+      }
+    }
+  }
 }
