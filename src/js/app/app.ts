@@ -9,6 +9,7 @@ import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
 import clamp from 'clamp-js';
 import {Fancybox} from "@fancyapps/ui";
+import Preloader from "./animation/Preloader";
 
 class App {
     splineURL: string;
@@ -27,6 +28,7 @@ class App {
         this.createSearchBlock()
         this.createSlider()
         this.createFancybox()
+        this.createPreloader()
     }
 
     createSlider = () => {
@@ -98,12 +100,10 @@ class App {
         new SearchBlock(searchBlock)
     }
 
-    createClampForText = () => {
-        const texts = document.querySelectorAll('.clamp-text');
-        if (!texts) return
-        texts.forEach((text: HTMLElement) => {
-            clamp(text, {clamp: 'auto'});
-        })
+    createPreloader = () => {
+        const preloader = document.querySelector('.preloader');
+        if (!preloader) return
+        new Preloader(preloader)
     }
 
     createFancybox = () => {

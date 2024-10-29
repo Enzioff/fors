@@ -1,0 +1,35 @@
+.dots {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+
+  @include r($tablet) {
+    gap: 2px;
+  }
+
+  &__line {
+    display: flex;
+    gap: 3px;
+    @include r($tablet) {
+      gap: 2px;
+    }
+  }
+}
+
+.dot {
+  display: flex;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #DCE4FF;
+  transition: .2s linear;
+
+  @include r($tablet) {
+    width: 14px;
+    height: 14px;
+  }
+
+  &--color {
+    background-color: $main1;
+  }
+}

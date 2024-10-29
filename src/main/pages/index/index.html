@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <%= htmlWebpackPlugin.options.widgets.head %>
-<body>
+<body class="fixed">
 <%= htmlWebpackPlugin.options.widgets.header %>
-<!--<%= htmlWebpackPlugin.options.widgets.preloader %>-->
+<%= htmlWebpackPlugin.options.widgets.preloader %>
 <div class="spline-video">
     <video controls>
         <source src="#" type="video/mp4">
@@ -71,7 +71,7 @@
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
-                        <span>Обсудить проект</span>
+                        <span>Обсудить<br>проект</span>
                     </a>
                 </div>
             </div>

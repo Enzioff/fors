@@ -10,8 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
-<link href="css/main.9ba7.css" rel="stylesheet"></head>
-<body>
+<link href="css/main.9136.css" rel="stylesheet"></head>
+<body class="fixed">
 <header class="header">
     <div class="container">
         <div class="header__wrapper">
@@ -82,43 +82,350 @@
     </div>
 </header>
 
-<!--<section class="preloader">
-    <div class="assembly">
-        <!-- Внутренний компонент (19 кубов) -->
-        <div class="comp-3d comp-3d--i">
-            <!-- Повторите этот блок 19 раз -->
-            <div class="cube">
-                <div class="cube__face"></div>
-                <div class="cube__face"></div>
-                <div class="cube__face"></div>
-                <div class="cube__face"></div>
-                <div class="cube__face"></div>
-                <div class="cube__face"></div>
-            </div>
-            <!-- Повторение 2/19 -->
-            <!-- ... -->
-            <!-- Повторение 19/19 -->
-        </div>
-
-        <!-- Внешний компонент (8 позиций с кубами) -->
-        <div class="comp-3d comp-3d--o">
-            <!-- Повторите этот блок 8 раз -->
-            <div class="pos">
+<section class="preloader">
+    <div class="preloader__wrapper">
+        <div class="assembly">
+            <div class="comp-3d comp-3d--i">
                 <div class="cube">
-                    <div class="cube__face"></div>
-                    <div class="cube__face"></div>
-                    <div class="cube__face"></div>
-                    <div class="cube__face"></div>
-                    <div class="cube__face"></div>
-                    <div class="cube__face"></div>
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
+                </div>
+                <div class="cube">
+                    <div class="cube__face cube__face--front"></div>
+                    <div class="cube__face cube__face--back"></div>
+                    <div class="cube__face cube__face--right"></div>
+                    <div class="cube__face cube__face--left"></div>
+                    <div class="cube__face cube__face--top"></div>
+                    <div class="cube__face cube__face--bottom"></div>
                 </div>
             </div>
-            <!-- Повторение 2/8 -->
-            <!-- ... -->
-            <!-- Повторение 8/8 -->
+            <div class="comp-3d comp-3d--o">
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+                <div class="pos">
+                    <div class="cube">
+                        <div class="cube__face cube__face--front"></div>
+                        <div class="cube__face cube__face--back"></div>
+                        <div class="cube__face cube__face--right"></div>
+                        <div class="cube__face cube__face--left"></div>
+                        <div class="cube__face cube__face--top"></div>
+                        <div class="cube__face cube__face--bottom"></div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</section>-->
+    <div class="preloader__facts">
+        <div class="preloader__item">
+            <h3 class="preloader__title"></h3>
+            <p class="preloader__text"></p>
+        </div>
+    </div>
+    <div class="preloader__decorative">
+        <div class="dots">
+            <div class="dots__line">
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="dots__line">
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="dots__line">
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+            <div class="dots__line">
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color tab-hidden-min"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot dot--color"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </div>
+</section>
 <div class="spline-video">
     <video controls>
         <source src="#" type="video/mp4">
@@ -186,7 +493,7 @@
                         <svg class="button-circle__icon">
                             <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
                         </svg>
-                        <span>Обсудить проект</span>
+                        <span>Обсудить<br>проект</span>
                     </a>
                 </div>
             </div>
@@ -1793,5 +2100,5 @@
             </div>
     </div>
 </div>
-<script defer src="bundle.967b.js"></script></body>
+<script defer src="bundle.33c3.js"></script></body>
 </html>
