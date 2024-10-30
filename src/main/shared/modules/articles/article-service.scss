@@ -10,6 +10,7 @@
   border-radius: 35px;
   box-shadow: 0 0 30px 0 #0A274D26;
   transform-origin: 50% 0;
+  overflow: hidden;
 
   @include r($tablet) {
     height: auto;
@@ -248,6 +249,15 @@
     }
   }
 
+  &__header {
+    &--row {
+      flex-direction: row;
+      .article-service__element {
+        flex-direction: row;
+      }
+    }
+  }
+
   &__detail {
     display: flex;
     flex-direction: column;
@@ -277,19 +287,39 @@
     width: auto;
     height: auto;
     padding: 20px;
-    border-color: $white;
-    background-color: $white;
     font-family: $font-accent;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
     text-align: center;
     color: $main1;
+    border-color: $white;
+    background-color: $white;
 
     &:hover,
     &:focus,
     &:active {
       background-color: $white;
+    }
+
+    @include r($tablet) {
+      padding: 5px 20px;
+      font-size: 12px;
+      line-height: 14px;
+    }
+
+    @include r($mobile) {
+      font-size: 11px;
+      padding: 7px 20px;
+      align-self: flex-start;
+    }
+  }
+
+  &--cut {
+    .tag {
+      &:nth-child(n+4) {
+        display: none;
+      }
     }
   }
 }
