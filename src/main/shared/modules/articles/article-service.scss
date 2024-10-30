@@ -188,6 +188,14 @@
     @include r($tablet) {
       gap: 10px;
     }
+
+    &--end {
+      justify-content: flex-end;
+
+      .article-service__element {
+        width: auto;
+      }
+    }
   }
 
   &__element {
@@ -253,5 +261,35 @@
   &__tags {
     margin-left: auto;
     max-width: 450px;
+
+    &--full {
+      max-width: 100%;
+
+      .tag {
+        padding: 13px 10px;
+      }
+    }
+  }
+
+  &__button {
+    align-self: flex-end;
+    justify-self: flex-start;
+    width: auto;
+    height: auto;
+    padding: 20px;
+    border-color: $white;
+    background-color: $white;
+    font-family: $font-accent;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 19px;
+    text-align: center;
+    color: $main1;
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: $white;
+    }
   }
 }

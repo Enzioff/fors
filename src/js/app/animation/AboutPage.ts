@@ -224,7 +224,7 @@ export class AboutPage extends AnimationConfig {
                     }
                 })
 
-                let offsetX = -timelineItems[0].getBoundingClientRect().width;
+                let offsetX = -timelineItems[0].getBoundingClientRect().width / 2;
                 let animCounter = 0;
                 const animCounterMax = 5;
                 timelineItems.forEach((element, idx) => {

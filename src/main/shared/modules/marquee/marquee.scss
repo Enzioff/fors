@@ -20,6 +20,7 @@
     align-items: center;
     gap: 20px;
     margin-left: -100%;
+    will-change: transform;
 
     @include r($tablet) {
       gap: 15px;

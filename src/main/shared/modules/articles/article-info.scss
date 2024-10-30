@@ -9,6 +9,7 @@
   padding: 25px;
   background-color: $white;
   border-radius: 25px;
+  will-change: transform, opacity, top;
 
   @for $i from 1 through 10 {
     &--#{$i} {

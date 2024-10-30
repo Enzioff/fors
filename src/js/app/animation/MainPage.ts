@@ -225,7 +225,7 @@ export class MainPage extends AnimationConfig {
                 trigger: pinnedBlock,
                 pin: true,
                 pinSpacing: true,
-                scrub: 1,
+                scrub: true,
                 start: 'center center',
                 end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200) + 300}`,
                 onLeaveBack: () => {
