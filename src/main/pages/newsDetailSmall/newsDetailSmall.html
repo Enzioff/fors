@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%= htmlWebpackPlugin.options.widgets.head %>
+<body>
+<%= htmlWebpackPlugin.options.widgets.headerPages %>
+<main class="main">
+    <section class="section section--event section--bg animate-intro mbm-20">
+        <div class="intro">
+            <div class="container">
+                <div class="grid grid--end mbm-20">
+                    <div class="grid__item grid__item--6 grid__item-tab--12 grid__item-mob--4 mbm-20">
+                        <p class="subtitle anim-in-bottom" data-anim-delay="0.1">Новости и события</p>
+                        <h1 class="title title--main anim-in-bottom-stagger">
+                            <span>производительность<br>при работе с СУБД Oracle</span>
+                        </h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section pt-70 pbt-60 mbm-20">
+        <div class="container">
+            <div class="grid">
+                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60 mbm-20">
+                    <div class="detail-ui detail-ui--row">
+                        <div class="detail-ui__header">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость СМИ</span>
+                                </div>
+                            </div>
+                            <a href="#" class="link">
+                                <span>forsd.ru</span>
+                                <svg>
+                                    <use xlink:href="./assets/sprite.svg#icon-arrow-down"></use>
+                                </svg>
+                            </a>
+                        </div>
+                        <time class="detail-ui__time">12.09.2024</time>
+                    </div>
+                </div>
+                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4">
+                    <div class="editor">
+                        <h3>
+                            Сервер «ДатаРу БС» продемонстрировал высокую производительность при работе с СУБД Oracle
+                        </h3>
+                        <br>
+                        <p>
+                            Сервисный центр компании <a href="#">«ФОРС Дистрибуция»</a>, специализирующийся на оказании
+                            технической
+                            поддержки программных и аппаратных средств Oracle, и отечественный вендор технологических
+                            решений и сервисов компания DатаРу успешно провели тестирование производительности
+                            многопроцессорных серверов линейки «ДатаРу БС» при использовании их в качестве аппаратной
+                            платформы для работы СУБД Oracle Database Enterprise Edition. Российская платформа
+                            подтвердила аппаратную совместимость с испытанным ПО, продемонстрировала высокие показатели
+                            производительности, вертикальной масштабируемости и отказоустойчивости, что позволяет
+                            рассматривать ее в качестве альтернативы для многопроцессорных импортных серверов на базе
+                            RISC-архитектуры.
+                        </p>
+                        <br>
+                        <br>
+                        <div class="quote">
+                            <p class="quote__text">
+                                Разработка четырёх специальных моторных тестов для кисти руки стала новым серьёзным
+                                шагом в развитии нашего мобильного приложения. При помощи камеры смартфона и посредством
+                                нажатия на экран пациентом они анализируют скорость и амплитуду движения его пальцев и
+                                кисти руки. Можно сказать, что мы выполнили цифровизацию классических неврологических
+                                тестов.
+                            </p>
+                            <div class="quote__footer">
+                                <div class="quote__user">
+                                    <picture class="quote__picture">
+                                        <img src="./assets/images/user-4.png" alt="">
+                                    </picture>
+                                    <div class="quote__info">
+                                        <h3 class="quote__title">Дарья Голосова</h3>
+                                        <p class="quote__description">
+                                            Первый заместитель
+                                            Генерального директора
+                                            компании «Ай-Форс» (ГК Форс)
+                                        </p>
+                                    </div>
+                                </div>
+                                <svg class="quote__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-quotes"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <p>
+                            В рамках работ по тестированию были выполнены серии тестов, которые позволили зафиксировать
+                            параметры одной из моделей ультрамасштабируемой линейки серверов «ДатаРу БС8» при выполнении
+                            операций различного типа, характерных для систем, использующих СУБД Oracle. В ходе
+                            тестирования сравнивались параметры относительной производительности серверных платформ
+                            «ДатаРу БС8», Oracle SPARC T8-1, а также IBM Power S922.
+                        </p>
+                        <br>
+                        <p>
+                            Данная эко-система включает LUI4Ora2Pg — инструмент автоматизации, планирования и управления
+                            процессами миграции, Ora2PgCopy для высокоскоростного переноса данных из одной СУБД в другую
+                            и Ora2PgSync для реализации инкрементальной миграции данных. Все эти продукты
+                            сертифицированы и включены в Реестр российского ПО. Ряд успешных внедрений доказал их
+                            эффективность на практике.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= htmlWebpackPlugin.options.widgets.footer %>
+<%= htmlWebpackPlugin.options.widgets.temp %>
+<%= htmlWebpackPlugin.options.widgets.hidden %>
+</body>
+</html>

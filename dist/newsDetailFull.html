@@ -81,15 +81,20 @@
 </header>
 
 <main class="main">
-    <section class="section section--event section--bg animate-intro mbm-20">
+    <section class="section section--preview section--bg animate-intro mbm-20">
         <div class="intro">
             <div class="container">
                 <div class="grid grid--end mbm-20">
-                    <div class="grid__item grid__item--6 grid__item-tab--12 grid__item-mob--4 mbm-20">
+                    <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4 mbm-20">
                         <p class="subtitle anim-in-bottom" data-anim-delay="0.1">Новости и события</p>
                         <h1 class="title title--main anim-in-bottom-stagger">
-                            <span>Форс представит на PGConf.СПб 2024 свою передовую разработку PGARM</span>
+                            <span>Форс на Kazan Digital Week 2024</span>
                         </h1>
+                    </div>
+                    <div class="grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                        <picture class="detail-preview">
+                            <img src="./assets/images/detail-preview-4.png" alt="">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -98,81 +103,175 @@
     <section class="section pt-70 pbt-60 mbm-20">
         <div class="container">
             <div class="grid">
-                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60 mbm-20">
-                    <div class="detail-ui detail-ui--row">
-                        <div class="action-tag">
-                            <img class="action-tag__icon" src="./assets/images/icon-energy.svg" alt="">
-                            <span>Событие</span>
+                <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60">
+                    <div class="detail-ui">
+                        <div class="detail-ui__header">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Новость</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Медиаконтент</span>
+                                </div>
+                            </div>
                         </div>
                         <time class="detail-ui__time">12.09.2024</time>
                     </div>
                 </div>
                 <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4">
                     <div class="editor">
-                        <div class="partner-card">
-                            <div class="partner-card__detail">
-                                <div class="partner-card__info">
-                                    <time class="partner-card__time" datetime="2024.10.01">1 окт 2024</time>
-                                    <picture class="partner-card__picture tab-hidden-min">
-                                        <img src="./assets/images/partner-1.png" alt="">
-                                    </picture>
-                                    <p class="partner-card__description">Место проведения</p>
-                                    <p class="partner-card__text">
-                                        Гостиница «Санкт-Петербург»,<br>
-                                        г.Санкт-Петербург, Пироговская<br>
-                                        набережная, д. 5/2
-                                    </p>
-                                </div>
-                                <picture class="partner-card__picture mob-hidden">
-                                    <img src="./assets/images/partner-1.png" alt="">
-                                </picture>
-                            </div>
-                            <a href="#" class="partner-card__button button">Зарегистрироваться</a>
-                        </div>
-                        <br>
-                        <br>
                         <h3>
-                            Эксперты Форс примут участие в Международной технической конференции по открытой СУБД
-                            PostgreSQL от компании Postgres Professional, которая состоится 1 октября в Санкт-Петербурге
+                            Специалисты Форс приняли участие в работе Международного форума в Казани, проходившего с 9
+                            по 11 сентября. В этом году Форум состоялся в четвёртый раз
                         </h3>
                         <br>
                         <p>
-                            Компания выступит информационным партнером мероприятия.
-                            <br>
-                            Компания выступит информационным партнером мероприятия.
-                            Ежегодно конференция собирает в городах России более 1000 ИТ-специалистов. Этой
-                            осенью <a href="#">PGConf.СПб 2024</a> объединит на одной площадке постгресистов Северной
-                            столицы. В фокусе
-                            — актуальные вопросы эксплуатации и поддержки СУБД Postgres, миграции, настройки, создания
-                            отказоустойчивых и масштабируемых систем на этой платформе.
+                            <a href="#">Kazan Digital Week</a> — это крупнейшее мероприятие в сфере ИТ, престижная
+                            площадка, на которой
+                            выступили представители высшего руководства страны. Цель мероприятия — содействие в обмене
+                            научно-технической информацией, консолидация усилий для скорейшего решения задач
+                            импортозамещения и обеспечения технологического суверенитета России. Работа шла по 10
+                            основным направлениям, включающим цифровые технологии в государственном управлении,
+                            культуре, сельском хозяйстве, образовании, здравоохранении, медицине, транспорте и др.
                         </p>
                         <br>
                         <br>
-                        <figure class="media-block">
-                            <picture>
-                                <source srcset="./assets/images/news-img-mob.png" media="(max-width: 767px)">
-                                <img src="./assets/images/news-img.png" alt="">
-                            </picture>
-                            <figcaption>Заголовок фото (опционально)</figcaption>
+                        <div class="slider" data-slider="default" data-slides="1">
+                            <div class="swiper">
+                                <div class="swiper-wrapper">
+                                    <div class="swiper-slide">
+                                        <figure class="media-block">
+                                            <div>
+                                                <img src="./assets/images/detail-img-1.png" alt="">
+                                            </div>
+                                            <figcaption>Заголовок фото (опционально)</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <figure class="media-block">
+                                            <div>
+                                                <img src="./assets/images/detail-img-1.png" alt="">
+                                            </div>
+                                            <figcaption>Заголовок фото (опционально)</figcaption>
+                                        </figure>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <figure class="media-block">
+                                            <div>
+                                                <img src="./assets/images/detail-img-1.png" alt="">
+                                            </div>
+                                            <figcaption>Заголовок фото (опционально)</figcaption>
+                                        </figure>
+                                    </div>
+                                </div>
+                                <div class="swiper-controls">
+                                    <button class="swiper-button swiper-button--prev">
+                                        <svg class="swiper-icon">
+                                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                    <div class="swiper-pagination"></div>
+                                    <button class="swiper-button swiper-button--next">
+                                        <svg class="swiper-icon">
+                                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <div class="quote">
+                            <p class="quote__text">
+                                Разработка четырёх специальных моторных тестов для кисти руки стала новым серьёзным
+                                шагом в развитии нашего мобильного приложения. При помощи камеры смартфона и посредством
+                                нажатия на экран пациентом они анализируют скорость и амплитуду движения его пальцев и
+                                кисти руки. Можно сказать, что мы выполнили цифровизацию классических неврологических
+                                тестов.
+                            </p>
+                            <div class="quote__footer">
+                                <div class="quote__user">
+                                    <picture class="quote__picture">
+                                        <img src="./assets/images/user-4.png" alt="">
+                                    </picture>
+                                    <div class="quote__info">
+                                        <h3 class="quote__title">Дарья Голосова</h3>
+                                        <p class="quote__description">
+                                            Первый заместитель
+                                            Генерального директора
+                                            компании «Ай-Форс» (ГК Форс)
+                                        </p>
+                                    </div>
+                                </div>
+                                <svg class="quote__icon">
+                                    <use xlink:href="./assets/sprite.svg#icon-quotes"></use>
+                                </svg>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <h3>рабочие дискуссии</h3>
+                        <br>
+                        <p>Эксперты Форс участвовали в рабочих дискуссиях на двух закрытых сессиях Минцифры РФ:</p>
+                        <br>
+                        <ul>
+                            <li>реализация платформы «Мой спорт»</li>
+                            <li>ПГС – развитие Low Code для разработчиков</li>
+                        </ul>
+                        <br>
+                        <p>
+                            Обсуждения в каждой из этих рабочих групп вызвали живой интерес участников, которые смогли
+                            поделиться своими идеями и предложениями по повестке дня. При этом специалисты Форс
+                            опирались, прежде всего, на практический опыт, полученный в ходе внедрения соответствующих
+                            отраслевых цифровых сервисов, в том числе, с использованием Low code платформы ПГС.
+                        </p>
+                        <br>
+                        <a download href="#">Скачать приложение</a>
+                        <br>
+                        <br>
+                        <h3>Делегаты</h3>
+                        <br>
+                        <p>Делегатами от Форс были:</p>
+                        <br>
+                        <ul>
+                            <li>Андрей Бурин
+                                директор департамента по работе с государственным сектором
+                            </li>
+                            <li>Александр Потапов
+                                функциональный архитектор отделения разработки информационных систем
+                            </li>
+                            <li>Ольга Иванова
+                                руководитель аналитического отдела
+                            </li>
+                            <li>Елена Беляева
+                                ведущий менеджер департамента по работе с государственным сектором
+                            </li>
+                        </ul>
+                        <br>
+                        <br>
+                        <figure class="media-block media-block--video">
+                            <div>
+                                <img src="./assets/images/detail-img-1.png" alt="">
+                                <svg>
+                                    <use xlink:href="./assets/sprite.svg#icon-play"></use>
+                                </svg>
+                            </div>
+                            <figcaption>Заголовок видео (опционально)</figcaption>
                         </figure>
                         <br>
                         <br>
                         <p>
-                            Форс представит на конференции новое решение <a href="#">PGARM</a> — передовую разработку
-                            для диагностики производительности и мониторинга баз данных PostgreSQL. Это единый
-                            инструмент, использующий собственный алгоритм для быстрого сбора статистики и графического
-                            представления её интерпретации в разрезе всех компонентов систем на платформе PostgreSQL.
-                            Мониторинг запросов осуществляется в процессе их выполнения. Панель производительности даёт
-                            общее представление о нагрузке и запасах системных ресурсов баз данных и операционных
-                            систем.<br>
-                            <br>
-                            В течение всего дня на стенде Форс будет проводиться демонстрация возможностей и преимуществ
-                            PGARM.<br>
-                            <br>
-                            Приглашаем Вас посетить наш стенд — 1 октября, гостиница «Санкт-Петербург».<br>
-                            <br>
-                            Мы расскажем о комплексе услуг, которые предоставляет компания по направлению СУБД, а также
-                            о том, как решаем даже самые сложные задачи!
+                            Второй доклад был посвящен эко-системе инструментальных средств, разработанных
+                            специалистами <a href="#">Форс Телеком</a> для управления сценариями миграции больших объёмов данных из
+                            Oracle в PostgreSQL. Презентацию провел технический директор ФОРС Телеком Александр
+                            Любушкин.
+                        </p>
+                        <p>
+                            Данная эко-система включает <a href="#">LUI4Ora2Pg</a> — инструмент автоматизации, планирования и управления
+                            процессами миграции, <a href="#">Ora2PgCopy</a> для высокоскоростного переноса данных из одной СУБД в другую
+                            и Ora2PgSync для реализации инкрементальной миграции данных. Все эти продукты
+                            сертифицированы и включены в Реестр российского ПО. Ряд успешных внедрений доказал их
+                            эффективность на практике.
                         </p>
                     </div>
                 </div>
