@@ -21,20 +21,15 @@ class Spline {
         this.application = new Application(el);
 
         window.addEventListener('load', () => {
-            const delayBeforeLoad = 400;
-            let timeout: string | number | NodeJS.Timeout = null;
-            timeout = setTimeout(() => {
-                this.application.load(url, {
-                    credentials: 'include',
-                    mode: 'no-cors',
-                }).then(() => {
-                    this.cube = this.application.findObjectByName('cube');
-                    this.handleResize()
-                    this.checkWidthMediaQuery();
-                    animateSpline(this.application, 0);
-                })
-                clearTimeout(timeout)
-            }, delayBeforeLoad)
+            this.application.load(url, {
+                credentials: 'include',
+                mode: 'no-cors',
+            }).then(() => {
+                this.cube = this.application.findObjectByName('cube');
+                this.handleResize()
+                this.checkWidthMediaQuery();
+                animateSpline(this.application, 0);
+            })
         })
     }
 
