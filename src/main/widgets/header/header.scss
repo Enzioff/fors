@@ -48,18 +48,33 @@
 
   &__logo {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     &.light {
       .header__icon-logo {
         fill: $bg;
       }
+      .header__page {
+        color: $white;
+      }
     }
+  }
+
+  &__page {
+    font-family: $font-accent;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    color: $main3;
+    transition: .2s linear;
   }
 
   &__icon-logo {
     display: flex;
-    width: 208px;
-    height: 108px;
+    width: 209px;
+    height: 62px;
     fill: $main3;
     transition: .2s linear;
 

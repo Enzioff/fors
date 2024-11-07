@@ -141,6 +141,8 @@
 
   &__logo {
     margin-bottom: 10px;
+    width: 85px;
+    height: 87px;
 
     @include r($tablet) {
       margin-bottom: 0;

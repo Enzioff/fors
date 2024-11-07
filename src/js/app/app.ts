@@ -1,3 +1,5 @@
+import {Application} from '@splinetool/runtime';
+
 import {Spline} from "./spline/spline";
 import Tabs from "./tabs";
 import DropZone from "./dropZone";
@@ -7,7 +9,6 @@ import {MainPage} from "./animation/MainPage";
 import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
-import clamp from 'clamp-js';
 import {Fancybox} from "@fancyapps/ui";
 import Preloader from "./animation/Preloader";
 
@@ -15,7 +16,11 @@ class App {
     splineURL: string;
 
     constructor() {
-        // this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
+        this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
+
+        // const canvas = document.getElementById('canvas3d') as HTMLCanvasElement;
+        // const app = new Application(canvas);
+        // app.load('./scene.splinecode');
         this.init();
     }
 
