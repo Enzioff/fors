@@ -19,10 +19,10 @@ class Spline {
 
     setApplication = (el: HTMLCanvasElement, url: string) => {
         this.application = new Application(el);
+
         window.addEventListener('load', () => {
             const delayBeforeLoad = 400;
             let timeout: string | number | NodeJS.Timeout = null;
-
             timeout = setTimeout(() => {
                 this.application.load(url, {
                     credentials: 'include',

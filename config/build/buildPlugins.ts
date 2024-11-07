@@ -39,6 +39,11 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
                     to: "./assets/fonts/",
                     noErrorOnMissing: true,
                 },
+                {
+                    from: "src/main/shared/libs",
+                    to: "./assets/libs/",
+                    noErrorOnMissing: true,
+                },
             ],
         }),
         ...buildPagesList(paths),

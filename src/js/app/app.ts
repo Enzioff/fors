@@ -16,11 +16,7 @@ class App {
     splineURL: string;
 
     constructor() {
-        this.splineURL = 'https://prod.spline.design/T4GcdWa1iY2V7Fpu/scene.splinecode';
-
-        // const canvas = document.getElementById('canvas3d') as HTMLCanvasElement;
-        // const app = new Application(canvas);
-        // app.load('./scene.splinecode');
+        this.splineURL = './assets/libs/scene.splinecode';
         this.init();
     }
 
