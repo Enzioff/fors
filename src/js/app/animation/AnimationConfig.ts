@@ -135,7 +135,7 @@ export class AnimationConfig extends MainGsap {
                             opacity: 0,
                         })
                     }
-                }
+                },
             })
         })
     }

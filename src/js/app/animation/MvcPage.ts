@@ -70,8 +70,10 @@ export class MvcPage extends AnimationConfig {
                     animateSpline(this.application, 1)
                 },
                 onLeave: () => {
+                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
-                        this.application.setZoom(1.4)
+                        gsap.timeline({duration: 1})
+                            .to(cube.scale, {x: 1.4, y: 1.4, z: 1.4})
                         this.moveCanvas(0)
                     }
                     if (isTabletMax) {
@@ -85,12 +87,10 @@ export class MvcPage extends AnimationConfig {
                     animateSpline(this.application, 8)
                 },
                 onEnter: () => {
-                    gsap.from('.spline-canvas', {
-                        opacity: 0,
-                        duration: 2,
-                    })
+                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
-                        this.application.setZoom(0.8)
+                        gsap.timeline({duration: 1,})
+                            .to(cube.scale, {x: 0.8, y: 0.8, z: 0.8})
                         this.moveCanvas(0, {zIndex: 2})
                     }
                     if (isTabletMax) {
@@ -103,10 +103,12 @@ export class MvcPage extends AnimationConfig {
                     animateSpline(this.application, 2)
                 },
                 onEnterBack: () => {
+                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
                         this.moveCanvas(0, {zIndex: 2})
                         animateSpline(this.application, 2)
-                        this.application.setZoom(0.8)
+                        gsap.timeline({duration: 1,})
+                            .to(cube.scale, {x: 0.8, y: 0.8, z: 0.8})
                     }
                     if (isTabletMax) {
                         this.moveCanvas(10, {zIndex: 2})

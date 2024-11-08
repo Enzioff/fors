@@ -1,5 +1,3 @@
-import {Application} from '@splinetool/runtime';
-
 import {Spline} from "./spline/spline";
 import Tabs from "./tabs";
 import DropZone from "./dropZone";
