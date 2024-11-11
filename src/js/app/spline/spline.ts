@@ -1,5 +1,5 @@
+import gsap from "gsap";
 import {Application, SPEObject} from '@splinetool/runtime';
-import {animateSpline} from "./animate";
 
 class Spline {
     application: Application;
@@ -28,7 +28,10 @@ class Spline {
                 this.cube = this.application.findObjectByName('cube');
                 this.handleResize()
                 this.checkWidthMediaQuery();
-                animateSpline(this.application, 0);
+                const canvas = document.querySelector('.spline-canvas');
+                gsap.set(canvas, {
+                    yPercent: -100
+                })
             })
         })
     }

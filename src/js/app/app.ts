@@ -12,6 +12,7 @@ import Preloader from "./animation/Preloader";
 
 class App {
     splineURL: string;
+    spline: Spline;
 
     constructor() {
         this.splineURL = './assets/libs/scene.splinecode';
@@ -40,11 +41,11 @@ class App {
 
     createAnimation = () => {
         const el: HTMLCanvasElement = document.querySelector('.spline-canvas');
-        const spline = new Spline(el, this.splineURL)
+        this.spline = new Spline(el, this.splineURL)
 
-        new MainPage(spline)
-        new MvcPage(spline)
-        new AboutPage(spline)
+        new MainPage(this.spline)
+        new MvcPage(this.spline)
+        new AboutPage(this.spline)
     }
 
     createTabs = () => {
@@ -101,8 +102,9 @@ class App {
 
     createPreloader = () => {
         const preloader = document.querySelector('.preloader');
-        if (!preloader) return
-        new Preloader(preloader)
+        if (preloader) {
+            new Preloader(preloader, this.spline.application)
+        }
     }
 
     createFancybox = () => {

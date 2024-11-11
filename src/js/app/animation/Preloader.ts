@@ -1,6 +1,8 @@
 import gsap from "gsap";
 import ScrambleTextPlugin from 'gsap/ScrambleTextPlugin'
 import TextPlugin from 'gsap/TextPlugin'
+import {animateSpline} from "../spline/animate";
+import {Application} from "@splinetool/runtime";
 
 class Preloader {
     preloader;
@@ -13,9 +15,11 @@ class Preloader {
     facts;
     decorative;
     body;
+    application;
 
-    constructor(preloader: Element) {
+    constructor(preloader: Element, application: Application) {
         this.preloader = preloader;
+        this.application = application;
         this.body = document.querySelector('body');
         this.wrapper = this.preloader.querySelector('.preloader__wrapper');
         this.dotsLine = this.preloader.querySelectorAll('.dots__line');
@@ -29,6 +33,7 @@ class Preloader {
             'СПЕЦИАЛИСТОВ УЖЕ С НАМИ...',
             'ВЫПОЛНЕННЫХ РАБОТ...',
         ]
+
         this.init()
     }
 
@@ -102,6 +107,10 @@ class Preloader {
             onComplete: () => {
                 this.body.classList.remove('fixed')
                 this.preloader.remove()
+                animateSpline(this.application, 0);
+                gsap.to('.spline-canvas', {
+                    yPercent: 0,
+                })
             }
         })
     }

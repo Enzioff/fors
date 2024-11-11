@@ -23,6 +23,20 @@ export class AnimationConfig extends MainGsap {
         this.animationMarqueeScrub()
         this.animationMarqueeInfinite()
         this.animationFooter()
+
+        setTimeout(() => {
+            if (this.application) {
+                this.initial()
+            }
+        }, 1000)
+    }
+
+    public initial = () => {
+        const preloader = document.querySelector('.preloader');
+        if (!preloader) {
+            animateSpline(this.application, 0);
+            this.moveCanvas(0, {yPercent: 0});
+        }
     }
 
     public initIntroSection = () => {
