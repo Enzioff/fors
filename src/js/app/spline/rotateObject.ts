@@ -27,6 +27,7 @@ enum RotateKey {
     SCENE_25 = 'scene-25',
     SCENE_26 = 'scene-26',
     SCENE_28 = 'scene-28',
+    SCENE_1_1 = 'scene-1-1',
 }
 
 const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
@@ -39,7 +40,7 @@ const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
     [RotateKey.SCENE_7]: { y: Math.PI * 2 + 2.3, x: 0.2, z: Math.PI / 2 + 1.1, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_8]: { y: Math.PI * 2 + 2.3, x: 0.2, z: Math.PI / 2 + 3.8, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_9]: { y: Math.PI * 2 + 2.3, x: 0.2, z: Math.PI + 3.7, duration: 2, ease: "sine",  },
-    [RotateKey.SCENE_10]: { y: Math.PI * 3 + 0.3, x: 0.2, z: 5.2 + (Math.PI / 2), duration: 2, delay: 1, ease: "sine",  },
+    [RotateKey.SCENE_10]: { y: Math.PI * 3 + 0.3, x: 0.2, z: 5.2 + (Math.PI / 2), duration: 2, ease: "sine",  },
     [RotateKey.SCENE_11]: { y: Math.PI * 3.75, x: 0.2, z: 5.2 + (Math.PI / 2), duration: 2, ease: "sine",  },
     [RotateKey.SCENE_13]: { y: Math.PI * 4 + 0.6, x: 0.2, z: 5.2 + (Math.PI / 2), duration: 2, ease: "sine",  },
     [RotateKey.SCENE_15]: { y: Math.PI * 4.75 + 0.1, x: 0.2, z: 5.2 + (Math.PI / 2), duration: 2, ease: "sine",  },
@@ -49,12 +50,13 @@ const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
     [RotateKey.SCENE_19]: { y: Math.PI * 5 + 0.5, x: -0.05, z: Math.PI * 3.5 + 0.5, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_20]: { y: Math.PI * 5.5 + 0.9, x: -0.05, z: Math.PI * 3.5 + 0.5, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_21]: { y: Math.PI * 6 + 0.8, x: -0.1, z: Math.PI * 3.5 + 0.7, duration: 2, ease: "sine",  },
-    [RotateKey.SCENE_22]: { y: Math.PI * 6 + 0.8, x: -0.1, z: Math.PI * 2.5 + 0.7, duration: 3, ease: "sine",  },
+    [RotateKey.SCENE_22]: { y: Math.PI * 6 + 0.8, x: -0.1, z: Math.PI * 2.5 + 0.7, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_23]: { y: Math.PI * 6.5 + 0.5, x: -0.1, z: Math.PI * 2 + 0.7, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_24]: { y: Math.PI * 6.5 + 0.6, x: -0.1, z: Math.PI * 3 - 0.7, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_25]: { y: Math.PI * 6.5 + 0.6, x: -0.1, z: Math.PI * 3.5 - 0.7, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_26]: { y: Math.PI * 7.5 - 0.1, x: 0, z: Math.PI * 4, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_28]: { y: Math.PI * 7.5 - 0.9, x: 0.2, z: Math.PI * 4 - 0.8, duration: 2, ease: "sine",  },
+    [RotateKey.SCENE_1_1]: { y: (Math.PI * 2) + (-0.55), x: 0.2, z: -0.75, duration: 8, ease: "none", repeat: -1},
 };
 
 function rotateObject(el: SPEObject, key: RotateKey) {

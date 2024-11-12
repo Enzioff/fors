@@ -16,10 +16,12 @@ class Preloader {
     decorative;
     body;
     application;
+    initial;
 
-    constructor(preloader: Element, application: Application) {
+    constructor(preloader: Element, application: Application, initial: () => void) {
         this.preloader = preloader;
         this.application = application;
+        this.initial = initial;
         this.body = document.querySelector('body');
         this.wrapper = this.preloader.querySelector('.preloader__wrapper');
         this.dotsLine = this.preloader.querySelectorAll('.dots__line');
@@ -100,17 +102,15 @@ class Preloader {
             yPercent: -100,
             duration: 1,
         })
+
         gsap.to(this.preloader, {
             opacity: 0,
             duration: 1,
-            delay: 0.8,
+            delay: 0.2,
             onComplete: () => {
                 this.body.classList.remove('fixed')
                 this.preloader.remove()
-                animateSpline(this.application, 0);
-                gsap.to('.spline-canvas', {
-                    yPercent: 0,
-                })
+                this.initial()
             }
         })
     }

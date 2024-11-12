@@ -8,7 +8,6 @@ import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
 import {Fancybox} from "@fancyapps/ui";
-import Preloader from "./animation/Preloader";
 
 class App {
     splineURL: string;
@@ -28,7 +27,6 @@ class App {
         this.createSearchBlock()
         this.createSlider()
         this.createFancybox()
-        this.createPreloader()
     }
 
     createSlider = () => {
@@ -98,13 +96,6 @@ class App {
         const searchBlock = document.querySelector('[data-search-block]')
         if (!searchBlock) return;
         new SearchBlock(searchBlock)
-    }
-
-    createPreloader = () => {
-        const preloader = document.querySelector('.preloader');
-        if (preloader) {
-            new Preloader(preloader, this.spline.application)
-        }
     }
 
     createFancybox = () => {

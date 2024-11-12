@@ -4,13 +4,18 @@ import {MainGsap} from "./MainGsap";
 import {animateType} from "../../types";
 import {Spline} from "../spline/spline";
 import {animateSpline} from "../spline/animate";
+import Preloader from "./Preloader";
 
 export class AnimationConfig extends MainGsap {
+    isPreloaderFinish;
+
     constructor(spline?: Spline) {
         super(spline);
+        this.isPreloaderFinish = false;
     }
 
     public initAnimationConfig() {
+        this.initPreloader()
         this.initIntroSection()
         this.animationInBottom()
         this.animationInBottomPin()
@@ -23,20 +28,26 @@ export class AnimationConfig extends MainGsap {
         this.animationMarqueeScrub()
         this.animationMarqueeInfinite()
         this.animationFooter()
+        this.animationInfoList()
 
-        setTimeout(() => {
-            if (this.application) {
+        const preloader = document.querySelector('.preloader');
+        if (!preloader) {
+            setTimeout(() => {
                 this.initial()
-            }
-        }, 1000)
+            }, 1000)
+        }
+    }
+
+    initPreloader = () => {
+        const preloader = document.querySelector('.preloader');
+        if (preloader) {
+            new Preloader(preloader, this.application, this.initial)
+        }
     }
 
     public initial = () => {
-        const preloader = document.querySelector('.preloader');
-        if (!preloader) {
-            animateSpline(this.application, 0);
-            this.moveCanvas(0, {yPercent: 0});
-        }
+        animateSpline(this.application, 0);
+        this.moveCanvas(0, {yPercent: 0});
     }
 
     public initIntroSection = () => {
@@ -149,6 +160,10 @@ export class AnimationConfig extends MainGsap {
                             opacity: 0,
                         })
                     }
+                },
+                onEnterBack: () => {
+                    animateSpline(this.application, 0)
+                    this.moveCanvas(0)
                 },
             })
         })
@@ -506,19 +521,6 @@ export class AnimationConfig extends MainGsap {
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
 
-            // servicesHeaderItems[0].addEventListener('click', () => {
-            //     gsap.to(window, {
-            //         scrollTo: cards[0],
-            //         duration: 1,
-            //     })
-            // })
-            // servicesHeaderItems[servicesHeaderItems.length - 1].addEventListener('click', () => {
-            //     gsap.to(window, {
-            //         scrollTo: cards[cards.length - 1],
-            //         duration: 1,
-            //     })
-            // })
-
             ScrollTrigger.create({
                 trigger: section,
                 start: `top top+=${headerOffset}`,
@@ -604,6 +606,34 @@ export class AnimationConfig extends MainGsap {
                         duration: 1,
                         backgroundColor: cardColors[1],
                     }, '<')
+                }
+            })
+        })
+    }
+
+    public animationInfoList = () => {
+        const selector = document.querySelector('.trigger-info')
+        if (!selector) return
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+
+            ScrollTrigger.create({
+                trigger: selector,
+                start: 'top center',
+                end: 'bottom bottom',
+                onEnter: () => {
+                    animateSpline(this.application, 101)
+                    this.moveCanvas(-20)
+                },
+                onEnterBack: () => {
+                    animateSpline(this.application, 101)
+                    this.moveCanvas(-20)
                 }
             })
         })

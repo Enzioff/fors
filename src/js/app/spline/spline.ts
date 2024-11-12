@@ -30,7 +30,7 @@ class Spline {
                 this.checkWidthMediaQuery();
                 const canvas = document.querySelector('.spline-canvas');
                 gsap.set(canvas, {
-                    yPercent: -100
+                    yPercent: -100,
                 })
             })
         })

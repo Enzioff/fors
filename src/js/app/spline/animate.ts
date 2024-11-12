@@ -81,6 +81,9 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     28: (app, el) => {
         rotateObject(el, RotateKey.SCENE_28);
         callInnerAnimation(app, AnimationKey.JOIN_MODEL);
+    },
+    101: (app, el) => {
+        rotateObject(el, RotateKey.SCENE_1_1);
     }
 };
 
