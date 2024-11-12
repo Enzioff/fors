@@ -3,8 +3,11 @@
 <%= htmlWebpackPlugin.options.widgets.head %>
 <body>
 <%= htmlWebpackPlugin.options.widgets.headerPages %>
+<div class="spline-container mob-hidden">
+    <canvas class="spline-canvas"></canvas>
+</div>
 <main class="main">
-    <section class="section section--preview section--bg animate-intro mbm-20">
+    <section class="section section--preview section--bg animate-intro-left mbm-20">
         <div class="intro">
             <div class="container">
                 <div class="grid grid--end mbm-20">
@@ -22,7 +25,7 @@
             </div>
         </div>
     </section>
-    <section class="section pt-70 pbt-60 mbm-20">
+    <section class="section trigger-detail-page pt-70 pbt-60 mbm-20">
         <div class="container">
             <div class="grid">
                 <div class="grid__item--3 grid__item-tab--12 grid__item-mob-4 mbt-60">
@@ -731,7 +734,96 @@
         </div>
     </section>
 </main>
-<%= htmlWebpackPlugin.options.widgets.footer %>
+<footer class="footer">
+    <div class="footer__separator"></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="site-nav anim-in-bottom-stagger">
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">О компании</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Новости</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Проекты</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Решения</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Услуги</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Центр технической поддержки</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Разработка информационных систем</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Обучение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Импортозамещение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Консалтинг</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Карьера</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вакансии</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Начало карьеры</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Команда единомышленников</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Атмосфера</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вопросы и ответы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Контакты</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Где нас найти</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Контакты для прессы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <a href="#" class="footer__logo logo mob-hidden">
+                        <img src="./assets/images/logo-small.svg" alt="">
+                    </a>
+                    <p class="footer__text">1991–2024. © ФОРС</p>
+                    <p class="footer__text footer__text--copyright">© 2024,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvartalnov</a></p>
+                </div>
+                <div class="footer__meta">
+                    <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>
+                    <a href="#" class="footer__text">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <picture class="footer__cube">
+        <img src="./assets/images/menu-cube.png" alt="">
+    </picture>
+</footer>
 <%= htmlWebpackPlugin.options.widgets.temp %>
 <%= htmlWebpackPlugin.options.widgets.hidden %>
 </body>

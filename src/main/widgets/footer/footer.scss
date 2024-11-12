@@ -175,4 +175,18 @@
       text-align: left;
     }
   }
+
+  &__cube {
+    display: none;
+
+    @include r($mobile) {
+      position: absolute;
+      right: -155px;
+      bottom: -51px;
+      display: flex;
+      width: 335px;
+      height: 335px;
+      z-index: 2;
+    }
+  }
 }

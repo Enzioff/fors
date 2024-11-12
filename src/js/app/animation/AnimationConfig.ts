@@ -17,6 +17,7 @@ export class AnimationConfig extends MainGsap {
     public initAnimationConfig() {
         this.initPreloader()
         this.initIntroSection()
+        this.initIntroSectionLeft()
         this.animationInBottom()
         this.animationInBottomPin()
         this.animationInBottomStagger()
@@ -29,6 +30,8 @@ export class AnimationConfig extends MainGsap {
         this.animationMarqueeInfinite()
         this.animationFooter()
         this.animationInfoList()
+        this.animationDetailPage()
+        this.animationDashboard()
 
         const preloader = document.querySelector('.preloader');
         if (!preloader) {
@@ -46,8 +49,38 @@ export class AnimationConfig extends MainGsap {
     }
 
     public initial = () => {
+        const introSectionLeft = document.querySelector('.animate-intro-left');
         animateSpline(this.application, 0);
-        this.moveCanvas(0, {yPercent: 0});
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            if (introSectionLeft) {
+                if (isDesktop) {
+                    this.moveCanvas(-20, {yPercent: -10});
+                }
+                if (isTabletMax) {
+                    this.moveCanvas(-20, {yPercent: -20});
+                }
+                if (isMobileMax) {
+                    this.moveCanvas(0, {yPercent: 15});
+                }
+            } else {
+                if (isDesktop) {
+                    this.moveCanvas(0, {yPercent: 0});
+                }
+                if (isTabletMax) {
+                    this.moveCanvas(0, {yPercent: -20});
+                }
+                if (isMobileMax) {
+                    this.moveCanvas(0, {yPercent: 15});
+                }
+            }
+        })
     }
 
     public initIntroSection = () => {
@@ -75,7 +108,7 @@ export class AnimationConfig extends MainGsap {
             ScrollTrigger.create({
                 trigger: introSection,
                 start: 'top-=50 top',
-                end: 'bottom top',
+                end: isDesktop ? 'bottom-=100 top' : 'bottom center',
                 onToggle: (self) => {
                     if (self.isActive) {
                         if (isDesktop) {
@@ -85,7 +118,7 @@ export class AnimationConfig extends MainGsap {
                                 : this.headerAnimation.animate(animateType.HIDE)
                         }
                         if (isTabletMax) {
-                            this.moveCanvas(0, {yPercent: -25})
+                            this.moveCanvas(0, {yPercent: -20})
                             this.headerAnimation.animate(animateType.VISIBLE)
                         }
                         if (isMobileMax) {
@@ -145,7 +178,17 @@ export class AnimationConfig extends MainGsap {
                             this.headerAnimation.animate(animateType.VISIBLE)
                         }
                         if (isTabletMax) {
-                            this.moveCanvas(0, {yPercent: 0})
+                            const infoBlock = document.querySelector('.trigger-info');
+                            const cards = document.querySelector('.trigger-a-cards');
+                            const bigCardsSecond = document.querySelector('.trigger-big-cards-custom');
+
+                            if (cards && !bigCardsSecond) {
+                                this.moveCanvas(-20)
+                            } else if (bigCardsSecond) {
+                                this.moveCanvas(0, {yPercent: 0})
+                            } else if (!infoBlock) {
+                                this.moveCanvas(0, {yPercent: 0})
+                            }
                         }
                         gsap.to(introWidgets[0], {
                             x: 0,
@@ -164,6 +207,73 @@ export class AnimationConfig extends MainGsap {
                 onEnterBack: () => {
                     animateSpline(this.application, 0)
                     this.moveCanvas(0)
+                },
+            })
+        })
+    }
+
+    public initIntroSectionLeft = () => {
+        const introSection = document.querySelector('.animate-intro-left');
+
+        if (!introSection) return
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            if (isDesktop) {
+                this.headerAnimation.isFixed
+                    ? this.headerAnimation.animate(animateType.VISIBLE)
+                    : this.headerAnimation.animate(animateType.HIDE)
+            }
+            if (isTabletMax) {
+                this.headerAnimation.animate(animateType.VISIBLE)
+            }
+            ScrollTrigger.create({
+                trigger: introSection,
+                start: 'top-=50 top',
+                end: isDesktop ? 'bottom center' : 'bottom top',
+                onToggle: (self) => {
+                    if (self.isActive) {
+                        if (isDesktop) {
+                            this.moveCanvas(-20)
+                            this.headerAnimation.isFixed
+                                ? this.headerAnimation.animate(animateType.VISIBLE)
+                                : this.headerAnimation.animate(animateType.HIDE)
+                        }
+                        if (isTabletMax) {
+                            this.moveCanvas(-20)
+                            this.headerAnimation.animate(animateType.VISIBLE)
+                        }
+                        if (isMobileMax) {
+                            this.moveCanvas(0, {yPercent: 15})
+                        }
+                    } else {
+                        if (!this.headerAnimation.isFixed) {
+                            this.headerAnimation.animate(animateType.VISIBLE)
+                        }
+                        if (isTabletMax) {
+                            const infoBlock = document.querySelector('.trigger-info');
+                            const detailBlock = document.querySelector('.trigger-detail-page')
+                            if (detailBlock) {
+                                this.moveCanvas(-20, {yPercent: 0})
+                            } else if (!infoBlock) {
+                                this.moveCanvas(0, {yPercent: 0})
+                            }
+                        }
+                    }
+                },
+                onEnterBack: () => {
+                    animateSpline(this.application, 0)
+                    if (isDesktop) {
+                        this.moveCanvas(-20, {yPercent: -10})
+                    }
+                    if (isTabletMax) {
+                        this.moveCanvas(-20, {yPercent: -20})
+                    }
                 },
             })
         })
@@ -545,6 +655,9 @@ export class AnimationConfig extends MainGsap {
                 pin: true,
                 pinSpacing: true,
                 scrub: 1,
+                onEnter: () => {
+                    animateSpline(this.application, 101)
+                }
             })
 
             const cardsTimeline = gsap.timeline({
@@ -628,13 +741,127 @@ export class AnimationConfig extends MainGsap {
                 start: 'top center',
                 end: 'bottom bottom',
                 onEnter: () => {
+                    if (isTablet) {
+                        animateSpline(this.application, 101)
+                        this.moveCanvas(-20)
+                    }
+
+                    if (isMobileMax) {
+                        animateSpline(this.application, 101)
+                        this.moveCanvas(0)
+                    }
+                },
+                onEnterBack: () => {
+                    if (isTablet) {
+                        animateSpline(this.application, 101)
+                        this.moveCanvas(-20)
+                    }
+
+                    if (isMobileMax) {
+                        animateSpline(this.application, 101)
+                        this.moveCanvas(0)
+                    }
+                }
+            })
+        })
+    }
+
+    public animationDetailPage = () => {
+        const section = document.querySelector('.trigger-detail-page');
+
+        if (!section) return
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top top+=30%',
+                end: 'bottom bottom',
+                onToggle: (self) => {
                     animateSpline(this.application, 101)
-                    this.moveCanvas(-20)
+                    this.moveCanvas(-20, {yPercent: 10})
                 },
                 onEnterBack: () => {
                     animateSpline(this.application, 101)
-                    this.moveCanvas(-20)
+                    this.moveCanvas(-20, {yPercent: 10})
+                },
+                onLeaveBack: () => {
+                    if (isDesktop) {
+                        this.moveCanvas(-20, {yPercent: -10})
+                    }
+                    if (isTabletMax) {
+                        animateSpline(this.application, 0)
+                        this.moveCanvas(-20, {yPercent: -20});
+                    }
                 }
+            })
+        })
+    }
+
+    public animationDashboard = () => {
+        const section = document.querySelector('.trigger-dashboard');
+
+        if (!section) return
+
+        this.mm.add({
+            isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
+            isTabletMax: `(max-width: ${this.breakPoints.tabletMax}px)`,
+            isTablet: `(min-width: ${this.breakPoints.tablet}px)`,
+            isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
+        }, (context) => {
+            const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
+            ScrollTrigger.create({
+                trigger: section,
+                start: 'top center',
+                end: 'bottom center',
+                onToggle: (self) => {
+                    if (isTablet) {
+                        this.moveCanvas(-20)
+                    }
+
+                    if (isMobileMax) {
+                        this.moveCanvas(0)
+                    }
+                },
+                onUpdate: (self) => {
+                    const progress = self.progress;
+                    if (isDesktop) {
+                        if (progress >= 0.20) {
+                            animateSpline(this.application, 17)
+                        }
+                    }
+
+                    if (isTabletMax) {
+                        if (progress >= 0.40) {
+                            animateSpline(this.application, 17)
+                        }
+                    }
+                },
+                onEnterBack: () => {
+                    if (isTablet) {
+                        this.moveCanvas(-20)
+                    }
+
+                    if (isMobileMax) {
+                        this.moveCanvas(0)
+                    }
+                },
+                onLeaveBack: () => {
+                    if (isTabletMax) {
+                        animateSpline(this.application, 0)
+                        this.moveCanvas(0, {yPercent: -20})
+                    }
+                    if (isMobileMax) {
+                        animateSpline(this.application, 0)
+                        this.moveCanvas(0, {yPercent: 15})
+                    }
+                },
+                onLeave: () => animateSpline(this.application, 18),
             })
         })
     }

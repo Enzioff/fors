@@ -50,52 +50,54 @@ export class MvcPage extends AnimationConfig {
 
             ScrollTrigger.create({
                 trigger: section,
-                start: `top top+=${headerOffset}`,
-                end: () => `${cards.length * firstCardheight + listCardsHeight}`,
+                start: isDesktop ? `top top+=${headerOffset}` : 'top center',
+                end: () => `${isDesktop ? (cards.length * firstCardheight + listCardsHeight) - 100 : cards.length * firstCardheight + listCardsHeight}`,
                 onToggle: (self) => {
                     if (self.isActive) {
                         this.headerAnimation.animate(animateType.HIDE);
+                        const cube = this.application.findObjectByName('cube');
+                        if (isDesktop) {
+                            gsap.timeline({duration: 1,})
+                                .to(cube.scale, {x: 0.6, y: 0.6, z: 0.6}, '<')
+                        }
+
+                        if (isTabletMax) {
+                            gsap.timeline({duration: 1,})
+                                .to(cube.scale, {x: 0.8, y: 0.8, z: 0.8}, '<')
+                        }
                     } else {
                         this.headerAnimation.animate(animateType.VISIBLE)
+                        const cube = this.application.findObjectByName('cube');
+                        gsap.timeline({duration: 1,})
+                            .to(cube.scale, {x: 1, y: 1, z: 1}, '<')
                     }
                 },
                 onLeaveBack: () => {
                     if (isDesktop) {
-                        this.application.setZoom(1.4)
-                        this.moveCanvas(0)
+                        this.moveCanvas(0, {yPercent: 0, zIndex: 0})
                     }
                     if (isTabletMax) {
-                        this.application.setZoom(0.7)
                     }
                     animateSpline(this.application, 1)
                 },
                 onLeave: () => {
-                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
-                        gsap.timeline({duration: 1})
-                            .to(cube.scale, {x: 1.4, y: 1.4, z: 1.4})
-                        this.moveCanvas(0)
+                        this.moveCanvas(0, {yPercent: 0})
                     }
                     if (isTabletMax) {
-                        this.application.setZoom(0.7)
                         this.moveCanvas(-20)
                     }
                     if (isMobileMax) {
-                        this.application.setZoom(0.8)
                         this.moveCanvas(0)
                     }
                     animateSpline(this.application, 8)
                 },
                 onEnter: () => {
-                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
-                        gsap.timeline({duration: 1,})
-                            .to(cube.scale, {x: 0.8, y: 0.8, z: 0.8})
                         this.moveCanvas(0, {zIndex: 2})
                     }
                     if (isTabletMax) {
                         this.moveCanvas(10, {yPercent: -15, zIndex: 2})
-                        this.application.setZoom(0.6)
                     }
                     if (isMobileMax) {
                         this.moveCanvas(0, {yPercent: 15, zIndex: 2})
@@ -103,16 +105,12 @@ export class MvcPage extends AnimationConfig {
                     animateSpline(this.application, 2)
                 },
                 onEnterBack: () => {
-                    const cube = this.application.findObjectByName('cube');
                     if (isDesktop) {
                         this.moveCanvas(0, {zIndex: 2})
                         animateSpline(this.application, 2)
-                        gsap.timeline({duration: 1,})
-                            .to(cube.scale, {x: 0.8, y: 0.8, z: 0.8})
                     }
                     if (isTabletMax) {
                         this.moveCanvas(10, {zIndex: 2})
-                        this.application.setZoom(0.6)
                         animateSpline(this.application, 2)
                     }
                     if (isMobileMax) {
@@ -168,6 +166,9 @@ export class MvcPage extends AnimationConfig {
                     },
                     onStart: () => {
                         animateSpline(this.application, 3 + idx - 1)
+                        if (isDesktop) {
+                            this.moveCanvas(0, {yPercent: 3 * idx, zIndex: 2})
+                        }
                         if (isTabletMax) {
                             this.moveCanvas(10, {yPercent: -15 + (idx + 3), zIndex: 2})
                         }

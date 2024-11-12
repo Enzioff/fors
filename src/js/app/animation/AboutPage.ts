@@ -35,11 +35,67 @@ export class AboutPage extends AnimationConfig {
             ScrollTrigger.create({
                 trigger: section,
                 start: 'top center',
-                end: 'bottom center',
-                onEnter: () => animateSpline(this.application, 1),
+                end: isDesktop ? 'bottom center' : isTabletMax ? 'bottom-=150 center' : 'bottom center',
+                onEnter: () => {
+                    if (isDesktop) {
+                        animateSpline(this.application, 101)
+                    }
+                    if (isTabletMax) {
+                        const bigCardsSecond = document.querySelector('.trigger-big-cards-custom');
+                        if (bigCardsSecond) {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(10, {yPercent: 0, zIndex: 2})
+                        } else {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(-20, {yPercent: 0})
+                        }
+                    }
+                    if (isTabletMax) {
+                        const bigCardsSecond = document.querySelector('.trigger-big-cards-custom');
+                        if (bigCardsSecond) {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(0, {yPercent: 0, zIndex: 2})
+                        } else {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(0, {yPercent: 0})
+                        }
+                    }
+                },
+                onEnterBack: () => {
+                    const bigCardsSecond = document.querySelector('.trigger-big-cards-custom');
+                    if (isTabletMax) {
+                        if (bigCardsSecond) {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(10, {yPercent: 0, zIndex: 2})
+                        } else {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(-20, {yPercent: 0})
+                        }
+                    }
+                },
                 onLeaveBack: () => this.moveCanvas(0),
                 onToggle: self => {
                     self.refresh()
+
+                    if (self.isActive) {
+                        if (isTabletMax) {
+                            animateSpline(this.application, 101)
+                            this.moveCanvas(-20, {yPercent: 0})
+                        }
+                    } else {
+                        if (isDesktop) {
+                            animateSpline(this.application, 8)
+                            this.moveCanvas(-20, {yPercent: 0})
+                        }
+                        if (isTabletMax) {
+                            animateSpline(this.application, 8)
+                            this.moveCanvas(-20, {yPercent: 0})
+                        }
+                        if (isMobileMax) {
+                            animateSpline(this.application, 8)
+                            this.moveCanvas(0, {yPercent: 0})
+                        }
+                    }
                 },
             })
         })
@@ -213,8 +269,8 @@ export class AboutPage extends AnimationConfig {
                             })
                             if (self.isActive) {
                                 timeline.classList.add('active')
-                                isTabletMax && this.moveCanvas(-20, {yPercent: -20})
-                                isMobileMax && this.moveCanvas(0, {yPercent: 0})
+                                isTabletMax && this.moveCanvas(-20, {yPercent: -20, zIndex: 2})
+                                isMobileMax && this.moveCanvas(0, {yPercent: -13})
                             } else {
                                 timeline.classList.remove('active')
                                 isTabletMax && this.moveCanvas(-20, {yPercent: 0})

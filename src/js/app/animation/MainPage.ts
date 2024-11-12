@@ -36,6 +36,7 @@ export class MainPage extends AnimationConfig {
             onLeave: () => animateSpline(this.application, 1),
             onEnterBack: () => {
                 animateSpline(this.application, 0)
+                this.moveCanvas(0)
                 ScrollTrigger.refresh()
             },
         })
