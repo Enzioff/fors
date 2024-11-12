@@ -370,7 +370,6 @@ export class AnimationConfig extends MainGsap {
     }
 
     public animationInBottom() {
-        console.trace('Функция была вызвана из:');
         const selectors = document.querySelectorAll('.anim-in-bottom')
         if (!selectors) return
 

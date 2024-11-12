@@ -7,7 +7,7 @@ import {MainPage} from "./animation/MainPage";
 import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
-import {Fancybox} from "@fancyapps/ui";
+import {Carousel, Fancybox, Slideshow} from "@fancyapps/ui";
 
 class App {
     splineURL: string;
@@ -110,6 +110,11 @@ class App {
 
         // @ts-ignore
         Fancybox.bind('[data-fancybox]', {
+            on: {
+                done: (fancybox: Fancybox, carousel: Carousel) => {
+                    console.log(carousel)
+                }
+            },
             tpl: {
                 closeButton: customCloseButton,
             }
