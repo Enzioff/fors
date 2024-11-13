@@ -5,6 +5,19 @@
 .modal {
   max-width: 1361px;
   margin: 0 auto;
+
+  &--light {
+    width: 100%;
+    --fancybox-content-bg: #FFFFFF;
+
+    @include r($tablet) {
+      max-width: 709px;
+    }
+
+    @include r($mobile) {
+      max-width: 337px;
+    }
+  }
 }
 
 .fancybox__content {

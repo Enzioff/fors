@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
           rel="stylesheet">
-<link href="css/main.576c.css" rel="stylesheet"></head>
+<link href="css/main.955a.css" rel="stylesheet"></head>
 <body>
 <header class="header header--page">
     <div class="container">
@@ -670,201 +670,216 @@
             <a href="./careerDetail.html" class="temp__link">Карьера детальная</a>
             <a href="./decisions.html" class="temp__link">Решения</a>
             <a href="./decisionsDetail.html" class="temp__link">Решения Детальная</a>
+            <button data-fancybox data-src="#success" class="temp__link">Окно подтверждения отправки</button>
         </div>
     </div>
 </div>
 <div class="hidden">
     <div class="modal" id="cooperation">
         <div class="modal__wrapper">
-                <div class="grid">
-                    <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
-                        <h2 class="title mb-15">
-                            Готовы обсудить сотрудничество?
-                        </h2>
-                        <picture class="picture-ui mob-hidden">
-                            <img src="./assets/images/menu-cube.png" alt="">
-                        </picture>
-                    </div>
-                    <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4">
-                        <div class="card card--offset card--height">
-                            <div class="tabs">
-                                <div class="tabs__header">
-                                    <button class="tabs__item active">Связаться</button>
-                                    <button class="tabs__item">Карьера</button>
-                                    <button class="tabs__item">Контакты</button>
-                                </div>
-                                <div class="tabs__content">
-                                    <div class="tabs__element active">
-                                        <form action="1" class="form">
-                                            <label class="form__item">
-                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
-                                            </label>
-                                            <label class="form__item">
-                                                <input type="text" class="input" name="ORGANISATION"
-                                                       placeholder="Название организации">
-                                            </label>
-                                            <label class="form__item">
-                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
-                                            </label>
-                                            <label class="form__item">
-                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
-                                            </label>
-                                            <label class="form__item form__item--area">
+            <div class="grid">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <h2 class="title mb-15">
+                        Готовы обсудить сотрудничество?
+                    </h2>
+                    <picture class="picture-ui mob-hidden">
+                        <img src="./assets/images/menu-cube.png" alt="">
+                    </picture>
+                </div>
+                <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <div class="card card--offset card--height">
+                        <div class="tabs">
+                            <div class="tabs__header">
+                                <button class="tabs__item active">Связаться</button>
+                                <button class="tabs__item">Карьера</button>
+                                <button class="tabs__item">Контакты</button>
+                            </div>
+                            <div class="tabs__content">
+                                <div class="tabs__element active">
+                                    <form action="1" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="ORGANISATION"
+                                                   placeholder="Название организации">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <label class="form__item form__item--area">
                                             <textarea class="input input--area" name="COMMENT"
                                                       placeholder="Комментарий"></textarea>
-                                                <span class="form__max">0/1000</span>
-                                            </label>
-                                            <label class="form__item form__item--meta">
-                                                <input type="checkbox" class="checkbox" name="POLICY">
-                                                <span>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
                                                 Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
-                                                        href="#">условиями политики конфиденциальности</a>
+                                                    href="#">условиями политики конфиденциальности</a>
                                             </span>
-                                            </label>
-                                        </form>
-                                    </div>
-                                    <div class="tabs__element">
-                                        <form action="2" class="form">
-                                            <label class="form__item">
-                                                <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
-                                            </label>
-                                            <label class="form__item">
-                                                <input type="email" class="input" name="EMAIL" placeholder="Почта">
-                                            </label>
-                                            <label class="form__item">
-                                                <input type="tel" class="input" name="PHONE" placeholder="Телефон">
-                                            </label>
-                                            <div class="form__item">
-                                                <label class="drop-zone">
-                                                    <svg class="drop-zone__icon">
-                                                        <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
-                                                    </svg>
-                                                    <svg class="drop-zone__icon drop-zone__icon--error">
-                                                        <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
-                                                    </svg>
-                                                    <span class="drop-zone__caption">
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <form action="2" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <div class="form__item">
+                                            <label class="drop-zone">
+                                                <svg class="drop-zone__icon">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
+                                                </svg>
+                                                <svg class="drop-zone__icon drop-zone__icon--error">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
+                                                </svg>
+                                                <span class="drop-zone__caption">
                                                     Перетащите файлы формата JPG, PNG or PDF (не больше 10MB)
                                                 </span>
-                                                    <span class="drop-zone__notation">
+                                                <span class="drop-zone__notation">
                                                     Загрузите свое резюме
                                                 </span>
-                                                    <input type="file" hidden>
-                                                </label>
-                                                <div class="loaded-block"></div>
-                                            </div>
-                                            <label class="form__item form__item--area">
+                                                <input type="file" hidden>
+                                            </label>
+                                            <div class="loaded-block"></div>
+                                        </div>
+                                        <label class="form__item form__item--area">
                                             <textarea class="input input--area input--small" name="COMMENT"
                                                       placeholder="Комментарий"></textarea>
-                                                <span class="form__max">0/1000</span>
-                                            </label>
-                                            <label class="form__item form__item--meta">
-                                                <input type="checkbox" class="checkbox" name="POLICY">
-                                                <span>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
                                                 Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
-                                                        href="#">условиями политики конфиденциальности</a>
+                                                    href="#">условиями политики конфиденциальности</a>
                                             </span>
-                                            </label>
-                                        </form>
-                                    </div>
-                                    <div class="tabs__element">
-                                        <div class="contacts-block">
-                                            <article class="article-contact">
-                                                <h3 class="article-contact__title">Центр разработки</h3>
-                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
-                                                    2</p>
-                                                <div class="article-contact__links">
-                                                    <a href="tel:+74957877040"
-                                                       class="article-contact__link">
-                                                        +7 (495) 787-70-40
-                                                    </a>
-                                                    <a href="mailto:develop@fors.ru"
-                                                       class="article-contact__link article-contact__link--small">
-                                                        develop@fors.ru
-                                                    </a>
-                                                </div>
-                                            </article>
-                                            <article class="article-contact">
-                                                <h3 class="article-contact__title">Центр техподдержки</h3>
-                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
-                                                    2</p>
-                                                <div class="article-contact__links">
-                                                    <a href="tel:+74957877040"
-                                                       class="article-contact__link">
-                                                        +7 (495) 787-70-40
-                                                    </a>
-                                                    <a href="mailto:support@fors.ru"
-                                                       class="article-contact__link article-contact__link--small">
-                                                        support@fors.ru
-                                                    </a>
-                                                </div>
-                                            </article>
-                                            <article class="article-contact">
-                                                <h3 class="article-contact__title">Учебно-консультационный центр</h3>
-                                                <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
-                                                    2</p>
-                                                <div class="article-contact__links">
-                                                    <a href="tel:+74957877040"
-                                                       class="article-contact__link">
-                                                        +7 (495) 787-70-40
-                                                    </a>
-                                                    <a href="mailto:edu@fors.ru"
-                                                       class="article-contact__link article-contact__link--small">
-                                                        edu@fors.ru
-                                                    </a>
-                                                </div>
-                                            </article>
-                                        </div>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <div class="contacts-block">
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр разработки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:develop@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    develop@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр техподдержки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:support@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    support@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Учебно-консультационный центр</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:edu@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    edu@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end">
-                        <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
-                                data-form-submit>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Отправить</span>
-                        </button>
-                        <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
-                                data-form-submit>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Отправить</span>
-                        </button>
-                        <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Все<br>контакты</span>
-                        </button>
-                    </div>
-                    <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end desktop-hidden">
-                        <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit" data-btn-mob
-                                data-form-submit>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Отправить</span>
-                        </button>
-                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" type="submit" data-btn-mob
-                                data-form-submit>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Отправить</span>
-                        </button>
-                        <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden" data-btn-mob>
-                            <svg class="button-circle__icon">
-                                <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
-                            </svg>
-                            <span>Все<br>контакты</span>
-                        </button>
-                    </div>
+                </div>
+                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end">
+                    <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
+                </div>
+                <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end desktop-hidden">
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit"
+                            data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            type="submit" data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            data-btn-mob>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="modal modal--light" id="success">
+        <div class="modal__wrapper">
+            <div class="success-box">
+                <div class="success-box__header">
+                    <h2 class="title title--main">Отправлено</h2>
+                    <p class="text">Благодарим за ваш запрос.<br class="tab-hidden-min"> Мы обязательно<br class="mob-hidden">свяжемся с вами!</p>
+                </div>
+                <a href="#" class="text text--link">develop@fors.ru</a>
+            </div>
+        </div>
     </div>
 </div>
 <script defer src="bundle.a24e.js"></script></body>

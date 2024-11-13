@@ -3,4 +3,21 @@
     font-size: 16px;
     line-height: 19px;
   }
+
+  &--link {
+    font-family: $font-accent;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 21px;
+    text-transform: uppercase;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include r($tablet) {
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
 }
