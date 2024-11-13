@@ -112,8 +112,20 @@ class App {
         Fancybox.bind('[data-fancybox]', {
             on: {
                 done: (fancybox: Fancybox, carousel: Carousel) => {
-                    console.log(carousel)
-                }
+                    const targetElement = fancybox.options.triggerEl;
+                    if (targetElement) {
+                        const attrs = targetElement.getAttribute('data-attr')
+                        const activeSlideContent = fancybox.carousel.slides[0].contentEl
+
+                        if (activeSlideContent && attrs) {
+                            const tabs: NodeListOf<HTMLElement> = activeSlideContent.querySelectorAll('.tabs__item');
+                            if (!tabs) return
+                            if (attrs === 'career') {
+                                tabs[1].click();
+                            }
+                        }
+                    }
+                },
             },
             tpl: {
                 closeButton: customCloseButton,

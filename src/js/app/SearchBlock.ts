@@ -13,7 +13,7 @@ class SearchBlock {
 
     constructor(searchBlock: Element) {
         this.searchBlock = searchBlock;
-        this.searchForm = this.searchBlock.querySelector('form.search')
+        this.searchForm = this.searchBlock.querySelector('.search')
         this.input = this.searchForm.querySelector('input');
         this.reset = this.searchForm.querySelector('.search__button--reset')
         this.searchList = document.querySelector('[data-search-list]')
