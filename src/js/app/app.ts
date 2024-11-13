@@ -110,6 +110,39 @@ class App {
 
         // @ts-ignore
         Fancybox.bind('[data-fancybox]', {
+            Toolbar: {
+                enabled: false,
+                items: false,
+            },
+            Carousel: {
+                Navigation: {
+                    nextTpl: '<svg class="swiper-button" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 55.918 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 49.0684 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 42.2188 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 35.3672 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 28.5195 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 21.668 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 49.0645 25.6514)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135285 42.2168 19.4258)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 42.2207 46.8232)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 48.4453 39.9736)" fill="#134AFF"/>\n' +
+                        '</svg>\n',
+                    prevTpl: '<svg class="swiper-button" style="transform: rotate(180deg)" viewBox="0 0 72 72" xmlns="http://www.w3.org/2000/svg">\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 55.918 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 49.0684 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 42.2188 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 35.3672 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 28.5195 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 21.668 32.501)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 49.0645 25.6514)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135285 42.2168 19.4258)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 42.2207 46.8232)" fill="#134AFF"/>\n' +
+                        '<ellipse cx="2.80223" cy="2.80068" rx="2.80223" ry="2.80068" transform="matrix(0.000135198 1 -1 -0.000135183 48.4453 39.9736)" fill="#134AFF"/>\n' +
+                        '</svg>\n',
+                },
+            },
+            wheel: 'slide',
             on: {
                 done: (fancybox: Fancybox, carousel: Carousel) => {
                     const targetElement = fancybox.options.triggerEl;
@@ -129,6 +162,10 @@ class App {
             },
             tpl: {
                 closeButton: customCloseButton,
+            },
+            btnTpl: {
+                arrowLeft: '<button data-fancybox-prev class="fancybox-button fancybox-button--arrow_left">Назад</button>',
+                arrowRight: '<button data-fancybox-next class="fancybox-button fancybox-button--arrow_right">Вперёд</button>',
             }
         })
     }

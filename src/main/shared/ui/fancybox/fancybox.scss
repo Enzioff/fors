@@ -2,6 +2,12 @@
   --fancybox-content-bg: #F0F0FF;
 }
 
+.f-button svg {
+  --f-button-svg-width: 72px;
+  --f-button-svg-height: 72px;
+  stroke: none !important;
+}
+
 .modal {
   max-width: 1361px;
   margin: 0 auto;
