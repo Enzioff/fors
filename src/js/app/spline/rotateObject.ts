@@ -59,14 +59,57 @@ const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
     [RotateKey.SCENE_1_1]: { y: (Math.PI * 2) + (-0.55), x: 0.2, z: -0.75, duration: 8, ease: "none", repeat: -1},
 };
 
-function rotateObject(el: SPEObject, key: RotateKey) {
-    if (el?.rotation) {
-        gsap.killTweensOf(el.rotation);
-    }
+function normalizeAngle(angle: number | gsap.TweenValue): number {
+    // @ts-ignore
+    return angle - Math.floor(angle / (Math.PI * 2)) * (Math.PI * 2);
+}
 
+function getShortestRotation(current: number, target: number | gsap.TweenValue): number {
+    // @ts-ignore
+    const delta = normalizeAngle(target - current);
+    if (delta > Math.PI) {
+        return delta - (Math.PI * 2);
+    }
+    return delta;
+}
+
+function rotateObject(el: SPEObject, key: RotateKey) {
     const params = rotationParams[key];
     if (params && el?.rotation) {
-        gsap.to(el.rotation, params);
+        gsap.killTweensOf(el.rotation);
+
+        const currentY = normalizeAngle(el.rotation.y);
+        const currentX = normalizeAngle(el.rotation.x);
+        const currentZ = normalizeAngle(el.rotation.z);
+
+        const targetY = normalizeAngle(params.y);
+        const targetX = normalizeAngle(params.x);
+        const targetZ = normalizeAngle(params.z);
+
+        let shortestY = getShortestRotation(currentY, targetY);
+        let shortestX = getShortestRotation(currentX, targetX);
+        let shortestZ = getShortestRotation(currentZ, targetZ);
+
+        if (Math.abs(shortestY) > Math.PI) {
+            shortestY = (shortestY > 0) ? shortestY - (Math.PI * 2) : shortestY + (Math.PI * 2);
+        }
+
+        if (Math.abs(shortestX) > Math.PI) {
+            shortestX = (shortestX > 0) ? shortestX - (Math.PI * 2) : shortestX + (Math.PI * 2);
+        }
+
+        if (Math.abs(shortestZ) > Math.PI) {
+            shortestZ = (shortestZ > 0) ? shortestZ - (Math.PI * 2) : shortestZ + (Math.PI * 2);
+        }
+
+        gsap.to(el.rotation, {
+            y: currentY + shortestY,
+            x: currentX + shortestX,
+            z: currentZ + shortestZ,
+            duration: params.duration,
+            ease: params.ease,
+            repeat: params.repeat ? params.repeat : null,
+        });
     }
 }
 
