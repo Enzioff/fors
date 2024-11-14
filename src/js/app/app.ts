@@ -8,11 +8,9 @@ import CustomSelect from "./customSelect";
 import SearchBlock from "./SearchBlock";
 import Slider from "./slider";
 import {Carousel, Fancybox, Slideshow} from "@fancyapps/ui";
-
 class App {
     splineURL: string;
     spline: Spline;
-
     constructor() {
         this.splineURL = './assets/libs/scene.splinecode';
         this.init();
