@@ -88,10 +88,16 @@
 
   &__logo {
     display: flex;
+    width: 70px;
+    height: 70px;
 
     @include r($tablet) {
       width: 40px;
       height: 40px;
+    }
+
+    img {
+      @include coverFull();
     }
   }
 
