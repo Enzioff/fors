@@ -12,7 +12,7 @@ class App {
     splineURL: string;
     spline: Spline;
     constructor() {
-        this.splineURL = './assets/libs/scene.splinecode';
+        this.splineURL = '/local/templates/ru/assets/libs/scene.splinecode';
         this.init();
     }
 
