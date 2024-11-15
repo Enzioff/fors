@@ -114,11 +114,6 @@
       line-height: 14px;
     }
 
-    &:first-child,
-    &:last-child {
-      cursor: pointer;
-    }
-
     &.active {
       color: $white;
       background-color: $main1;
