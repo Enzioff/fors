@@ -1,6 +1,7 @@
 import {Application} from "@splinetool/runtime";
 import {RotateKey, rotateObject} from "./rotateObject";
 import {AnimationKey, callInnerAnimation} from "./callInnerAnimation";
+import gsap from "gsap";
 
 const animationActions: { [key: number]: (app: Application, el?: any) => void } = {
     0: (app, el) => {
@@ -90,7 +91,6 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
 function animateSpline(app: Application, key: number): void {
     const el = app.findObjectByName('cube');
     const action = animationActions[key];
-    // console.log(key)
     if (action) {
         action(app, el);
     }
