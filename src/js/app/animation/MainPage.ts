@@ -45,7 +45,7 @@ export class MainPage extends AnimationConfig {
         const progress = self.progress;
         
         if (progress >= 0.4 && progress <= 0.5) {
-          animateSpline(this.application, 101)
+          animateSpline(this.application, 102)
         }
       }
     })
@@ -57,7 +57,7 @@ export class MainPage extends AnimationConfig {
         start: 'center center',
         end: 'bottom center',
         onEnter: () => {
-          animateSpline(this.application, 101)
+          animateSpline(this.application, 102)
         },
       })
     }
@@ -72,6 +72,11 @@ export class MainPage extends AnimationConfig {
       onEnter: () => {
         animateSpline(this.application, 101)
       },
+      onToggle: self => {
+        if (self.isActive) {
+          self.refresh()
+        }
+      }
     })
   }
   
@@ -98,10 +103,6 @@ export class MainPage extends AnimationConfig {
         self.isActive
           ? this.headerAnimation.animate(animateType.LOGO_WHITE)
           : this.headerAnimation.animate(animateType.LOGO_BLUE)
-        
-        if (self.isActive) {
-          animateSpline(this.application, 101)
-        }
       }
     })
     

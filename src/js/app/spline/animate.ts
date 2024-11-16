@@ -85,6 +85,9 @@ const animationActions: { [key: number]: (app: Application, el?: any) => void } 
     },
     101: (app, el) => {
         rotateObject(el, RotateKey.SCENE_1_1);
+    },
+    102: (app, el) => {
+        rotateObject(el, RotateKey.SCENE_1_2);
     }
 };
 
