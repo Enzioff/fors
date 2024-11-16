@@ -36,6 +36,7 @@ export class MainPage extends AnimationConfig {
       markers: true,
       onLeave: () => {
         animateSpline(this.application, 1)
+        
       },
       onEnterBack: () => {
         animateSpline(this.application, 0)
