@@ -33,6 +33,7 @@ export class MainPage extends AnimationConfig {
       trigger: section,
       start: 'top top',
       end: 'bottom center',
+      markers: true,
       onLeave: () => {
         animateSpline(this.application, 1)
       },
@@ -56,6 +57,7 @@ export class MainPage extends AnimationConfig {
         trigger: direction,
         start: 'center center',
         end: 'bottom center',
+        markers: true,
         onEnter: () => {
           animateSpline(this.application, 102)
         },
@@ -69,6 +71,7 @@ export class MainPage extends AnimationConfig {
       trigger: animCardsSection,
       start: 'center center',
       end: 'bottom center',
+      markers: true,
       onEnter: () => {
         animateSpline(this.application, 101)
       },
