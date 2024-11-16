@@ -5,6 +5,7 @@ import {animateType} from "../../types";
 import {Spline} from "../spline/spline";
 import {animateSpline} from "../spline/animate";
 import Preloader from "./Preloader";
+import {logoVisibility} from "../../types/types";
 
 export class AnimationConfig extends MainGsap {
     isPreloaderFinish;
@@ -108,9 +109,11 @@ export class AnimationConfig extends MainGsap {
             ScrollTrigger.create({
                 trigger: introSection,
                 start: 'top-=50 top',
-                end: isDesktop ? 'bottom-=100 top' : 'bottom center',
+                end: isDesktop ? 'bottom-=100 top' : 'bottom top+=30%',
                 onToggle: (self) => {
                     if (self.isActive) {
+                        this.headerAnimation.changeLogo(logoVisibility.VISIBLE);
+                        
                         if (isDesktop) {
                             this.moveCanvas(0)
                             this.headerAnimation.isFixed
@@ -203,6 +206,9 @@ export class AnimationConfig extends MainGsap {
                             opacity: 0,
                         })
                     }
+                },
+                onLeave: () => {
+                    this.headerAnimation.changeLogo(logoVisibility.HIDE);
                 },
                 onEnterBack: () => {
                     animateSpline(this.application, 0)

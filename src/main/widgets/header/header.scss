@@ -7,11 +7,12 @@
   flex-direction: column;
   padding-top: 30px;
   width: 100%;
+  min-height: 138px;
   z-index: 3;
   transform: translate(0, -100%);
 
   @include r($tablet) {
-
+    min-height: 142px;
   }
 
   @include r($mobile) {
@@ -20,6 +21,7 @@
 
   &--page {
     padding-top: 47px;
+    min-height: 155px;
   }
 
   &__wrapper {
@@ -59,6 +61,30 @@
         color: $white;
       }
     }
+
+    &.short {
+      .header__icon-logo {
+        width: 62px;
+        height: 62px;
+
+        &:nth-child(1) {
+          display: none;
+        }
+        &:nth-child(2) {
+          display: block;
+        }
+
+        @include r($tablet) {
+          width: 36px;
+          height: 36px;
+        }
+
+        @include r($mobile) {
+          width: 27px;
+          height: 27px;
+        }
+      }
+    }
   }
 
   &__page {
@@ -77,6 +103,10 @@
     height: 62px;
     fill: $main3;
     transition: .2s linear;
+
+    &:nth-child(2) {
+      display: none;
+    }
 
     @include r($tablet) {
       width: 124px;

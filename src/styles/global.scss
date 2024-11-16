@@ -33,11 +33,37 @@ body {
   flex-direction: column;
   gap: 10px;
 
+  &.short {
+    img {
+      &:nth-child(1) {
+        display: none;
+      }
+      &:nth-child(2) {
+        display: block;
+      }
+      width: 62px;
+      height: 62px;
+
+      @include r($tablet) {
+        width: 36px;
+        height: 36px;
+      }
+
+      @include r($mobile) {
+        width: 27px;
+        height: 27px;
+      }
+    }
+  }
+
   @include r($tablet) {
     gap: 5px;
   }
 
   img {
+    &:nth-child(2) {
+      display: none;
+    }
     @include r($tablet) {
       width: 123px;
       height: 36px;

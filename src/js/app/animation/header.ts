@@ -1,6 +1,6 @@
 import gsap from "gsap";
-import {animateType} from "../../types";
-import {breakPoints} from "../../types";
+import {animateType, breakPoints} from "../../types";
+import {logoVisibility} from "../../types/types";
 
 class HeaderAnimation {
     header;
@@ -13,6 +13,9 @@ class HeaderAnimation {
     userNavigation;
     mm;
     breakPoints;
+    logosMain;
+    logosPages;
+    pageLogo;
 
     constructor(matchMedia: gsap.MatchMedia, breakPoints: breakPoints) {
         this.mm = matchMedia;
@@ -27,6 +30,9 @@ class HeaderAnimation {
         this.desktopMenu = this.header.querySelector('.desktop-menu')
         this.mobileMenu = this.header.querySelector('.menu')
         this.userNavigation = document.querySelector('.header__user-nav')
+        this.logosMain = this.header.querySelectorAll('.header__logo .header__icon-logo');
+        this.logosPages = this.header.querySelectorAll('.logo img');
+        this.pageLogo = this.header.querySelector('.logo');
 
         this.initMenu()
     }
@@ -147,6 +153,25 @@ class HeaderAnimation {
         }
 
         events[type]?.();
+    }
+    
+    public changeLogo = (flag: logoVisibility) => {
+        console.log('change')
+        if (this.logosMain && this.logosMain.length > 0) {
+            if (flag === logoVisibility.HIDE) {
+                this.logo.classList.add('short')
+            } else {
+                this.logo.classList.remove('short')
+            }
+        }
+        
+        if (this.logosPages && this.logosPages.length > 0) {
+            if (flag === logoVisibility.HIDE) {
+                this.pageLogo.classList.add('short')
+            } else {
+                this.pageLogo.classList.remove('short')
+            }
+        }
     }
 
     public get isFixed() {

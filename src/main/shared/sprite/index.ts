@@ -1,4 +1,5 @@
 import './logo.svg';
+import './logo-small.svg';
 import './icon-arrow-down.svg';
 import './icon-arrow-right.svg';
 import './icon-arrow-bottom.svg';

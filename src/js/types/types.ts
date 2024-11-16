@@ -7,6 +7,11 @@ export enum animateType {
     LOGO_WHITE = 'LOGO_WHITE'
 }
 
+export enum logoVisibility {
+    VISIBLE = 'VISIBLE',
+    HIDE = 'HIDE',
+}
+
 export enum breakPointsValues {
     DESKTOP = 1440,
     TABLET_MAX = 1439,
