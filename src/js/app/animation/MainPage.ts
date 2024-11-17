@@ -33,7 +33,6 @@ export class MainPage extends AnimationConfig {
       trigger: section,
       start: 'top top',
       end: 'bottom center',
-      markers: true,
       onLeave: () => {
         animateSpline(this.application, 1)
         
@@ -43,13 +42,6 @@ export class MainPage extends AnimationConfig {
         this.moveCanvas(0)
         ScrollTrigger.refresh()
       },
-      onUpdate: self => {
-        const progress = self.progress;
-        
-        if (progress >= 0.4 && progress <= 0.5) {
-          animateSpline(this.application, 102)
-        }
-      }
     })
     
     const direction = document.querySelector('.direction');
@@ -57,31 +49,50 @@ export class MainPage extends AnimationConfig {
       ScrollTrigger.create({
         trigger: direction,
         start: 'center center',
-        end: 'bottom center',
-        markers: true,
+        end: 'bottom bottom',
         onEnter: () => {
           animateSpline(this.application, 102)
         },
       })
     }
     
-    const animCardsSection = document.querySelector('.grid--anim-cards')
-    if (!animCardsSection) return
+    const rotate = document.querySelectorAll('.trigger-rotate');
+    if (rotate) {
+      rotate.forEach((el, idx) => {
+        ScrollTrigger.create({
+          trigger: el,
+          start: 'center center',
+          end: 'bottom center',
+          markers: true,
+          onEnter: (self) => {
+          
+          },
+          onToggle: self => {
+            self.refresh()
+            self.update()
+            if (self.isActive) {
+              animateSpline(this.application, 102)
+            }
+          }
+        })
+      })
+    }
     
-    ScrollTrigger.create({
-      trigger: animCardsSection,
-      start: 'center center',
-      end: 'bottom center',
-      markers: true,
-      onEnter: () => {
-        animateSpline(this.application, 101)
-      },
-      onToggle: self => {
-        if (self.isActive) {
+    const infinite = document.querySelectorAll('.trigger-infinite');
+    if (infinite) {
+      ScrollTrigger.create({
+        trigger: infinite,
+        start: 'center center',
+        end: 'bottom center',
+        markers: true,
+        onEnter: () => {
+          animateSpline(this.application, 102)
+        },
+        onToggle: (self) => {
           self.refresh()
-        }
-      }
-    })
+        },
+      })
+    }
   }
   
   protected blueSection = () => {

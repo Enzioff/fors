@@ -58,7 +58,7 @@ const rotationParams: { [key in RotateKey]: gsap.TweenVars } = {
     [RotateKey.SCENE_26]: { y: Math.PI * 7.5 - 0.1, x: 0, z: Math.PI * 4, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_28]: { y: Math.PI * 7.5 - 0.9, x: 0.2, z: Math.PI * 4 - 0.8, duration: 2, ease: "sine",  },
     [RotateKey.SCENE_1_1]: { y: (Math.PI * 2) + (-0.55), x: 0.2, z: -0.75, duration: 8, ease: "none", repeat: -1},
-    [RotateKey.SCENE_1_2]: { y: 2, x: 0.2, z: -2, duration: 8, ease: "none", repeat: -1},
+    [RotateKey.SCENE_1_2]: { y: Math.PI * 2, x: 0.2, z: -Math.PI * 2, duration: 5, ease: "none", repeat: -1},
 };
 
 function normalizeAngle(angle: number | gsap.TweenValue): number {

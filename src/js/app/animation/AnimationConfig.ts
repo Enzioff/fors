@@ -582,6 +582,9 @@ export class AnimationConfig extends MainGsap {
                 end: 'center center',
                 onEnter: () => {
                     animateSpline(this.application, 28)
+                    setTimeout(() => {
+                        animateSpline(this.application, 102)
+                    }, 1400)
                     if (isDesktop) {
                         this.moveCanvas(0, {yPercent: 50, zIndex: 2})
                     }
