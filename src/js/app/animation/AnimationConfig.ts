@@ -619,7 +619,7 @@ export class AnimationConfig extends MainGsap {
 
         const servicesHeader = section.querySelector('.services__header')
         const servicesHeaderItems = section.querySelectorAll('.services__item')
-        const cards = section.querySelectorAll('.article-service')
+        const cards = section.querySelectorAll('.article-service') as NodeListOf<HTMLElement>
         const listCards = section.querySelector('.trigger-list-cards')
 
         const firstCardheight = cards[0].getBoundingClientRect().height;
@@ -677,11 +677,21 @@ export class AnimationConfig extends MainGsap {
                 }
             });
 
+            let finalHeight = 0;
             cards.forEach((card: HTMLElement, idx) => {
-                const cardHeight = card.offsetHeight;
-
+                const cardHeight = card.offsetHeight + offsetGap;
+                
+                // if (idx >= 1) {
+                //     cardHeight = cards[idx - 1].offsetHeight;
+                // }
+                
+                if (idx >= 1) {
+                    finalHeight += cards[idx - 1].offsetHeight + offsetGap
+                }
+                
                 cardsTimeline.fromTo(card, {
-                    y: (cardHeight + offsetGap) * idx,
+                    y: finalHeight,
+                    // y: (cardHeight + offsetGap) * idx,
                     duration: 1,
                 }, {
                     y: idx <= 3 ? offsetTop * idx : offsetTop * 2,
