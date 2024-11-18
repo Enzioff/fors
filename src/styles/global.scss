@@ -54,6 +54,10 @@ body {
         height: 27px;
       }
     }
+
+    p {
+      opacity: 0;
+    }
   }
 
   @include r($tablet) {
