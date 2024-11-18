@@ -63,7 +63,6 @@ export class MainPage extends AnimationConfig {
           trigger: el,
           start: 'center center',
           end: 'bottom center',
-          markers: true,
           onEnter: (self) => {
           
           },
@@ -84,7 +83,6 @@ export class MainPage extends AnimationConfig {
         trigger: infinite,
         start: 'center center',
         end: 'bottom center',
-        markers: true,
         onEnter: () => {
           animateSpline(this.application, 102)
         },
