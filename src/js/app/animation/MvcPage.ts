@@ -296,9 +296,9 @@ export class MvcPage extends AnimationConfig {
     }
 
     protected breakCardsSection = () => {
-        const section = document.querySelector('.trigger-cards-break');
+        const sections = document.querySelectorAll('.trigger-cards-break');
 
-        if (!section) return;
+        if (!sections) return;
 
         this.mm.add({
             isDesktop: `(min-width: ${this.breakPoints.desktop}px)`,
@@ -307,19 +307,27 @@ export class MvcPage extends AnimationConfig {
             isMobileMax: `(max-width: ${this.breakPoints.mobileMax}px)`,
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
-
-            ScrollTrigger.create({
-                trigger: section,
-                start: 'top center',
-                end: 'bottom center',
-                onToggle: self => {
-                    self.refresh()
-                },
-                onLeave: () => {
-                    if (isDesktop) {
-                        this.moveCanvas(-20)
+            
+            sections.forEach(section => {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: 'top center',
+                    end: 'bottom center',
+                    onToggle: self => {
+                        self.refresh()
+                        if (self.isActive) {
+                            animateSpline(this.application, 17)
+                        } else {
+                            animateSpline(this.application, 18)
+                        }
+                    },
+                    onLeave: () => {
+                        if (isDesktop) {
+                            this.moveCanvas(-20)
+                        }
+                        animateSpline(this.application, 18)
                     }
-                }
+                })
             })
         })
     }
