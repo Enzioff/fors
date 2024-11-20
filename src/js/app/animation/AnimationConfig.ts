@@ -40,6 +40,32 @@ export class AnimationConfig extends MainGsap {
                 this.initial()
             }, 1000)
         }
+        
+        this.rotateTrigger();
+    }
+    
+    public rotateTrigger = () => {
+        const rotate = document.querySelectorAll('.trigger-rotate');
+        if (rotate) {
+            rotate.forEach((el, idx) => {
+                ScrollTrigger.create({
+                    trigger: el,
+                    start: 'center center',
+                    end: 'bottom center',
+                    onEnter: (self) => {
+                    
+                    },
+                    onToggle: self => {
+                        self.refresh()
+                        self.update()
+                        console.log('123')
+                        if (self.isActive) {
+                            animateSpline(this.application, 102)
+                        }
+                    }
+                })
+            })
+        }
     }
 
     initPreloader = () => {

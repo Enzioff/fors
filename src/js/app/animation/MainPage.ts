@@ -56,27 +56,6 @@ export class MainPage extends AnimationConfig {
       })
     }
     
-    const rotate = document.querySelectorAll('.trigger-rotate');
-    if (rotate) {
-      rotate.forEach((el, idx) => {
-        ScrollTrigger.create({
-          trigger: el,
-          start: 'center center',
-          end: 'bottom center',
-          onEnter: (self) => {
-          
-          },
-          onToggle: self => {
-            self.refresh()
-            self.update()
-            if (self.isActive) {
-              animateSpline(this.application, 102)
-            }
-          }
-        })
-      })
-    }
-    
     const infinite = document.querySelectorAll('.trigger-infinite');
     if (infinite) {
       ScrollTrigger.create({
