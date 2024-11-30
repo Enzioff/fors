@@ -10,6 +10,8 @@
   min-height: 138px;
   z-index: 3;
   transform: translate(0, -100%);
+  backdrop-filter: blur(6px);
+  background-color: #F0F0FF6E;
 
   @include r($tablet) {
     min-height: 142px;
