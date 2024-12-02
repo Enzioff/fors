@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <%= htmlWebpackPlugin.options.widgets.head %>
-<body class="fixed">
+<body class="">
 <%= htmlWebpackPlugin.options.widgets.header %>
-<%= htmlWebpackPlugin.options.widgets.preloader %>
+<!--<%= htmlWebpackPlugin.options.widgets.preloader %>-->
 <div class="spline-video">
     <video controls>
         <source src="#" type="video/mp4">
@@ -860,62 +860,122 @@
                 </div>
             </div>
             <div class="grid trigger-break-cards">
-                <div class="grid__item grid__item--6 grid__item-tab--12">
+                <div class="grid__item grid__item--6 grid__item-tab--12 mob-hidden">
                     <div class="pint-grid anim-in-bottom-pin">
                         <a href="#" target="_blank" class="article-card">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-1-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-1-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-1-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-1.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--small">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-2-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-2-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-2-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-2.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--wide order-mob--3">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-3-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-3-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-3-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-3.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--wide">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-4-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-4-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-4-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-4.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--small">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-5-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-5-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-5-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-5.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card order-mob--2">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-6-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-6-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-6-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-6.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--small order-mob--2">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-7-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-7-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-7-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-7.png" alt="">
                             </picture>
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--small order-mob--1">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-8-tab.png" media="(max-width: 1439px)">
                                 <source srcset="./assets/images/grid-8-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-8-tab.png" media="(max-width: 1439px)">
                                 <img src="./assets/images/grid-8.png" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+                <div class="grid__item grid__item--6 grid__item-tab--12 tab-hidden-min">
+                    <div class="pint-grid anim-in-bottom-pin">
+                        <a href="#" target="_blank" class="article-card">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-1-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-1-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-1.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--small">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-2-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-2-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-2.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--wide">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-4-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-4-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-4.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--small">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-8-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-8-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-8.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--wide">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-3-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-3-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-3.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-6-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-6-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-6.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--small">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-7-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-7-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-7.png" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" target="_blank" class="article-card article-card--small">
+                            <picture class="article-card__picture">
+                                <source srcset="./assets/images/grid-5-m.png" media="(max-width: 767px)">
+                                <source srcset="./assets/images/grid-5-tab.png" media="(max-width: 1439px)">
+                                <img src="./assets/images/grid-5.png" alt="">
                             </picture>
                         </a>
                     </div>

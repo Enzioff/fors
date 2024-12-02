@@ -33,7 +33,7 @@ class HeaderAnimation {
         this.logosMain = this.header.querySelectorAll('.header__logo .header__icon-logo');
         this.logosPages = this.header.querySelectorAll('.logo img');
         this.pageLogo = this.header.querySelector('.logo');
-
+        
         this.initMenu()
     }
 

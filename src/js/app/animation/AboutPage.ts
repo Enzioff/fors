@@ -3,6 +3,7 @@ import {ScrollTrigger} from "gsap/ScrollTrigger";
 import {animateSpline} from "../spline/animate";
 import {AnimationConfig} from "./AnimationConfig";
 import {Spline} from "../spline/spline";
+import {animateType} from "../../types";
 
 export class AboutPage extends AnimationConfig {
     constructor(spline: Spline) {
