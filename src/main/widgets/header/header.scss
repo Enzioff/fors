@@ -24,6 +24,10 @@
   &--page {
     padding-top: 47px;
     min-height: 155px;
+
+    @include r($mobile) {
+      min-height: 115px;
+    }
   }
 
   &__wrapper {
