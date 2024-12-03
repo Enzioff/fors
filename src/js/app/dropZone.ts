@@ -142,8 +142,6 @@ class DropZone {
                 this.setStatus("Ошибка при загрузке файла")
                 return false
             }
-
-            console.log(this.uploadInput.files, this.calculateFileSize(file.size))
         })
     }
 

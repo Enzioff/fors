@@ -156,7 +156,6 @@ class HeaderAnimation {
     }
     
     public changeLogo = (flag: logoVisibility) => {
-        console.log('change')
         if (this.logosMain && this.logosMain.length > 0) {
             if (flag === logoVisibility.HIDE) {
                 this.logo.classList.add('short')

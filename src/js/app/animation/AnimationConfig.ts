@@ -43,6 +43,7 @@ export class AnimationConfig extends MainGsap {
     this.animationInfoList()
     this.animationDetailPage()
     this.animationDashboard()
+    this.animationIntro()
     
     const preloader = document.querySelector('.preloader');
     if (!preloader) {
@@ -70,6 +71,27 @@ export class AnimationConfig extends MainGsap {
       
       this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств или когда скролл на верх
     });
+  }
+  
+  public animationIntro = () => {
+    const section = document.querySelector('.section--main')
+    const header = document.querySelector('header');
+    if (!section) return
+    
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top top-=30',
+      end: 'bottom center',
+      onEnter: () => {
+        header.classList.remove('header--blur');
+      },
+      onEnterBack: () => {
+        header.classList.remove('header--blur');
+      },
+      onLeave: () => {
+        header.classList.add('header--blur');
+      },
+    })
   }
   
   public rotateTrigger = () => {

@@ -30,7 +30,6 @@ class SearchBlock {
         this.input.addEventListener('input', (evt) => {
             const target = evt.target as HTMLInputElement;
 
-            console.log(target.value)
             if (target.value.length > 0) {
                 this.reset.classList.add('visible')
             } else {

@@ -10,8 +10,6 @@
   min-height: 155px;
   z-index: 3;
   transform: translate(0, -100%);
-  backdrop-filter: blur(6px);
-  background-color: #F0F0FF6E;
 
   @include r($tablet) {
     min-height: 142px;
@@ -25,10 +23,20 @@
     padding-top: 47px;
     min-height: 155px;
 
+    @include r($tablet) {
+      padding-top: 20px;
+      min-height: 100px;
+    }
+
     @include r($mobile) {
       padding-top: 30px;
       min-height: 115px;
     }
+  }
+
+  &--blur {
+    backdrop-filter: blur(6px);
+    background-color: #F0F0FF6E;
   }
 
   &__wrapper {
