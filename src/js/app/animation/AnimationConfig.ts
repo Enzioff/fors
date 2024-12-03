@@ -18,6 +18,14 @@ export class AnimationConfig extends MainGsap {
   }
   
   public initAnimationConfig() {
+    window.addEventListener("load", () => {
+      window.scrollTo(0, 0);
+      ScrollTrigger.getAll().forEach(el => {
+        el.refresh()
+        el.update()
+      })
+    });
+    
     this.initPreloader()
     this.initIntroSection()
     this.initIntroSectionLeft()
