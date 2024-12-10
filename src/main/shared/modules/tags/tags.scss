@@ -27,4 +27,17 @@
       gap: 5px;
     }
   }
+
+  &--block {
+    justify-content: space-between;
+    max-width: 100%;
+    width: 100%;
+
+    @include r($mobile) {
+      flex-wrap: nowrap;
+      gap: 10px;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  }
 }

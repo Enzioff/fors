@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="ru">
 <%= htmlWebpackPlugin.options.widgets.head %>
-<body class="fixed">
+<body class="">
 <%= htmlWebpackPlugin.options.widgets.header %>
-<%= htmlWebpackPlugin.options.widgets.preloader %>
+<!--<%= htmlWebpackPlugin.options.widgets.preloader %>-->
 <div class="spline-video">
     <video controls>
         <source src="#" type="video/mp4">
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="info-blocks anim-in-bottom-stagger">
-                            <div class="card info-block">
+                            <a href="#" class="card info-block">
                                 <picture class="info-block__picture">
                                     <img src="./assets/images/pic-1.jpg" alt="">
                                 </picture>
@@ -161,8 +161,8 @@
                                     </div>
                                     <time class="info-block__date">28.05.2022</time>
                                 </div>
-                            </div>
-                            <div class="card info-block">
+                            </a>
+                            <a href="#" class="card info-block">
                                 <picture class="info-block__picture">
                                     <img src="./assets/images/pic-1.jpg" alt="">
                                 </picture>
@@ -178,8 +178,8 @@
                                     </div>
                                     <time class="info-block__date">28.05.2022</time>
                                 </div>
-                            </div>
-                            <div class="card info-block">
+                            </a>
+                            <a href="#" class="card info-block">
                                 <picture class="info-block__picture">
                                     <img src="./assets/images/pic-1.jpg" alt="">
                                 </picture>
@@ -195,7 +195,7 @@
                                     </div>
                                     <time class="info-block__date">28.05.2022</time>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <a href="#" class="button button--wide anim-in-bottom">все новости</a>
                     </div>
@@ -938,8 +938,8 @@
                         </a>
                         <a href="#" target="_blank" class="article-card article-card--wide">
                             <picture class="article-card__picture">
-                                <source srcset="./assets/images/grid-4-m.png" media="(max-width: 767px)">
                                 <source srcset="./assets/images/grid-4-tab.png" media="(max-width: 1439px)">
+                                <source srcset="./assets/images/grid-4-m.png" media="(max-width: 767px)">
                                 <img src="./assets/images/grid-4.png" alt="">
                             </picture>
                         </a>

@@ -4,6 +4,18 @@
   justify-content: flex-end;
   gap: 20px;
 
+  &--full {
+    .custom-select {
+      max-width: 100%;
+    }
+
+    .custom-select__menu {
+      @include r($tablet) {
+        min-width: 100%;
+      }
+    }
+  }
+
   @include r($tablet) {
     gap: 10px;
   }

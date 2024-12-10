@@ -14,6 +14,11 @@
     line-height: 36.12px;
     text-align: left;
     color: $main3;
+    transition: .2s linear;
+
+    &:hover {
+      color: $main1;
+    }
 
     @include r($tablet) {
       font-family: $font-main;

@@ -2,10 +2,18 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 20px;
+  margin: 0 -20px;
   height: 625px;
   overflow: hidden;
   will-change: transform, opacity;
+
+  & > {
+    .article-info {
+      max-width: calc(100% - 40px);
+    }
+  }
 
   @include r($tablet) {
     gap: 10px;
