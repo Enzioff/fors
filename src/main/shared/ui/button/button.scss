@@ -21,6 +21,8 @@
   vertical-align: middle;
   cursor: pointer;
 
+  transition: background-color .2s;
+
   &:hover {
     background-color: $blue_hover;
   }
@@ -111,6 +113,7 @@
   border-radius: 50%;
 
   cursor: pointer;
+  transition: background-color .2s;
 
   &:hover {
     background-color: $blue_hover;
@@ -231,6 +234,7 @@
 
   &--light {
     border-color: $white;
+    transition: background-color .2s;
 
     &:hover {
       background-color: $white;
@@ -280,7 +284,6 @@
   }
 
   &--stay {
-    transition: initial;
   }
 
   &--big {
