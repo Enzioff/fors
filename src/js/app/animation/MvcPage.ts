@@ -120,12 +120,16 @@ export class MvcPage extends AnimationConfig {
             })
 
             ScrollTrigger.create({
+                id: 'xyi',
                 trigger: section,
                 start: `top-=40 top`,
                 end: () => `${cards.length * firstCardheight}`,
                 pin: true,
                 pinSpacing: true,
                 scrub: 1,
+                onToggle: self => {
+                    console.log(ScrollTrigger.getAll())
+                }
             })
 
             const cardsTimeline = gsap.timeline({
