@@ -110,6 +110,7 @@ class App {
 
         // @ts-ignore
         Fancybox.bind('[data-fancybox]', {
+            defaultType: "iframe",
             Toolbar: {
                 enabled: false,
                 items: false,
