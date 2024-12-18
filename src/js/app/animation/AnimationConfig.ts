@@ -10,21 +10,61 @@ import {logoVisibility} from "../../types/types";
 export class AnimationConfig extends MainGsap {
   isPreloaderFinish;
   lastScrollTop;
+  matchMediaDesktop;
+  matchMediaTablet;
+  matchMediaMobile;
   
   constructor(spline?: Spline) {
     super(spline);
     this.isPreloaderFinish = false;
     this.lastScrollTop = 0;
+    this.matchMediaDesktop = matchMedia('(min-width: 1440px)');
+    this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1439px)');
+    this.matchMediaMobile = matchMedia('(max-width: 767px)');
   }
   
   public initAnimationConfig() {
     window.addEventListener("load", () => {
+      ScrollTrigger.getAll().forEach(el => {
+        el.refresh()
+        el.update()
+      })
       window.scrollTo(0, 0);
       ScrollTrigger.getAll().forEach(el => {
         el.refresh()
         el.update()
       })
     });
+    
+    window.addEventListener('resize', () => {
+      ScrollTrigger.disable()
+      setTimeout(() => {
+        ScrollTrigger.disable()
+        ScrollTrigger.enable()
+        ScrollTrigger.getAll().forEach(el => {
+          el.refresh()
+          el.update()
+        })
+      }, 150)
+    })
+    
+    this.matchMediaDesktop.addEventListener('change', evt => {
+      if (evt.matches) {
+        window.location.reload()
+      }
+    })
+    
+    this.matchMediaTablet.addEventListener('change', evt => {
+      if (evt.matches) {
+        window.location.reload()
+      }
+    })
+    
+    this.matchMediaMobile.addEventListener('change', evt => {
+      if (evt.matches) {
+        window.location.reload()
+      }
+    })
     
     this.initPreloader()
     this.initIntroSection()
@@ -106,8 +146,6 @@ export class AnimationConfig extends MainGsap {
           
           },
           onToggle: self => {
-            self.refresh()
-            self.update()
             if (self.isActive) {
               animateSpline(this.application, 102)
             }
@@ -375,9 +413,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: selector,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -398,9 +433,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: children,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -421,9 +453,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: selector,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -442,9 +471,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: selector,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -465,9 +491,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: selector,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -491,9 +514,6 @@ export class AnimationConfig extends MainGsap {
           start: 'top-=50 bottom',
           end: 'bottom center',
           scrub: 1,
-          onToggle: self => {
-            self.refresh()
-          }
         }
       })
     })
@@ -515,9 +535,6 @@ export class AnimationConfig extends MainGsap {
           trigger: children,
           start: 'top bottom',
           toggleActions: "play pause pause reset",
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -541,9 +558,6 @@ export class AnimationConfig extends MainGsap {
         scrollTrigger: {
           trigger: children,
           start: 'top bottom',
-          onToggle: self => {
-            self.refresh()
-          },
         }
       })
     })
@@ -563,8 +577,6 @@ export class AnimationConfig extends MainGsap {
           self.isActive
             ? tl.play()
             : tl.pause()
-          
-          self.refresh()
         }
       },
     });
@@ -632,9 +644,6 @@ export class AnimationConfig extends MainGsap {
       onEnterBack: () => tl.play(),
       onLeave: () => tl.pause(),
       onLeaveBack: () => tl.pause(),
-      onToggle: self => {
-        self.refresh()
-      },
     })
   }
   
@@ -678,9 +687,6 @@ export class AnimationConfig extends MainGsap {
           if (isMobileMax) {
             this.moveCanvas(0, {yPercent: 0, zIndex: 1})
           }
-        },
-        onToggle: self => {
-          self.refresh()
         },
       })
     })

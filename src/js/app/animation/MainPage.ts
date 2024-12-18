@@ -39,7 +39,7 @@ export class MainPage extends AnimationConfig {
       onEnterBack: () => {
         animateSpline(this.application, 0)
         this.moveCanvas(0)
-        ScrollTrigger.refresh()
+        // ScrollTrigger.refresh()
       },
     })
     
@@ -64,9 +64,6 @@ export class MainPage extends AnimationConfig {
         onEnter: () => {
           animateSpline(this.application, 102)
         },
-        onToggle: (self) => {
-          self.refresh()
-        },
       })
     }
   }
@@ -90,7 +87,6 @@ export class MainPage extends AnimationConfig {
       start: `top top+=${headerOffset}`,
       end: `bottom top+=${headerOffset}`,
       onToggle: (self) => {
-        self.refresh()
         self.isActive
           ? this.headerAnimation.animate(animateType.LOGO_WHITE)
           : this.headerAnimation.animate(animateType.LOGO_BLUE)
@@ -129,7 +125,6 @@ export class MainPage extends AnimationConfig {
         onLeave: () => {
           animateSpline(this.application, 8)
         },
-        onToggle: self => self.refresh()
       })
     })
     
@@ -267,9 +262,6 @@ export class MainPage extends AnimationConfig {
         onLeave: () => {
           isMobileMax && this.moveCanvas(0);
         },
-        onToggle: self => {
-          self.refresh()
-        }
       })
       
       const updatePagination = (isActive: boolean, idx: number) => {
@@ -475,7 +467,6 @@ export class MainPage extends AnimationConfig {
       onEnter: () => animateSpline(this.application, 17),
       onEnterBack: () => animateSpline(this.application, 17),
       onLeaveBack: () => animateSpline(this.application, 16),
-      onToggle: self => self.refresh()
     })
   }
   

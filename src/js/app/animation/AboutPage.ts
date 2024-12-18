@@ -35,7 +35,7 @@ export class AboutPage extends AnimationConfig {
 
             ScrollTrigger.create({
                 trigger: section,
-                start: 'top center',
+                start: 'top top',
                 end: isDesktop ? 'bottom center' : isTabletMax ? 'bottom-=150 center' : 'bottom center',
                 onEnter: () => {
                     if (isDesktop) {
@@ -76,8 +76,6 @@ export class AboutPage extends AnimationConfig {
                 },
                 onLeaveBack: () => this.moveCanvas(0),
                 onToggle: self => {
-                    self.refresh()
-
                     if (self.isActive) {
                         if (isTabletMax) {
                             animateSpline(this.application, 101)
@@ -120,7 +118,6 @@ export class AboutPage extends AnimationConfig {
                 start: 'top center',
                 end: 'bottom center',
                 onToggle: (self) => {
-                    self.refresh()
                     if (self.isActive) {
                         if (isTablet) {
                             this.moveCanvas(20)
@@ -193,13 +190,7 @@ export class AboutPage extends AnimationConfig {
                         pin: true,
                         scrub: 1,
                         onToggle: self => {
-                            ScrollTrigger.getAll().forEach(el => {
-                                if (el.trigger.classList.contains('footer')) {
-                                    el.refresh()
-                                }
-                            })
                             if (self.isActive) {
-                                self.refresh()
                                 timeline.classList.add('active')
                                 if (switcher) {
                                     switcher.style.opacity = '0';
@@ -262,12 +253,6 @@ export class AboutPage extends AnimationConfig {
                         pinSpacing: true,
                         scrub: 1,
                         onToggle: self => {
-                            self.refresh()
-                            ScrollTrigger.getAll().forEach(el => {
-                                if (el.trigger.classList.contains('footer')) {
-                                    el.refresh()
-                                }
-                            })
                             if (self.isActive) {
                                 timeline.classList.add('active')
                                 isTabletMax && this.moveCanvas(-20, {yPercent: -20, zIndex: 2})
@@ -324,7 +309,6 @@ export class AboutPage extends AnimationConfig {
                 start: 'top center',
                 end: 'bottom top',
                 onToggle: self => {
-                    self.refresh()
                     if (self.isActive) {
                         isDesktop && this.moveCanvas(-20, {yPercent: 20})
                     }

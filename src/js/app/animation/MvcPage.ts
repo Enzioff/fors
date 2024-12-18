@@ -50,8 +50,9 @@ export class MvcPage extends AnimationConfig {
 
             ScrollTrigger.create({
                 trigger: section,
-                start: isDesktop ? `top top+=${headerOffset}` : 'top center',
+                start: isDesktop ? `top top+=${headerOffset}` : 'top top',
                 end: () => `${isDesktop ? (cards.length * firstCardheight + listCardsHeight) - 100 : cards.length * firstCardheight + listCardsHeight}`,
+                pin: true,
                 onToggle: (self) => {
                     if (self.isActive) {
                         this.headerAnimation.animate(animateType.HIDE);
@@ -116,19 +117,6 @@ export class MvcPage extends AnimationConfig {
                     if (isMobileMax) {
                         this.moveCanvas(0, {yPercent: 15, zIndex: 2})
                     }
-                }
-            })
-
-            ScrollTrigger.create({
-                id: 'xyi',
-                trigger: section,
-                start: `top-=40 top`,
-                end: () => `${cards.length * firstCardheight}`,
-                pin: true,
-                pinSpacing: true,
-                scrub: 1,
-                onToggle: self => {
-                    console.log(ScrollTrigger.getAll())
                 }
             })
 
@@ -228,7 +216,6 @@ export class MvcPage extends AnimationConfig {
                     start: 'center center',
                     end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200)}`,
                     scrub: 1,
-                    onEnter: self => self.refresh()
                 }
             });
 
@@ -265,7 +252,6 @@ export class MvcPage extends AnimationConfig {
                     start: 'center center',
                     end: () => `+=${listItems?.length * (listItems[0]?.getBoundingClientRect().height + 200) + 300}`,
                     onToggle: self => {
-                        self.refresh()
                         if (self.isActive) {
                             if (isMobileMax) {
                                 this.moveCanvas(0, {yPercent: -20})
@@ -318,7 +304,6 @@ export class MvcPage extends AnimationConfig {
                     start: 'top center',
                     end: 'bottom center',
                     onToggle: self => {
-                        self.refresh()
                         if (self.isActive) {
                             animateSpline(this.application, 17)
                         } else {
