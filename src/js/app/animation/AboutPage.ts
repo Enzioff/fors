@@ -173,6 +173,7 @@ export class AboutPage extends AnimationConfig {
         }, (context) => {
             const {isDesktop, isTabletMax, isTablet, isMobileMax} = context.conditions;
             if (isDesktop) {
+                gsap.killTweensOf(timelineWrapper)
                 const totalHeight = Array.from(timelineItems).reduce((height, item) => {
                     return height + item.getBoundingClientRect().height;
                 }, 0);
@@ -233,8 +234,9 @@ export class AboutPage extends AnimationConfig {
                     offsetY -= elementHeight
                 })
             }
-
             if (isTabletMax) {
+                ScrollTrigger.update()
+                gsap.killTweensOf(timelineWrapper)
                 const totalWidth = Array.from(timelineItems).reduce((width, item) => {
                     return width + item.getBoundingClientRect().width;
                 }, 0);
