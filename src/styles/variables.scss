@@ -23,7 +23,7 @@ $blue_active: #002DBF;
 $red: #DF2E2E;
 
 // Размеры
-$tablet: 1439;
+$tablet: 1300;
 $mobile: 767;
 
 // Миксины
@@ -207,13 +207,13 @@ $mobile: 767;
 
 // Адаптивность
 @mixin r($width) {
-  @media only screen and (max-width: $width+ "px") {
+  @media (max-width: $width+ "px") {
     @content
   }
 }
 
 @mixin rmin($width) {
-  @media only screen and (min-width: $width+ "px") {
+  @media (min-width: $width+ "px") {
     @content
   }
 }

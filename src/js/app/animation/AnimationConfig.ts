@@ -18,8 +18,8 @@ export class AnimationConfig extends MainGsap {
     super(spline);
     this.isPreloaderFinish = false;
     this.lastScrollTop = 0;
-    this.matchMediaDesktop = matchMedia('(min-width: 1440px)');
-    this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1439px)');
+    this.matchMediaDesktop = matchMedia('(min-width: 1300px)');
+    this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1299px)');
     this.matchMediaMobile = matchMedia('(max-width: 767px)');
   }
   

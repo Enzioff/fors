@@ -13,8 +13,8 @@ export enum logoVisibility {
 }
 
 export enum breakPointsValues {
-    DESKTOP = 1440,
-    TABLET_MAX = 1439,
+    DESKTOP = 1300,
+    TABLET_MAX = 1299,
     TABLET = 768,
     MOBILE_MAX = 767,
     MOBILE = 360
