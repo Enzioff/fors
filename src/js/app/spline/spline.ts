@@ -11,7 +11,7 @@ class Spline {
     constructor(el: HTMLCanvasElement, url: string) {
         if (el) {
             this.setApplication(el, url)
-            this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1440px)')
+            this.desktopWidthMediaQuery = window.matchMedia('(min-width: 1300px)')
             this.tabletWidthMediaQuery = window.matchMedia('(min-width: 768px)')
             this.mobileWidthMediaQuery = window.matchMedia('(min-width: 320px)')
         }
