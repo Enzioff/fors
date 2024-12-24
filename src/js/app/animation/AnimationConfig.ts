@@ -94,23 +94,23 @@ export class AnimationConfig extends MainGsap {
     
     this.rotateTrigger();
     
-    window.addEventListener('scroll', () => {
-      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-      
-      if (currentScrollTop > this.lastScrollTop) {
-        this.headerAnimation.animate(animateType.HIDE)
-      } else {
-        if (!this.headerAnimation.isFixed) {
-          if (currentScrollTop > 800) {
-            this.headerAnimation.animate(animateType.VISIBLE)
-          }
-        } else {
-          this.headerAnimation.animate(animateType.VISIBLE)
-        }
-      }
-      
-      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств или когда скролл на верх
-    });
+    // window.addEventListener('scroll', () => {
+    //   const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    //
+    //   if (currentScrollTop > this.lastScrollTop) {
+    //     this.headerAnimation.animate(animateType.HIDE)
+    //   } else {
+    //     if (!this.headerAnimation.isFixed) {
+    //       if (currentScrollTop > 800) {
+    //         this.headerAnimation.animate(animateType.VISIBLE)
+    //       }
+    //     } else {
+    //       this.headerAnimation.animate(animateType.VISIBLE)
+    //     }
+    //   }
+    //
+    //   this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств или когда скролл на верх
+    // });
   }
   
   public animationIntro = () => {
