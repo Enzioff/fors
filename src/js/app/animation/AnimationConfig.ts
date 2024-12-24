@@ -37,6 +37,7 @@ export class AnimationConfig extends MainGsap {
     });
     
     window.addEventListener('resize', () => {
+      alert('resize')
       ScrollTrigger.disable()
       setTimeout(() => {
         ScrollTrigger.disable()
@@ -50,18 +51,21 @@ export class AnimationConfig extends MainGsap {
     
     this.matchMediaDesktop.addEventListener('change', evt => {
       if (evt.matches) {
+        alert('match desktop')
         window.location.reload()
       }
     })
     
     this.matchMediaTablet.addEventListener('change', evt => {
       if (evt.matches) {
+        alert('match tablet')
         window.location.reload()
       }
     })
     
     this.matchMediaMobile.addEventListener('change', evt => {
       if (evt.matches) {
+        alert('match mobile')
         window.location.reload()
       }
     })
@@ -94,23 +98,23 @@ export class AnimationConfig extends MainGsap {
     
     this.rotateTrigger();
     
-    // window.addEventListener('scroll', () => {
-    //   const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    //
-    //   if (currentScrollTop > this.lastScrollTop) {
-    //     this.headerAnimation.animate(animateType.HIDE)
-    //   } else {
-    //     if (!this.headerAnimation.isFixed) {
-    //       if (currentScrollTop > 800) {
-    //         this.headerAnimation.animate(animateType.VISIBLE)
-    //       }
-    //     } else {
-    //       this.headerAnimation.animate(animateType.VISIBLE)
-    //     }
-    //   }
-    //
-    //   this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств или когда скролл на верх
-    // });
+    window.addEventListener('scroll', () => {
+      const currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+      
+      if (currentScrollTop > this.lastScrollTop) {
+        this.headerAnimation.animate(animateType.HIDE)
+      } else {
+        if (!this.headerAnimation.isFixed) {
+          if (currentScrollTop > 800) {
+            this.headerAnimation.animate(animateType.VISIBLE)
+          }
+        } else {
+          this.headerAnimation.animate(animateType.VISIBLE)
+        }
+      }
+      
+      this.lastScrollTop = currentScrollTop <= 0 ? 0 : currentScrollTop; // Для мобильных устройств или когда скролл на верх
+    });
   }
   
   public animationIntro = () => {
