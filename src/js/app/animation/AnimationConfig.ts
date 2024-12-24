@@ -13,6 +13,7 @@ export class AnimationConfig extends MainGsap {
   matchMediaDesktop;
   matchMediaTablet;
   matchMediaMobile;
+  windowWidth;
   
   constructor(spline?: Spline) {
     super(spline);
@@ -21,6 +22,7 @@ export class AnimationConfig extends MainGsap {
     this.matchMediaDesktop = matchMedia('(min-width: 1300px)');
     this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1299px)');
     this.matchMediaMobile = matchMedia('(max-width: 767px)');
+    this.windowWidth = window.innerWidth;
   }
   
   public initAnimationConfig() {
@@ -37,35 +39,34 @@ export class AnimationConfig extends MainGsap {
     });
     
     window.addEventListener('resize', () => {
-      alert('resize')
-      ScrollTrigger.disable()
-      setTimeout(() => {
+      if (this.windowWidth > window.innerWidth || this.windowWidth < window.innerWidth) {
         ScrollTrigger.disable()
-        ScrollTrigger.enable()
-        ScrollTrigger.getAll().forEach(el => {
-          el.refresh()
-          el.update()
-        })
-      }, 150)
+        setTimeout(() => {
+          ScrollTrigger.disable()
+          ScrollTrigger.enable()
+          ScrollTrigger.getAll().forEach(el => {
+            el.refresh()
+            el.update()
+          })
+          this.windowWidth = window.innerWidth
+        }, 150)
+      }
     })
     
     this.matchMediaDesktop.addEventListener('change', evt => {
       if (evt.matches) {
-        alert('match desktop')
         window.location.reload()
       }
     })
     
     this.matchMediaTablet.addEventListener('change', evt => {
       if (evt.matches) {
-        alert('match tablet')
         window.location.reload()
       }
     })
     
     this.matchMediaMobile.addEventListener('change', evt => {
       if (evt.matches) {
-        alert('match mobile')
         window.location.reload()
       }
     })
