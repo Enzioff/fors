@@ -191,6 +191,7 @@ export class AboutPage extends AnimationConfig {
                         pin: true,
                         scrub: 1,
                         onToggle: self => {
+                            self.refresh()
                             if (self.isActive) {
                                 timeline.classList.add('active')
                                 if (switcher) {

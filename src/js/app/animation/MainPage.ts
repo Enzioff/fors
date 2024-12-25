@@ -290,6 +290,9 @@ export class MainPage extends AnimationConfig {
             !isFirstCard && gsap.to(popups[idx - 1], {
               ...popupsAnimation[`back`]
             })
+            if (idx >= listItems.length - 1) {
+              shadow.classList.add('hidden')
+            }
           },
           onUpdate: () => {
             popups.forEach(el => {
@@ -308,6 +311,9 @@ export class MainPage extends AnimationConfig {
             gsap.to(popups[idx - 1], {
               ...popupsAnimation[`back`]
             })
+            if (idx <= listItems.length - 1) {
+              shadow.classList.remove('hidden')
+            }
           }
         })
       })
@@ -413,10 +419,18 @@ export class MainPage extends AnimationConfig {
             resizeShadow(idx)
             animateSpline(this.application, animationIdx)
           },
+          onComplete: () => {
+            if (idx >= listItems.length - 1) {
+              shadow.classList.add('hidden')
+            }
+          },
           onReverseComplete: () => {
             animateSpline(this.application, animationIdx)
             resizeShadow(!isFirstCard ? idx - 1 : idx)
             !isFirstCard && updatePagination(false, idx)
+            if (idx <= listItems.length - 1) {
+              shadow.classList.remove('hidden')
+            }
           }
         })
       })
@@ -581,10 +595,18 @@ export class MainPage extends AnimationConfig {
             resizeShadow(idx)
             animateSpline(this.application, animationIdx)
           },
+          onComplete: () => {
+            if (idx >= listItems.length - 1) {
+              shadow.classList.add('hidden')
+            }
+          },
           onReverseComplete: () => {
             animateSpline(this.application, animationIdx)
             resizeShadow(!isFirstCard ? idx - 1 : idx)
             !isFirstCard && updatePagination(false, idx)
+            if (idx <= listItems.length - 1) {
+              shadow.classList.remove('hidden')
+            }
           }
         })
       })

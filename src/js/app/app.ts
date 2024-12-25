@@ -13,8 +13,8 @@ class App {
     spline: Spline;
     
     constructor() {
-        this.splineURL = '/local/templates/ru/assets/libs/scene.splinecode';
-        // this.splineURL = './assets/libs/scene.splinecode';
+        // this.splineURL = '/local/templates/ru/assets/libs/scene.splinecode';
+        this.splineURL = './assets/libs/scene.splinecode';
         this.init();
     }
 

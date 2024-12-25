@@ -51,8 +51,9 @@ export class MvcPage extends AnimationConfig {
             ScrollTrigger.create({
                 trigger: section,
                 start: isDesktop ? `top top+=${headerOffset}` : 'top top',
-                end: () => `${isDesktop ? (cards.length * firstCardheight + listCardsHeight) - 100 : cards.length * firstCardheight + listCardsHeight}`,
+                end: () => `+=${isDesktop ? (cards.length * firstCardheight + listCardsHeight) - 100 : cards.length * firstCardheight + listCardsHeight}`,
                 pin: true,
+                pinSpacing: true,
                 onToggle: (self) => {
                     if (self.isActive) {
                         this.headerAnimation.animate(animateType.HIDE);
@@ -128,7 +129,7 @@ export class MvcPage extends AnimationConfig {
                     scrub: 1,
                 }
             });
-
+            
             cards.forEach((card: HTMLElement, idx) => {
                 const cardHeight = card.offsetHeight;
 
@@ -276,8 +277,16 @@ export class MvcPage extends AnimationConfig {
                             resizeShadow(idx)
                             animateSpline(this.application, 10 + idx)
                         },
+                        onComplete: () => {
+                            if (idx >= listItems.length - 1) {
+                                shadow.classList.add('hidden')
+                            }
+                        },
                         onReverseComplete: () => {
                             resizeShadow(!isFirstCard ? idx - 1 : idx)
+                            if (idx <= listItems.length - 1) {
+                                shadow.classList.remove('hidden')
+                            }
                         }
                     })
                 })
