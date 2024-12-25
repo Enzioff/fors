@@ -14,7 +14,6 @@ export class AnimationConfig extends MainGsap {
   matchMediaTablet;
   matchMediaMobile;
   windowWidth;
-  windowHeight;
   
   constructor(spline?: Spline) {
     super(spline);
@@ -24,11 +23,11 @@ export class AnimationConfig extends MainGsap {
     this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1299px)');
     this.matchMediaMobile = matchMedia('(max-width: 767px)');
     this.windowWidth = window.innerWidth;
-    this.windowHeight = window.innerHeight;
   }
   
   public initAnimationConfig() {
     window.addEventListener("load", () => {
+      console.log('loaded')
       ScrollTrigger.getAll().forEach(el => {
         el.refresh()
         el.update()
@@ -41,30 +40,15 @@ export class AnimationConfig extends MainGsap {
     });
     
     window.addEventListener('resize', () => {
-      console.log('resize')
       if (this.windowWidth > window.innerWidth || this.windowWidth < window.innerWidth) {
+        console.log('resize')
         ScrollTrigger.disable()
-        setTimeout(() => {
-          ScrollTrigger.disable()
-          ScrollTrigger.enable()
-          ScrollTrigger.getAll().forEach(el => {
-            el.refresh()
-            el.update()
-          })
-          this.windowWidth = window.innerWidth
-        }, 150)
-      }
-      if (this.windowHeight > window.innerHeight || this.windowHeight < window.innerHeight) {
-        ScrollTrigger.disable()
-        setTimeout(() => {
-          ScrollTrigger.disable()
-          ScrollTrigger.enable()
-          ScrollTrigger.getAll().forEach(el => {
-            el.refresh()
-            el.update()
-          })
-          this.windowHeight = window.innerHeight
-        }, 150)
+        ScrollTrigger.enable()
+        ScrollTrigger.getAll().forEach(el => {
+          el.refresh()
+          el.update()
+        })
+        this.windowWidth = window.innerWidth
       }
     })
     
