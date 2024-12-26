@@ -37,6 +37,14 @@ class Preloader {
         ]
 
         this.init()
+        
+        window.addEventListener('load', () => {
+            this.body.classList.remove('fixed')
+            this.preloader.remove()
+            setTimeout(() => {
+                this.initial()
+            }, 500)
+        })
     }
 
     init() {
@@ -107,11 +115,6 @@ class Preloader {
             opacity: 0,
             duration: 1,
             delay: 0.2,
-            onComplete: () => {
-                this.body.classList.remove('fixed')
-                this.preloader.remove()
-                this.initial()
-            }
         })
     }
 }
