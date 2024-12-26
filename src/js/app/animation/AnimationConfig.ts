@@ -14,6 +14,7 @@ export class AnimationConfig extends MainGsap {
   matchMediaTablet;
   matchMediaMobile;
   windowWidth;
+  windowHeight;
   
   constructor(spline?: Spline) {
     super(spline);
@@ -23,6 +24,7 @@ export class AnimationConfig extends MainGsap {
     this.matchMediaTablet = matchMedia('(min-width: 768px) and (max-width: 1299px)');
     this.matchMediaMobile = matchMedia('(max-width: 767px)');
     this.windowWidth = window.innerWidth;
+    this.windowHeight = window.innerHeight;
   }
   
   public initAnimationConfig() {
@@ -39,9 +41,22 @@ export class AnimationConfig extends MainGsap {
       })
     });
     
+    const updateTriggers = () => {
+      console.log('vertical resize')
+      if (this.windowHeight > window.innerHeight || this.windowHeight < window.innerHeight) {
+        ScrollTrigger.disable()
+        ScrollTrigger.enable()
+        ScrollTrigger.getAll().forEach(el => {
+          el.refresh()
+          el.update()
+        })
+        this.windowHeight = window.innerHeight
+      }
+    }
+    
     window.addEventListener('resize', () => {
       if (this.windowWidth > window.innerWidth || this.windowWidth < window.innerWidth) {
-        console.log('resize')
+        console.log('horizontal resize')
         ScrollTrigger.disable()
         ScrollTrigger.enable()
         ScrollTrigger.getAll().forEach(el => {
@@ -49,6 +64,10 @@ export class AnimationConfig extends MainGsap {
           el.update()
         })
         this.windowWidth = window.innerWidth
+      }
+      
+      if (this.matchMediaDesktop.matches || this.matchMediaTablet.matches) {
+        updateTriggers()
       }
     })
     
