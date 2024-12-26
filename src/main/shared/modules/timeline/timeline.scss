@@ -45,6 +45,10 @@
     min-height: 168px;
     transition: .2s linear;
 
+    @include r($tablet) {
+      opacity: .2;
+    }
+
     &::after {
       content: '';
       position: absolute;
@@ -55,6 +59,10 @@
       background: $bg;
       opacity: .9;
       transition: .2s linear;
+
+      @include r($tablet) {
+        display: none;
+      }
     }
 
     @include r($tablet) {
@@ -87,6 +95,10 @@
 
     &.active {
       transition: .2s linear;
+
+      @include r($tablet) {
+        opacity: 1;
+      }
 
       &::after {
         opacity: 0;
