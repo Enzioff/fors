@@ -29,11 +29,11 @@ export class AnimationConfig extends MainGsap {
   
   public initAnimationConfig() {
     window.addEventListener("load", () => {
-      console.log('loaded')
       ScrollTrigger.getAll().forEach(el => {
         el.refresh()
         el.update()
       })
+      
       window.scrollTo(0, 0);
       ScrollTrigger.getAll().forEach(el => {
         el.refresh()
@@ -189,7 +189,6 @@ export class AnimationConfig extends MainGsap {
     const introSectionLeft = document.querySelector('.animate-intro-left');
     animateSpline(this.application, 0);
     
-    ScrollTrigger.disable()
     setTimeout(() => {
       ScrollTrigger.disable()
       ScrollTrigger.enable()
