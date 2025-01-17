@@ -39,11 +39,11 @@ class Preloader {
         this.init()
         
         window.addEventListener('load', () => {
-            this.body.classList.remove('fixed')
-            this.preloader.remove()
             setTimeout(() => {
+                this.body.classList.remove('fixed')
+                this.preloader.remove()
                 this.initial()
-            }, 500)
+            }, 1000)
         })
     }
 
