@@ -13,13 +13,18 @@ class App {
     spline: Spline;
     
     constructor() {
-        this.splineURL = '/local/templates/ru/assets/libs/scene.splinecode';
-        // this.splineURL = './assets/libs/scene.splinecode';
+        // this.splineURL = '/local/templates/ru/assets/libs/scene.splinecode';
+        this.splineURL = './assets/libs/scene.splinecode';
         this.init();
     }
 
     init = () => {
         this.createAnimation()
+            .then(spline => {
+                new MainPage(spline)
+                new MvcPage(spline)
+                new AboutPage(spline)
+            })
         this.createTabs()
         this.createDropZone()
         this.createInputAreaMaxValue()
@@ -37,13 +42,11 @@ class App {
         })
     }
 
-    createAnimation = () => {
+    async createAnimation() {
         const el: HTMLCanvasElement = document.querySelector('.spline-canvas');
         this.spline = new Spline(el, this.splineURL)
-
-        new MainPage(this.spline)
-        new MvcPage(this.spline)
-        new AboutPage(this.spline)
+        
+        return this.spline
     }
 
     createTabs = () => {

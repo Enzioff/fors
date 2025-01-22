@@ -23,4 +23,17 @@
     border-radius: 25px;
     overflow: hidden;
   }
+
+  &--logo {
+    width: 200px;
+    height: 200px;
+
+    @include r($mobile) {
+      margin: 0 0 0 auto;
+    }
+
+    img {
+      object-fit: contain;
+    }
+  }
 }

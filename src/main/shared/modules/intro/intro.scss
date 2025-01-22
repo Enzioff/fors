@@ -3,7 +3,12 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  min-height: 600px;
   height: 100%;
+
+  @include r($tablet) {
+    min-height: 400px;
+  }
 
   @include r($mobile) {
     justify-content: flex-start;

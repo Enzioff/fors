@@ -23,7 +23,6 @@ class Spline {
         window.addEventListener('load', () => {
             this.application.load(url, {
                 credentials: 'include',
-                mode: 'no-cors',
             }).then(() => {
                 this.cube = this.application.findObjectByName('cube');
                 this.handleResize()

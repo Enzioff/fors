@@ -110,19 +110,6 @@ root {
     }
   }
 
-  &--event {
-    height: 100vh;
-    max-height: 500px;
-
-    @include r($tablet) {
-      max-height: 381px;
-    }
-
-    @include r($mobile) {
-      max-height: 400px;
-    }
-  }
-
   &--height {
     height: 100vh;
     max-height: 850px;
@@ -134,6 +121,18 @@ root {
     @include r($mobile) {
       height: 100%;
       max-height: 894px;
+    }
+  }
+
+  &--project-detail {
+    .intro {
+      min-height: 600px;
+      padding-top: 200px;
+
+      @include r($tablet) {
+        min-height: 400px;
+        padding-top: 160px;
+      }
     }
   }
 }
