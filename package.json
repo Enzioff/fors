@@ -28,7 +28,7 @@
   },
   "homepage": "https://github.com/KennyNobody/polosatik#readme",
   "devDependencies": {
-    "@splinetool/runtime": "^1.9.28",
+    "@splinetool/runtime": "^1.9.59",
     "@types/clamp-js": "^0.7.6",
     "@types/inputmask": "^5.0.7",
     "@types/node": "^18.14.1",
