@@ -125,13 +125,34 @@ root {
   }
 
   &--project-detail {
-    .intro {
-      min-height: 600px;
-      padding-top: 200px;
+    &:has(.detail-preview--logo) {
+      .intro {
+        min-height: 600px;
+        padding-top: 200px;
 
-      @include r($tablet) {
-        min-height: 400px;
-        padding-top: 160px;
+        @include r($tablet) {
+          min-height: 400px;
+          padding-top: 160px;
+        }
+      }
+    }
+
+    &:not(&:has(.detail-preview--logo)) {
+      .intro {
+        .grid__item:nth-child(1) {
+          padding-top: 200px;
+
+          @include r($mobile) {
+            padding-top: 0;
+          }
+        }
+        .grid__item:nth-child(2) {
+          height: 100%;
+
+          @include r($mobile) {
+            height: auto;
+          }
+        }
       }
     }
   }
