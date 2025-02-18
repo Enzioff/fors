@@ -55,9 +55,10 @@
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    min-width: 670px;
 
     @include r($tablet) {
-      align-items: flex-start;
+      min-width: auto;
     }
   }
 
@@ -138,6 +139,21 @@
     @include r($mobile) {
       width: 94px;
       height: 27px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    flex-shrink: 0;
+    margin-right: 15px;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    @include r($tablet) {
+      margin-right: 20px;
+      width: 25px;
+      height: 25px;
     }
   }
 }

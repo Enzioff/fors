@@ -29,11 +29,11 @@ class Preloader {
         this.text = this.preloader.querySelector('.preloader__text');
         this.facts = this.preloader.querySelector('.preloader__facts')
         this.decorative = this.preloader.querySelector('.preloader__decorative') as HTMLElement
-        this.titles = ['> 900', '> 410', '> 2 000']
+        this.titles = ['> 2 000', '> 410', '> 900']
         this.texts = [
-            'СЕРТИФИКАЦИЙ У ПРЕПОДАВАТЕЛЕЙ...',
-            'СПЕЦИАЛИСТОВ УЖЕ С НАМИ...',
             'ВЫПОЛНЕННЫХ РАБОТ...',
+            'СПЕЦИАЛИСТОВ УЖЕ С НАМИ...',
+            'СЕРТИФИКАЦИЙ У ПРЕПОДАВАТЕЛЕЙ...',
         ]
 
         this.init()
@@ -43,12 +43,14 @@ class Preloader {
                 this.body.classList.remove('fixed')
                 this.preloader.remove()
                 this.initial()
+                // this.body.initGoogleAnalytics();
             }, 1000)
         })
     }
 
     init() {
         gsap.registerPlugin(ScrambleTextPlugin, TextPlugin)
+        // clearTimeout(this.body.timeoutGoogleAnalytics);
         this.body.classList.add('fixed')
 
         this.textAnimation()

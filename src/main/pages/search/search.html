@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%= htmlWebpackPlugin.options.widgets.head %>
+<body>
+<%= htmlWebpackPlugin.options.widgets.headerPages %>
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section class="section section--search animate-intro pt-170 trigger-info mb-150 mbt-60 mbm-20">
+        <div class="container">
+            <div class="grid grid--center mb-20 mbm-10">
+                <div class="grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <p class="text text--small">Найдено: 3</p>
+                </div>
+            </div>
+            <!-- Блок для вывода найденных элементов -->
+            <div class="grid" data-search-list>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>ИТ-консалтинг</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Телекоммуникация</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Миграция ИС</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-2.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">ПАО «Мобильные ТелеСистемы» (МТС)</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>ИТ-консалтинг</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Телекоммуникация</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Миграция ИС</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Участие в проекте по миграции основных информационных систем МТС на платформу Intel
+                                x86/Linux. Специфика проекта — необходимость провести миграцию ИС в условиях весьма
+                                ограниченного «окна простоя» при больших объёмах данных, которые необходимо было
+                                перенести на новую платформу.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12 mt-20">
+                    <button class="button button--center" data-show-more="?_page=2">Показать ещё</button>
+                </div>
+            </div>
+            <!-- Блок при ненахождении элементов -->
+            <div class="grid hidden" data-not-found>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <div class="not-found">
+                        <svg class="not-found__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-search-error"></use>
+                        </svg>
+                        <p class="not-found__text">
+                            Мы не нашли проекты по вашему запросу.<br>
+                            Попробуйте проверить и изменить условия поиска
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= htmlWebpackPlugin.options.widgets.footer %>
+<%= htmlWebpackPlugin.options.widgets.temp %>
+<%= htmlWebpackPlugin.options.widgets.hidden %>
+</body>
+</html>

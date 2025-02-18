@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ФОРС</title>
+<link href="css/main.ef31.css" rel="stylesheet"></head>
+
+<body>
+<header class="header header--page">
+    <div class="container">
+        <div class="header__wrapper">
+            <a href="/" class="logo">
+                <img src="./assets/images/logo.svg" alt="">
+                <img src="./assets/images/logo-small.svg" alt="">
+                <p class="header__page">Министерство</p>
+            </a>
+            <div class="header__user-nav">
+                <svg class="header__search" data-fancybox data-src="#search-modal">
+                    <use xlink:href="./assets/sprite.svg#icon-search-big"></use>
+                </svg>
+                <div class="burger">
+                    <div class="burger__wrapper">
+                        <img src="./assets/images/icon-burger.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-cross.svg" alt="">
+                        <img hidden src="./assets/images/icon-burger-arrow.svg" alt="">
+                    </div>
+                </div>
+                <div class="desktop-menu">
+                    <div class="desktop-menu__wrapper">
+                        <a href="#" class="desktop-menu__link">Компания</a>
+                        <a href="#" class="desktop-menu__link">Проекты</a>
+                        <a href="#" class="desktop-menu__link">Продукты</a>
+                        <a href="#" class="desktop-menu__link">Техническая поддержка</a>
+                        <a href="#" class="desktop-menu__link">Учебный центр</a>
+                        <a href="#" class="desktop-menu__link">Вакансии</a>
+                        <a href="#" class="desktop-menu__link">Контакты</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="menu">
+        <div class="container">
+            <div class="menu__wrapper">
+                <nav class="nav">
+                    <a href="#" class="nav__link">Компания</a>
+                    <a href="#" class="nav__link">Проекты</a>
+                    <a href="#" class="nav__link">Продукты</a>
+                    <a href="#" class="nav__link">Техническая поддержка</a>
+                    <a href="#" class="nav__link">Учебный центр</a>
+                    <a href="#" class="nav__link">Вакансии</a>
+                    <a href="#" class="nav__link">Контакты</a>
+                </nav>
+                <div class="menu__footer">
+                    <div class="menu__links">
+                        <a href="tel:+74957877040" class="menu__link menu__link--big">+7 (495) 787-70-40</a>
+                        <a href="mailto:info@fors.ru" class="menu__link">info@fors.ru</a>
+                    </div>
+                    <div class="menu__social social social--row">
+                        <a href="#" class="social__link social__link--red">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-youtube.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--turquoise">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-telegram.svg" alt="">
+                            </picture>
+                        </a>
+                        <a href="#" class="social__link social__link--brown">
+                            <picture class="social__picture">
+                                <img src="./assets/images/icon-github.svg" alt="">
+                            </picture>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section class="section section--search animate-intro pt-170 trigger-info mb-150 mbt-60 mbm-20">
+        <div class="container">
+            <div class="grid grid--center mb-20 mbm-10">
+                <div class="grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <p class="text text--small">Найдено: 3</p>
+                </div>
+            </div>
+            <!-- Блок для вывода найденных элементов -->
+            <div class="grid" data-search-list>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>ИТ-консалтинг</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Телекоммуникация</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Миграция ИС</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-2.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">ПАО «Мобильные ТелеСистемы» (МТС)</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>ИТ-консалтинг</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Телекоммуникация</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Миграция ИС</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Участие в проекте по миграции основных информационных систем МТС на платформу Intel
+                                x86/Linux. Специфика проекта — необходимость провести миграцию ИС в условиях весьма
+                                ограниченного «окна простоя» при больших объёмах данных, которые необходимо было
+                                перенести на новую платформу.
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-4.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-5.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-6.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <a href="#" class="article-project">
+                        <div class="article-project__side">
+                            <div class="tags tags--card">
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--default action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <div class="article-project__footer">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                        <div class="article-project__side">
+                            <div class="article-project__header">
+                                <picture class="article-project__picture">
+                                    <img src="./assets/images/logo-card-1.png" alt="">
+                                </picture>
+                                <h3 class="article-project__title">Российский футбольный союз</h3>
+                            </div>
+                            <div class="tags tags--card tab-hidden-min">
+                                <div class="action-tag action-tag--light">
+                                    <span>Спорт</span>
+                                </div>
+                                <div class="action-tag action-tag--light">
+                                    <span>Автоматизация процессов</span>
+                                </div>
+                            </div>
+                            <p class="article-project__text">
+                                Автоматизация процессов лицензирования футбольных клубов, осуществляемых Российским
+                                футбольным союзом (РФС). В рамках проекта разработан специальный модуль
+                                «Лицензирование», входящий в состав цифровой платформы заказчика (РФС.ЦП).
+                            </p>
+                            <div class="article-project__footer tab-hidden-min">
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-1.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-2.svg" alt="">
+                                </picture>
+                                <picture class="article-project__logo">
+                                    <img src="./assets/images/icon-tec-3.svg" alt="">
+                                </picture>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="grid__item--6 grid__item-tab--12 mt-20">
+                    <button class="button button--center" data-show-more="?_page=2">Показать ещё</button>
+                </div>
+            </div>
+            <!-- Блок при ненахождении элементов -->
+            <div class="grid hidden" data-not-found>
+                <div class="grid__item--6 grid__item-tab--12">
+                    <div class="not-found">
+                        <svg class="not-found__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-search-error"></use>
+                        </svg>
+                        <p class="not-found__text">
+                            Мы не нашли проекты по вашему запросу.<br>
+                            Попробуйте проверить и изменить условия поиска
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<footer class="footer">
+    <div class="footer__separator"></div>
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="site-nav anim-in-bottom-stagger">
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">О компании</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Новости</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Проекты</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Решения</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Услуги</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Центр технической поддержки</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Разработка информационных систем</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Обучение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Импортозамещение</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Консалтинг</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Карьера</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вакансии</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Начало карьеры</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Команда единомышленников</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Атмосфера</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Вопросы и ответы</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="site-nav__item">
+                    <h4 class="site-nav__title">Контакты</h4>
+                    <ul class="site-nav__list">
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Где нас найти</a>
+                        </li>
+                        <li class="site-nav__element">
+                            <a href="#" class="site-nav__link">Контакты для прессы</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__info">
+                    <a href="#" class="footer__logo logo mob-hidden">
+                        <img src="./assets/images/logo-small.svg" alt="">
+                    </a>
+                    <p class="footer__text">1991–2024. © ФОРС</p>
+                    <p class="footer__text footer__text--copyright">© 2024,  Zephyr / design <br class="tab-hidden-min"> by <a href="#">Roman Kvartalnov</a></p>
+                </div>
+                <div class="footer__meta">
+                    <a href="#" class="footer__text">+7 495 787 70 40 / info@fors.ru</a>
+                    <a href="#" class="footer__text">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<style>
+    .temp {
+        padding: 20px 0;
+        background-color: #FFFFFF;
+        border-top: 1px solid #eeeeee;
+        z-index: 5;
+    }
+
+    .temp__wrapper {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 30px 40px;
+    }
+    .temp__link {
+        font-size: 14px;
+        transition: .2s linear;
+    }
+    .temp__link:hover {
+        opacity: .7;
+    }
+    .temp__title {
+        margin-bottom: 20px;
+        font-size: 18px;
+    }
+</style>
+<div class="temp">
+    <div class="container">
+        <h2 class="temp__title">Временная секция для навигации по вёрстке</h2>
+        <div class="temp__wrapper">
+            <a href="./index.html" class="temp__link">Главная</a>
+            <a href="./about.html" class="temp__link">О Компании</a>
+            <a href="./mvc.html" class="temp__link">МВЦ</a>
+            <a href="./projects.html" class="temp__link">Проекты</a>
+            <a href="./newsDetail.html" class="temp__link">Детальная страница</a>
+            <a href="./news.html" class="temp__link">Новости</a>
+            <a href="./newsDetailSmall.html" class="temp__link">Новости детальная страница</a>
+            <a href="./newsDetailFull.html" class="temp__link">Новости детальная страница полная</a>
+            <a href="./newsPageDetail.html" class="temp__link">Страница события</a>
+            <a href="./services.html" class="temp__link">Услуги</a>
+            <a href="./servicesDetail.html" class="temp__link">Услуги детальная</a>
+            <a href="./career.html" class="temp__link">Карьера</a>
+            <a href="./careerVacancy.html" class="temp__link">Карьера вакансии</a>
+            <a href="./careerDetail.html" class="temp__link">Карьера детальная</a>
+            <a href="./decisions.html" class="temp__link">Решения</a>
+            <a href="./decisionsDetail.html" class="temp__link">Решения Детальная</a>
+            <a href="./errorPage.html" class="temp__link">404</a>
+            <a href="./search.html" class="temp__link">Страница поиска</a>
+            <button data-fancybox data-src="#success" class="temp__link">Окно подтверждения отправки</button>
+        </div>
+    </div>
+</div>
+
+<div class="hidden">
+    <div class="modal" id="cooperation">
+        <div class="modal__wrapper">
+            <div class="grid">
+                <div class="grid__item grid__item--3 grid__item-tab--6 grid__item-mob--4">
+                    <h2 class="title mb-15">
+                        Готовы обсудить сотрудничество?
+                    </h2>
+                    <picture class="picture-ui mob-hidden">
+                        <img src="./assets/images/menu-cube.png" alt="">
+                    </picture>
+                </div>
+                <div class="grid__item grid__item--2 grid__item-tab--6 grid__item-mob--4">
+                    <div class="card card--offset card--height">
+                        <div class="tabs">
+                            <div class="tabs__header">
+                                <button class="tabs__item active">Связаться</button>
+                                <button class="tabs__item">Карьера</button>
+                                <button class="tabs__item">Контакты</button>
+                            </div>
+                            <div class="tabs__content">
+                                <div class="tabs__element active">
+                                    <form action="1" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="ORGANISATION"
+                                                   placeholder="Название организации">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <label class="form__item form__item--area">
+                                            <textarea class="input input--area" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                    href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <form action="2" class="form">
+                                        <label class="form__item">
+                                            <input type="text" class="input" name="NAME" placeholder="Имя и Фамилия">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="email" class="input" name="EMAIL" placeholder="Почта">
+                                        </label>
+                                        <label class="form__item">
+                                            <input type="tel" class="input" name="PHONE" placeholder="Телефон">
+                                        </label>
+                                        <div class="form__item">
+                                            <label class="drop-zone">
+                                                <svg class="drop-zone__icon">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-doc"></use>
+                                                </svg>
+                                                <svg class="drop-zone__icon drop-zone__icon--error">
+                                                    <use xlink:href="./assets/sprite.svg#icon-upload-error"></use>
+                                                </svg>
+                                                <span class="drop-zone__caption">
+                                                    Перетащите файлы формата JPG, PNG or PDF (не больше 10MB)
+                                                </span>
+                                                <span class="drop-zone__notation">
+                                                    Загрузите свое резюме
+                                                </span>
+                                                <input type="file" hidden>
+                                            </label>
+                                            <div class="loaded-block"></div>
+                                        </div>
+                                        <label class="form__item form__item--area">
+                                            <textarea class="input input--area input--small" name="COMMENT"
+                                                      placeholder="Комментарий"></textarea>
+                                            <span class="form__max">0/1000</span>
+                                        </label>
+                                        <label class="form__item form__item--meta">
+                                            <input type="checkbox" class="checkbox" name="POLICY">
+                                            <span>
+                                                Я даю согласие на обработку моих <a href="#">персональных данных</a> в соответствии с <a
+                                                    href="#">условиями политики конфиденциальности</a>
+                                            </span>
+                                        </label>
+                                    </form>
+                                </div>
+                                <div class="tabs__element">
+                                    <div class="contacts-block">
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр разработки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:develop@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    develop@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Центр техподдержки</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:support@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    support@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                        <article class="article-contact">
+                                            <h3 class="article-contact__title">Учебно-консультационный центр</h3>
+                                            <p class="article-contact__text">Москва, Графский переулок, д. 14, корп.
+                                                2</p>
+                                            <div class="article-contact__links">
+                                                <a href="tel:+74957877040"
+                                                   class="article-contact__link">
+                                                    +7 (495) 787-70-40
+                                                </a>
+                                                <a href="mailto:edu@fors.ru"
+                                                   class="article-contact__link article-contact__link--small">
+                                                    edu@fors.ru
+                                                </a>
+                                            </div>
+                                        </article>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid__item grid__item--1 grid__item-tab--2 grid__item-mob--1 grid__item--end">
+                    <button class="button-circle button-circle--right tab-hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" type="submit" data-btn
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--right tab-hidden hidden" data-btn>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
+                </div>
+                <div class="grid__item grid__item--1 grid__item-tab--12 grid__item-mob--4 grid__item--end desktop-hidden">
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden" type="submit"
+                            data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            type="submit" data-btn-mob
+                            data-form-submit>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Отправить</span>
+                    </button>
+                    <button class="button-circle button-circle--big button-circle--right desktop-hidden hidden"
+                            data-btn-mob>
+                        <svg class="button-circle__icon">
+                            <use xlink:href="./assets/sprite.svg#icon-arrow-right"></use>
+                        </svg>
+                        <span>Все<br>контакты</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--light" id="success">
+        <div class="modal__wrapper">
+            <div class="success-box">
+                <div class="success-box__header">
+                    <h2 class="title title--main">Отправлено</h2>
+                    <p class="text">Благодарим за ваш запрос.<br class="tab-hidden-min"> Мы обязательно<br class="mob-hidden">свяжемся с вами!</p>
+                </div>
+                <a href="#" class="text text--link">develop@fors.ru</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal--full" id="search-modal">
+        <div class="modal__wrapper">
+            <div class="block-search" data-search-block>
+                <form action="#" class="block-search__search search">
+                    <input type="text" class="search__input" placeholder="Поиск">
+                    <div class="search__control">
+                        <button class="search__button search__button--reset" type="reset">
+                            <svg class="search__icon search__icon--remove">
+                                <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                        <button class="search__button">
+                            <svg class="search__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-search"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script defer src="bundle.5913.js"></script></body>
+</html>

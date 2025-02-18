@@ -1,0 +1,17 @@
+.block-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 761px;
+  min-height: 500px;
+
+  @include r($tablet) {
+    max-width: 634px;
+  }
+
+  @include r($mobile) {
+    min-height: 274px;
+  }
+}

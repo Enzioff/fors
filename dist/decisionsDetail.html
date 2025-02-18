@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ФОРС</title>
-<link href="css/main.a612.css" rel="stylesheet"></head>
+<link href="css/main.ef31.css" rel="stylesheet"></head>
 
 <body>
 <header class="header header--page">
@@ -15,9 +15,12 @@
             <a href="/" class="logo">
                 <img src="./assets/images/logo.svg" alt="">
                 <img src="./assets/images/logo-small.svg" alt="">
-                <p class="header__page">Министерство цифрового развития государственного управления республики Башкортостан</p>
+                <p class="header__page">Министерство</p>
             </a>
             <div class="header__user-nav">
+                <svg class="header__search" data-fancybox data-src="#search-modal">
+                    <use xlink:href="./assets/sprite.svg#icon-search-big"></use>
+                </svg>
                 <div class="burger">
                     <div class="burger__wrapper">
                         <img src="./assets/images/icon-burger.svg" alt="">
@@ -946,10 +949,13 @@
             <a href="./careerDetail.html" class="temp__link">Карьера детальная</a>
             <a href="./decisions.html" class="temp__link">Решения</a>
             <a href="./decisionsDetail.html" class="temp__link">Решения Детальная</a>
+            <a href="./errorPage.html" class="temp__link">404</a>
+            <a href="./search.html" class="temp__link">Страница поиска</a>
             <button data-fancybox data-src="#success" class="temp__link">Окно подтверждения отправки</button>
         </div>
     </div>
 </div>
+
 <div class="hidden">
     <div class="modal" id="cooperation">
         <div class="modal__wrapper">
@@ -1157,6 +1163,28 @@
             </div>
         </div>
     </div>
+    <div class="modal modal--full" id="search-modal">
+        <div class="modal__wrapper">
+            <div class="block-search" data-search-block>
+                <form action="#" class="block-search__search search">
+                    <input type="text" class="search__input" placeholder="Поиск">
+                    <div class="search__control">
+                        <button class="search__button search__button--reset" type="reset">
+                            <svg class="search__icon search__icon--remove">
+                                <use xlink:href="./assets/sprite.svg#icon-cross"></use>
+                            </svg>
+                        </button>
+                        <button class="search__button">
+                            <svg class="search__icon">
+                                <use xlink:href="./assets/sprite.svg#icon-search"></use>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
-<script defer src="bundle.6840.js"></script></body>
+
+<script defer src="bundle.5913.js"></script></body>
 </html>

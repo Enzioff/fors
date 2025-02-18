@@ -148,8 +148,6 @@ export class MvcPage extends AnimationConfig {
                                     ease: 'none',
                                 })
                             }
-                            servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
-                            servicesHeaderItems[idx].classList.add('active')
 
                             gsap.to(card, {
                                 backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
@@ -169,8 +167,14 @@ export class MvcPage extends AnimationConfig {
                             this.moveCanvas(0, {yPercent: 12, zIndex: 2})
                         }
                     },
+                    onComplete: () => {
+                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
+                        servicesHeaderItems[idx].classList.add('active')
+                    },
                     onReverseComplete: () => {
                         animateSpline(this.application, 7 - idx + 1)
+                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
+                        servicesHeaderItems[idx> 0 ? idx - 1 : 0].classList.add('active')
                     }
                 }).add(`point${idx}`)
 

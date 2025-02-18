@@ -1,0 +1,57 @@
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  &__title {
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 322px;
+    line-height: 434px;
+    color: $main1;
+
+    @include r($tablet) {
+      font-weight: 400;
+      font-size: 250px;
+      line-height: 337px;
+    }
+
+    @include r($mobile) {
+      font-weight: 400;
+      font-size: 180px;
+      line-height: 243px;
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: 50px;
+    font-family: $font-main;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 91px;
+    text-transform: uppercase;
+    color: $main1;
+
+    @include r($tablet) {
+      margin-bottom: 40px;
+      font-weight: 400;
+      font-size: 42px;
+      line-height: 56px;
+    }
+
+    @include r($mobile) {
+      font-weight: 400;
+      font-size: 32px;
+      line-height: 38px;
+    }
+  }
+
+  &__button {
+    max-width: 257px;
+
+    @include r($tablet) {
+      max-width: 169px;
+    }
+  }
+}

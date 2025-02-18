@@ -92,7 +92,7 @@ class HeaderAnimation {
                     duration: 0.5,
                     ease: "back.out(1.7)",
                 })
-
+                
                 this.burger.classList.add('active')
                 checkBurgerStatus()
             }
@@ -107,17 +107,18 @@ class HeaderAnimation {
                     margin: 0,
                     duration: 1,
                 })
+                
                 this.burger.classList.remove('active')
                 checkBurgerStatus()
             }
 
             if (isDesktop) {
                 this.burger.addEventListener('mouseenter', openDesktopMenu)
-                this.userNavigation.addEventListener('mouseleave', closeDesktopMenu)
+                this.header.addEventListener('mouseleave', closeDesktopMenu)
 
                 return () => {
                     this.burger.removeEventListener('mouseenter', openDesktopMenu)
-                    this.userNavigation.removeEventListener('mouseleave', closeDesktopMenu)
+                    this.header.removeEventListener('mouseleave', closeDesktopMenu)
                 };
             }
 

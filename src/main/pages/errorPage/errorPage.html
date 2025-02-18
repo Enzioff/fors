@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ru">
+<%= htmlWebpackPlugin.options.widgets.head %>
+<body>
+<%= htmlWebpackPlugin.options.widgets.headerPages %>
+<div class="spline-video">
+    <video controls>
+        <source src="#" type="video/mp4">
+    </video>
+</div>
+<div class="spline-container">
+    <canvas class="spline-canvas"></canvas>
+</div>
+<main class="main">
+    <section
+        class="section section--height section--bg animate-intro pt-160 ptm-0 ptt-150 pb-70 pbt-50">
+        <div class="intro">
+            <div class="container">
+                <div class="error-page">
+                    <p class="error-page__title">404</p>
+                    <p class="error-page__subtitle">Страница не найдена</p>
+                    <a href="./" class="error-page__button button">На главную</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+<%= htmlWebpackPlugin.options.widgets.footer %>
+<%= htmlWebpackPlugin.options.widgets.temp %>
+<%= htmlWebpackPlugin.options.widgets.hidden %>
+</body>
+</html>
