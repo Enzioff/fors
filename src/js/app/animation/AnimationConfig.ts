@@ -808,13 +808,6 @@ export class AnimationConfig extends MainGsap {
                         const progress = cardsTimeline.progress();
                         
                         if (progress > 0) {
-                            if (isMobileMax) {
-                                gsap.to(servicesHeader, {
-                                    scrollTo: servicesHeaderItems[idx],
-                                    ease: 'none',
-                                })
-                            }
-                            
                             gsap.to(card, {
                                 backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
                                 duration: 0,
@@ -824,10 +817,24 @@ export class AnimationConfig extends MainGsap {
                     onComplete: () => {
                         servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
                         servicesHeaderItems[idx].classList.add('active')
+                        
+                        if (isMobileMax) {
+                            gsap.to(servicesHeader, {
+                                scrollTo: servicesHeaderItems[idx],
+                                ease: 'none',
+                            })
+                        }
                     },
                     onReverseComplete: () => {
                         servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
                         servicesHeaderItems[idx> 0 ? idx - 1 : 0].classList.add('active')
+                        
+                        if (isMobileMax) {
+                            gsap.to(servicesHeader, {
+                                scrollTo: servicesHeaderItems[idx> 0 ? idx - 1 : 0],
+                                ease: 'none',
+                            })
+                        }
                     }
                 }).add(`point${idx}`)
                 
