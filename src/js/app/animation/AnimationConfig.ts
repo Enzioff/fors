@@ -807,32 +807,26 @@ export class AnimationConfig extends MainGsap {
                     onUpdate: () => {
                         const progress = cardsTimeline.progress();
                         
+                        const cardProgress = cardsTimeline.time();
+                        
+                        const currentProgress = +(cardProgress - idx).toFixed(2)
+                        
+                        if (currentProgress >= 0.65) {
+                            servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
+                            servicesHeaderItems[idx].classList.add('active')
+                            
+                            if (isMobileMax) {
+                                gsap.to(servicesHeader, {
+                                    scrollTo: servicesHeaderItems[idx],
+                                    ease: 'none',
+                                })
+                            }
+                        }
+                        
                         if (progress > 0) {
                             gsap.to(card, {
                                 backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
                                 duration: 0,
-                            })
-                        }
-                    },
-                    onComplete: () => {
-                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
-                        servicesHeaderItems[idx].classList.add('active')
-                        
-                        if (isMobileMax) {
-                            gsap.to(servicesHeader, {
-                                scrollTo: servicesHeaderItems[idx],
-                                ease: 'none',
-                            })
-                        }
-                    },
-                    onReverseComplete: () => {
-                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
-                        servicesHeaderItems[idx> 0 ? idx - 1 : 0].classList.add('active')
-                        
-                        if (isMobileMax) {
-                            gsap.to(servicesHeader, {
-                                scrollTo: servicesHeaderItems[idx> 0 ? idx - 1 : 0],
-                                ease: 'none',
                             })
                         }
                     }

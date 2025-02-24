@@ -141,6 +141,23 @@ export class MvcPage extends AnimationConfig {
                     duration: 1,
                     onUpdate: () => {
                         const progress = cardsTimeline.progress();
+                        
+                        const cardProgress = cardsTimeline.time();
+                        
+                        const currentProgress = +(cardProgress - idx).toFixed(2)
+                        
+                        if (currentProgress >= 0.65) {
+                            servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
+                            servicesHeaderItems[idx].classList.add('active')
+                            
+                            if (isMobileMax) {
+                                gsap.to(servicesHeader, {
+                                    scrollTo: servicesHeaderItems[idx],
+                                    ease: 'none',
+                                })
+                            }
+                        }
+                        
                         if (progress > 0) {
                             gsap.to(card, {
                                 backgroundColor: idx >= 2 ? cardColors[2] : idx >= 1 ? cardColors[1] : cardColors[0],
@@ -160,28 +177,8 @@ export class MvcPage extends AnimationConfig {
                             this.moveCanvas(0, {yPercent: 12, zIndex: 2})
                         }
                     },
-                    onComplete: () => {
-                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
-                        servicesHeaderItems[idx].classList.add('active')
-                        
-                        if (isMobileMax) {
-                            gsap.to(servicesHeader, {
-                                scrollTo: servicesHeaderItems[idx],
-                                ease: 'none',
-                            })
-                        }
-                    },
                     onReverseComplete: () => {
                         animateSpline(this.application, 7 - idx + 1)
-                        servicesHeaderItems.forEach(temp => temp.classList.remove('active'))
-                        servicesHeaderItems[idx> 0 ? idx - 1 : 0].classList.add('active')
-                        
-                        if (isMobileMax) {
-                            gsap.to(servicesHeader, {
-                                scrollTo: servicesHeaderItems[idx> 0 ? idx - 1 : 0],
-                                ease: 'none',
-                            })
-                        }
                     }
                 }).add(`point${idx}`)
 
